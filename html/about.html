@@ -7,17 +7,15 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<!--  <style>
-  .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 100%;
-      margin: auto;
+ <style>
+  p,h1,h2,h3,h4,h5,h6{
+      color :white;
   }
-  </style> -->
+  </style>
 </head>
 <body>
   <!-- NAVBAR-->
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default" margin-bottom>
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -38,17 +36,6 @@
           <li><a href="company.html">Company</a></li>
           <li><a href="location.html">Location</a></li>
           <li><a href="currency.html">Currency</a></li>
-          <!--<li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>-->
           </ul>
             <ul  class="nav navbar-nav navbar-right">
           </li>
@@ -66,40 +53,76 @@
   <!-- END NAVBAR -->
 
 <!-- About the authors part-->
-<div class="container">
-        <div class="row"></div>
-        <div class="row panel-body text-center">
-            <div class="col-md-12 center-block">
-                <h3>About IMBD Group 7</h3>
-            </div>
+    <div class="jumbotron" style = "margin-bottom: 0px; margin-top: 0px; padding:0px">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" >
+         <style>.carousel-inner{margin:auto;max-width: 100%;}</style>
+        <div class="item active">
+          <img src="../images/Building.jpg" width= "100%";>
+            <div class="carousel-caption">
+              <style>.carousel-caption{background-color: black;opacity: 0.7;}</style>
+              <h1>The Downing Jones</h1>
+            <p class="lead"> About Us</p>
+
+          </div>
         </div>
-        <div class="row nathan panel-body text-center">
+      </div>
+    </div>
+  </div>
+
+    <div class="container" style = "background-image: url(../images/background4.jpg); width: 100%;margin-left:0px; margin-right:0px;margin-top: 0%">             
+      <h2 style = "text-align : center;font-weight : bold; padding : 20px"> Who We Are </h2>
+      <h4 style = "font-weight : normal; text-align : center; padding : 20px">info about who we are info about who we are info about who we are info about who we are info about who we are info about who we are</h4> 
+    </div>
+
+  <div class="container" style = "background-image: url(../images/background4.jpg); width: 100%;margin-left:0px; margin-right:0px">
+              <div class="row Matthew panel-body text-center">
             <div class="col-md-4 center-block">
                 <img class="profilePic img-circle" src="/static/img/shubham.jpg" width="200" height="200">
-                <h4>Nathan Adams</h4>
+                <h4>Matthew Coleman</h4>
                 <p><b>Role: </b>PUT STUFF HERE</p>
                 <p><b>Git Commits: </b>PUT STUFF</p>
                 <p><b>Unit Tests: </b>PUT STUFF</p>
                 <p><b>Issues: </b>PUT STUFF</p>
             </div>
-            <div class="col-md-7">
+
+            <div class="col-md-4 center-block">
+                <img class="profilePic img-circle" src="/static/img/shubham.jpg" width="200" height="200">
+                <h4>Saleh Alghusson</h4>
+                <p><b>Role: </b>PUT STUFF HERE</p>
+                <p><b>Git Commits: </b>PUT STUFF</p>
+                <p><b>Unit Tests: </b>PUT STUFF</p>
+                <p><b>Issues: </b>PUT STUFF</p>
+            </div>
+
+            <div class="col-md-4 center-block">
+                <img class="profilePic img-circle" src="/static/img/shubham.jpg" width="200" height="200">
+                <h4>Saleh Alghusson</h4>
+                <p><b>Role: </b>PUT STUFF HERE</p>
+                <p><b>Git Commits: </b>PUT STUFF</p>
+                <p><b>Unit Tests: </b>PUT STUFF</p>
+                <p><b>Issues: </b>PUT STUFF</p>
+            </div>
+        </div>
+
+        <div class="row Saleh panel-body text-center">
+          <div class="col-md-4 center-block">
                 <div class="jumbotron">
-                    <p> INFO </p>
+                <p> Put info here </p>
                 </div>
             </div>
-        </div>
-        <div class="row jemin panel-body text-center">
+
             <div class="col-md-4 center-block">
-                <img class="profilePic img-circle" src="/static/img/shubham.jpg" width="200" height="200">
-                <h4>Jemin Shin</h4>
-                <p><b>Role: </b>PUT STUFF HERE</p>
-                <p><b>Git Commits: </b>PUT STUFF</p>
-                <p><b>Unit Tests: </b>PUT STUFF</p>
-                <p><b>Issues: </b>PUT STUFF</p>
-            </div>
-            <div class="col-md-7">
                 <div class="jumbotron">
-                    <p> INFO </p>
+                <p> Put info here </p>
+                </div>
+            </div>
+
+            <div class="col-md-4 center-block">
+                <div class="jumbotron">
+                <p> Put info here </p>
                 </div>
             </div>
         </div>
@@ -113,13 +136,7 @@
                 <p><b>Unit Tests: </b>PUT STUFF</p>
                 <p><b>Issues: </b>PUT STUFF</p>
             </div>
-            <div class="col-md-7">
-                <div class="jumbotron">
-                    <p> INFO </p>
-                </div>
-            </div>
-        </div>
-        <div class="row Saleh panel-body text-center">
+
             <div class="col-md-4 center-block">
                 <img class="profilePic img-circle" src="/static/img/shubham.jpg" width="200" height="200">
                 <h4>Saleh Alghusson</h4>
@@ -128,64 +145,39 @@
                 <p><b>Unit Tests: </b>PUT STUFF</p>
                 <p><b>Issues: </b>PUT STUFF</p>
             </div>
-            <div class="col-md-7">
-                <div class="jumbotron">
-                    <p> INFO </p>
-                </div>
-            </div>
-        </div>
 
-        <div class="row kelvin panel-body text-center">
             <div class="col-md-4 center-block">
                 <img class="profilePic img-circle" src="/static/img/shubham.jpg" width="200" height="200">
-                <h4>Kelvin He</h4>
+                <h4>Saleh Alghusson</h4>
                 <p><b>Role: </b>PUT STUFF HERE</p>
                 <p><b>Git Commits: </b>PUT STUFF</p>
                 <p><b>Unit Tests: </b>PUT STUFF</p>
                 <p><b>Issues: </b>PUT STUFF</p>
             </div>
-            <div class="col-md-7">
+        </div>
+
+        <div class="row Saleh panel-body text-center">
+          <div class="col-md-4 center-block">
                 <div class="jumbotron">
-                    <p> INFO </p>
+                <p> Put info here </p>
+                </div>
+            </div>
+
+            <div class="col-md-4 center-block">
+                <div class="jumbotron">
+                <p> Put info here </p>
+                </div>
+            </div>
+
+            <div class="col-md-4 center-block">
+                <div class="jumbotron">
+                <p> Put info here </p>
                 </div>
             </div>
         </div>
 
-        <div class="row sarah panel-body text-center">
-            <div class="col-md-4 center-block">
-                <img class="profilePic img-circle" src="../images/sarah.jpg" width="200" height="200">
-                <h4>Sarah Jee</h4>
-                <p><b>Role: </b>PUT STUFF HERE</p>
-                <p><b>Git Commits: </b>PUT STUFF</p>
-                <p><b>Unit Tests: </b>PUT STUFF</p>
-                <p><b>Issues: </b>PUT STUFF</p>
-            </div>
-            <div class="col-md-7">
-                <div class="jumbotron">
-                    <p> INFO </p>
-                </div>
-            </div>
-        </div>
-        <div class="row panel-body text-center">
-            <div class="col-md-12 center-block">
-                <h3>Data Source</h3>
-                <a href="http://pokeapi.co">
-                    <p><b>linkedin.com</b></p>
-                    <img id="apiImage" src="/static/img/favicon.ico">
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <div class="jumbotron">
-                    <p>How we got our info later.
-                    <p>
-                </div>
-            </div>
-        </div>
         <div id="space" class="row panel-body text-center">
-            <div class="col-md-4 center-block">
+            <div class="col-md-6 center-block">
                 <h5>Tools Used</h5>
                 <p>Bootstrap</p>
                 <p>Flask</p>
@@ -195,46 +187,15 @@
                 <p>SQLAlchemy</p>
                 <p>Apiary</p>
             </div>
-            <div class="col-md-4 center-block">
+            <div class="col-md-6 center-block">
                 <h5>Stats</h5>
                 <p><b># Commits: </b>do later</p>
                 <p><b># Issues: </b>do later</p>
                 <p><b># Unit Tests: </b>do later</p>
                 <button id="test-button"><p>Run Tests</p></button>
-                <!--
-                <script>
-                    document.getElementById("test-button").onclick = function () {
-                        var req = new XMLHttpRequest();
-                        var url = "api/run_tests";
-                        req.onreadystatechange = function () {
-                            if (req.readyState == 4 && req.status == 200) {
-                                alert(req.responseText);
-                            }
-                        };
-                        req.open("GET", url, true);
-                        req.send();
-                    };
-                </script>
-              -->
-            </div>
-            <div class="col-md-4 center-block">
-                <h5>Links</h5>
-                <a href="http://docs.swecune.apiary.io">
-                    <p>Apiary API</p>
-                </a>
-                <a href="https://github.com/kelvinhe273/IDB-Group7/issues">
-                    <p>Github Issue Tracker</p>
-                </a>
-                <a href="https://github.com/kelvinhe273/IDB-Group7">
-                    <p>Github Repo</p>
-                </a>
-                <a href="https://github.com/kelvinhe273/IDB-Group7/wiki">
-                    <p>Github Wiki</p>
-                </a>
-            </div>
-        </div>
+                
     </div>
-<!-- END AUTHORS PART-->
+  </div>
 
 </body>
 </html>
