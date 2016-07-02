@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Companies</title>
+  <title>Company 1</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -40,9 +40,9 @@
         <ul class="nav navbar-nav">
           <li><a href="index.html">Home</a></li>
           <li><a href="stockmarket.html">Stock Market <span class="sr-only">(current)</span></a></li>
-          <li class="active"><a href="company.html">Company</a></li>
+          <li><a href="company.html">Company</a></li>
           <li><a href="location.html">Location</a></li>
-          <li><a href="currency.html">Currency</a></li>
+          <li class="active"><a href="currency.html">Currency</a></li>
           <!-- DROPDOWN EXAMPLE IN CASE WE WANT TO USE IT -->
           <!--<li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -73,92 +73,17 @@
   <!-- END NAVBAR -->
 
 <!-- PAGE CONTENT -->
-  <div>
-  <table id="companytable" class="table table-hover" style="width:100%" align="center">
-  <thead>
-    <tr>
-      <th id="name">Name</th>
-      <th id="stockexchange">Stock Exchange</th>
-      <th id="location">Location</th>
-      <th id="cureency">Currency</th>
-    </tr>
-    </thead>
-    <!-- Figure out how to add foreign currency signs.-->
-    <tbody>
-      <tr>
-         <td><a href="company1.html">Company 1</a></td>
-         <td><a href="nasdaq.html">NASDAQ</a></td>
-         <td><a href="us.html">USA</a></td>
-         <td><a href="dollars.html">US Dollars</a></td>
-      </tr>
-      <tr>
-        <td><a href="company2.html">Company 2</a></td>
-        <td><a href="fra.html">FRA</a></td>
-        <td><a href="france.html">France</a></td>
-        <td><a href="euro.html">Euro</a></td>
-      </tr>
-      <tr>
-        <td><a href="company3.html">Company 3</a></td>
-         <td><a href="lse.html">LSE</a></td>
-         <td><a href="greatbritain.html">Great Britain</a></td>
-         <td><a href="pounds.html">Pound sterling</a></td>
-      </tr>
-      </tbody>
-  </table>
+ <div>
+ <div>
+  <h2>Currency</h2>
+  <p>Flesh this out later.</p>
+   <h2>Locations</h2>
+   <p>Flesh this out later.</p>
+   <h2>Stock Exchange</h2>
+   <p>Flesh this out later.</p>
+ </div>
+  <img src="../images/placeholder.jpg">
  </div> 
-<!-- END PAGE CONTENT-->
-
- <!-- SCRIPT FOR SORTING-->
-<script>
-$(document).ready(function() {
-    $('#companytable').DataTable();
-} );
-</script>
-<!-- END SCRIPT FOR SORTING-->
-
+ <!-- END PAGE CONTENT -->
 </body>
 </html>
-
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
-</head>
- <!- - PAGE CONTENT - ->
-  <div>
-  <table class="table table-hover table-striped" style="width:100%" align="center">
-    <tr>
-      <th id="name">Name</th>
-      <th id="stockexchange">Stock Exchange</th>
-      <th id="location">Location</th>
-      <th id="cureency">Currency</th>
-    </tr>
-    <!- - Figure out how to add foreign currency signs.- ->
-      <tr>
-         <td>Company 1</td>
-         <td>NASDAQ</td>
-         <td>USA</td>
-         <td>US Dollars</td>
-      </tr>
-      <tr>
-        <td>Company 2</td>
-        <td>FRA</td>
-        <td>France</td>
-        <td>Euro</td>
-      </tr>
-      <tr>
-        <td>Company 3</td>
-         <td>LSE</td>
-         <td>Great Britain</td>
-         <td>Pound sterling</td>
-      </tr>
-  </table>
- </div> 
-<!- - END PAGE CONTENT- ->
-</html>
--->
