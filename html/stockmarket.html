@@ -8,6 +8,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.12.3.js"></script>
 <!--  <style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
@@ -70,13 +73,16 @@
   <!-- END NAVBAR -->
 <!-- PAGE CONTENT -->
   <div>
-  <table class="table table-hover table-striped" style="width:100%" align="center">
+  <table id="stocktable" class="table table-hover" style="width:100%" align="center">
+    <thead>
     <tr>
       <th id="name">Name</th>
       <th id="location">Location</th>
       <th id="cureency">Currency</th>
     </tr>
+    </thead>
     <!-- Figure out how to add foreign currency signs.-->
+      <tbody>
       <tr>
          <td>NASDAQ</td>
          <td>USA</td>
@@ -92,9 +98,17 @@
          <td>Great Britain</td>
          <td><a href="pounds.html">Pound sterling</a></td>
       </tr>
+      </tbody>
   </table>
  </div> 
 <!-- END PAGE CONTENT-->
+<!-- SCRIPT FOR SORTING-->
+<script>
+$(document).ready(function() {
+    $('#stocktable').DataTable();
+} );
+</script>
+<!-- END SCRIPT FOR SORTING-->
 
 </body>
 </html>
