@@ -5,11 +5,14 @@ app = Flask ( __name__ )
 def homepage ():
 	return render_template('index.html')
 
-@app . route ( '/company' )
-def company ():
-        return render_template('company.html')
+@app . route ( '/euro' )
+def euro1 ():
+        return render_template('euro.html')
 
-#ashdgakhsd
+@app . route ( '/euro.html' )
+def euro2 ():
+        return render_template('euro.html')
+
 if __name__ == "__main__" :
 	app.run()
 
