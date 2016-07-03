@@ -1,0 +1,109 @@
+FORMAT: 1A
+HOST: downingjones.me
+# Downing Jones API
+
+The Downing Jones API allows for data requests on
+stock market exchanges, companies, locations, and currencies.
+
+# Group Stock Market Exchange
+## Stock Market Exchange List [/api/stockmarkets]
+### Obtain a list of stock market exchanges [GET]
++ Response 200(application/json)
+    {
+        "exchanges": 
+        [
+            {
+                "name": NASDAQ,
+                "location": USA,
+                "currency": US Dollars
+            },
+            {
+                "name": FRA,
+                "location": France,
+                "currency": Euro
+            },
+            {
+                "name": LSE,
+                "location": Great Britain,
+                "currency": Pound sterling
+            },
+        ]            
+    }
+    
+# Group Companies
+## Companies List [/api/companies]
+### Obtain a list of companies [GET]
++ Response 200(application/json)
+    {
+        "companies": 
+        [
+            {
+                "name": Company 1,
+                "stock_exchange": NASDAQ,
+                "location": USA,
+                "currency": US Dollars
+            },
+            {
+                "name": Company 2,
+                "stock_exchange": FRA,
+                "location": France,
+                "currency": Euro
+            },
+            {
+                "name": Company 3,
+                "stock_exchange": LSE,
+                "location": Great Britain,
+                "currency": Pound sterling
+            },
+        ]            
+    }
+    
+# Group Locations
+## Locations List [/api/locations]
+### Obtain a list of various locations [GET]
++ Response 200(application/json)
+    {
+        "locations": 
+        [
+            {
+                "location": USA,
+                "exchange": NASDAQ,
+                "currency": US Dollars
+            },
+            {
+                "location": France,
+                "exchange": FRA,
+                "currency": Euro
+            },
+            {
+                "location": Great Britain,
+                "exchange": LSE,
+                "currency": Pound sterling
+            },
+        ]            
+    }
+    
+# Group Currencies
+## Currencies List [/api/currencies]
+### Obtain a list of various locations [GET]
++ Response 200(application/json)
+    {
+        "currencies": 
+        [
+            {
+                "type": US Dollars
+                "exchange": NASDAQ,
+                "location": USA,
+            },
+            {
+                "type": Euro
+                "exchange": FRA,
+                "location": Great Britain,
+            },            
+            {
+                "type": Pound sterling
+                "exchange": LSE,
+                "location": Great Britain,
+            },
+        ]            
+    }
