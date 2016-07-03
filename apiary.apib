@@ -1,127 +1,109 @@
 FORMAT: 1A
-HOST: http://financequotes-api.com/
+HOST: downingjones.me
+# Downing Jones API
 
-# GTD TODO API
-API Documentation for Yahoo Finance
+The Downing Jones API allows for data requests on
+stock market exchanges, companies, locations, and currencies.
 
-## Exchange [/exchange]
-A single Exchange object, it represents a single exchange.
-
-Required attributes: 
-
-- `name`
-- `location`
-- `currency`
-
-+ Parameters
-    + id (required, int) ... Unique exchange ID in the form of an integer
-
-+ Model (application/hal+json)
-
-    + Body
-
+# Group Stock Market Exchange
+## Stock Market Exchange List [/api/stockmarkets]
+### Obtain a list of stock market exchanges [GET]
++ Response 200(application/json)
+    {
+        "exchanges": 
+        [
             {
-                "id": 1,
-                "name": "Health",
-                "description": "This represents projects that are related to health"
-                "parent": 0,
-                "meta": "NULL"
-            }
-            
-## Retrieve a single Exchange [GET]
-
-+ Response 200 (application/json)
-
-    [Exchange][]
-    
-+ Response 404 (application/json)
-
-        { 
-            "error": "Resource not found" 
-        }
-    
-### Edit a Exchange [PATCH]
-
-+ Request (application/json)
-
-        {
-            "description": "A collection of health related projects",
-        }
-
-+ Response 200
-    
-    [Exchange][]
-
-+ Response 404
-
-        { 
-            "error": "Resource not found"
-        }
-
-+ Response 400
-
-        { 
-            "error": "Resource modification failed"
-        }
-
-## Delete a Exchange [DELETE]
-
-+ Response 200
-
-        { 
-            "result": True
-        }
-
-## Create a Exchange [POST]
-
-+ Request (application/json)
-
-        {
-            "name": "Diet",
-            "description": "A collection of projects related to Diet",
-            "parent": 1
-        }
-
-+ Response 201
-
-    [Exchange][]
-    
-+ Response 400
-
-        { 
-            "error": "Resource modification failed"
-        }
-
-# Exchange Collection [/exchange]
-Get all of the Exchanges.
-
-+ Model (application/hal+json)
-
-    + Body
-
+                "name": NASDAQ,
+                "location": USA,
+                "currency": US Dollars
+            },
             {
-                "exchanges": [
-                    {
-                        "id": 1,
-                        "name": "Health",
-                        "description": "This represents projects that are related to health"
-                        "parent": 0,
-                        "meta": "NULL"
-                    },
-                    {
-                        "id": 1,
-                        "name": "Diet",
-                        "description": "A collection of projects related to Diet",
-                        "parent": 1,
-                        "meta": "NULL"
-                    }
-                ]
-            }
-
-
-
-## List all Exchanges [GET]
-
-+ Response 200
-
-    [Exchange Collection][]
+                "name": FRA,
+                "location": France,
+                "currency": Euro
+            },
+            {
+                "name": LSE,
+                "location": Great Britain,
+                "currency": Pound sterling
+            },
+        ]            
+    }
+    
+# Group Companies
+## Companies List [/api/companies]
+### Obtain a list of companies [GET]
++ Response 200(application/json)
+    {
+        "companies": 
+        [
+            {
+                "name": Company 1,
+                "stock_exchange": NASDAQ,
+                "location": USA,
+                "currency": US Dollars
+            },
+            {
+                "name": Company 2,
+                "stock_exchange": FRA,
+                "location": France,
+                "currency": Euro
+            },
+            {
+                "name": Company 3,
+                "stock_exchange": LSE,
+                "location": Great Britain,
+                "currency": Pound sterling
+            },
+        ]            
+    }
+    
+# Group Locations
+## Locations List [/api/locations]
+### Obtain a list of various locations [GET]
++ Response 200(application/json)
+    {
+        "locations": 
+        [
+            {
+                "location": USA,
+                "exchange": NASDAQ,
+                "currency": US Dollars
+            },
+            {
+                "location": France,
+                "exchange": FRA,
+                "currency": Euro
+            },
+            {
+                "location": Great Britain,
+                "exchange": LSE,
+                "currency": Pound sterling
+            },
+        ]            
+    }
+    
+# Group Currencies
+## Currencies List [/api/currencies]
+### Obtain a list of various locations [GET]
++ Response 200(application/json)
+    {
+        "currencies": 
+        [
+            {
+                "type": US Dollars
+                "exchange": NASDAQ,
+                "location": USA,
+            },
+            {
+                "type": Euro
+                "exchange": FRA,
+                "location": Great Britain,
+            },            
+            {
+                "type": Pound sterling
+                "exchange": LSE,
+                "location": Great Britain,
+            },
+        ]            
+    }
