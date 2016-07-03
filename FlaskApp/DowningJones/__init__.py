@@ -41,9 +41,9 @@ def currency ():
 def dollars ():
 	return render_template('dollars.html')
 
-@app.route ( '/euro.html' )
-def euro ():
-	return render_template('euro.html')
+@app.route ( '/euros.html' )
+def euros ():
+	return render_template('euros.html')
 
 @app.route ( '/fra.html' )
 def fra ():
@@ -69,15 +69,15 @@ def lse ():
 def nasdaq ():
 	return render_template('nasdaq.html')
 
-@app.route ( 'pounds.html' )
+@app.route ( '/pounds.html' )
 def pounds ():
 	return render_template('pounds.html')
 
-@app.route ( 'stockmarket.html' )
+@app.route ( '/stockmarket.html' )
 def stockmarket ():
 	return render_template('stockmarket.html')
 
-@app.route ( 'us.html' )
+@app.route ( '/us.html' )
 def us ():
 	return render_template('us.html')
 
