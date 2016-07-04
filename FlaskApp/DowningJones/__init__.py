@@ -45,9 +45,9 @@ def dollars ():
 def euros ():
 	return render_template('euros.html')
 
-@app.route ( '/fra.html' )
+@app.route ( '/par.html' )
 def fra ():
-	return render_template('fra.html')
+	return render_template('par.html')
 
 @app.route ( '/france.html' )
 def france ():
