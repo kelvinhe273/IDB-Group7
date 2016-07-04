@@ -11,13 +11,20 @@
   <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.12.3.js"></script>
-<!--  <style>
-  .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 100%;
-      margin: auto;
+ <style>
+  body{
+    background-image: url("static/background4.jpg");
+    background-size: cover;
+    }
+    tr,tbody,a{
+      color:white;
+    }
+
+    tr:hover td {
+      background-color: lightblue;
   }
-  </style> -->
+
+  </style>
 </head>
 <body>
 
@@ -43,19 +50,6 @@
           <li><a href="company.html">Company</a></li>
           <li><a href="location.html">Location</a></li>
           <li><a href="currency.html">Currency</a></li>
-          <!-- DROPDOWN EXAMPLE IN CASE WE WANT TO USE IT -->
-          <!--<li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>-->
-            <!-- END DROP DOWN EXAMPLE -->
           </ul>
             <ul  class="nav navbar-nav navbar-right">
           </li>
@@ -72,7 +66,16 @@
   </nav>
   <!-- END NAVBAR -->
 <!-- PAGE CONTENT -->
-  <div class="container-fluid">
+<script>
+$(document).ready(function() {
+    $('#stocktable').DataTable();
+} );
+</script>
+<div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; background-color: Gainsboro ">
+  <h1 style = "font-weight : bold; text-align : center;">Stock Exchanges</h1>
+  <p></p>
+</div>
+  <div class="container-fluid" >
   <table id="stocktable" class="table table-hover table-responsive">
     <thead>
     <tr>
@@ -89,7 +92,7 @@
          <td><a href="dollars.html">US Dollars</a></td>
       </tr>
       <tr>
-        <td><a href="par.html">PAR</a></td>
+        <td><a href="fra.html">FRA</a></td>
         <td><a href="france.html">France</a></td>
         <td><a href="euros.html">Euro</a></td>
       </tr>
@@ -103,52 +106,8 @@
  </div> 
 <!-- END PAGE CONTENT-->
 <!-- SCRIPT FOR SORTING-->
-<script>
-$(document).ready(function() {
-    $('#stocktable').DataTable();
-} );
-</script>
 <!-- END SCRIPT FOR SORTING-->
 
 </body>
 </html>
 
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
-</head>
-<!- - PAGE CONTENT- ->
- <div>
-  <table class="table table-hover table-striped" style="width:100%" align="center">
-    <tr>
-      <th id="name">Name</th>
-      <th id="location">Location</th>
-      <th id="cureency">Currency</th>
-    </tr>
-    <!- - Figure out how to add foreign currency signs.- ->
-      <tr>
-         <td>NASDAQ</td>
-         <td>USA</td>
-         <td>US Dollars</td>
-      </tr>
-      <tr>
-        <td>FRA</td>
-        <td>France</td>
-        <td>Euro</td>
-      </tr>
-      <tr>
-         <td>LSE</td>
-         <td>Great Britain</td>
-         <td>Pound sterling</td>
-      </tr>
-  </table>
- </div> 
- <!- - END PAGE CONTENT - ->
-</html>
--->
