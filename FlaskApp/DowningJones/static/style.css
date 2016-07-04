@@ -1,5 +1,6 @@
 table{
     background-color:#a9a9a9;
+    margin:auto;
 }
 table, th, td {
     border: 1px solid black;
