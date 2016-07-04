@@ -11,13 +11,18 @@
   <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.12.3.js"></script>
-<!--  <style>
-  .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 100%;
-      margin: auto;
+ <style>
+   body{
+    background-image: url("static/background4.jpg")
+    }
+    tr,tbody,a{
+      color:white;
+    }
+
+    tr:hover td {
+      background-color: lightblue;
   }
-  </style> -->
+  </style>
 </head>
 <body>
 
@@ -73,7 +78,18 @@
   <!-- END NAVBAR -->
 
 <!-- PAGE CONTENT -->
+ <!-- SCRIPT FOR SORTING-->
+<script>
+$(document).ready(function() {
+    $('#currencytable').DataTable();
+} );
+</script>
+<!-- END SCRIPT FOR SORTING-->
  <div class="container-fluid">
+  <div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; boldackground-color: Gainsboro ">
+    <h1 style = "font-weight : bold; text-align : center;">Currency</h1>
+  <p></p>
+</div>
   <table id="currencytable" class="table table-hover table-responsive">
     <thead>
     <tr>
@@ -104,55 +120,6 @@
  </div> 
  <!-- END PAGE CONTENT -->
 
- <!-- SCRIPT FOR SORTING-->
-<script>
-$(document).ready(function() {
-    $('#currencytable').DataTable();
-} );
-</script>
-<!-- END SCRIPT FOR SORTING-->
-
 </body>
 </html>
 
-<!--
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
-</head>
-<!- - PAGE CONTENT - ->
- <div>
-  <table class="table table-hover table-striped" style="width:100%" align="center">
-    <tr>
-      <th id="name">Type</th>
-      <th id="stockexchange">Stock Exchange</th>
-      <th id="location">Location</th>
-    </tr>
-    <!- - Figure out how to add foreign currency signs.- ->
-      <tr>
-         <td>US Dollars</td>
-         <td>NASDAQ</td>
-         <td>USA</td>
-      </tr>
-      <tr>
-        <td>Euro</td>
-        <td>FRA</td>
-        <td>France</td>
-      </tr>
-      <tr>
-        <td>Pound sterling</td>
-         <td>LSE</td>
-         <td>Great Britain</td>
-      </tr>
-  </table>
- </div> 
- <- - END PAGE CONTENT - ->
-
-</html>
--->

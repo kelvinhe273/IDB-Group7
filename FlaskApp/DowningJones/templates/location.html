@@ -11,13 +11,18 @@
   <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.12.3.js"></script>
-<!--  <style>
-  .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 100%;
-      margin: auto;
+ <style>
+ body{
+    background-image: url("static/background4.jpg")
+    }
+    tr,tbody,a{
+      color:white;
+    }
+
+    tr:hover td {
+      background-color: lightblue;
   }
-  </style> -->
+  </style>
 </head>
 <body>
 
@@ -74,6 +79,10 @@
 
 <!-- PAGE CONTENT -->
  <div class="container-fluid">
+  <div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; boldackground-color: Gainsboro ">
+    <h1 style = "font-weight : bold; text-align : center;">Locations</h1>
+  <p></p>
+  </div>
   <table id="locationtable" class="table table-hover table-responsive">
   <thead>
     <tr>
