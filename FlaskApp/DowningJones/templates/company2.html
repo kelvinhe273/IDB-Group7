@@ -11,13 +11,21 @@
   <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.12.3.js"></script>
-<!--  <style>
-  .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 100%;
-      margin: auto;
+ <style>
+  .jumbotron{
+    background-color: #262626;
+    color:white;
+    padding-left :0px;
+
   }
-  </style> -->
+  h2{
+    color: red;
+  }
+
+  body{
+    background-image: url("static/background4.jpg")
+  }
+  </style>
 </head>
 <body>
 
@@ -43,19 +51,6 @@
           <li><a href="company.html">Company</a></li>
           <li><a href="location.html">Location</a></li>
           <li class="active"><a href="currency.html">Currency</a></li>
-          <!-- DROPDOWN EXAMPLE IN CASE WE WANT TO USE IT -->
-          <!--<li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>-->
-            <!-- END DROP DOWN EXAMPLE -->
           </ul>
             <ul  class="nav navbar-nav navbar-right">
           </li>
@@ -71,19 +66,74 @@
     </div><!-- /.container-fluid -->
   </nav>
   <!-- END NAVBAR -->
-
+<!-- Header Well -->
+<div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; background-color: Gainsboro ">
+  <h1 style = "font-weight : bold; text-align : center;">Yahoo</h1>
+  <p></p>
+  <h3 style = "font-weight : bold; text-align : center">Yhoo(Country : <a href="us.html">US </a> )</h3>
+</div>
+<!-- End Well -->
 <!-- PAGE CONTENT -->
- <div>
- <div>
-  <h2>Currency</h2>
-  <p>Flesh this out later.</p>
-   <h2>Locations</h2>
-   <p>Flesh this out later.</p>
-   <h2>Stock Exchange</h2>
-   <p>Flesh this out later.</p>
- </div>
-  <img src="static/placeholder.jpg">
- </div> 
- <!-- END PAGE CONTENT -->
+<div class="container-fluid" style = "background-image: url(static/background4.jpg)">
+  <div class="jumbotron">
+      <div class="row">
+          <div class="col-xs-4">
+              <div class="row">
+                  <div class="col-xs-12">
+                    <h4>Price: 32.48 Currency: <a href="dollars.html">USD </a></h4>
+                    <p></p>
+                    <h5 style = "border-bottom: 1px solid grey">Stock Exchange: <a href="nasdaq.html">NASDAQ</a></h5>
+                    <p></p>
+                  </div>
+                  <div class="col-xs-12">
+                    <h4>Percent Change: 3.24%</h4>
+                    <p></p>
+                    <h5 style = "border-bottom: 1px solid grey">Start: 10 USD   End: 32.48 USD</h5>
+                    <p></p>
+                  </div>
+                  <div class="col-xs-12"><h4>dividend/AYP: 2.68%</h4></div>
+                  <p></p>
+              </div>
+          </div>
+          <div class="col-xs-8">
+              <h3 style = "text-align:center">
+                Graph of Stock goes here
+              </h3>
+          </div>
+      </div>
+  </div>
+  <div class="well well-md" style = "border-bottom: 3px solid; background-color: Gainsboro">
+    <h1 style = "font-weight : bold; text-align : left">Additional Information</h1>
+  </div>
+</div>
+<div class="container" style = "background-color:lightgrey ">
+  <div class="row">
+    <div class="col-xs-4" style ="text-align: center; border-right: 1px solid black">
+      <h5 style = "border-bottom: 1px solid grey">EPS: 2.019</h5>
+      <p></p>
+      <h5 style = "border-bottom: 1px solid grey">PE: 16.64</h5>
+      <p></p>
+      <h5 style = "border-bottom: 1px solid grey">PEG: 1.74</h5>
+      <p></p>
+    </div>
+    <div class="col-xs-4" style ="text-align: center">
+      <h5 style = "border-bottom: 1px solid grey">Days Range: 37.43 - 38.08</h5>
+      <p></p>
+      <h5 style = "border-bottom: 1px solid grey">52 Week Range: 26.15 - 39.98</h5>
+      <p></p>
+      <h5 style = "border-bottom: 1px solid grey">1 yr. Target Estimate: 40.94</h5>
+    </div>
+    <div class="col-xs-4" style ="text-align: center">
+      <h5 style = "border-bottom: 1px solid grey">Volume: 10,602,792</h5>
+      <p></p>
+      <h5 style = "border-bottom: 1px solid grey">Avg Volume: 13,678,600</h5>
+      <p></p>
+      <h5 style = "border-bottom: 1px solid grey">Market Cap: 40.94</h5>
+    </div>
+    <p></p>
+  </div>
+</div>
+
+ <!-- END PAGE CONTENT
 </body>
 </html>

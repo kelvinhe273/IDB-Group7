@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>LSE</title>
+  <title>NASDAQ</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="static/style.css">
+  <link rel="stylesheet" type="text/css" href="static/stkexc.css">
   <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.12.3.js"></script>
@@ -39,10 +39,10 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href="index.html">Home</a></li>
-          <li><a href="stockmarket.html">Stock Market <span class="sr-only">(current)</span></a></li>
+          <li class="active"><a href="stockmarket.html">Stock Market <span class="sr-only">(current)</span></a></li>
           <li><a href="company.html">Company</a></li>
           <li><a href="location.html">Location</a></li>
-          <li class="active"><a href="currency.html">Currency</a></li>
+          <li><a href="currency.html">Currency</a></li>
           <!-- DROPDOWN EXAMPLE IN CASE WE WANT TO USE IT -->
           <!--<li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -74,16 +74,39 @@
 
 <!-- PAGE CONTENT -->
  <div>
- <div>
-  <h2>Currency</h2>
-  <p>Flesh this out later.</p>
-   <h2>Locations</h2>
-   <p>Flesh this out later.</p>
-   <h2>Companies</h2>
-   <p>Flesh this out later.</p>
- </div>
-  <img src="static/lse.png">
+  <p style="float: left;"><img src="static/lse2.jpg" height="600" width="400" border="1px"></p>
  </div> 
+ <div class="col-md-8 col-sm-8" style="margin-top: 15px;">
+            <div class="container col-md-12 shadow card" style="background-color:#2f4f4f; min-height: 325px; padding: 0px;">
+
+                <div class="container col-md-12 col-sm-12 cardHeader">
+                    <h1 style="margin-top: 15px;">Nasdaq</h1>
+                </div>
+
+                <div class="container col-md-12 col-sm-12">
+                <div class="col-md-6 col-sm-6">
+                    <h2>Points:</h2><h3>2,493.0</h3>
+                    <h2>Change:</h2><h3>-30.0 points, -1.2%</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <h2>Location:</h2>
+                            <h3><a href="greatbritain.html">London, England, United Kingdom</a></h3>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6">
+                            <h2>Currency:</h2>
+                            <h3><a href="pounds.html">British Sterling pound</a></h3>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6">
+                            <h2>Companies: </h2>
+                            <h3><a href="LINKHERE">THIS COMPANY</a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
  <!-- END PAGE CONTENT -->
 </body>
 </html>
