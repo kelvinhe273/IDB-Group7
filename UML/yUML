@@ -1,0 +1,10 @@
+<img src="http:%2F%2Fyuml.me%2Fdiagram%2Fscruffy%2Fclass%2F[Stock_Exchange]->[Name]
+[Stock_Exchange]->[Location]
+[Stock_Exchange]->[Currency]"> 
+<img src="http:%2F%2Fyuml.me%2Fdiagram%2Fscruffy%2Fclass%2F[Company]->[Name]
+[Company]->[Stock_Exchange],[Company]->[Location]
+[Company]->[Currency]"> 
+<img src="http:%2F%2Fyuml.me%2Fdiagram%2Fscruffy%2Fclass%2F[Currency]->[Type],[Currency]->[Stock_Exchange]
+[Currency]->[Location]"> 
+<img src="http:%2F%2Fyuml.me%2Fdiagram%2Fscruffy%2Fclass%2F[Location]->[Name],[Location]->[Stock_Exchange]
+[Location]->[Currency]">
