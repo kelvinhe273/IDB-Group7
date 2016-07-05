@@ -12,7 +12,10 @@ th, td {
 }
 td {
   text-align: left;
-  color:white;
+}
+
+tr {
+    color:white;
 }
 h2, p {
     color:orange;
