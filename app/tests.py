@@ -19,36 +19,123 @@ class MyTest(TestCase):
         db.drop_all()
 
     def test_currency_commits(self):
-        one = Currency('us dollar', 'us dol', 9)
-        db.session.add(one)
+        currency = Currency('us dollar', 'us dol', 9)
+        db.session.add(currency)
         db.session.commit()
 
-        # assert currency is there
-        assert one in db.session
+        # assert currency is in db
+        assert currency in db.session
+
+    def test_currency_returns(self):
+        currency = Currency('us dollar', 'us dol', 9)
+        db.session.add(currency)
+        db.session.commit()
+
+        #assert it retuns correct data
+        self.assertEqual('<Currency \'us dollar\'>', str(Currency.query.first()))
+
+    def test_currency_relations(self):
+        currency = Currency('us dollar', 'us dol', 9)
+        exchange = exchange = Exchange('nasdaq', 200, -.04, None, currency)
+        location = location = Location('USA', 'Washington D.C', 20, currency)
+        db.session.add(currency)
+        db.session.add(exchange)
+        db.session.add(location)
+        db.session.commit()
+
+        #assert currency is on other models
+        self.assertEqual('<Currency \'us dollar\'>', str(Exchange.query.first().currency))
+
+        self.assertEqual('<Currency \'us dollar\'>', str(Location.query.first().currency))
 
     def test_location_commits(self):
-        one = Location('USA', 'Washington D.C', 20, None)
-        db.session.add(one)
+        location = Location('USA', 'Washington D.C', 20, None)
+        db.session.add(location)
         db.session.commit()
 
-        # assert currency is there
-        assert one in db.session
+        # assert location is in db
+        assert location in db.session
+
+    def test_location_returns(self):
+        location = Location('USA', 'Washington D.C', 20, None)
+        db.session.add(location)
+        db.session.commit()
+
+        #assert it retuns correct data
+        self.assertEqual('<Location \'USA\'>', str(Location.query.first()))
+
+    def test_location_relations(self):
+        currency = Currency('us dollar', 'us dol', 9)
+        location = Location('USA', 'Washington D.C', 20, currency)
+        db.session.add(location)
+        db.session.add(currency)
+        db.session.commit()
+
+        self.assertEqual('<Currency \'us dollar\'>', str(Location.query.first().currency))
 
     def test_exchange_commits(self):
-        one = Exchange('nasdaq', 200, -.04, None, None)
-        db.session.add(one)
+        exchange = Exchange('nasdaq', 200, -.04, None, None)
+        db.session.add(exchange)
         db.session.commit()
 
-        # assert currency is there
-        assert one in db.session
+        # assert exchange is in db
+        assert exchange in db.session
+
+    def test_exchange_returns(self):
+        exchange = Exchange('nasdaq', 200, -.04, None, None)
+        db.session.add(exchange)
+        db.session.commit()
+
+        #assert it retuns correct data
+        self.assertEqual('<Exchange \'nasdaq\'>', str(Exchange.query.first()))
+
+    def test_exchange_relations(self):
+        currency = Currency('us dollar', 'us dol', 9)
+        location = Location('USA', 'Washington D.C', 20, currency)
+        exchange = Exchange('nasdaq', 200, -.04, location, currency)
+        db.session.add(exchange)
+        db.session.add(currency)
+        db.session.add(location)
+        db.session.commit()
+
+        #assert it retuns correct data
+        self.assertEqual('<Currency \'us dollar\'>', str(Exchange.query.first().currency))
+
+        self.assertEqual('<Location \'USA\'>', str(Exchange.query.first().location))
 
     def test_company_commits(self):
-        one = Company('Yahoo', 'YHD', None, None, None)
-        db.session.add(one)
+        company = Company('Yahoo', 'YHD', None, None, None)
+        db.session.add(company)
         db.session.commit()
 
-        # assert currency is there
-        assert one in db.session
+        # assert company is in db
+        assert company in db.session
+
+    def test_company_returns(self):
+        company = Company('Yahoo', 'YHD', None, None, None)
+        db.session.add(company)
+        db.session.commit()
+
+        #assert it retuns correct data
+        self.assertEqual('<Company \'Yahoo\'>', str(Company.query.first()))
+
+    def test_company_relations(self):
+        currency = Currency('us dollar', 'us dol', 9)
+        location = Location('USA', 'Washington D.C', 20, currency)
+        exchange = Exchange('nasdaq', 200, -.04, location, currency)
+        company = Company('Yahoo', 'YHD', location, exchange, currency)
+        db.session.add(exchange)
+        db.session.add(currency)
+        db.session.add(location)
+        db.session.add(company)
+        db.session.commit()
+
+        #assert it retuns correct data
+        self.assertEqual('<Location \'USA\'>', str(Company.query.first().location))
+
+        self.assertEqual('<Exchange \'nasdaq\'>', str(Company.query.first().exchange))
+
+        self.assertEqual('<Currency \'us dollar\'>', str(Company.query.first().currency))
 
 if __name__ == "__main__" :
     unittest.main()
