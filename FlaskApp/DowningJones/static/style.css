@@ -17,6 +17,10 @@ h2, p {
     color:orange;
 }
 
+h3{
+    color:white;
+}
+
 body{
     background-image: url("background4.jpg");
     background-size: cover;
