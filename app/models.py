@@ -11,9 +11,8 @@ class Exchange(db.Model):
     points = db.Column(db.Float)
     change = db.Column(db.Float)
     location_id = db.Column(db.Integer, db.ForeignKey('location.id'))
-    location = db.relationship('Location', uselist=False)
+    # location = db.relationship('Location', uselist=False)
     currency_id = db.Column(db.Integer, db.ForeignKey('currency.id'))
-    currency = db.relationship('Currency', uselist=False)
 
     def __init__(self, name, points, change, location, currency):
         self.name = name
@@ -30,8 +29,8 @@ class Currency(db.Model):
     name = db.Column(db.String(80))
     code = db.Column(db.String(80))
     num_users = db.Column(db.Integer)
-    #exchange ForeignKey
-    #location ForeignKey
+    exchanges = db.relationship('Exchange', backref='currency', lazy='dynamic')
+    locations = db.relationship('Location', backref='currency', lazy='dynamic')
 
     def __init__(self, name, code, num_users):
         self.name = name
@@ -68,8 +67,7 @@ class Location(db.Model):
     capital = db.Column(db.String(80))
     gdp = db.Column(db.Float)
     currency_id = db.Column(db.Integer, db.ForeignKey('currency.id'))
-    currency = db.relationship('Currency', uselist=False)
-    #exchange ForeignKey
+    exchanges = db.relationship('Exchange', backref='location', lazy='dynamic')
 
     def __init__(self, name, capital, gdp, currency):
         self.name = name
