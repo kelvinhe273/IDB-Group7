@@ -15,17 +15,23 @@ stock market exchanges, companies, locations, and currencies.
             {
                 "name": NASDAQ,
                 "location": USA,
-                "currency": US Dollars
+                "currency": US Dollars,
+                "points": 4862.57,
+                "change": +.041%
             },
             {
-                "name": FRA,
+                "name": PAR,
                 "location": France,
-                "currency": Euro
+                "currency": Euro,
+                "points": 32.15,
+                "change": -2.46%
             },
             {
                 "name": LSE,
                 "location": Great Britain,
-                "currency": Pound sterling
+                "currency": Pound sterling,
+                "points": 32.15,
+                "change": -2.46%
             },
         ]            
     }
@@ -38,19 +44,22 @@ stock market exchanges, companies, locations, and currencies.
         "companies": 
         [
             {
-                "name": Company 1,
+                "name": Yahoo,
+                "symbol": YHOO,
                 "stock_exchange": NASDAQ,
                 "location": USA,
                 "currency": US Dollars
             },
             {
                 "name": Company 2,
-                "stock_exchange": FRA,
+                "symbol": COM2,
+                "stock_exchange": PAR,
                 "location": France,
                 "currency": Euro
             },
             {
                 "name": Company 3,
+                "symbol": COM3,
                 "stock_exchange": LSE,
                 "location": Great Britain,
                 "currency": Pound sterling
@@ -67,18 +76,25 @@ stock market exchanges, companies, locations, and currencies.
         [
             {
                 "location": USA,
+                "capital": Washington, D.C.,
                 "exchange": NASDAQ,
-                "currency": US Dollars
+                "currency": US Dollars,
+                "GDP (Nominal)": $18.558 trillion 
+                
             },
             {
                 "location": France,
-                "exchange": FRA,
-                "currency": Euro
+                "capital": Paris,
+                "exchange": PAR,
+                "currency": Euro,
+                "GDP (Nominal)": $2.647 trillion
             },
             {
-                "location": Great Britain,
+                "location": United Kingdom,
+                "capital": London,
                 "exchange": LSE,
-                "currency": Pound sterling
+                "currency": Pound sterling,
+                "GDP (Nominal)": $2.849 trillion
             },
         ]            
     }
@@ -91,19 +107,25 @@ stock market exchanges, companies, locations, and currencies.
         "currencies": 
         [
             {
-                "type": US Dollars
+                "name": US Dollars,
+                "currency code": USD
                 "exchange": NASDAQ,
                 "location": USA,
+                "# of official users": 9
             },
             {
-                "type": Euro
-                "exchange": FRA,
-                "location": Great Britain,
+                "name": Euro,
+                "currency code": EUR
+                "exchange": PAR,
+                "location": France,
+                "# of official users": 19
             },            
             {
-                "type": Pound sterling
+                "name": Pound sterling,
+                "currency code": GBP,
                 "exchange": LSE,
                 "location": Great Britain,
+                "# of official users": 1
             },
         ]            
     }
