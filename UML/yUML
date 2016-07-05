@@ -1,4 +1,4 @@
-<!-- http://yuml.me/edit/bf96e27f -->
+<!-- http://yuml.me/edit/4205d645 -->
 <img src="http:%2F%2Fyuml.me%2Fdiagram%2Fscruffy%2Fclass%2F[Stock_Exchange]->[Name],
 [Stock_Exchange]->[Location],
 [Stock_Exchange]->[Currency], [Stock_Exchange]->[Points], [Stock_Exchange]->[Change]"> 
