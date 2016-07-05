@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Location</title>
+  <title>NASDAQ</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="static/stkexc.css">
   <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.12.3.js"></script>
@@ -39,9 +39,9 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href="index.html">Home</a></li>
-          <li><a href="stockmarket.html">Stock Market <span class="sr-only">(current)</span></a></li>
+          <li class="active"><a href="stockmarket.html">Stock Market <span class="sr-only">(current)</span></a></li>
           <li><a href="company.html">Company</a></li>
-          <li class="active"><a href="location.html">Location</a></li>
+          <li><a href="location.html">Location</a></li>
           <li><a href="currency.html">Currency</a></li>
           <!-- DROPDOWN EXAMPLE IN CASE WE WANT TO USE IT -->
           <!--<li class="dropdown">
@@ -74,83 +74,39 @@
 
 <!-- PAGE CONTENT -->
  <div>
-  <table id="locationtable" class="table table-hover" style="width:100%" align="center">
-  <thead>
-    <tr>
-      <th id="name">Location</th>
-      <th id="stockexchange">Stock Exchange</th>
-      <th id="cureency">Currency</th>
-    </tr>
-    </thead>
-    <!-- Figure out how to add foreign currency signs.-->
-     <tbody>
-     <tr>
-        <td><a href="us.html">USA</a></td>
-         <td><a href="nasdaq.html">NASDAQ</a></td>
-         <td><a href="dollars.html">US Dollars</a></td>
-      </tr>
-      <tr>
-        <td><a href="france.html">France</a></td>
-        <td><a href="fra.html">FRA</a></td>
-        <td><a href="euro.html">Euro</a></td>
-      </tr>
-      <tr>
-         <td><a href="greatbritain.html">Great Britain</a></td>
-         <td><a href="lse.html">LSE</a></td>
-         <td><a href="pounds.html">Pound sterling</a></td>
-      </tr>
-      </tbody>
-  </table>
+  <p style="float: left;"><img src="static/nasdaq_f.jpg" height="600" width="400" border="1px"></p>
  </div> 
+ <div class="col-md-8 col-sm-8" style="margin-top: 15px;">
+            <div class="container col-md-12 shadow card" style="background-color:#2f4f4f; min-height: 325px; padding: 0px;">
+
+                <div class="container col-md-12 col-sm-12 cardHeader">
+                    <h1 style="margin-top: 15px;">Nasdaq</h1>
+                </div>
+
+                <div class="container col-md-12 col-sm-12">
+                <div class="col-md-6 col-sm-6">
+                    <h2>Points:</h2><h3>4,862.57</h3>
+                    <h2>Change:</h2><h3>+19.895 points, +.041%</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <h2>Location:</h2>
+                            <h3><a href="us.html">New York, New York, United States</a></h3>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6">
+                            <h2>Currency:</h2>
+                            <h3><a href="dollars.html">US Dollars</a></h3>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6">
+                            <h2>Companies: </h2>
+                            <h3><a href="LINKHERE">THIS COMPANY</a>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
  <!-- END PAGE CONTENT -->
-
-<!-- SCRIPT FOR SORTING-->
-<script>
-$(document).ready(function() {
-    $('#locationtable').DataTable();
-} );
-</script>
-<!-- END SCRIPT FOR SORTING-->
-
 </body>
 </html>
-
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
-</head>
-<!- - PAGE CONTENT - ->
- <div>
-  <table class="table table-hover table-striped" style="width:100%" align="center">
-    <tr>
-      <th id="name">Location</th>
-      <th id="stockexchange">Stock Exchange</th>
-      <th id="cureency">Currency</th>
-    </tr>
-    <!- - Figure out how to add foreign currency signs.- ->
-      <tr>
-        <td>USA</td>
-         <td>NASDAQ</td>
-         <td>US Dollars</td>
-      </tr>
-      <tr>
-        <td>France</td>
-        <td>FRA</td>
-        <td>Euro</td>
-      </tr>
-      <tr>
-         <td>Great Britain</td>
-         <td>LSE</td>
-         <td>Pound sterling</td>
-      </tr>
-  </table>
- </div> 
- <!- - END PAGE CONTENT - ->
-</html>
--->
