@@ -1,3 +1,59 @@
+commit 953ad250e0ff4f03217b3c84efc8758d1bf4f65f
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 20:39:19 2016 -0500
+
+    removing travis file
+
+commit eefcb179ba10a18e9f3f58873b45285118b9913c
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 20:37:54 2016 -0500
+
+    repo cleanup
+
+commit a3937cd1cf2288a1ac795a215fc25e1c538cb5a7
+Merge: cfe4ee2 ddd2dba
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 20:36:21 2016 -0500
+
+    Merge branch 'dev'
+
+commit ddd2dbabb4e679653f8d8cc4f81cdd38141e9fa3
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 20:34:21 2016 -0500
+
+    edited makefile
+
+commit e4a87d93cb84c96c3fe6fd9e1b75aa941a83ee1b
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 20:29:41 2016 -0500
+
+    changed makefile, created models.html file
+
+commit 1ed4f5b704c735fb3e013ac4f0062598a63899ff
+Merge: b816e02 985f76d
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 5 21:24:44 2016 -0400
+
+    Merge branch 'dev' of https://github.com/kelvinhe273/IDB-Group7 into dev
+
+commit b816e02f309579511667760bb292e50358ff5afa
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 5 21:24:10 2016 -0400
+
+    ran pydoc
+
+commit 985f76d4bf019fdeb395fbeb3f3d3dbec0493e11
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 20:18:02 2016 -0500
+
+    edited makefile
+
+commit cfe4ee2aba5041804ede7807a8463be68a2257e1
+Author: kelvinhe273 <kelvinhe1995@gmail.com>
+Date:   Tue Jul 5 19:56:32 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
 commit daecc58c4c23bf444363b0b6a781bcfe066abab1
 Author: Kelvin He <kelvinhe@cs.utexas.edu>
 Date:   Tue Jul 5 19:55:32 2016 -0500
@@ -38,6 +94,13 @@ Date:   Tue Jul 5 19:13:32 2016 -0500
 
     Merge branch 'dev' of https://github.com/kelvinhe273/IDB-Group7 into dev
 
+commit 57855c79bdb5d467ebd5f843a7d98ac53b756076
+Merge: 196c123 a401a83
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 5 18:30:13 2016 -0400
+
+    Merge branch 'dev'
+
 commit a401a838c736baa5ece42cccdc70f382645ed728
 Author: Kelvin He <kelvinhe@cs.utexas.edu>
 Date:   Tue Jul 5 17:29:12 2016 -0500
@@ -50,11 +113,24 @@ Date:   Tue Jul 5 17:28:19 2016 -0500
 
     editing gitignore
 
+commit 196c123b3f062bdb34f970e8c9ad991ea724e3cb
+Merge: 073b33d 3711974
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 5 18:27:43 2016 -0400
+
+    MERGE PLEASE.
+
 commit 3711974c1ab93c7a2017d3f2c293d4fc34f48f6d
 Author: Kelvin He <kelvinhe@cs.utexas.edu>
 Date:   Tue Jul 5 17:26:41 2016 -0500
 
     update uml to be a pdf file
+
+commit 073b33d3cbeebe246f45964ce3fe2d282a40f6b4
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 5 18:25:35 2016 -0400
+
+    merging.
 
 commit 4e4e893c843cd23237aa35e3405d5098e38e6a1d
 Merge: 3cb4455 2301308
@@ -64,6 +140,13 @@ Date:   Tue Jul 5 17:21:49 2016 -0500
     Merge pull request #22 from kelvinhe273/na/models
     
     Add models and unit tests
+
+commit ed5d42e6958064f5c8d54a4064c2e3b14ac56223
+Merge: a87d9b8 3cb4455
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 5 18:20:34 2016 -0400
+
+    Merge branch 'dev'
 
 commit 3cb4455d514b91e1376c31593fb9109bb7a03d1b
 Author: Kelvin He <kelvinhe@cs.utexas.edu>
@@ -297,6 +380,13 @@ Author: Jemin Shin <heyjaekev5553@yahoo.com>
 Date:   Tue Jul 5 13:24:14 2016 -0500
 
     Colors, how do they work?
+
+commit a87d9b82c2b2ad8e190f4e1049b40e685afd0b45
+Merge: 8fbefa5 31ab3bc
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 13:19:08 2016 -0500
+
+    merging with dev.
 
 commit 31ab3bcf091cf17ab640929560c799d8acd75ddc
 Merge: 818e65e d9d9e7a
