@@ -17,7 +17,7 @@ else
 endif
 
 .pylintrc:
-	$(PYLINT) --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
+	$(PYLINT) --generated-members=commit,add,query --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
 
 collatz-tests:
 	git clone https://github.com/cs373-summer-2016/collatz-tests.git

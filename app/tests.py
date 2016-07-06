@@ -1,7 +1,6 @@
-from flask_testing import TestCase
-from flask import Flask
-from models import app, db, Currency, Exchange, Location, Company
 import unittest
+from flask_testing import TestCase
+from models import app, db, Currency, Exchange, Location, Company
 
 class MyTest(TestCase):
     SQLALCHEMY_DATABASE_URI = "sqlite://"
@@ -24,7 +23,7 @@ class MyTest(TestCase):
         db.session.commit()
 
         # assert currency is in db
-        assert currency in db.session
+        self.assertIn(currency, db.session)
 
     def test_currency_returns(self):
         currency = Currency('us dollar', 'us dol', 9)
@@ -54,7 +53,7 @@ class MyTest(TestCase):
         db.session.commit()
 
         # assert location is in db
-        assert location in db.session
+        self.assertIn(location, db.session)
 
     def test_location_returns(self):
         location = Location('USA', 'Washington D.C', 20, None)
@@ -84,7 +83,7 @@ class MyTest(TestCase):
         db.session.commit()
 
         # assert exchange is in db
-        assert exchange in db.session
+        self.assertIn(exchange, db.session)
 
     def test_exchange_returns(self):
         exchange = Exchange('nasdaq', 200, -.04, None, None)
@@ -114,7 +113,7 @@ class MyTest(TestCase):
         db.session.commit()
 
         # assert company is in db
-        assert company in db.session
+        self.assertIn(company, db.session)
 
     def test_company_returns(self):
         company = Company('Yahoo', 'YHD', None, None, None)
