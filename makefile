@@ -25,6 +25,9 @@ models.html: app/models.py
 IDB1.log:
 	git log > IDB1.log
 
+TestModels: .pylintrc app/models.py app/tests.py
+	-$(PYLINT) app/tests.py
+
 check:
 	@not_found=0;                                 \
     for i in $(FILES);                            \
@@ -48,7 +51,10 @@ clean:
 	rm -f  .coverage
 	rm -f  *.pyc
 	rm -f  *.tmp
+	rm -f  IDB1.log
+	rm -f  models.html
 	rm -rf __pycache__
+
 
 config:
 	git config -l
@@ -67,3 +73,5 @@ status:
 	git branch
 	git remote -v
 	git status
+
+test: .pylintrc models.html TestModels IDB1.log check
