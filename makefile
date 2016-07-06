@@ -1,12 +1,12 @@
 FILES :=                              \
-    Collatz.html                      \
-    Collatz.log                       \
-    Collatz.py                        \
-    RunCollatz.in                     \
-    RunCollatz.out                    \
-    RunCollatz.py                     \
-    TestCollatz.out                   \
-    TestCollatz.py
+    .gitignore					 	  \
+    makefile						  \
+    apiary.apib						  \
+    IDB1.log						  \
+    models.html						  \
+    app/models.py   				  \
+    app/tests.py   					  \
+    UML.pdf                           
 
 ifeq ($(CI), true)
     COVERAGE := coverage
@@ -17,31 +17,16 @@ else
 endif
 
 .pylintrc:
-	$(PYLINT) --generated-members=commit,add,query --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
+	$(PYLINT) --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
 
-collatz-tests:
-	git clone https://github.com/cs373-summer-2016/collatz-tests.git
+models.html: app/models.py
+	pydoc3 -w models
 
-Collatz.html: Collatz.py
-	pydoc3 -w Collatz
+IDB1.log:
+	git log > IDB1.log
 
-Collatz.log:
-	git log > Collatz.log
-
-RunCollatz.tmp: .pylintrc RunCollatz.in RunCollatz.out RunCollatz.py
-	-$(PYLINT) Collatz.py
-	-$(PYLINT) RunCollatz.py
-	./RunCollatz.py < RunCollatz.in > RunCollatz.tmp
-	diff RunCollatz.tmp RunCollatz.out
-	python3 -m cProfile RunCollatz.py < RunCollatz.in > RunCollatz.tmp
-	cat RunCollatz.tmp
-
-TestCollatz.tmp: .pylintrc TestCollatz.py
-	-$(PYLINT) Collatz.py
-	-$(PYLINT) TestCollatz.py
-	$(COVERAGE) run    --branch TestCollatz.py >  TestCollatz.tmp 2>&1
-	$(COVERAGE) report -m                      >> TestCollatz.tmp
-	cat TestCollatz.tmp
+abc: .pylintrc app/tests.py
+	-$(PYLINT) app/tests.py
 
 check:
 	@not_found=0;                                 \
@@ -64,22 +49,20 @@ check:
 
 clean:
 	rm -f  .coverage
-	rm -f  .pylintrc
 	rm -f  *.pyc
-	rm -f  Collatz.html
-	rm -f  Collatz.log
-	rm -f  RunCollatz.tmp
-	rm -f  TestCollatz.tmp
+	rm -f  *.tmp
 	rm -rf __pycache__
-	rm -rf collatz-tests
 
 config:
 	git config -l
 
+html: models.html
+
+log: IDB1.log
+
 format:
-	autopep8 -i Collatz.py
-	autopep8 -i RunCollatz.py
-	autopep8 -i TestCollatz.py
+	autopep8 -i app/models.py
+	autopep8 -i app/tests.py
 
 status:
 	make clean
@@ -87,5 +70,3 @@ status:
 	git branch
 	git remote -v
 	git status
-
-test: Collatz.html Collatz.log RunCollatz.tmp TestCollatz.tmp collatz-tests check
