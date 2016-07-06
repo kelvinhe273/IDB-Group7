@@ -1,3 +1,5 @@
 .coverage
 .pylintrc
 .DS_Store
+__pycache__/
+UML/
