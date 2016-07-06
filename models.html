@@ -1,0 +1,325 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module models</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/var/www/app/models.py">/var/www/app/models.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial">flask_sqlalchemy.Model(<a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="models.html#Company">Company</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Currency">Currency</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Exchange">Exchange</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Location">Location</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Company">class <strong>Company</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Company">Company</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Company-__init__"><strong>__init__</strong></a>(self, name, symbol, location, exchange, currency)</dt><dd><tt>self.<strong>name</strong>&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;<a href="#Company">Company</a><br>
+self.<strong>symbol</strong>&nbsp;the&nbsp;symbol&nbsp;of&nbsp;the&nbsp;<a href="#Company">Company</a><br>
+self.<strong>location</strong>&nbsp;the&nbsp;location&nbsp;of&nbsp;the&nbsp;<a href="#Company">Company</a><br>
+self.<strong>currency</strong>&nbsp;the&nbsp;currecny&nbsp;the&nbsp;<a href="#Company">Company</a>&nbsp;uses</tt></dd></dl>
+
+<dl><dt><a name="Company-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>returns&nbsp;the&nbsp;<a href="#Company">Company</a>'s&nbsp;self.<strong>name</strong>&nbsp;attribute</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>currency</strong></dt>
+</dl>
+<dl><dt><strong>currency_id</strong></dt>
+</dl>
+<dl><dt><strong>exchange</strong></dt>
+</dl>
+<dl><dt><strong>exchange_id</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>location</strong></dt>
+</dl>
+<dl><dt><strong>location_id</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>symbol</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f0e9c739210; Company&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('company', MetaData(bind=None), Column('id...ey('currency.id'), table=&lt;company&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'company'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Currency">class <strong>Currency</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Currency">Currency</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Currency-__init__"><strong>__init__</strong></a>(self, name, code, num_users)</dt><dd><tt>self.<strong>name</strong>&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;currency&nbsp;type<br>
+self.<strong>code</strong>&nbsp;the&nbsp;currency&nbsp;code<br>
+self.<strong>num_users</strong>&nbsp;the&nbsp;number&nbsp;of&nbsp;countries&nbsp;that&nbsp;use&nbsp;this&nbsp;currency</tt></dd></dl>
+
+<dl><dt><a name="Currency-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>returns&nbsp;the&nbsp;<a href="#Currency">Currency</a>'s&nbsp;self.<strong>name</strong>&nbsp;attribute</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>code</strong></dt>
+</dl>
+<dl><dt><strong>exchanges</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>locations</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>num_users</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f0e9c785a10; Currency&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('currency', MetaData(bind=None), Column('i...sers', Integer(), table=&lt;currency&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'currency'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Exchange">class <strong>Exchange</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Exchange">Exchange</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Exchange-__init__"><strong>__init__</strong></a>(self, name, points, change, location, currency)</dt><dd><tt>self.<strong>name</strong>&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;<a href="#Exchange">Exchange</a><br>
+self.<strong>points</strong>&nbsp;the&nbsp;point&nbsp;change&nbsp;of&nbsp;the&nbsp;<a href="#Exchange">Exchange</a><br>
+self.<strong>change</strong>&nbsp;the&nbsp;change&nbsp;in&nbsp;percentage&nbsp;of&nbsp;the&nbsp;<a href="#Exchange">Exchange</a><br>
+self.<strong>location</strong>&nbsp;the&nbsp;location&nbsp;of&nbsp;the&nbsp;<a href="#Exchange">Exchange</a><br>
+self.<strong>currency</strong>&nbsp;the&nbsp;currency&nbsp;the&nbsp;<a href="#Exchange">Exchange</a>&nbsp;uses</tt></dd></dl>
+
+<dl><dt><a name="Exchange-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>returns&nbsp;the&nbsp;<a href="#Exchange">Exchange</a>'s&nbsp;self.<strong>name</strong>&nbsp;attribute</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>change</strong></dt>
+</dl>
+<dl><dt><strong>currency</strong></dt>
+</dl>
+<dl><dt><strong>currency_id</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>location</strong></dt>
+</dl>
+<dl><dt><strong>location_id</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<dl><dt><strong>points</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f0e9c785410; Exchange&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('exchange', MetaData(bind=None), Column('i...y('currency.id'), table=&lt;exchange&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'exchange'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Location">class <strong>Location</strong></a>(flask_sqlalchemy.Model)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Location">Location</a></dd>
+<dd>flask_sqlalchemy.Model</dd>
+<dd><a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Location-__init__"><strong>__init__</strong></a>(self, name, capital, gdp, currency)</dt><dd><tt>self.<strong>name</strong>&nbsp;the&nbsp;name&nbsp;(country)&nbsp;of&nbsp;the&nbsp;locaiton<br>
+self.<strong>capital</strong>&nbsp;the&nbsp;capital&nbsp;of&nbsp;the&nbsp;location<br>
+self.<strong>gdp</strong>&nbsp;the&nbsp;GDP(Nominal)&nbsp;of&nbsp;the&nbsp;location<br>
+self.<strong>currency</strong>&nbsp;the&nbsp;currency&nbsp;of&nbsp;the&nbsp;location</tt></dd></dl>
+
+<dl><dt><a name="Location-__repr__"><strong>__repr__</strong></a>(self)</dt><dd><tt>returns&nbsp;the&nbsp;location's&nbsp;self.<strong>name</strong>&nbsp;attribute</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>capital</strong></dt>
+</dl>
+<dl><dt><strong>currency</strong></dt>
+</dl>
+<dl><dt><strong>currency_id</strong></dt>
+</dl>
+<dl><dt><strong>exchanges</strong></dt>
+</dl>
+<dl><dt><strong>gdp</strong></dt>
+</dl>
+<dl><dt><strong>id</strong></dt>
+</dl>
+<dl><dt><strong>name</strong></dt>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__mapper__</strong> = &lt;Mapper at 0x7f0e9c739910; Location&gt;</dl>
+
+<dl><dt><strong>__table__</strong> = Table('location', MetaData(bind=None), Column('i...y('currency.id'), table=&lt;location&gt;), schema=None)</dl>
+
+<dl><dt><strong>__tablename__</strong> = 'location'</dl>
+
+<hr>
+Methods inherited from flask_sqlalchemy.Model:<br>
+<strong>query</strong> = &lt;flask_sqlalchemy.BaseQuery object&gt;
+<hr>
+Data and other attributes inherited from flask_sqlalchemy.Model:<br>
+<dl><dt><strong>metadata</strong> = MetaData(bind=None)</dl>
+
+<hr>
+Data descriptors inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="flask_sqlalchemy.html#Model">flask_sqlalchemy.Model</a>:<br>
+<dl><dt><strong>query_class</strong> = &lt;class 'flask_sqlalchemy.BaseQuery'&gt;<dd><tt>The&nbsp;default&nbsp;query&nbsp;object&nbsp;used&nbsp;for&nbsp;models,&nbsp;and&nbsp;exposed&nbsp;as<br>
+:attr:`~SQLAlchemy.Query`.&nbsp;This&nbsp;can&nbsp;be&nbsp;subclassed&nbsp;and<br>
+replaced&nbsp;for&nbsp;individual&nbsp;models&nbsp;by&nbsp;setting&nbsp;the&nbsp;:attr:`~Model.query_class`<br>
+attribute.&nbsp;&nbsp;This&nbsp;is&nbsp;a&nbsp;subclass&nbsp;of&nbsp;a&nbsp;standard&nbsp;SQLAlchemy<br>
+:class:`~sqlalchemy.orm.query.Query`&nbsp;class&nbsp;and&nbsp;has&nbsp;all&nbsp;the&nbsp;methods&nbsp;of&nbsp;a<br>
+standard&nbsp;query&nbsp;as&nbsp;well.</tt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>app</strong> = &lt;Flask 'models'&gt;<br>
+<strong>db</strong> = &lt;SQLAlchemy engine='sqlite://'&gt;</td></tr></table>
+</body></html>

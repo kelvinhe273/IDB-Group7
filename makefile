@@ -20,7 +20,7 @@ endif
 	$(PYLINT) --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
 
 models.html: app/models.py
-	pydoc3 -w models
+	pydoc3 -w app/models
 
 IDB1.log:
 	git log > IDB1.log
