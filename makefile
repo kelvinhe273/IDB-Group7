@@ -25,9 +25,6 @@ models.html: app/models.py
 IDB1.log:
 	git log > IDB1.log
 
-abc: .pylintrc app/tests.py
-	-$(PYLINT) app/tests.py
-
 check:
 	@not_found=0;                                 \
     for i in $(FILES);                            \
