@@ -52,7 +52,6 @@ clean:
 	rm -f  *.pyc
 	rm -f  *.tmp
 	rm -f  IDB1.log
-	rm -f  models.html
 	rm -rf __pycache__
 
 
