@@ -27,6 +27,7 @@ IDB1.log:
 
 TestModels: .pylintrc app/models.py app/tests.py
 	-$(PYLINT) app/tests.py
+	python3 app/tests.py
 
 check:
 	@not_found=0;                                 \
