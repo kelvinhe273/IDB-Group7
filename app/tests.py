@@ -6,15 +6,14 @@ class MyTest(TestCase):
     SQLALCHEMY_DATABASE_URI = "sqlite://"
     TESTING = True
 
-    @classmethod
-    def create_app(cls):
+    def create_app(self):
         # pass in test configuration
         return app
-    @classmethod
-    def set_up(cls):
+
+    def setUp(self):
         db.create_all()
-    @classmethod
-    def tear_down(cls):
+
+    def tearDown(self):
         db.session.remove()
         db.drop_all()
 
