@@ -1,48 +1,46 @@
 import requests
 import json
 import sqlite3
-# from flask import Flask
-# from flask_sqlalchemy import SQLAlchemy
-# from SQLAlchemy import Table
+import csv
 
-# app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-# db = SQLAlchemy(app)
-
-print ('Scraping Data')
-
-endpoints = ['Symbol', 'Name', ' Exchange']
+endpoints = ['Symbol', 'Name', ' Exchange', 'Currency']
 base_url = "http://dev.markitondemand.com/Api/v2/"
 lookup_url = base_url + "Lookup/"
 quote_url = base_url + "Quote/"
 
-
-print (lookup_url)
-resp = requests.get(lookup_url + "json?input=NFLX")
-# print (resp.headers)
-# print (resp.encoding)
-# print (resp.text)
-# print (resp.json())
-symbol = resp.json()[0]["Symbol"]
-name = resp.json()[0]["Name"]
-exchange = resp.json()[0]["Exchange"]
-
-
-
-print('')
-print('')
-print('')
-print('')
-
 conn = sqlite3.connect('test.db')
 cur = conn.cursor()
 cur.execute('DROP TABLE IF EXISTS Company')
-cur.execute('CREATE TABLE Company (symbol TEXT, name TEXT, exchange TEXT)')
+cur.execute('CREATE TABLE Company (symbol TEXT, name TEXT, exchange TEXT, currency TEXT)')
 
-cur.execute('INSERT INTO Company (Symbol, Name, Exchange) VALUES ( ?, ?, ?) ',
-	(symbol, name, exchange))
 
-conn.commit()
+f = open('companylist.csv')
+csv_f = csv.reader(f)
+for row in csv_f:
+	source = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22' +row[0] +'%22)&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&format=json'
+
+
+	resp = requests.get(source)
+	# print(resp.text)
+	symbol = resp.json()['query']['results']['quote']['symbol']
+	#print(symbol)
+	name = resp.json()['query']['results']['quote']['Name']
+	exchange =  resp.json()['query']['results']['quote']['StockExchange']
+	currency =  resp.json()['query']['results']['quote']['Currency']
+
+	cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency) VALUES ( ?, ?, ?, ?) ',
+		(symbol, name, exchange,currency))
+
+	conn.commit()
+
+
+
+print('')
+print('')
+print('')
+print('')
+
+
 
 print 'Company:'
 cur.execute('SELECT * FROM Company')
@@ -52,28 +50,3 @@ conn.commit()
 cur.close()
 
 
-print ('Scraping Data')
-
-endpoints = ['Symbol', 'Name', ' Exchange']
-base_url = "http://dev.markitondemand.com/Api/v2/"
-lookup_url = base_url + "Lookup/"
-quote_url = base_url + "Quote/"
-
-
-print (lookup_url)
-resp = requests.get(lookup_url + "json?input=NFLX")
-# print (resp.headers)
-# print (resp.encoding)
-# print (resp.text)
-# print (resp.json())
-
-resp_json = resp.json()
-
-
-
-
-
-resp = requests.get(quote_url + "json?symbol=NFLX")
-print (resp.headers)
-# print (resp.encoding)
-print (resp.text)
