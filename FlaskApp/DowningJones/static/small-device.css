@@ -7,9 +7,10 @@ table{
     margin:auto;
 }
 table, th, td {
+
     border: 1px solid black;
     border-collapse: collapse;
-    color:black;
+    color:blue;
 }
 th, td {
     padding: 5px;
@@ -42,7 +43,7 @@ table{
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-    color:black;
+    color:blue;
 }
 th, td {
     padding: 5px;
@@ -75,7 +76,7 @@ table{
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-    color:black;
+    color:blue;
 }
 th, td {
     padding: 5px;
@@ -109,7 +110,7 @@ table{
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-    color:black;
+    color:blue;
 }
 th, td {
     padding: 5px;
@@ -144,7 +145,7 @@ table{
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-    color:black;
+    color:blue;
 }
 th, td {
     padding: 5px;
@@ -179,7 +180,7 @@ table{
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-    color:black;
+    color:blue;
 }
 th, td {
     padding: 5px;
@@ -212,7 +213,7 @@ table{
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-    color:black;
+    color:blue;
 }
 th, td {
     padding: 5px;
@@ -245,7 +246,7 @@ table{
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-    color:black;
+    color:blue;
 }
 th, td {
     padding: 5px;
@@ -279,7 +280,7 @@ table{
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-    color:black;
+    color:blue;
 }
 th, td {
     padding: 5px;
