@@ -23,7 +23,7 @@ cur.execute('DROP TABLE IF EXISTS Currency')
 cur.execute('CREATE TABLE Currency (currency TEXT)')
 
 
-f = open('companylist.csv')
+f = open('yahoo.csv')
 csv_f = csv.reader(f)
 for row in csv_f:
 	source = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22' +row[0] +'%22)&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&format=json'
@@ -34,26 +34,25 @@ for row in csv_f:
 	symbol = resp.json()['query']['results']['quote']['symbol']
 	#print(symbol)
 	name = resp.json()['query']['results']['quote']['Name']
-	exchange =  "NASDAQ"
+	exchange =  resp.json()['query']['results']['quote']['StockExchange']
+	if exchange == "NMS":
+		exchange = "NYSE"
 	currency =  resp.json()['query']['results']['quote']['Currency']
 
-	cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency) VALUES ( ?, ?, ?, ?) ',
-		(symbol, name, exchange,currency))
-	cur.execute('INSERT INTO Exchange (Exchange, Currency) VALUES ( ?, ?) ',
-		(exchange, currency))
-	cur.execute('INSERT INTO Location (Currency) VALUES (?) ',
-		(currency,))
-	cur.execute('INSERT INTO Currency (Currency) VALUES (?) ',
-		(currency,))
+	if currency == 'USD' or currency == 'GBp' or currency == 'EUR':
 
-	conn.commit()
+		if exchange == "NYSE" or exchange == "PAR" or exchange == "LSE":
 
+			cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency) VALUES ( ?, ?, ?, ?) ',
+				(symbol, name, exchange,currency))
+			cur.execute('INSERT INTO Exchange (Exchange, Currency) VALUES ( ?, ?) ',
+				(exchange, currency))
+			cur.execute('INSERT INTO Location (Currency) VALUES (?) ',
+				(currency,))
+			cur.execute('INSERT INTO Currency (Currency) VALUES (?) ',
+				(currency,))
 
-
-print('')
-print('')
-print('')
-print('')
+			conn.commit()
 
 
 
