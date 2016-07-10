@@ -16,6 +16,12 @@ cur.execute('CREATE TABLE Company (symbol TEXT, name TEXT, exchange TEXT, curren
 cur.execute('DROP TABLE IF EXISTS Exchange')
 cur.execute('CREATE TABLE Exchange (exchange TEXT, currency TEXT)')
 
+cur.execute('DROP TABLE IF EXISTS Location')
+cur.execute('CREATE TABLE Location (currency TEXT)')
+
+cur.execute('DROP TABLE IF EXISTS Currency')
+cur.execute('CREATE TABLE Currency (currency TEXT)')
+
 
 f = open('companylist.csv')
 csv_f = csv.reader(f)
@@ -35,6 +41,10 @@ for row in csv_f:
 		(symbol, name, exchange,currency))
 	cur.execute('INSERT INTO Exchange (Exchange, Currency) VALUES ( ?, ?) ',
 		(exchange, currency))
+	cur.execute('INSERT INTO Location (Currency) VALUES (?) ',
+		(currency,))
+	cur.execute('INSERT INTO Currency (Currency) VALUES (?) ',
+		(currency,))
 
 	conn.commit()
 
@@ -47,8 +57,8 @@ print('')
 
 
 
-print 'Exchange:'
-cur.execute('SELECT * FROM Exchange')
+print 'Currency:'
+cur.execute('SELECT * FROM Currency')
 for row in cur :
 	print row
 conn.commit()
