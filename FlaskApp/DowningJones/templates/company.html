@@ -1,55 +1,70 @@
 {% extends "layout.html" %}
 {% block body %}
+<!-- Header Well -->
+<div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; background-color: Gainsboro ">
+  <h1 style = "font-weight : bold; text-align : center;">Yahoo</h1>
+  <p></p>
+  <h3 style = "font-weight : bold; text-align : center">Yhoo(Country : <a href="us.html">US </a> )</h3>
+</div>
+<!-- End Well -->
 <!-- PAGE CONTENT -->
-  <div class="container-fluid">
-    <div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; boldackground-color: Gainsboro ">
-      <h1 style = "font-weight : bold; text-align : center;">Companies</h1>
+<div class="container-fluid" style = "background-image: url(static/background4.jpg)">
+  <div class="jumbotron">
+      <div class="row">
+          <div class="col-xs-4">
+              <div class="row">
+                  <div class="col-xs-12">
+                    <h4>Price: 32.48 Currency: <a href="dollars.html">USD </a></h4>
+                    <p></p>
+                    <h5 style = "border-bottom: 1px solid grey">Stock Exchange: <a href="nasdaq.html">NASDAQ</a></h5>
+                    <p></p>
+                  </div>
+                  <div class="col-xs-12">
+                    <h4>Percent Change: 3.24%</h4>
+                    <p></p>
+                    <h5 style = "border-bottom: 1px solid grey">Start: 10 USD   End: 32.48 USD</h5>
+                    <p></p>
+                  </div>
+                  <div class="col-xs-12"><h4>dividend/AYP: 2.68%</h4></div>
+                  <p></p>
+              </div>
+          </div>
+          <div class="col-xs-8">
+              <h3 style = "text-align:center">
+                <img src="static/chart.png" height="400px">
+              </h3>
+          </div>
+      </div>
+  </div>
+  <div class="well well-md" style = "border-bottom: 3px solid; background-color: Gainsboro">
+    <h1 style = "font-weight : bold; text-align : left">Additional Information</h1>
+  </div>
+</div>
+<div class="container" style = "background-color:lightgrey ">
+  <div class="row">
+    <div class="col-xs-4" style ="text-align: center; border-right: 1px solid black">
+      <h5 style = "border-bottom: 1px solid grey">EPS: 2.019</h5>
+      <p></p>
+      <h5 style = "border-bottom: 1px solid grey">PE: 16.64</h5>
+      <p></p>
+      <h5 style = "border-bottom: 1px solid grey">PEG: 1.74</h5>
+      <p></p>
+    </div>
+    <div class="col-xs-4" style ="text-align: center">
+      <h5 style = "border-bottom: 1px solid grey">Days Range: 37.43 - 38.08</h5>
+      <p></p>
+      <h5 style = "border-bottom: 1px solid grey">52 Week Range: 26.15 - 39.98</h5>
+      <p></p>
+      <h5 style = "border-bottom: 1px solid grey">1 yr. Target Estimate: 40.94</h5>
+    </div>
+    <div class="col-xs-4" style ="text-align: center">
+      <h5 style = "border-bottom: 1px solid grey">Volume: 10,602,792</h5>
+      <p></p>
+      <h5 style = "border-bottom: 1px solid grey">Avg Volume: 13,678,600</h5>
+      <p></p>
+      <h5 style = "border-bottom: 1px solid grey">Market Cap: 40.94</h5>
+    </div>
     <p></p>
-  </div>  <table id="companytable" class="table table-hover table-responsive">
-  <thead>
-    <tr>
-      <th id="name">Name</th>
-      <th id="stockexchange">Stock Exchange</th>
-      <th id="location">Location</th>
-      <th id="currency">Currency</th>
-      <th id="symbol">Symbol</th>
-    </tr>
-    </thead>
-    <!-- Figure out how to add foreign currency signs.-->
-    <tbody>
-      <tr>
-         <td><a href="company1.html">Yahoo</a></td>
-         <td><a href="nasdaq.html">NASDAQ</a></td>
-         <td><a href="us.html">USA</a></td>
-         <td><a href="dollars.html">US Dollars</a></td>
-         <td>YHOO</td>
-      </tr>
-      <tr>
-        <td><a href="company2.html">Safran SA</a></td>
-        <td><a href="par.html">PAR</a></td>
-        <td><a href="france.html">France</a></td>
-        <td><a href="euros.html">Euro</a></td>
-        <td>SAF</td>
-      </tr>
-      <tr>
-        <td><a href="company3.html">ABC</a></td>
-         <td><a href="lse.html">LSE</a></td>
-         <td><a href="greatbritain.html">United Kingdom</a></td>
-         <td><a href="pounds.html">Pound sterling</a></td>
-         <td>ABCAM</td>
-      </tr>
-      </tbody>
-  </table>
- </div> 
-<!-- END PAGE CONTENT-->
-<!-- SCRIPT FOR SORTING-->
-<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-<script>
-  $(document).ready(function() {
-      $('#companytable').DataTable();
-  } );
-</script>
-<!-- END SCRIPT FOR SORTING-->
+  </div>
+</div>
 {% endblock %}
-

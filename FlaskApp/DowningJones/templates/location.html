@@ -1,56 +1,43 @@
 {% extends "layout.html" %}
 {% block body %}
 <!-- PAGE CONTENT -->
- <div class="container-fluid">
-  <div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; boldackground-color: Gainsboro ">
-    <h1 style = "font-weight : bold; text-align : center;">Locations</h1>
-  <p></p>
+<div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; background-color: Gainsboro ">
+  <h1 style = "font-weight : bold; text-align : center;">USA</h1>
+</div>
+<!-- End Well -->
+<!-- PAGE CONTENT -->
+<div class="container-fluid" style = "background-image: url(static/background4.jpg)">
+  <div class="jumbotron" style = "background-color: lightblue">
+      <div class="row">
+        <div class="col-xs-8">
+              <img src="static/us.jpg" height="600" width= "100%" border="1px">
+          </div>
+          <div class="col-xs-4">
+              <div class="row">
+                  <div class="col-xs-12">
+                    <h2>Currency: <a href="dollars.html">Dollars </a></h4>
+                    <p></p>
+                    <p></p>
+                    <h3 style = "border-bottom: 1px solid grey">Stock Exchange: <a href="nasdaq.html">NASDAQ</a></h5>
+                    <p></p>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
-  <table id="locationtable" class="table table-hover table-responsive">
-  <thead>
-    <tr>
-      <th id="name">Location</th>
-      <th id="stockexchange">Stock Exchange</th>
-      <th id="currency">Currency</th>
-      <th id="capital">Capital</th>
-      <th id="gdp">GDP</th>
-    </tr>
-    </thead>
-    <!-- Figure out how to add foreign currency signs.-->
-     <tbody>
-     <tr>
-        <td><a href="us.html">USA</a></td>
-         <td><a href="nasdaq.html">NASDAQ</a></td>
-         <td><a href="dollars.html">US Dollars</a></td>
-         <td>Washington D.C.</td>
-         <td>16.77 trillion USD</td>
-      </tr>
-      <tr>
-        <td><a href="france.html">France</a></td>
-        <td><a href="par.html">PAR</a></td>
-        <td><a href="euros.html">Euro</a></td>
-        <td>Paris</td>
-        <td>2.806 trillion USD</td>
-      </tr>
-      <tr>
-         <td><a href="greatbritain.html">United Kingdom</a></td>
-         <td><a href="lse.html">LSE</a></td>
-         <td><a href="pounds.html">Pound sterling</a></td>
-         <td>London</td>
-         <td>2.678 trillion USD</td>
-      </tr>
-      </tbody>
-  </table>
- </div> 
- <!-- END PAGE CONTENT -->
-
-<!-- SCRIPT FOR SORTING-->
-<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-<script>
-  $(document).ready(function() {
-      $('#locationtable').DataTable();
-  } );
-</script>
-<!-- END SCRIPT FOR SORTING-->
+  <div class="well well-md" style = "border-bottom: 3px solid; background-color: Gainsboro">
+    <h1 style = "font-weight : bold; text-align : left">Countries Companies</h1>
+  </div>
+  </div>
+  <div class="container" style = "background-color:lightgrey ">
+    <div class="row">
+      <div class="col-xs-12" style ="text-align: center; border-right: 1px solid black">
+        <h5 style = "border-bottom: 1px solid grey"><a href="company1.html">Yahoo</a></h5>
+        <p></p>
+        <h5 style = "border-bottom: 1px solid grey">1-800-Flowers</h5>
+        <p></p>
+        <h5 style = "border-bottom: 1px solid grey">21st Century Fox</h5>
+        <p></p>
+      </div>
+    </div>
 {% endblock %}
