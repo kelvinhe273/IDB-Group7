@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>IMDB Group 7</title>
+  <title>Downing Jones</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<!--  <style>
-  .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 100%;
-      margin: auto;
+  <link rel="stylesheet" type="text/css" href="static/style.css">
+  <script src="//code.jquery.com/jquery-1.12.3.js"></script>
+ <style>
+  body{
+    background-image: url("static/background4.jpg");
+    background-size: cover;
+    }
+    tr,tbody,a,td{
+      color:white;
+    }
+
+    tr:hover td {
+      background-color: lightblue;
   }
-  </style> -->
+
+  </style>
 </head>
 <body>
 
-  <!-- NAVBAR-->
+<!-- NAVBAR-->
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -34,24 +43,11 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="index.html">Home</a></li>
-          <li class="active"><a href="stockmarket.html">Stock Market <span class="sr-only">(current)</span></a></li>
+          <li ><a href="index.html">Home</a></li>
+          <li ><a href="stockmarket.html">Stock Market</a></li>
           <li><a href="company.html">Company</a></li>
           <li><a href="location.html">Location</a></li>
           <li><a href="currency.html">Currency</a></li>
-          <!-- DROPDOWN EXAMPLE IN CASE WE WANT TO USE IT -->
-          <!--<li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>-->
-            <!-- END DROP DOWN EXAMPLE -->
           </ul>
             <ul  class="nav navbar-nav navbar-right">
           </li>
@@ -67,6 +63,13 @@
     </div><!-- /.container-fluid -->
   </nav>
   <!-- END NAVBAR -->
-
+<!-- PAGE CONTENT -->
+ <div class="container-fluid">
+  {% block body %}{% endblock %}
+ </div>
+  
+ </div> 
+<!-- END PAGE CONTENT-->
 </body>
 </html>
+
