@@ -34,7 +34,7 @@ for row in csv_f:
 	symbol = resp.json()['query']['results']['quote']['symbol']
 	#print(symbol)
 	name = resp.json()['query']['results']['quote']['Name']
-	exchange =  resp.json()['query']['results']['quote']['StockExchange']
+	exchange =  "NASDAQ"
 	currency =  resp.json()['query']['results']['quote']['Currency']
 
 	cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency) VALUES ( ?, ?, ?, ?) ',
@@ -57,8 +57,8 @@ print('')
 
 
 
-print 'Currency:'
-cur.execute('SELECT * FROM Currency')
+print 'Company:'
+cur.execute('SELECT * FROM Company')
 for row in cur :
 	print row
 conn.commit()
