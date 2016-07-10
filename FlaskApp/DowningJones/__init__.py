@@ -17,9 +17,9 @@ def about ():
 def base ():
 	return render_template('base.html')
 
-@app.route ( '/company.html' )
-def company ():
-	return render_template('company.html')
+@app.route ( '/companies.html' )
+def companies ():
+	return render_template('companies.html')
 
 @app.route ( '/company1.html' )
 def company1 ():
@@ -33,9 +33,9 @@ def company2 ():
 def company3 ():
 	return render_template('company3.html')
 
-@app.route ( '/currency.html' )
-def currency ():
-	return render_template('currency.html')
+@app.route ( '/currencies.html' )
+def currencies ():
+	return render_template('currencies.html')
 
 @app.route ( '/dollars.html' )
 def dollars ():
@@ -57,9 +57,9 @@ def france ():
 def greatbritain ():
 	return render_template('greatbritain.html')
 
-@app.route ( '/location.html' )
-def location ():
-	return render_template('location.html')
+@app.route ( '/locations.html' )
+def locations ():
+	return render_template('locations.html')
 
 @app.route ( '/lse.html' )
 def lse ():
@@ -73,9 +73,9 @@ def nasdaq ():
 def pounds ():
 	return render_template('pounds.html')
 
-@app.route ( '/stockmarket.html' )
-def stockmarket ():
-	return render_template('stockmarket.html')
+@app.route ( '/stockmarkets.html' )
+def stockmarkets ():
+	return render_template('stockmarkets.html')
 
 @app.route ( '/us.html' )
 def us ():
