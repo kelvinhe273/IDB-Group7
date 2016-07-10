@@ -81,5 +81,4 @@ def stockmarket ():
 def us ():
 	return render_template('us.html')
 
-if __name__ == "__main__" :
-	app.run()
+
