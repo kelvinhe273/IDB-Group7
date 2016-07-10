@@ -2,26 +2,134 @@
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
-/* Styles */
+table{
+    background-color:#a9a9a9;
+    margin:auto;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    color:black;
+}
+th, td {
+    padding: 5px;
+}
+td {
+  text-align: left;
+}
+h2, p {
+    color:orange;
+}
+
+h3{
+    color:white;
+}
+
+body{
+    background-image: url("background.jpg");
+    background-size: cover;
+  }
+
 }
 
 /* Smartphones (landscape) ----------- */
 @media only screen 
 and (min-width : 321px) {
-/* Styles */
+table{
+    background-color:#a9a9a9;
+    margin:auto;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    color:black;
+}
+th, td {
+    padding: 5px;
+}
+td {
+  text-align: left;
+}
+h2, p {
+    color:orange;
+}
+
+h3{
+    color:white;
+}
+
+body{
+    background-image: url("background.jpg");
+    background-size: cover;
+  }
+
 }
 
 /* Smartphones (portrait) ----------- */
 @media only screen 
 and (max-width : 320px) {
-/* Styles */
+table{
+    background-color:#a9a9a9;
+    margin:auto;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    color:black;
+}
+th, td {
+    padding: 5px;
+}
+td {
+  text-align: left;
+}
+h2, p {
+    color:orange;
+}
+
+h3{
+    color:white;
+}
+
+body{
+    background-image: url("background.jpg");
+    background-size: cover;
+  }
+
 }
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen 
 and (min-device-width : 768px) 
 and (max-device-width : 1024px) {
-/* Styles */
+table{
+    background-color:#a9a9a9;
+    margin:auto;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    color:black;
+}
+th, td {
+    padding: 5px;
+}
+td {
+  text-align: left;
+}
+h2, p {
+    color:orange;
+}
+
+h3{
+    color:white;
+}
+
+body{
+    background-image: url("background.jpg");
+    background-size: cover;
+  }
+
 }
 
 /* iPads (landscape) ----------- */
@@ -29,7 +137,34 @@ and (max-device-width : 1024px) {
 and (min-device-width : 768px) 
 and (max-device-width : 1024px) 
 and (orientation : landscape) {
-/* Styles */
+table{
+    background-color:#a9a9a9;
+    margin:auto;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    color:black;
+}
+th, td {
+    padding: 5px;
+}
+td {
+  text-align: left;
+}
+h2, p {
+    color:orange;
+}
+
+h3{
+    color:white;
+}
+
+body{
+    background-image: url("background.jpg");
+    background-size: cover;
+  }
+
 }
 
 /* iPads (portrait) ----------- */
@@ -37,24 +172,132 @@ and (orientation : landscape) {
 and (min-device-width : 768px) 
 and (max-device-width : 1024px) 
 and (orientation : portrait) {
-/* Styles */
+table{
+    background-color:#a9a9a9;
+    margin:auto;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    color:black;
+}
+th, td {
+    padding: 5px;
+}
+td {
+  text-align: left;
+}
+h2, p {
+    color:orange;
+}
+
+h3{
+    color:white;
+}
+
+body{
+    background-image: url("background.jpg");
+    background-size: cover;
+  }
+
 }
 
 /* Desktops and laptops ----------- */
 @media only screen 
 and (min-width : 1224px) {
-/* Styles */
+table{
+    background-color:#a9a9a9;
+    margin:auto;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    color:black;
+}
+th, td {
+    padding: 5px;
+}
+td {
+  text-align: left;
+}
+h2, p {
+    color:orange;
+}
+
+h3{
+    color:white;
+}
+
+body{
+    background-image: url("background.jpg");
+    background-size: cover;
+  }
+
 }
 
 /* Large screens ----------- */
 @media only screen 
 and (min-width : 1824px) {
-/* Styles */
+table{
+    background-color:#a9a9a9;
+    margin:auto;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    color:black;
+}
+th, td {
+    padding: 5px;
+}
+td {
+  text-align: left;
+}
+h2, p {
+    color:orange;
+}
+
+h3{
+    color:white;
+}
+
+body{
+    background-image: url("background.jpg");
+    background-size: cover;
+  }
+
 }
 
 /* iPhone 4 ----------- */
 @media
 only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5) {
-/* Styles */
+table{
+    background-color:#a9a9a9;
+    margin:auto;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    color:black;
+}
+th, td {
+    padding: 5px;
+}
+td {
+  text-align: left;
+}
+h2, p {
+    color:orange;
+}
+
+h3{
+    color:white;
+}
+
+body{
+    background-image: url("background.jpg");
+    background-size: cover;
+  }
+
 }
