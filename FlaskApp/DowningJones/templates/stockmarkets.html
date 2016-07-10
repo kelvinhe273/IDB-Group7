@@ -18,27 +18,15 @@
     </thead>
     <!-- Figure out how to add foreign currency signs.-->
       <tbody>
-      <tr>
-         <td><a href="nasdaq.html">NASDAQ</a></td>
-         <td><a href="us.html">USA</a></td>
-         <td><a href="dollars.html">US Dollars</a></td>
-         <td>4,862.57</td>
-         <td>+.041%</td>
-      </tr>
-      <tr>
-        <td><a href="par.html">PAR</a></td>
-        <td><a href="france.html">France</a></td>
-        <td><a href="euros.html">Euro</a></td>
-        <td>32.15</td>
-        <td>-2.46%</td>
-      </tr>
-      <tr>
-         <td><a href="lse.html">LSE</a></td>
-         <td><a href="greatbritain.html">United Kingdom</a></td>
-         <td><a href="pounds.html">Pound sterling</a></td>
-         <td>2,493.0</td>
-         <td>-1.2%</td>
-      </tr>
+        {% for market in markets %}
+        <tr>
+         <td><a href="nasdaq.html">{{ market.name }}</a></td>
+         <td><a href="us.html">{{ market.location }}</a></td>
+         <td><a href="dollars.html">{{ market.currency }}</a></td>
+         <td>{{ market.points }}</td>
+         <td>{{ market.change }}</td>
+        </tr>
+      {% endfor %}
       </tbody>
   </table>
  </div>

@@ -17,27 +17,15 @@
     </thead>
     <!-- Figure out how to add foreign currency signs.-->
     <tbody>
-      <tr>
-         <td><a href="company1.html">Yahoo</a></td>
-         <td><a href="nasdaq.html">NASDAQ</a></td>
-         <td><a href="us.html">USA</a></td>
-         <td><a href="dollars.html">US Dollars</a></td>
-         <td>YHOO</td>
-      </tr>
-      <tr>
-        <td><a href="company2.html">Safran SA</a></td>
-        <td><a href="par.html">PAR</a></td>
-        <td><a href="france.html">France</a></td>
-        <td><a href="euros.html">Euro</a></td>
-        <td>SAF</td>
-      </tr>
-      <tr>
-        <td><a href="company3.html">ABC</a></td>
-         <td><a href="lse.html">LSE</a></td>
-         <td><a href="greatbritain.html">United Kingdom</a></td>
-         <td><a href="pounds.html">Pound sterling</a></td>
-         <td>ABCAM</td>
-      </tr>
+        {% for company in companies %}
+          <tr>
+            <td><a href="company1.html">{{ company.name }}</a></td>
+            <td><a href="nasdaq.html">{{ company.stock_exchange }}</a></td>
+            <td><a href="us.html">{{ company.location }}</a></td>
+            <td><a href="dollars.html">{{ company.currency}}</a></td>
+            <td>{{ company.symbol }}</td>
+          </tr>
+        {% endfor %}
       </tbody>
   </table>
  </div> 

@@ -18,27 +18,15 @@
     </thead>
     <!-- Figure out how to add foreign currency signs.-->
      <tbody>
-     <tr>
-        <td><a href="us.html">USA</a></td>
-         <td><a href="nasdaq.html">NASDAQ</a></td>
-         <td><a href="dollars.html">US Dollars</a></td>
-         <td>Washington D.C.</td>
-         <td>16.77 trillion USD</td>
-      </tr>
-      <tr>
-        <td><a href="france.html">France</a></td>
-        <td><a href="par.html">PAR</a></td>
-        <td><a href="euros.html">Euro</a></td>
-        <td>Paris</td>
-        <td>2.806 trillion USD</td>
-      </tr>
-      <tr>
-         <td><a href="greatbritain.html">United Kingdom</a></td>
-         <td><a href="lse.html">LSE</a></td>
-         <td><a href="pounds.html">Pound sterling</a></td>
-         <td>London</td>
-         <td>2.678 trillion USD</td>
-      </tr>
+      {% for location in locations %}
+        <tr>
+          <td><a href="us.html">{{ location.location }}</a></td>
+          <td><a href="nasdaq.html">{{ location.stock_exchange }}</a></td>
+          <td><a href="dollars.html">{{ location.currency }}</a></td>
+          <td>{{ location.capital }}</td>
+          <td>{{ location.GDP_Nominal }}</td>
+        </tr>
+      {% endfor %}
       </tbody>
   </table>
  </div> 
