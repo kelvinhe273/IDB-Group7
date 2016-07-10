@@ -19,7 +19,7 @@
     <tbody>
         {% for company in companies %}
           <tr>
-            <td><a href="company1.html">{{ company.name }}</a></td>
+            <td><a href="companies/{{ company.id }}">{{ company.name }}</a></td>
             <td><a href="nasdaq.html">{{ company.stock_exchange }}</a></td>
             <td><a href="us.html">{{ company.location }}</a></td>
             <td><a href="dollars.html">{{ company.currency}}</a></td>

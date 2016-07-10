@@ -48,7 +48,7 @@ def companies ():
 
 @app.route ( '/companies/<id>' )
 def company (id):
-	return render_template('company1.html')
+	return render_template('company.html')
 
 @app.route ( '/currencies' )
 def currencies ():
@@ -83,7 +83,7 @@ def currencies ():
 
 @app.route ( '/currencies/<id>' )
 def currency (id):
-	return render_template('dollars.html')
+	return render_template('currency.html')
 
 @app.route ( '/locations' )
 def locations ():
@@ -119,7 +119,7 @@ def locations ():
 
 @app.route ( '/locations/<id>' )
 def location (id):
-	return render_template('pounds.html')
+	return render_template('location.html')
 
 @app.route ( '/stockmarkets' )
 def stockmarkets ():
@@ -154,6 +154,4 @@ def stockmarkets ():
 
 @app.route ( '/stockmarkets/<id>' )
 def market (id):
-	return render_template('nasdaq.html')
-
-
+	return render_template('stockmarket.html')
