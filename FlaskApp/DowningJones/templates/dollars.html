@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>US Dollars</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="static/dollarscss.css">
+<!--  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+      margin: auto;
+  }
+  </style> -->
+</head>
+
+<body>
+  <!-- NAVBAR-->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">DOWNING JONES</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="stockmarket.html">Stock Market <span class="sr-only">(current)</span></a></li>
+          <li><a href="company.html">Company</a></li>
+          <li><a href="location.html">Location</a></li>
+          <li class="active"><a href="currency.html">Currency</a></li>
+          <!-- DROPDOWN EXAMPLE IN CASE WE WANT TO USE IT -->
+          <!--<li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>-->
+            <!-- END DROP DOWN EXAMPLE -->
+          </ul>
+            <ul  class="nav navbar-nav navbar-right">
+          </li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <!-- END NAVBAR -->
+
+<!-- DOLLAR CONTENT-->
+<div>
+  <h1>United States Dollar</h1>
+   <div>
+    <h3>Background:</h3>
+    <p>The United States dollar is the official currency of the <a href="us.html">United States of America</a> which uses it to primarily trade through <a href="nasdaq.html">NASDAQ</a> which is an American stock exchange.</p>
+   </div>
+</div>
+<!-- Carousel -->
+  <div class="container">
+    <br>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active" >
+           <img src="static/onedollar.jpg" width="800" height="400">
+           <h4>$1</h4>
+        </div>
+        
+        <div class="item">
+           <img src="static/fivedollar.jpg" width="800" height="400">
+           <h4>$5</h4>
+        </div>
+        
+        <div class="item">
+           <img src="static/tendollar.jpg" width="800" height="400">
+           <h4>$10</h4>
+        </div>
+         
+        <div class="item">
+           <img src="static/twentydollar.jpg" width="800" height="400">
+           <h4>$20</h4>
+        </div>
+         
+        <div class="item">
+           <img src="static/fiftydollar.jpg" width="800" height="400">
+           <h4>$50</h4>
+        </div>
+         
+        <div class="item">
+           <img src="static/onehundred.jpg" width="800" height="400">
+           <h4>$100</h4>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" ></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+ <!-- END CAROUSEL -->
+ <!-- END DOLLAR CONTENT-->
+</body>
+</html>
