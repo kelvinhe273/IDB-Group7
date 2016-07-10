@@ -6,16 +6,16 @@ def homepage ():
 	return render_template('index.html',
 							title='Downing Jones')
 
-@app.route ( '/index.html' )
+@app.route ( '/index' )
 def index ():
 	return render_template('index.html',
 						    title='Downing Jones')
 
-@app.route ( '/about.html' )
+@app.route ( '/about' )
 def about ():
 	return render_template('about.html')
 
-@app.route ( '/companies.html' )
+@app.route ( '/companies' )
 def companies ():
 	companies = [    
 		{
@@ -46,19 +46,11 @@ def companies ():
 							title='Companies',
 							companies=companies)
 
-@app.route ( '/company1.html' )
-def company1 ():
+@app.route ( '/companies/<id>' )
+def company (id):
 	return render_template('company1.html')
 
-@app.route ( '/company2.html' )
-def company2 ():
-	return render_template('company2.html')
-
-@app.route ( '/company3.html' )
-def company3 ():
-	return render_template('company3.html')
-
-@app.route ( '/currencies.html' )
+@app.route ( '/currencies' )
 def currencies ():
 	currencies = [
 	    {
@@ -89,27 +81,11 @@ def currencies ():
 							title='Currencies',
 							currencies=currencies)
 
-@app.route ( '/dollars.html' )
-def dollars ():
+@app.route ( '/currencies/<id>' )
+def currency (id):
 	return render_template('dollars.html')
 
-@app.route ( '/euros.html' )
-def euros ():
-	return render_template('euros.html')
-
-@app.route ( '/par.html' )
-def fra ():
-	return render_template('par.html')
-
-@app.route ( '/france.html' )
-def france ():
-	return render_template('france.html')
-
-@app.route ( '/greatbritain.html' )
-def greatbritain ():
-	return render_template('greatbritain.html')
-
-@app.route ( '/locations.html' )
+@app.route ( '/locations' )
 def locations ():
 	locations = [
 	    {
@@ -141,19 +117,11 @@ def locations ():
 						    title='Locations',
 						    locations=locations)
 
-@app.route ( '/lse.html' )
-def lse ():
-	return render_template('lse.html')
-
-@app.route ( '/nasdaq.html' )
-def nasdaq ():
-	return render_template('nasdaq.html')
-
-@app.route ( '/pounds.html' )
-def pounds ():
+@app.route ( '/locations/<id>' )
+def location (id):
 	return render_template('pounds.html')
 
-@app.route ( '/stockmarkets.html' )
+@app.route ( '/stockmarkets' )
 def stockmarkets ():
 	markets=[
 	        {
@@ -184,8 +152,8 @@ def stockmarkets ():
 							title='Exchanges',
 							markets=markets)
 
-@app.route ( '/us.html' )
-def us ():
-	return render_template('us.html')
+@app.route ( '/stockmarkets/<id>' )
+def market (id):
+	return render_template('nasdaq.html')
 
 
