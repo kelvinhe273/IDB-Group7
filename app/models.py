@@ -35,7 +35,8 @@ class Exchange(db.Model):
         return '<Exchange %r>' % self.name
 
 class Currency(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)    #pk can be the iso code
+    iso = db.Column(db.String(3))
     name = db.Column(db.String(80))
     code = db.Column(db.String(80))
     num_users = db.Column(db.Integer)
@@ -44,10 +45,12 @@ class Currency(db.Model):
 
     def __init__(self, name, code, num_users):
         """
+        self.iso the three letter id for the currency
         self.name the name of the currency type
         self.code the currency code
         self.num_users the number of countries that use this currency
         """
+        self.iso = iso
         self.name = name
         self.code = code
         self.num_users = num_users
@@ -89,7 +92,8 @@ class Company(db.Model):
         return '<Company %r>' % self.name
 
 class Location(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)        #pk can be the iso code
+    iso = db.Column(db.String(2))
     name = db.Column(db.String(80))
     capital = db.Column(db.String(80))
     gdp = db.Column(db.Float)
@@ -98,11 +102,13 @@ class Location(db.Model):
 
     def __init__(self, name, capital, gdp, currency):
         """
-        self.name the name (country) of the locaiton
+        self.iso the two letter id for the country of the location
+        self.name the name (country) of the location
         self.capital the capital of the location
         self.gdp the GDP(Nominal) of the location
         self.currency the currency of the location
         """
+        self.iso = iso
         self.name = name
         self.capital = capital
         self.gdp = gdp
