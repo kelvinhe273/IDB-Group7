@@ -17,7 +17,7 @@ else
 endif
 
 .pylintrc:
-	$(PYLINT) --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
+	$(PYLINT)  --generated-members=commit,add,query --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
 
 models.html: app/models.py
 	pydoc3 -w app/models
@@ -27,6 +27,7 @@ IDB1.log:
 
 TestModels: .pylintrc app/models.py app/tests.py
 	-$(PYLINT) app/tests.py
+	python3 app/tests.py
 
 check:
 	@not_found=0;                                 \
