@@ -220,4 +220,21 @@
             <button id="test-button"><h5>Run Tests</h5></button>
         </div>
     </div>
+    <div id='test_results' style='display:none;'></div>
+    <script type="text/javascript">
+        $('#test-button').click(function(){
+            $.ajax({
+                url: '/api/run_tests',
+                type: 'GET'
+            })
+            .done(function(data, textStatus, jqXHR){
+                $('#test_results').text(data);
+                $('#test_results').show();
+            })
+            .fail(function(jqXHR, textStatus, errorThrown){
+                $('#test_results').text('An error Occured running the tests');
+                $('#test_results').show();
+            })
+        })
+    </script>
 {% endblock %}

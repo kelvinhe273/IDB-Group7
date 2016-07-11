@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
+import subprocess
 
 app = Flask ( __name__ )
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./test.db'
@@ -19,7 +20,8 @@ def index ():
 
 @app.route ( '/about' )
 def about ():
-	return render_template('about.html')
+	return render_template('about.html',
+                            title='About')
 
 @app.route ( '/companies' )
 def companies ():
@@ -76,3 +78,11 @@ def market (id):
     return render_template('stockmarket.html',
                             title=market.name,
                             market=market)
+
+@app.route ( '/api/run_tests')
+def tests ():
+    try:
+        results = subprocess.getoutput("python3 tests.py")
+        return results
+    except Exception as exc:
+        return str(exc)
