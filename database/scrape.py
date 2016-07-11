@@ -241,7 +241,7 @@ for row in csv_f:
 				(location, iso,capital,gdp, currency, location_exchange))
 
 		except sqlite3.IntegrityError:
-			#print location
+			conn.commit()
 			continue
 
 		
