@@ -34,15 +34,23 @@ csv_f = csv.reader(f)
 for row in csv_f:
 	source = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22' +row[0] +'%22)&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&format=json'
 
-
-	resp = requests.get(source)
-	print(resp.text)
-	symbol = resp.json()['query']['results']['quote']['symbol']
-	if symbol is None:
+	try:
+		resp = requests.get(source)
+		# print(resp.text)
+		symbol = resp.json()['query']['results']['quote']['symbol']
+		if symbol is None:
+			continue
+		print(symbol)
+		name = resp.json()['query']['results']['quote']['Name']
+		exchange =  resp.json()['query']['results']['quote']['StockExchange']
+		# print(exchange)
+	except ValueError:
+		print("failed to decode")
 		continue
-	print(symbol)
-	name = resp.json()['query']['results']['quote']['Name']
-	exchange =  resp.json()['query']['results']['quote']['StockExchange']
+
+	except TypeError:
+		print("failed to decode")
+		continue
 	
 	# if exchange == "NMS":
 	# 	exchange = "NASDAQ"
