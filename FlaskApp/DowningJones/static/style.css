@@ -37,9 +37,11 @@ html, body{
     margin:0;
 }
 
-.carousel-inner{
-    position:relative;
+.carousel-inner{    
     width:100%;
+    padding-left:0;
+    padding-right:0;
+    margin:0;
 }
 
 #myCarousel{
