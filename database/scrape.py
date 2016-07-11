@@ -74,7 +74,6 @@ for row in csv_f:
 			iso = 'US'
 			capital = 'Washington DC'
 			gdp = '16.77 trillion USD'
-			curName = 'US Dollars'
 			exchangeName = 'National Market System'
 			market_cap_exchange = '19,223 billion'
 
@@ -83,7 +82,6 @@ for row in csv_f:
 			iso = 'GB'
 			capital = 'London'
 			gdp = '2.678 trillion USD'
-			curName = 'Sterling Pound'
 			exchangeName = 'London Stock Exchange'
 			market_cap_exchange = '6,187 billion'
 
@@ -92,7 +90,6 @@ for row in csv_f:
 			iso = 'FR'
 			capital = 'Paris'
 			gdp = '2.806 trillion USD'
-			curName = 'Euros'
 			exchangeName = 'Paris Stock Exchange'
 			market_cap_exchange = '3,321 billion'
 
@@ -101,7 +98,6 @@ for row in csv_f:
 			iso = 'HK'
 			capital = 'none'
 			gdp = '274 billion USD'
-			curName = 'Hong Kong dollar'
 			exchangeName = 'Hong Kong Stock Exchange'
 			market_cap_exchange = '3,325 billion'
 
@@ -110,7 +106,6 @@ for row in csv_f:
 			iso = 'MX'
 			capital = 'Mexico City'
 			gdp = '1.261 trillion USD'
-			curName = 'Peso'
 			exchangeName = 'Mexico Stock Exchange'
 			market_cap_exchange = '402.99 billion'
 
@@ -119,7 +114,6 @@ for row in csv_f:
 			iso = 'TW'
 			capital = 'Taipei'
 			gdp = '474 billion USD'
-			curName = 'Taiwan New Dollar'
 			exchangeName = 'Taiwan Stock Exchange'
 			market_cap_exchange = '861 billion'
 
@@ -128,7 +122,6 @@ for row in csv_f:
 			iso = 'DE'
 			capital = 'Berlin'
 			gdp = '3.355 trillion USD'
-			curName = 'Euro'
 			exchangeName = 'Berlin Stock Exchange'
 			market_cap_exchange = '1,176 billion'
 
@@ -137,7 +130,6 @@ for row in csv_f:
 			iso = 'DE'
 			capital = 'Berlin'
 			gdp = '3.355 trillion USD'
-			curName = 'Euro'
 			exchangeName = 'Munich Stock Exchange'
 			market_cap_exchange = '1,762 billion'
 
@@ -146,7 +138,6 @@ for row in csv_f:
 			iso = 'DE'
 			capital = 'Berlin'
 			gdp = '3.355 trillion USD'
-			curName = 'Euro'
 			exchangeName = 'Frankfurt Stock Exchange'
 			market_cap_exchange = '1,762 billion'
 
@@ -155,7 +146,6 @@ for row in csv_f:
 			iso = 'CA'
 			capital = 'Ottawa'
 			gdp = '1.827 trillion USD'
-			curName = 'Canadian Dollar'
 			exchangeName = 'Toronto Stock Exchange'
 			market_cap_exchange = '1,939 billion'
 
@@ -164,7 +154,6 @@ for row in csv_f:
 			iso = 'GR'
 			capital = 'Athens'
 			gdp = '242.2 billion USD'
-			curName = 'Euro'
 			exchangeName = 'Athens Stock Exchange'
 			market_cap_exchange = '43.85 billion'
 
@@ -175,36 +164,43 @@ for row in csv_f:
 			location_cur = 'Greece,Germany,France'
 			exchnages_cur = 'ASE, FRA, MUN, BER, PAR'
 			exchange_rate = 1.10
+			curName = 'Euro'
 
 		elif currency == "GBp":
 			location_cur = 'Great Britain'
 			exchnages_cur = 'LSE'
 			exchange_rate = 1.30
+			curName = 'Sterling Pound'
 
 		elif currency == 'MXN':
 			location_cur = 'Mexico'
 			exchnages_cur = 'MEX'
 			exchange_rate = .054
+			curName = 'Peso'
 
 		elif currency == 'TWD':
 			location_cur = 'Taiwan'
 			exchnages_cur = 'TAI'
 			exchange_rate = .031
+			curName = 'Taiwan New Dollar'
 
 		elif currency == 'CAD':
 			location_cur = 'Canada'
 			exchnages_cur = 'TOR'
 			exchange_rate = .76
+			curName = 'Canadian Dollar'
 
 		elif currency == 'USD':
 			location_cur = 'United States'
 			exchnages_cur = 'NMS'
 			exchange_rate = 1
+			curName = 'US Dollars'
 
 		elif currency == 'HKD':
 			location_cur = 'Hong Kong'
 			exchnages_cur = 'HKG'
 			exchange_rate = .13
+			curName = 'Hong Kong dollar'
 
 
 		cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency, Location , Open_Price, Previous_Price, Percent_Change, Year_High, Ask_Price, Eps, Peg, Days_Range, Percent_Change_Fifty, Percent_Change_Twohundred, Volume, Avg_Volume, Market_Cap) VALUES ( ?, ?, ?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ) ',
@@ -214,7 +210,7 @@ for row in csv_f:
 		cur.execute('INSERT INTO Currency (Name,Currency, Locations, Exchanges, Exchange_Rate) VALUES (?, ?, ?, ?, ?) ',
 			(curName, currency, location_cur, exchnages_cur, exchange_rate))
 		cur.execute('INSERT INTO Location (Name, Iso, Capital, Gdp, Currency) VALUES (?, ?, ?, ?, ?) ',
-			(name, iso,capital,gdp, currency))
+			(location_cur, iso,capital,gdp, currency))
 
 		conn.commit()
 
