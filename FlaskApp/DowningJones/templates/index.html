@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block body %}
   <!-- Carousel -->
-  <div class="container">
+  <div class="container-fluid" style="padding-left:0; padding-right:0; margin:0;">
     <br>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -14,15 +14,21 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="static/index1.jpg" width="2000" height="1000">
+          <div class="fill">
+          <img src="static/index1.jpg">
+        </div>
         </div>
 
         <div class="item">
-          <img src="static/index2.jpg" width="2000" height="1000">
+          <div class="fill">
+          <img src="static/index2.jpg">
+        </div>
         </div>
       
         <div class="item">
-          <img src="static/index3.jpg" width="2000" height="1000">
+          <div class="fill">
+          <img src="static/index3.jpg">
+        </div>
         </div>
       </div>
 
