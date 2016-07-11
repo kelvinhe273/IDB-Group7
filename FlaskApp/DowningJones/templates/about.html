@@ -13,11 +13,8 @@
     margin-right: 15px;
     float: left;
   }
-  .profilePic {
-    margin-left: 100px;
-  }
-</style>
 
+</style>
 
 
 <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="/static/small-device.css" />
@@ -32,10 +29,9 @@
         <div class="item active">
           <img src="static/Building.jpg" width= "100%";>
             <div class="carousel-caption">
-              <style>.carousel-caption{background-color: black;opacity: 0.7;}</style>
+              <style>.carousel-caption{background-color: transparent !important;opacity: 0.7}</style>
               <h1>The Downing Jones</h1>
             <p class="lead" style="color:white"> About Us</p>
-
           </div>
         </div>
       </div>
@@ -47,79 +43,156 @@
       <h4 style = "color:white; font-weight : normal; text-align : center; padding : 20px">We are an up and coming startup in Austin, Texas whose main goal is to help bring valuable information regarding financial data to our clients.</h4> 
     </div>
 
-    <div id='omgstuff'>
-        <div class="person">
-            <img class="profilePic img-circle" src="static/MattPic.png" width="200" height="200">
-            <h4 >Matthew Coleman</h4>
-            <h6 ><b>Role: </b>Front End</h6>
-            <h6 ><b>Git Commits: </b>20</h6>
-            <h6 ><b>Unit Tests: </b>0</h6>
-            <h6 ><b>Issues: </b>4</h6>
-            <div class="jumbotron">
-                <p > I am currently a senior who is a underappreciated front end developer.Who's team also doesnt appreciate his creative design innovations for our website</p>
+    <div class="container aboutCard" style="color: white;">
+    <!-- Team Members Row -->
+
+    <div class="container row">
+        <!-- Matthew Bio -->
+        <div class="container col-md-4 col-sm-4">
+            <div class="text-center" style="padding: 15px; height: 100%;">
+                <div class="row">
+                    <div style="margin: 0 auto;">
+                        <img class="profilePic img-circle" src="static/MattPic.png" width="200" height="200">
+                    </div>
+                </div>
+
+                <div class="row" >
+                    <h2>Matthew Coleman</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4; text-center">
+                        <h4 ><b>Role: </b>Front End</h4>
+                        <h6 ><b>Git Commits: </b>20</h6>
+                        <h6 ><b>Unit Tests: </b>0</h6>
+                        <h6 ><b>Issues: </b>4</h6>
+                    </div>
+                </div>
+                <p style="font-size:16px"> I am currently a senior who is a underappreciated front end developer.Who's team also doesnt appreciate his creative design innovations for our website</p>
             </div>
         </div>
 
+        <!-- Saleh Bio -->
+        <div class="container col-md-4 col-sm-4">
+            <div class="text-center" style="padding: 15px; height: 100%;">
 
-        <div class="person">
-            <img class="profilePic img-circle" src="static/saleh.jpg" width="200" height="200">
-            <h4 >Saleh Alghusson</h4>
-            <h6 ><b>Role: </b>professional server destroyer</h6>
-            <h6 ><b>Git Commits: </b>15</h6>
-            <h6 ><b>Unit Tests: </b>0</h6>
-            <h6 ><b>Issues: </b>3</6>
-            <div class="jumbotron">
-                <p > Senior computer science major. Likes to sleep and crash servers in his spare time. Needs a watch. Most heard phrase: "GOD DAMMIT SAL." </p>
+                <div class="row">
+                    <div style="margin: 0 auto;">
+                        <img class="profilePic img-circle" src="static/saleh.jpg" width="200" height="200">
+                    </div>
+                </div>
+
+                <div class="row" >
+                    <h2>Saleh Alghusson</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4; text-center">
+                        <h4 ><b>Role: </b>professional server destroyer</h6>
+                        <h6 ><b>Git Commits: </b>15</h6>
+                        <h6 ><b>Unit Tests: </b>0</h6>
+                        <h6 ><b>Issues: </b>3</6>
+                    </div>
+                </div>
+                <p style="font-size:16px">Senior computer science major. Likes to sleep and crash servers in his spare time. Needs a watch. Most heard phrase: "GOD DAMMIT SAL." </p>
             </div>
         </div>
 
-        <div class="person">
-            <img class="profilePic img-circle" src="static/nathan.jpg" width="200" height="200">
-            <h4 >Nathan Adams</h4>
-            <h6 ><b>Role: </b>Back End</h6>
-            <h6 ><b>Git Commits: </b>5</h6>
-            <h6 ><b>Unit Tests: </b>ALL</h6>
-            <h6 ><b>Issues: </b>4</h6>
-            <div class="jumbotron">
-                <p > Likes to blow things up back in Tyler, Texas. Is a very experienced full stack developer at SpiceWorks here in Austin, Texas. Loves Zoidberg.</p>
+        <!-- Nathan Bio -->
+        <div class="container col-md-4 col-sm-4">
+            <div class="text-center" style="padding: 15px; height: 100%;">
+
+                <div class="row">
+                    <div style="margin: 0 auto;">
+                        <img class="profilePic img-circle" src="static/nathan.jpg" width="200" height="200">
+                    </div>
+                </div>
+
+                <div class="row" >
+                    <h2>Nathan Adams</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4; text-center">
+                        <h4 ><b>Role: </b>Back End</h6>
+                        <h6 ><b>Git Commits: </b>5</h6>
+                        <h6 ><b>Unit Tests: </b>ALL</h6>
+                        <h6 ><b>Issues: </b>4</h6>
+                    </div>
+                </div>
+            <p style="font-size:16px"> Likes to blow things up back in Tyler, Texas. Is a very experienced full stack developer at SpiceWorks here in Austin, Texas. Loves Zoidberg.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container row">
+        <!-- Sarah Bio -->
+        <div class="container col-md-4 col-sm-4">
+            <div class="text-center" style="padding: 15px; height: 100%;">
+                <div class="row">
+                    <div style="margin: 0 auto;">
+                        <img class="profilePic img-circle" src="static/sarah.jpg" width="200" height="200">
+                    </div>
+                </div>
+
+                <div class="row" >
+                    <h2>Sarah Jee</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4; text-center">
+                        <h4 ><b>Role: </b>Front End</h6>
+                        <h6 ><b>Git Commits: </b>5</h6>
+                        <h6 ><b>Unit Tests: </b>0</h6>
+                        <h6 ><b>Issues: </b>4</h6>
+                    </div>
+                </div>
+                <p style="font-size:16px"> Incoming junior. Likes to visit Canada on weekends with family. Has bad luck with planes and traveling in general. She works on front end stuff.</p>
             </div>
         </div>
 
-        <div class="person">
-            <img class="profilePic img-circle" src="static/sarah.jpg" width="200" height="200">
-            <h4 >Sarah Jee</h4>
-            <h6 ><b>Role: </b>Front End</h6>
-            <h6 ><b>Git Commits: </b>5</h6>
-            <h6 ><b>Unit Tests: </b>0</h6>
-            <h6 ><b>Issues: </b>4</h6>
-            <div class="jumbotron">
-                <p >Incoming junior. Likes to visit Canada on weekends with family. Has bad luck with planes and traveling in general. She works on front end stuff.</p>
+        <!-- Kelvin Bio -->
+        <div class="container col-md-4 col-sm-4">
+            <div class="text-center" style="padding: 15px; height: 100%;">
+                <div class="row">
+                    <div style="margin: 0 auto;">
+                        <img class="profilePic img-circle" src="static/kelvin.jpg" width="200" height="200">
+                    </div>
+                </div>
+
+                <div class="row" >
+                    <h2>Kelvin He</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4; text-center">
+                        <h4 ><b>Role: </b>Back End</h6>
+                        <h6 ><b>Git Commits: </b>10</h6>
+                        <h6 ><b>Unit Tests: </b>0</h6>
+                        <h6 ><b>Issues: </b>4</h6>
+                    </div>
+                </div>
+                <p style="font-size:16px"> HE'S SINGLE! Hates to tell people what to do but has to delegate work between members. Loves to be innovative and creative but assigned to do backend.</p>
             </div>
         </div>
 
-        <div class="person">
-            <img class="profilePic img-circle" src="static/kelvin.jpg" width="200" height="200">
-            <h4 >Kelvin He</h4>
-            <h6 ><b>Role: </b>Back End</h6>
-            <h6 ><b>Git Commits: </b>10</h6>
-            <h6 ><b>Unit Tests: </b>0</h6>
-            <h6 ><b>Issues: </b>4</h6>
-            <div class="jumbotron">
-                <p > HE'S SINGLE! Hates to tell people what to do but has to delegate work between members. Loves to be innovative and creative but assigned to do backend.</p>
+        <!-- Jemin Bio -->
+        <div class="container col-md-4 col-sm-4">
+            <div class="text-center" style="padding: 15px; height: 100%;">
+                <div class="row">
+                    <div style="margin: 0 auto;">
+                        <img class="profilePic img-circle" src="static/jae.jpg" width="200" height="200">
+                    </div>
+                </div>
+                <div class="row" >
+                    <h2>Jemin Shin</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4; text-center">
+                        <h6 ><b>Role: </b>Front End</h6>
+                        <h6 ><b>Git Commits: </b>25</h6>
+                        <h6 ><b>Unit Tests: </b>0</h6>
+                        <h6 ><b>Issues: </b>3</h6>
+                    </div>
+                </div>
+                <p style="font-size:16px"> Senior computer science major. Plays video games sometimes, except when it comes to wow. I love that shit. Most commonly said phrase: "GOD DAMMIT SAL."</p>
             </div>
         </div>
-
-        <div class="person">
-            <img class="profilePic img-circle" src="static/jae.jpg" width="200" height="200">
-            <h4 >Jemin Shin</h4>
-            <h6 ><b>Role: </b>Front End</h6>
-            <h6 ><b>Git Commits: </b>25</h6>
-            <h6 ><b>Unit Tests: </b>0</h6>
-            <h6 ><b>Issues: </b>3</h6>
-            <div class="jumbotron">
-                <p > Senior computer science major. Plays video games sometimes, except when it comes to wow. I love that shit. Most commonly said phrase: "GOD DAMMIT SAL."</p>
-            </div>
-         </div>
     </div>
 
     <div id="space" class="row panel-body text-center">
@@ -145,8 +218,6 @@
             <h5 ><b># Issues: </b>20</h5>
             <h5 ><b># Unit Tests: </b>10</h5>
             <button id="test-button"><h5>Run Tests</h5></button>
-            
         </div>
-    
     </div>
 {% endblock %}
