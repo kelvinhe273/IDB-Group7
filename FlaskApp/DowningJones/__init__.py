@@ -6,7 +6,7 @@ app = Flask ( __name__ )
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./test.db'
 db = SQLAlchemy(app)
 
-from models import Currency, Exchange, Location, Company
+from models import *
 
 @app.route ( '/' )
 def homepage ():
