@@ -210,7 +210,7 @@ for row in csv_f:
 		cur.execute('INSERT INTO Currency (Name,Currency, Locations, Exchanges, Exchange_Rate) VALUES (?, ?, ?, ?, ?) ',
 			(curName, currency, location_cur, exchnages_cur, exchange_rate))
 		cur.execute('INSERT INTO Location (Name, Iso, Capital, Gdp, Currency) VALUES (?, ?, ?, ?, ?) ',
-			(location_cur, iso,capital,gdp, currency))
+			(location, iso,capital,gdp, currency))
 
 		conn.commit()
 
