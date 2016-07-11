@@ -14,7 +14,7 @@ class Exchange(db.Model):
     # location = db.relationship('Location', uselist=False)
     currency_id = db.Column(db.Integer, db.ForeignKey('currency.id'))
 
-    def __init__(self, name, points, change, location, currency):
+    def __init__(self, name, name_code, change, location, currency):
         """
         self.name the name of the Exchange
         self.points the point change of the Exchange
@@ -23,7 +23,7 @@ class Exchange(db.Model):
         self.currency the currency the Exchange uses
         """
         self.name = name
-        self.points = points
+        self.name_code = name_code
         self.change = change
         self.location = location
         self.currency = currency
@@ -65,6 +65,19 @@ class Company(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     symbol = db.Column(db.String(80))
+    open_price = db.Column(db.String(80))
+    prev_price = db.Column(db.String(80))
+    percent_change = db.Column(db.String(80))
+    year_high = db.Column(db.String(80))
+    ask_price = db.Column(db.String(80))
+    eps = db.Column(db.String(80))
+    peg = db.Column(db.String(80))
+    days_range = db.Column(db.String(80))
+    percent_change_fifty = db.Column(db.String(80))
+    percent_change_twohundred = db.Column(db.String(80))
+    volume = db.Column(db.String(80))
+    avg_volume = db.Column(db.String(80))
+    market_cap = db.Column(db.String(80))
     location_id = db.Column(db.Integer, db.ForeignKey('location.id'))
     location = db.relationship('Location', uselist=False)
     exchange_id = db.Column(db.Integer, db.ForeignKey('exchange.id'))
@@ -72,7 +85,7 @@ class Company(db.Model):
     currency_id = db.Column(db.Integer, db.ForeignKey('currency.id'))
     currency = db.relationship('Currency', uselist=False)
 
-    def __init__(self, name, symbol, location, exchange, currency):
+    def __init__(self, name, symbol, location, exchange, currency, open_price, prev_price, percent_change, year_high, ask_price, eps, peg, days_range, percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap):
         """
         self.name the name of the Company
         self.symbol the symbol of the Company
@@ -84,6 +97,19 @@ class Company(db.Model):
         self.location = location
         self.exchange = exchange
         self.currency = currency
+        self.open_price = open_price
+        self.prev_price = prev_price
+        self.percent_change = percent_change
+        self.year_high = year_high
+        self.ask_price = ask_price
+        self.eps = eps
+        self.peg = peg
+        self.days_range = days_range
+        self.percent_change_fifty = percent_change_fifty
+        self.percent_change_twohundred = percent_change_twohundred
+        self.volume = volume
+        self.avg_volume = avg_volume
+        self.market_cap = market_cap
 
     def __repr__(self):
         """
