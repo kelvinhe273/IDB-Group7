@@ -82,7 +82,9 @@ def market (id):
 @app.route ( '/api/run_tests')
 def tests ():
     try:
-        results = subprocess.getoutput("python3 tests.py")
-        return results
+        process = subprocess.Popen(['python3', '/var/www/FlaskApp/DowningJones/tests.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        out, err = process.communicate()
+        
+        return str(out) + str(err)
     except Exception as exc:
         return str(exc)
