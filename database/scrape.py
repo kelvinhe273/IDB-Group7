@@ -3,6 +3,7 @@ import json
 import sqlite3
 import csv
 
+
 from yahoo_oauth import OAuth1
 oauth = OAuth1(None, None, from_file='keys.json')
 
@@ -20,7 +21,7 @@ cur.execute('DROP TABLE IF EXISTS Company')
 cur.execute('CREATE TABLE Company (symbol TEXT, name TEXT, exchange TEXT, currency TEXT, location TEXT, open_price TEXT, previous_price TEXT, percent_change TEXT, year_high TEXT, ask_price TEXT, eps TEXT, peg TEXT,days_range TEXT, percent_change_fifty TEXT, percent_change_twohundred TEXT, volume TEXT, avg_volume TEXT, market_cap TEXT)')
 
 cur.execute('DROP TABLE IF EXISTS Exchange')
-cur.execute('CREATE TABLE Exchange (exchange TEXT, name TEXT, currency TEXT, location TEXT, market_cap_exchange TEXT)')
+cur.execute('CREATE TABLE Exchange (exchange TEXT, name TEXT, currency TEXT, location TEXT, market_cap_exchange TEXT, UNIQUE(exchange))')
 
 cur.execute('DROP TABLE IF EXISTS Location')
 cur.execute('CREATE TABLE Location (name TEXT, iso TEXT, capital TEXT, gdp TEXT, currency TEXT, location_exchange TEXT)')
@@ -225,17 +226,26 @@ for row in csv_f:
 		elif location == 'USA':
 			location_exchange = 'National Market System'
 
+		
+		
 		cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency, Location , Open_Price, Previous_Price, Percent_Change, Year_High, Ask_Price, Eps, Peg, Days_Range, Percent_Change_Fifty, Percent_Change_Twohundred, Volume, Avg_Volume, Market_Cap) VALUES ( ?, ?, ?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ) ',
 			(symbol, name, exchange, currency, location , open_price, previous_price, percent_change, year_high, ask_price, eps, peg, days_range, percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap))
-		cur.execute('INSERT INTO Exchange (Exchange, Name, Currency, Location , Market_Cap_Exchange) VALUES ( ?, ?, ?, ?, ?) ',
-			(exchange,exchangeName, currency, location, market_cap_exchange))
-		cur.execute('INSERT INTO Currency (Name,Currency, Locations, Exchanges, Exchange_Rate) VALUES (?, ?, ?, ?, ?) ',
-			(curName, currency, location_cur, exchnages_cur, exchange_rate))
-		cur.execute('INSERT INTO Location (Name, Iso, Capital, Gdp, Currency, Location_Exchange) VALUES (?, ?, ?, ?, ?, ?) ',
-			(location, iso,capital,gdp, currency, location_exchange))
+			
+		try:
+			print(location)
+			cur.execute('INSERT INTO Exchange (Exchange, Name, Currency, Location , Market_Cap_Exchange) VALUES ( ?, ?, ?, ?, ?) ',
+				(exchange,exchangeName, currency, location, market_cap_exchange))
+			cur.execute('INSERT INTO Currency (Name,Currency, Locations, Exchanges, Exchange_Rate) VALUES (?, ?, ?, ?, ?) ',
+				(curName, currency, location_cur, exchnages_cur, exchange_rate))
+			cur.execute('INSERT INTO Location (Name, Iso, Capital, Gdp, Currency, Location_Exchange) VALUES (?, ?, ?, ?, ?, ?) ',
+				(location, iso,capital,gdp, currency, location_exchange))
 
+		except sqlite3.IntegrityError:
+			#print location
+			continue
+
+		
 		conn.commit()
-
 
 
 print 'Location:'
