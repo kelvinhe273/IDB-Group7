@@ -3,6 +3,12 @@ import json
 import sqlite3
 import csv
 
+from yahoo_oauth import OAuth1
+oauth = OAuth1(None, None, from_file='keys.json')
+
+if not oauth.token_is_valid():
+	oauth.refresh_access_token()
+
 endpoints = ['Symbol', 'Name', ' Exchange', 'Currency']
 base_url = "http://dev.markitondemand.com/Api/v2/"
 lookup_url = base_url + "Lookup/"
@@ -30,29 +36,30 @@ for row in csv_f:
 
 
 	resp = requests.get(source)
-	# print(resp.text)
+	print(resp.text)
 	symbol = resp.json()['query']['results']['quote']['symbol']
-	#print(symbol)
+	if symbol is None:
+		continue
+	print(symbol)
 	name = resp.json()['query']['results']['quote']['Name']
 	exchange =  resp.json()['query']['results']['quote']['StockExchange']
-	if exchange == "NMS":
-		exchange = "NYSE"
-	currency =  resp.json()['query']['results']['quote']['Currency']
+	
+	# if exchange == "NMS":
+	# 	exchange = "NASDAQ"
 
-	if currency == 'USD' or currency == 'GBp' or currency == 'EUR':
+	if exchange == "NMS" or exchange == "LSE" or exchange == "PAR" or exchange == "SSE" or exchange == "F" or exchange == "KS" or exchange == "SZ" or exchange == "TO" or exchange == "HK" or exchange == "MI" or exchange == "SS":
 
-		if exchange == "NYSE" or exchange == "PAR" or exchange == "LSE":
+		currency =  resp.json()['query']['results']['quote']['Currency']
+		cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency) VALUES ( ?, ?, ?, ?) ',
+			(symbol, name, exchange,currency))
+		cur.execute('INSERT INTO Exchange (Exchange, Currency) VALUES ( ?, ?) ',
+			(exchange, currency))
+		cur.execute('INSERT INTO Location (Currency) VALUES (?) ',
+			(currency,))
+		cur.execute('INSERT INTO Currency (Currency) VALUES (?) ',
+			(currency,))
 
-			cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency) VALUES ( ?, ?, ?, ?) ',
-				(symbol, name, exchange,currency))
-			cur.execute('INSERT INTO Exchange (Exchange, Currency) VALUES ( ?, ?) ',
-				(exchange, currency))
-			cur.execute('INSERT INTO Location (Currency) VALUES (?) ',
-				(currency,))
-			cur.execute('INSERT INTO Currency (Currency) VALUES (?) ',
-				(currency,))
-
-			conn.commit()
+		conn.commit()
 
 
 
