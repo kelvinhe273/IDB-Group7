@@ -14,14 +14,14 @@ class Exchange(db.Model):
     def __init__(self, name, name_code, change, location, currency):
         """
         self.name the name of the Exchange
-        self.points the point change of the Exchange
-        self.change the change in percentage of the Exchange
+        self.name_code the three letter symbol for the exchange
+        self.market_cap the market cap of the exchange
         self.location the location of the Exchange
         self.currency the currency the Exchange uses
         """
         self.name = name
         self.name_code = name_code
-        self.change = change
+        self.market_cap = market_cap
         self.location = location
         self.currency = currency
 
@@ -33,24 +33,27 @@ class Exchange(db.Model):
 
 class Currency(db.Model):
     id = db.Column(db.Integer, primary_key=True)    #pk can be the iso code
-    iso = db.Column(db.String(3))
     name = db.Column(db.String(80))
     code = db.Column(db.String(80))
-    num_users = db.Column(db.Integer)
+    locations = db.Column(db.String(80))
+    exchanges = db.Column(db.String(80))
+    exchange_rate = db.Column(db.Integer)
     exchanges = db.relationship('Exchange', backref='currency', lazy='dynamic')
     locations = db.relationship('Location', backref='currency', lazy='dynamic')
 
-    def __init__(self, name, code, num_users):
+    def __init__(self, name, code, locations, exchanges, exchange_rate):
         """
-        self.iso the three letter id for the currency
+        self.locations the location of all relevant countries
         self.name the name of the currency type
         self.code the currency code
-        self.num_users the number of countries that use this currency
+        self.exchanges the relevant exchanges that use this currency
+        self.exchange_rate is the exchange rate compared to the USD
         """
-        self.iso = iso
+        self.locations = locations
         self.name = name
         self.code = code
-        self.num_users = num_users
+        self.exchanges = exchanges
+        self.exchange_rate = exchange_rate
 
     def __repr__(self):
         """
@@ -88,6 +91,20 @@ class Company(db.Model):
         self.symbol the symbol of the Company
         self.location the location of the Company
         self.currency the currecny the Company uses
+        self.open_price the open price for that stock that day
+        self.prev_price th eclosing price of that stock the previous day
+        self.percent_change the percent it has changed today
+        self.year_high the highest p[rice of the year for that stock
+        self.ask_price the asking price for that stock
+        self.eps the eps for that stock
+        self.peg the peg for that stock
+        self.days_range the range of days for info about that stock
+        self.percent_change_fifty the percent change in fifty days for that stock
+        self.percent_change_twohundred the percent change in 200 days for that stock
+        self.volume  the volume for that stock
+        self.avg_volume the average volume for that stock
+        self.market_cap the market capitalization for that stock
+
         """
         self.name = name
         self.symbol = symbol
