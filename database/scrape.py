@@ -17,7 +17,7 @@ quote_url = base_url + "Quote/"
 conn = sqlite3.connect('test.db')
 cur = conn.cursor()
 cur.execute('DROP TABLE IF EXISTS Company')
-cur.execute('CREATE TABLE Company (symbol TEXT, name TEXT, exchange TEXT, currency TEXT, location TEXT)')
+cur.execute('CREATE TABLE Company (symbol TEXT, name TEXT, exchange TEXT, currency TEXT, location TEXT, open_price TEXT, previous_price TEXT, percent_change TEXT, year_high TEXT, ask_price TEXT, eps TEXT, peg TEXT,days_range TEXT, percent_change_fifty TEXT, percent_change_twohundred TEXT, volume TEXT, avg_volume TEXT, market_cap TEXT)')
 
 cur.execute('DROP TABLE IF EXISTS Exchange')
 cur.execute('CREATE TABLE Exchange (exchange TEXT, name TEXT, currency TEXT, location TEXT)')
@@ -43,6 +43,19 @@ for row in csv_f:
 		print(symbol)
 		name = resp.json()['query']['results']['quote']['Name']
 		exchange =  resp.json()['query']['results']['quote']['StockExchange']
+		open_price = resp.json()['query']['results']['quote']['Open']
+		previous_price = resp.json()['query']['results']['quote']['PreviousClose']
+		percent_change = resp.json()['query']['results']['quote']['ChangeinPercent']
+		year_high = resp.json()['query']['results']['quote']['YearHigh']
+		ask_price = resp.json()['query']['results']['quote']['Ask']
+		eps = resp.json()['query']['results']['quote']['EPSEstimateCurrentYear']
+		peg = resp.json()['query']['results']['quote']['PEGRatio']
+		days_range = resp.json()['query']['results']['quote']['DaysRange']
+		percent_change_fifty = resp.json()['query']['results']['quote']['PercentChangeFromFiftydayMovingAverage']
+		percent_change_twohundred = resp.json()['query']['results']['quote']['PercentChangeFromTwoHundreddayMovingAverage']
+		volume = resp.json()['query']['results']['quote']['Volume']
+		avg_volume = resp.json()['query']['results']['quote']['AverageDailyVolume']
+		market_cap = resp.json()['query']['results']['quote']['MarketCapitalization']
 		#print(exchange)
 	except ValueError:
 		print("failed to decode")
@@ -146,8 +159,8 @@ for row in csv_f:
 			exchangeName = 'Athens Stock Exchange'
 
 		currency =  resp.json()['query']['results']['quote']['Currency']
-		cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency,Location) VALUES ( ?, ?, ?, ?, ?) ',
-			(symbol, name, exchange,currency,location))
+		cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency, Location , Open_Price, Previous_Price, Percent_Change, Year_High, Ask_Price, Eps, Peg, Days_Range, Percent_Change_Fifty, Percent_Change_Twohundred, Volume, Avg_Volume, Market_Cap) VALUES ( ?, ?, ?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ) ',
+			(symbol, name, exchange, currency, location , open_price, previous_price, percent_change, year_high, ask_price, eps, peg, days_range, percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap))
 		cur.execute('INSERT INTO Exchange (Exchange, Name, Currency, Location) VALUES ( ?, ?, ?, ?) ',
 			(exchange,exchangeName, currency, location))
 		cur.execute('INSERT INTO Currency (Name,Currency) VALUES (?, ?) ',
