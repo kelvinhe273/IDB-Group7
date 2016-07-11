@@ -10,21 +10,19 @@
   <thead>
     <tr>
       <th id="name">Location</th>
-      <th id="stockexchange">Stock Exchange</th>
-      <th id="currency">Currency</th>
       <th id="capital">Capital</th>
       <th id="gdp">GDP</th>
+      <th id="iso">ISO</th>
     </tr>
     </thead>
     <!-- Figure out how to add foreign currency signs.-->
      <tbody>
       {% for location in locations %}
         <tr>
-          <td><a href="us.html">{{ location.location }}</a></td>
-          <td><a href="nasdaq.html">{{ location.stock_exchange }}</a></td>
-          <td><a href="dollars.html">{{ location.currency }}</a></td>
+          <td><a href="/locations/{{location.rowid}}">{{ location.name }}</a></td>
           <td>{{ location.capital }}</td>
-          <td>{{ location.GDP_Nominal }}</td>
+          <td>{{ location.gdp }}</td>
+          <td>{{ location.iso }}</td>
         </tr>
       {% endfor %}
       </tbody>

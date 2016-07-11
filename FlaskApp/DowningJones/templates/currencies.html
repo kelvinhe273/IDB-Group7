@@ -10,21 +10,17 @@
     <thead>
     <tr>
       <th id="name">Name</th>
-      <th id="stockexchange">Stock Exchange</th>
-      <th id="location">Location</th>
       <th id="currencycode">Currency Code</th>
-      <th id="numberofusers">Number of Official Users</th>
+      <th id="exchangerate">Exchange Rate (To U.S Dollar)</th>
     </tr>
     </thead>
     <!-- Figure out how to add foreign currency signs.-->
     <tbody>
       {% for currency in currencies %}
         <tr>
-         <td><a href="dollars.html">{{ currency.name }}</a></td>
-         <td><a href="nasdaq.html">{{ currency.exchange }}</a></td>
-         <td><a href="us.html">{{ currency.location }}</a></td>
-         <td>{{ currency.currency_code }}</td>
-         <td>{{ currency.number_of_official_users }}</td>
+         <td><a href="/currencies/{{currency.rowid}}">{{ currency.name }}</a></td>
+         <td>{{ currency.currency }}</td>
+         <td>{{ currency.exchange_rate }}</td>
         </tr>
       {% endfor %}
       </tbody>

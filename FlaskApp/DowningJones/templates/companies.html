@@ -9,9 +9,6 @@
   <thead>
     <tr>
       <th id="name">Name</th>
-      <th id="stockexchange">Stock Exchange</th>
-      <th id="location">Location</th>
-      <th id="currency">Currency</th>
       <th id="symbol">Symbol</th>
     </tr>
     </thead>
@@ -19,10 +16,7 @@
     <tbody>
         {% for company in companies %}
           <tr>
-            <td><a href="companies/{{ company.id }}">{{ company.name }}</a></td>
-            <td><a href="nasdaq.html">{{ company.stock_exchange }}</a></td>
-            <td><a href="us.html">{{ company.location }}</a></td>
-            <td><a href="dollars.html">{{ company.currency}}</a></td>
+            <td><a href="/companies/{{company.rowid}}">{{ company.name }}</a></td>
             <td>{{ company.symbol }}</td>
           </tr>
         {% endfor %}
