@@ -22,28 +22,10 @@ h3{
 }
 
 body{
-    background-image: url("background4.jpg");
     background-size: cover;
 }
 
 html, body{
     padding:0;
-    margin:0;
-}
-
-.carousel{
-    padding-left:0;
-    padding-right:0;
-    margin:0;
-}
-
-.carousel-inner{
-    position:relative;
-    width:100%;
-}
-
-#myCarousel{
-    padding-left:0;
-    padding-right:0;
     margin:0;
 }
