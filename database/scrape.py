@@ -17,16 +17,16 @@ quote_url = base_url + "Quote/"
 conn = sqlite3.connect('test.db')
 cur = conn.cursor()
 cur.execute('DROP TABLE IF EXISTS Company')
-cur.execute('CREATE TABLE Company (symbol TEXT, name TEXT, exchange TEXT, currency TEXT)')
+cur.execute('CREATE TABLE Company (symbol TEXT, name TEXT, exchange TEXT, currency TEXT, location TEXT)')
 
 cur.execute('DROP TABLE IF EXISTS Exchange')
-cur.execute('CREATE TABLE Exchange (exchange TEXT, currency TEXT)')
+cur.execute('CREATE TABLE Exchange (exchange TEXT, name TEXT, currency TEXT, location TEXT)')
 
 cur.execute('DROP TABLE IF EXISTS Location')
-cur.execute('CREATE TABLE Location (currency TEXT)')
+cur.execute('CREATE TABLE Location (name TEXT, iso TEXT, capital TEXT, gdp TEXT, currency TEXT)')
 
 cur.execute('DROP TABLE IF EXISTS Currency')
-cur.execute('CREATE TABLE Currency (currency TEXT)')
+cur.execute('CREATE TABLE Currency (name TEXT,currency TEXT)')
 
 
 f = open('yahoo.csv')
@@ -43,7 +43,7 @@ for row in csv_f:
 		print(symbol)
 		name = resp.json()['query']['results']['quote']['Name']
 		exchange =  resp.json()['query']['results']['quote']['StockExchange']
-		# print(exchange)
+		#print(exchange)
 	except ValueError:
 		print("failed to decode")
 		continue
@@ -55,24 +55,112 @@ for row in csv_f:
 	# if exchange == "NMS":
 	# 	exchange = "NASDAQ"
 
-	if exchange == "NMS" or exchange == "LSE" or exchange == "PAR" or exchange == "SSE" or exchange == "F" or exchange == "KS" or exchange == "SZ" or exchange == "TO" or exchange == "HK" or exchange == "MI" or exchange == "SS":
+	if exchange == "NMS" or exchange == "LSE" or exchange == "PAR" or exchange == "HKG" or exchange == "MEX" or exchange == "TAI" or exchange == "BER" or exchange == "MUN" or exchange == "FRA" or exchange == "VAN" or exchange == "ASE":
+
+		if exchange == "NMS":
+			location = 'USA'
+			iso = 'US'
+			capital = 'Washington DC'
+			gdp = '16.77 trillion USD'
+			curName = 'US Dollars'
+			exchangeName = 'National Market System'
+
+		elif exchange == "LSE":
+			location = 'Great Britain'
+			iso = 'GB'
+			capital = 'London'
+			gdp = '2.678 trillion USD'
+			curName = 'Sterling Pound'
+			exchangeName = 'London Stock Exchange'
+
+		elif exchange == "PAR":
+			location = 'France'
+			iso = 'FR'
+			capital = 'Paris'
+			gdp = '2.806 trillion USD'
+			curName = 'Euros'
+			exchangeName = 'Paris Stock Exchange'
+
+		elif exchange == "HKG":
+			location = 'Hong Kong'
+			iso = 'HK'
+			capital = 'none'
+			gdp = '274 billion USD'
+			curName = 'Hong Kong dollar'
+			exchangeName = 'Hong Kong Stock Exchange'
+
+		elif exchange == "MEX":
+			location = 'Mexico'
+			iso = 'MX'
+			capital = 'Mexico City'
+			gdp = '1.261 trillion USD'
+			curName = 'Peso'
+			exchangeName = 'Mexico Stock Exchange'
+
+		elif exchange == "TAI":
+			location = 'Taiwan'
+			iso = 'TW'
+			capital = 'Taipei'
+			gdp = '474 billion USD'
+			curName = 'Taiwan New Dollar'
+			exchangeName = 'Taiwan Stock Exchange'
+
+		elif exchange == "BER":
+			location = 'Berlin, Germany'
+			iso = 'DE'
+			capital = 'Berlin'
+			gdp = '3.355 trillion USD'
+			curName = 'Euro'
+			exchangeName = 'Berlin Stock Exchange'
+
+		elif exchange == "MUN":
+			location = 'Munich, Germany'
+			iso = 'DE'
+			capital = 'Berlin'
+			gdp = '3.355 trillion USD'
+			curName = 'Euro'
+			exchangeName = 'Munich Stock Exchange'
+
+		elif exchange == "FRA":
+			location = 'Frankfurt, Germany'
+			iso = 'DE'
+			capital = 'Berlin'
+			gdp = '3.355 trillion USD'
+			curName = 'Euro'
+			exchangeName = 'Frankfurt Stock Exchange'
+
+		elif exchange == "VAN":
+			location = 'Vancouver, Canada'
+			iso = 'CA'
+			capital = 'Ottawa'
+			gdp = '1.827 trillion USD'
+			curName = 'Canadian Dollar'
+			exchangeName = 'Vancouver Stock Exchange'
+
+		elif exchange == "ASE":
+			location = 'Athens, Greece'
+			iso = 'GR'
+			capital = 'Athens'
+			gdp = '242.2 billion USD'
+			curName = 'Euro'
+			exchangeName = 'Athens Stock Exchange'
 
 		currency =  resp.json()['query']['results']['quote']['Currency']
-		cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency) VALUES ( ?, ?, ?, ?) ',
-			(symbol, name, exchange,currency))
-		cur.execute('INSERT INTO Exchange (Exchange, Currency) VALUES ( ?, ?) ',
-			(exchange, currency))
-		cur.execute('INSERT INTO Location (Currency) VALUES (?) ',
-			(currency,))
-		cur.execute('INSERT INTO Currency (Currency) VALUES (?) ',
-			(currency,))
+		cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency,Location) VALUES ( ?, ?, ?, ?, ?) ',
+			(symbol, name, exchange,currency,location))
+		cur.execute('INSERT INTO Exchange (Exchange, Name, Currency, Location) VALUES ( ?, ?, ?, ?) ',
+			(exchange,exchangeName, currency, location))
+		cur.execute('INSERT INTO Currency (Name,Currency) VALUES (?, ?) ',
+			(curName, currency))
+		cur.execute('INSERT INTO Location (Name, Iso, Capital, Gdp, Currency) VALUES (?, ?, ?, ?, ?) ',
+			(name, iso,capital,gdp, currency))
 
 		conn.commit()
 
 
 
-print 'Company:'
-cur.execute('SELECT * FROM Company')
+print 'Location:'
+cur.execute('SELECT * FROM Location')
 for row in cur :
 	print row
 conn.commit()
