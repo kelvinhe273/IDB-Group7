@@ -85,6 +85,6 @@ def tests ():
         process = subprocess.Popen(['python3', '/var/www/FlaskApp/DowningJones/tests.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out, err = process.communicate()
         
-        return str({'out': str(out), 'err': str(err)})
+        return str(out) + str(err)
     except Exception as exc:
         return str(exc)
