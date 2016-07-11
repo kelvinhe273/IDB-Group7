@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- PAGE CONTENT -->
+ <div class="container-fluid">
+  <div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; boldackground-color: Gainsboro ">
+    <h1 style = "font-weight : bold; text-align : center;">Stock Exchanges</h1>
+  <p></p>
+</div>
+  <table id="stocktable" class="table table-hover table-responsive">
+    <thead>
+    <tr>
+      <th id="name">Name</th>
+      <th id="location">Location</th>
+      <th id="currency">Currency</th>
+      <th id="points">Points</th>
+      <th id="change">Change</th>
+    </tr>
+    </thead>
+    <!-- Figure out how to add foreign currency signs.-->
+      <tbody>
+        {% for market in markets %}
+        <tr>
+         <td><a href="nasdaq.html">{{ market.name }}</a></td>
+         <td><a href="us.html">{{ market.location }}</a></td>
+         <td><a href="dollars.html">{{ market.currency }}</a></td>
+         <td>{{ market.points }}</td>
+         <td>{{ market.change }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+  </table>
+ </div>
+<!-- END PAGE CONTENT-->
+<!-- SCRIPT FOR SORTING-->
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script>
+  $(document).ready(function() {
+      $('#stocktable').DataTable();
+  } );
+</script>
+<!-- END SCRIPT FOR SORTING-->
+{% endblock %}

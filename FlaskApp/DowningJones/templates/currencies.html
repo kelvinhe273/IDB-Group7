@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- PAGE CONTENT -->
+ <div class="container-fluid">
+  <div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; boldackground-color: Gainsboro ">
+    <h1 style = "font-weight : bold; text-align : center;">Currency</h1>
+  <p></p>
+</div>
+  <table id="currencytable" class="table table-hover table-responsive">
+    <thead>
+    <tr>
+      <th id="name">Name</th>
+      <th id="stockexchange">Stock Exchange</th>
+      <th id="location">Location</th>
+      <th id="currencycode">Currency Code</th>
+      <th id="numberofusers">Number of Official Users</th>
+    </tr>
+    </thead>
+    <!-- Figure out how to add foreign currency signs.-->
+    <tbody>
+      {% for currency in currencies %}
+        <tr>
+         <td><a href="dollars.html">{{ currency.name }}</a></td>
+         <td><a href="nasdaq.html">{{ currency.exchange }}</a></td>
+         <td><a href="us.html">{{ currency.location }}</a></td>
+         <td>{{ currency.currency_code }}</td>
+         <td>{{ currency.number_of_official_users }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+  </table>
+ </div> 
+<!-- END PAGE CONTENT -->
+<!-- SCRIPT FOR SORTING-->
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script>
+  $(document).ready(function() {
+      $('#currencytable').DataTable();
+  } );
+</script>
+<!-- END SCRIPT FOR SORTING-->
+{% endblock %}
