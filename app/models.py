@@ -136,21 +136,24 @@ class Location(db.Model):
     iso = db.Column(db.String(2))
     name = db.Column(db.String(80))
     capital = db.Column(db.String(80))
+    exchange = db.Column(db.String(80))
     gdp = db.Column(db.Float)
     currency_id = db.Column(db.Integer, db.ForeignKey('currency.id'))
     exchanges = db.relationship('Exchange', backref='location', lazy='dynamic')
 
-    def __init__(self, name, capital, gdp, currency):
+    def __init__(self, name, capital, gdp, currency, exchange):
         """
         self.iso the two letter id for the country of the location
         self.name the name (country) of the location
         self.capital the capital of the location
         self.gdp the GDP(Nominal) of the location
         self.currency the currency of the location
+        self.exchange is the exchange with that location
         """
         self.iso = iso
         self.name = name
         self.capital = capital
+        self.exchange = exchange
         self.gdp = gdp
         self.currency = currency
 

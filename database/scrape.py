@@ -23,7 +23,7 @@ cur.execute('DROP TABLE IF EXISTS Exchange')
 cur.execute('CREATE TABLE Exchange (exchange TEXT, name TEXT, currency TEXT, location TEXT, market_cap_exchange TEXT)')
 
 cur.execute('DROP TABLE IF EXISTS Location')
-cur.execute('CREATE TABLE Location (name TEXT, iso TEXT, capital TEXT, gdp TEXT, currency TEXT)')
+cur.execute('CREATE TABLE Location (name TEXT, iso TEXT, capital TEXT, gdp TEXT, currency TEXT, location_exchange TEXT)')
 
 cur.execute('DROP TABLE IF EXISTS Currency')
 cur.execute('CREATE TABLE Currency (name TEXT,currency TEXT, locations TEXT, exchanges TEXT, exchange_rate Integer)')
@@ -202,6 +202,28 @@ for row in csv_f:
 			exchange_rate = .13
 			curName = 'Hong Kong dollar'
 
+		if location == 'Athens, Greece':
+			location_exchange = 'Athens Stock Exchange'
+		elif location == 'Toronto, Canada':
+			location_exchange = 'Toronto Stock Exchange'
+		elif location == 'Frankfurt, Germany':
+			location_exchange = 'Frankfurt Stock Exchange'
+		elif location == 'Munich, Germany':
+			location_exchange = 'Munich Stock Exchange'
+		elif location == 'Berlin, Germany':
+			location_exchange = 'Berlin Stock Exchange'
+		elif location == 'Taiwan':
+			location_exchange = 'Taiwan Stock Exchange'
+		elif location == 'Mexico':
+			location_exchange = 'Mexico Stock Exchange'
+		elif location == 'Hong Kong':
+			location_exchange = 'Hong Kong Stock Exchange'
+		elif location == 'France':
+			location_exchange = 'Paris Stock Exchange'
+		elif location == 'Great Britain':
+			location_exchange = 'London Stock Exchange'
+		elif location == 'USA':
+			location_exchange = 'National Market System'
 
 		cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency, Location , Open_Price, Previous_Price, Percent_Change, Year_High, Ask_Price, Eps, Peg, Days_Range, Percent_Change_Fifty, Percent_Change_Twohundred, Volume, Avg_Volume, Market_Cap) VALUES ( ?, ?, ?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ) ',
 			(symbol, name, exchange, currency, location , open_price, previous_price, percent_change, year_high, ask_price, eps, peg, days_range, percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap))
@@ -209,8 +231,8 @@ for row in csv_f:
 			(exchange,exchangeName, currency, location, market_cap_exchange))
 		cur.execute('INSERT INTO Currency (Name,Currency, Locations, Exchanges, Exchange_Rate) VALUES (?, ?, ?, ?, ?) ',
 			(curName, currency, location_cur, exchnages_cur, exchange_rate))
-		cur.execute('INSERT INTO Location (Name, Iso, Capital, Gdp, Currency) VALUES (?, ?, ?, ?, ?) ',
-			(location, iso,capital,gdp, currency))
+		cur.execute('INSERT INTO Location (Name, Iso, Capital, Gdp, Currency, Location_Exchange) VALUES (?, ?, ?, ?, ?, ?) ',
+			(location, iso,capital,gdp, currency, location_exchange))
 
 		conn.commit()
 
