@@ -29,3 +29,22 @@ html, body{
     padding:0;
     margin:0;
 }
+
+.carousel{
+    padding-left:0;
+    padding-right:0;
+    margin:0;
+}
+
+.carousel-inner{    
+    width:100%;
+    padding-left:0;
+    padding-right:0;
+    margin:0;
+}
+
+#myCarousel{
+    padding-left:0;
+    padding-right:0;
+    margin:0;
+}

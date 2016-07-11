@@ -2,7 +2,7 @@
 {% block body %}
 <!-- PAGE CONTENT -->
 <div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; background-color: Gainsboro ">
-  <h1 style = "font-weight : bold; text-align : center;">NASDAQ</h1>
+  <h1 style = "font-weight : bold; text-align : center;">{{market.name}}</h1>
 </div>
  <div class="container-fluid" style = "background-image: url(static/background4.jpg)">
   <div class="jumbotron" style = "background-image: url(static/background4.jpg)">
@@ -13,16 +13,13 @@
           <div class="col-xs-6">
               <div class="row" style = "background-color: #262626;color:white;">
                   <div class="col-xs-6">
-                    <h3>Points: 4,862.57</h3> 
-                  </div>
-                  <div class="col-xs-6">
-                    <h3>Location: New York, <a href="us.html">USA</a></h3>
+                    <h3>Location: <a href="/location/{{market.location}}">{{market.location}}</a></h3>
                   </div>
                     <div class="col-xs-6">
-                    <h3>Change: -2.46%</h3> 
+                    <h3>Market Cap: {{market.market_cap_exchange}}</h3> 
                   </div>
                   <div class="col-xs-6">
-                    <h3>Currency: <a href="dollars.html">Dollars</a></h3>
+                    <h3>Currency: <a href="/currency/{{market.currency}}">{{market.currency}}</a></h3>
                   </div>
                   </div>
                   <div class="container-fluid" style = "background-color:lightgrey;width:100%">
