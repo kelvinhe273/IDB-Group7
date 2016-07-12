@@ -57,6 +57,10 @@ html, body{
 
 .table-striped>tbody>tr:nth-child(odd)>td, 
 .table-striped>tbody>tr:nth-child(odd)>th {
-   background-color: lightgreen;
+   background-color: lightseagreen;
  }
 
+.table-striped>tbody>tr:nth-child(even)>td, 
+.table-striped>tbody>tr:nth-child(even)>th {
+   background-color: #eeeeee;
+ }

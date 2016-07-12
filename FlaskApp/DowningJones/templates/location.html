@@ -2,22 +2,25 @@
 {% block body %}
 <style>
 body{
-    background-image: url("../static/background3.png") !important;
+    background:linear-gradient(rgba(200,265,265,0.45), rgba(265,265,265,0.45)), url("../static/background3.png");
     background-size: cover !important;
 }
 </style>
 <!-- PAGE CONTENT -->
-<div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; background-color: Gainsboro ">
-  <h1 style = "font-weight : bold; text-align : center;">{{location.name}}</h1>
-</div>
 <!-- End Well -->
 <!-- PAGE CONTENT -->
 
 <div class="content">
+  <div class="row" style="padding:30px">
+    <div class="col-md-4"></div>
+    <div class="col-md-4" style="text-align: center">
+      <h1 style = "font-weight : bold">{{location.name}}</h1>
+    </div>
+  </div>
     <div class="row" style="padding:50px">
         <div class="col-md-2"></div>
         <div class="col-md-4">
-            <img id="location-pic" src="../static/{{location.iso}}.gif" height="500" width= "400">
+            <img id="location-pic" src="../static/{{location.iso}}-map.gif" height="500" width= "400">
         </div>
         <div class="col-md-1"></div>
 

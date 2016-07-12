@@ -2,16 +2,47 @@
 {% block body %}
 <style>
 body{
-    background-image: url("../static/background3.png") !important;
+    background:linear-gradient(rgba(200,265,265,0.45), rgba(265,265,265,0.45)), url("../static/background3.png");
     background-size: cover !important;
 }
 </style>
 <!-- PAGE CONTENT -->
-<div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; background-color: Gainsboro ">
-  <h1 style = "font-weight : bold; text-align : center;">{{market.name}}</h1>
-</div>
+
+ <!--div class="container-fluid" style = "background-image: url(static/background4.jpg)">
+  <div class="jumbotron" style = "background-image: url(static/background4.jpg)">
+      <div class="row">
+		  <div class="col-xs-6" align="middle">
+              <img src="../static/{{market.exchange}}-SE.gif" height="100" width="300" border="1px">
+          </div>
+          <div class="col-xs-6">
+              <div class="row" style = "background-color: #262626;color:white;">
+                    <h3>Location: <a href="/location/{{market.location}}">{{market.location}}</a></h3>
+                    <h3>Market Cap: {{market.market_cap_exchange}}</h3> 
+                    <h3>Currency: <a href="/currency/{{market.currency}}">{{market.currency}}</a></h3>
+                  </div>
+                  <div class="container-fluid" style = "background-color:lightgrey;width:100%">
+                    <div class="row">
+                      <div class="col-xs-12" style ="text-align: center; border-right: 1px solid black">
+                        <h5 style = "border-bottom: 1px solid grey"><a href="company1.html">Yahoo </a></h5>
+                        <p></p>
+                        <h5 style = "border-bottom: 1px solid grey">1-800-Flowers</h5>
+                        <p></p>
+                        <h5 style = "border-bottom: 1px solid grey">21st Century Fox</h5>
+                        <p></p>
+                      </div>
+                    </div>
+              </div>
+          </div>
+      </div>
+  </div-->
 
 <div class="content">
+  <div class="row" style="padding:30px">
+    <div class="col-md-4"></div>
+    <div class="col-md-4" style="text-align: center">
+      <h1 style = "font-weight : bold">{{market.name}}</h1>
+    </div>
+  </div>
     <div class="row" style="padding:50px">
         <div class="col-md-2"></div>
         <div class="col-md-4">
@@ -44,6 +75,8 @@ body{
             </div>
         </div>
     </div>
+
+    <div class
 </div>
  <!-- END PAGE CONTENT -->
 {% endblock %}

@@ -2,47 +2,14 @@
 {% block body %}
 <style>
 body{
-    background-image: url("../static/background3.png") !important;
+    background:linear-gradient(rgba(200,265,265,0.45), rgba(265,265,265,0.45)), url("../static/background3.png");
     background-size: cover !important;
 }
 </style>
 <!-- Header Well -->
-<div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; background-color: Gainsboro ">
-  <h1 style = "font-weight : bold; text-align : center;">{{ company.name }}</h1>
-  <p></p>
-  <h3 style = "font-weight : bold; text-align : center">{{ company.symbol }}<a href="/locations/{{company.rowid}}">{{ company.location }}</a></h3>
-
-</div>
 <!-- End Well -->
 <!-- PAGE CONTENT -->
-<!--div class="container-fluid" style = "background-image: url(static/background4.jpg)">
-  <div class="jumbotron">
-      <div class="row">
-          <div class="col-xs-4">
-              <div class="row">
-                  <div class="col-xs-12">
-                    <h4>Price: {{company.ask_price}} </h4>
-                      <h4>Currency: <a href="/currency/{{company.currency}}">{{company.currency}} </a></h4>
-                    <h4>Stock Exchange: <a href="/stockmarkets/{{company.exchange}}">{{company.exchange}}</a></h4>
-                  </div>
-                  <div class="col-xs-12">
-                    <h4>Percent Change: {{company.percent_change}}</h4>
-                    <p></p>
-                    <h4>Start: {{company.open_price}} {{company.currency}}  </h4>
-					<h4> End: {{company.previous_price}}{{company.currency}}</h4>
-                
-                  </div>
-                  <div class="col-xs-12"><h4></h4></div>
-                  <p></p>
-              </div>
-          </div>
-          <div class="col-xs-8">
-              <h3 style = "text-align:center">
-                <img src="http://chart.finance.yahoo.com/z?s={{company.symbol}}&t=6m&q=l&l=on&z=s&p=m50,m200"/>
-              </h3>
-          </div>
-      </div>
-  </div-->
+
   <!--div class="well well-md" style = "border-bottom: 3px solid; background-color: Gainsboro">
     <h1 style = "font-weight : bold; text-align : left">Additional Information</h1>
   </div>
@@ -77,6 +44,18 @@ body{
 
 
 <div class="content">
+  <div class="row" style="padding:30px">
+    <div class="col-md-4"></div>
+    <div class="col-md-4" style="text-align: center">
+      <h1 style = "font-weight : bold">{{company.name}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4" style="text-align: center">
+      <h1 style = "font-weight : bold">{{company.symbol}}</h1>
+    </div>
+  </div>
     <div class="row" style="padding:50px">
         <div class="col-md-2"></div>
         <div class="col-md-4">
