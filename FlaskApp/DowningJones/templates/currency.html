@@ -1,5 +1,10 @@
 {% extends "layout.html" %}
 {% block body %}
+<style>
+a{
+	color: white;
+}
+</style>
 <!-- PAGE CONTENT -->
 <div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; background-color: Gainsboro ">
   <h1 style = "font-weight : bold; text-align : center;">{{currency.name}}</h1>
@@ -12,18 +17,10 @@
           </div>
           <div class="col-xs-6">
               <div class="row" style = "background-color: #262626;color:white;">
-                  <div class="col-xs-6">
                     <h3>Location: <a href="/currency/{{currency.location}}">{{currency.location}}</a></h3>
-                  </div>
-                    <div class="col-xs-6">
                     <h3>Exchanges: <a href="/currency/{{currency.exchanges}}">{{currency.exchanges}}</a></h3> 
-                  </div>
-                  <div class="col-xs-6">
                     <h3>Currency Symbol: <a href="/currency/{{currency.currency}}">{{currency.currency}}</a></h3>
-                  </div>
-                  <div class="col-xs-6">
                     <h3>Exchange Rate: {{currency.exchange_rate}}</a></h3>
-                  </div>
                   </div>
           </div>
       </div>

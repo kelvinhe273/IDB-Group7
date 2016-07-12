@@ -4,7 +4,7 @@
 <div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; background-color: Gainsboro ">
   <h1 style = "font-weight : bold; text-align : center;">{{ company.name }}</h1>
   <p></p>
-  <h3 style = "font-weight : bold; text-align : center">{{ company.symbol }} :<a href="/locations/{{company.rowid}}">{{ company.location }}</a></h3>
+  <h3 style = "font-weight : bold; text-align : center">{{ company.symbol }}<a href="/locations/{{company.rowid}}">{{ company.location }}</a></h3>
 </div>
 <!-- End Well -->
 <!-- PAGE CONTENT -->
@@ -14,16 +14,16 @@
           <div class="col-xs-4">
               <div class="row">
                   <div class="col-xs-12">
-                    <h4>Price: {{company.ask_price}} Currency: <a href="/currency/{{company.currency}}">{{company.currency}} </a></h4>
-                    <p></p>
-                    <h5 style = "border-bottom: 1px solid grey">Stock Exchange: <a href="/stockmarkets/{{company.exchange}}">{{company.exchange}}</a></h5>
-                    <p></p>
+                    <h4>Price: {{company.ask_price}} </h4>
+                      <h4>Currency: <a href="/currency/{{company.currency}}">{{company.currency}} </a></h4>
+                    <h4>Stock Exchange: <a href="/stockmarkets/{{company.exchange}}">{{company.exchange}}</a></h4>
                   </div>
                   <div class="col-xs-12">
                     <h4>Percent Change: {{company.percent_change}}</h4>
                     <p></p>
-                    <h5 style = "border-bottom: 1px solid grey">Start: {{company.open_price}} {{company.currency}}  End: {{company.previous_price}}{{company.currency}}</h5>
-                    <p></p>
+                    <h4>Start: {{company.open_price}} {{company.currency}}  </h4>
+					<h4> End: {{company.previous_price}}{{company.currency}}</h4>
+                
                   </div>
                   <div class="col-xs-12"><h4></h4></div>
                   <p></p>

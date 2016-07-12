@@ -7,20 +7,14 @@
  <div class="container-fluid" style = "background-image: url(static/background4.jpg)">
   <div class="jumbotron" style = "background-image: url(static/background4.jpg)">
       <div class="row">
-        <div class="col-xs-6">
-              <img src="static/nasdaq_f.jpg" height="600" width= "100%" border="1px">
+		  <div class="col-xs-6" align="middle">
+              <img src="../static/{{market.exchange}}-SE.gif" height="100" width="300" border="1px">
           </div>
           <div class="col-xs-6">
               <div class="row" style = "background-color: #262626;color:white;">
-                  <div class="col-xs-6">
                     <h3>Location: <a href="/location/{{market.location}}">{{market.location}}</a></h3>
-                  </div>
-                    <div class="col-xs-6">
                     <h3>Market Cap: {{market.market_cap_exchange}}</h3> 
-                  </div>
-                  <div class="col-xs-6">
                     <h3>Currency: <a href="/currency/{{market.currency}}">{{market.currency}}</a></h3>
-                  </div>
                   </div>
                   <div class="container-fluid" style = "background-color:lightgrey;width:100%">
                     <div class="row">

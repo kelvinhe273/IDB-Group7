@@ -1,12 +1,13 @@
 {% extends "layout.html" %}
 {% block body %}
+
 <!-- PAGE CONTENT -->
  <div class="container-fluid">
   <div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; boldackground-color: Gainsboro ">
     <h1 style = "font-weight : bold; text-align : center;">Currency</h1>
   <p></p>
 </div>
-  <table id="currencytable" class="table table-hover table-responsive">
+  <table id="currencytable" class="table table-hover table-striped table-responsive table-bordered">
     <thead>
     <tr>
       <th id="name">Name</th>
@@ -41,5 +42,6 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
       $('#currencytable').DataTable();
   } );
 </script>
+
 <!-- END SCRIPT FOR SORTING-->
 {% endblock %}
