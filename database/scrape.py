@@ -21,13 +21,13 @@ cur.execute('DROP TABLE IF EXISTS Company')
 cur.execute('CREATE TABLE Company (symbol TEXT, name TEXT, exchange TEXT, currency TEXT, location TEXT, open_price TEXT, previous_price TEXT, percent_change TEXT, year_high TEXT, ask_price TEXT, eps TEXT, peg TEXT,days_range TEXT, percent_change_fifty TEXT, percent_change_twohundred TEXT, volume TEXT, avg_volume TEXT, market_cap TEXT)')
 
 cur.execute('DROP TABLE IF EXISTS Exchange')
-cur.execute('CREATE TABLE Exchange (exchange TEXT, name TEXT, currency TEXT, location TEXT, market_cap_exchange TEXT, UNIQUE(exchange))')
+cur.execute('CREATE TABLE Exchange (exchange TEXT, name TEXT, currency TEXT, location TEXT, market_cap_exchange TEXT, UNIQUE(exchange), FOREIGN KEY(exchange) REFERENCES Company(rowid))')
 
 cur.execute('DROP TABLE IF EXISTS Location')
-cur.execute('CREATE TABLE Location (name TEXT, iso TEXT, capital TEXT, gdp TEXT, currency TEXT, location_exchange TEXT)')
+cur.execute('CREATE TABLE Location (name TEXT, iso TEXT, capital TEXT, gdp TEXT, currency TEXT, location_exchange TEXT, FOREIGN KEY(name) REFERENCES Company(rowid))')
 
 cur.execute('DROP TABLE IF EXISTS Currency')
-cur.execute('CREATE TABLE Currency (name TEXT,currency TEXT, locations TEXT, exchanges TEXT, exchange_rate Integer)')
+cur.execute('CREATE TABLE Currency (name TEXT,currency TEXT, locations TEXT, exchanges TEXT, exchange_rate Integer, FOREIGN KEY(name) REFERENCES Location(rowid), FOREIGN KEY(name) REFERENCES Exchange(rowid))')
 
 
 f = open('yahoo.csv')
