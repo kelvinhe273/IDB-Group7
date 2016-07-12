@@ -8,8 +8,8 @@ class Exchange(db.Model):
     market_cap_exchange = db.Column(db.String(80))
     # location_id = db.Column(db.Integer, db.ForeignKey('Location.lid'))
     # location = db.relationship('Location', uselist=False)
-    # currency_id = db.Column(db.Integer, db.ForeignKey('currency.cid'))
-    cid = db.relationship('Currency', uselist=False, back_populates = "exchanges")
+    cid = db.Column(db.Integer, db.ForeignKey('Currency.cid'))
+    currency = db.relationship('Currency', back_populates = "exchanges")
 
     def __init__(self, name, name_code, change, location, currency):
         """
@@ -43,7 +43,7 @@ class Currency(db.Model):
     
     # exchange_id = db.Column(db.Integer, db.ForeignKey('Exchange.ID'))
     ID = db.Column(db.Integer, db.ForeignKey('Exchange.ID'))
-    ID = db.relationship('Exchange', back_populates = "currency")
+    exchanges = db.relationship('Exchange', back_populates = "currency")
     # locations = db.relationship('Location', backref='currency', lazy='dynamic')
 
     def __init__(self, name, code, locations, exchanges, exchange_rate):
