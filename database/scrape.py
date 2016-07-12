@@ -17,17 +17,21 @@ quote_url = base_url + "Quote/"
 
 conn = sqlite3.connect('test.db')
 cur = conn.cursor()
-cur.execute('DROP TABLE IF EXISTS Company')
-cur.execute('CREATE TABLE Company (symbol TEXT, name TEXT, exchange TEXT, currency TEXT, location TEXT, open_price TEXT, previous_price TEXT, percent_change TEXT, year_high TEXT, ask_price TEXT, eps TEXT, peg TEXT,days_range TEXT, percent_change_fifty TEXT, percent_change_twohundred TEXT, volume TEXT, avg_volume TEXT, market_cap TEXT)')
+
+cur.execute('PRAGMA foreign_keys = ON')
 
 cur.execute('DROP TABLE IF EXISTS Exchange')
-cur.execute('CREATE TABLE Exchange (exchange TEXT, name TEXT, currency TEXT, location TEXT, market_cap_exchange TEXT, UNIQUE(exchange), FOREIGN KEY(exchange) REFERENCES Company(rowid))')
+cur.execute('CREATE TABLE Exchange (ID INTEGER PRIMARY KEY AUTOINCREMENT,exchange TEXT, name TEXT, currency TEXT, location TEXT, market_cap_exchange TEXT, UNIQUE(id))')
+
+cur.execute('DROP TABLE IF EXISTS Company')
+cur.execute('CREATE TABLE Company (rid INTEGER PRIMARY KEY AUTOINCREMENT,symbol TEXT, name TEXT, exchange TEXT, currency TEXT, location TEXT, open_price TEXT, previous_price TEXT, percent_change TEXT, year_high TEXT, ask_price TEXT, eps TEXT, peg TEXT,days_range TEXT, percent_change_fifty TEXT, percent_change_twohundred TEXT, volume TEXT, avg_volume TEXT, market_cap TEXT, FOREIGN KEY(rid) REFERENCES Exchange(id))')
+ 
 
 cur.execute('DROP TABLE IF EXISTS Location')
-cur.execute('CREATE TABLE Location (name TEXT, iso TEXT, capital TEXT, gdp TEXT, currency TEXT, location_exchange TEXT, FOREIGN KEY(name) REFERENCES Company(rowid))')
+cur.execute('CREATE TABLE Location (lid INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT, iso TEXT, capital TEXT, gdp TEXT, currency TEXT, location_exchange TEXT, FOREIGN KEY(lid) REFERENCES Company(rid))')
 
 cur.execute('DROP TABLE IF EXISTS Currency')
-cur.execute('CREATE TABLE Currency (name TEXT,currency TEXT, locations TEXT, exchanges TEXT, exchange_rate Integer, FOREIGN KEY(name) REFERENCES Location(rowid), FOREIGN KEY(name) REFERENCES Exchange(rowid))')
+cur.execute('CREATE TABLE Currency (cid INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,currency TEXT, locations TEXT, exchanges TEXT, exchange_rate Integer, FOREIGN KEY(cid) REFERENCES Location(lid), FOREIGN KEY(cid) REFERENCES Exchange(ID))')
 
 
 f = open('yahoo.csv')
@@ -227,31 +231,45 @@ for row in csv_f:
 			location_exchange = 'National Market System'
 
 		
-		
+		cur.execute('INSERT INTO Exchange (Exchange, Name, Currency, Location , Market_Cap_Exchange) VALUES ( ?, ?, ?, ?, ?) ',
+			(exchange,exchangeName, currency, location, market_cap_exchange))
+
 		cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency, Location , Open_Price, Previous_Price, Percent_Change, Year_High, Ask_Price, Eps, Peg, Days_Range, Percent_Change_Fifty, Percent_Change_Twohundred, Volume, Avg_Volume, Market_Cap) VALUES ( ?, ?, ?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ) ',
 			(symbol, name, exchange, currency, location , open_price, previous_price, percent_change, year_high, ask_price, eps, peg, days_range, percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap))
-			
-		try:
-			print(location)
-			cur.execute('INSERT INTO Exchange (Exchange, Name, Currency, Location , Market_Cap_Exchange) VALUES ( ?, ?, ?, ?, ?) ',
-				(exchange,exchangeName, currency, location, market_cap_exchange))
-			cur.execute('INSERT INTO Currency (Name,Currency, Locations, Exchanges, Exchange_Rate) VALUES (?, ?, ?, ?, ?) ',
-				(curName, currency, location_cur, exchnages_cur, exchange_rate))
-			cur.execute('INSERT INTO Location (Name, Iso, Capital, Gdp, Currency, Location_Exchange) VALUES (?, ?, ?, ?, ?, ?) ',
-				(location, iso,capital,gdp, currency, location_exchange))
-
-		except sqlite3.IntegrityError:
-			conn.commit()
-			continue
-
 		
-		conn.commit()
+		cur.execute('INSERT INTO Location (Name, Iso, Capital, Gdp, Currency, Location_Exchange) VALUES (?, ?, ?, ?, ?, ?) ',
+		(location, iso,capital,gdp, currency, location_exchange))
+
+		cur.execute('INSERT INTO Currency (Name,Currency, Locations, Exchanges, Exchange_Rate) VALUES (?, ?, ?, ?, ?) ',
+		(curName, currency, location_cur, exchnages_cur, exchange_rate))
+		
 
 
-print 'Location:'
+		print(location)
+
+		# try:
+		# 	print(location)
+		# 	# cur.execute('INSERT INTO Exchange (Exchange, Name, Currency, Location , Market_Cap_Exchange) VALUES ( ?, ?, ?, ?, ?) ',
+		# 	# (exchange,exchangeName, currency, location, market_cap_exchange))
+		# # 	# cur.execute('INSERT INTO Currency (Name,Currency, Locations, Exchanges, Exchange_Rate) VALUES (?, ?, ?, ?, ?) ',
+		# # 	# 	(curName, currency, location_cur, exchnages_cur, exchange_rate))
+		# # 	# cur.execute('INSERT INTO Location (Name, Iso, Capital, Gdp, Currency, Location_Exchange) VALUES (?, ?, ?, ?, ?, ?) ',
+		# # 	# 	(location, iso,capital,gdp, currency, location_exchange))
+
+		# except sqlite3.IntegrityError:
+		# 	# cur.execute('PRAGMA foreign_keys = ON')	
+		# 	conn.commit()
+		# 	continue
+
+		# cur.execute('PRAGMA foreign_keys = ON')	
+		conn.commit()	
+
+
+
+print('Location:')
 cur.execute('SELECT * FROM Location')
 for row in cur :
-	print row
+	print(row)
 conn.commit()
 cur.close()
 
