@@ -2,13 +2,14 @@ from flask import Flask
 from __init__ import db
 
 class Exchange(db.Model):
-    rowid = db.Column(db.Integer, primary_key=True)
+    ID = db.Column(db.Integer, primary_key=True)
     exchange = db.Column(db.String(80))
     name = db.Column(db.String(80))
     market_cap_exchange = db.Column(db.String(80))
-    # location_id = db.Column(db.Integer, db.ForeignKey('location.id'))
+    # location_id = db.Column(db.Integer, db.ForeignKey('Location.lid'))
     # location = db.relationship('Location', uselist=False)
-    # currency_id = db.Column(db.Integer, db.ForeignKey('currency.id'))
+    # currency_id = db.Column(db.Integer, db.ForeignKey('currency.cid'))
+    cid = db.relationship('Currency', uselist=False, back_populates = "exchanges")
 
     def __init__(self, name, name_code, change, location, currency):
         """
@@ -31,13 +32,18 @@ class Exchange(db.Model):
         return '<Exchange %r>' % self.name
 
 class Currency(db.Model):
-    rowid = db.Column(db.Integer, primary_key=True)    #pk can be the iso code
+    # __tablename__ = 'Currency'
+    cid = db.Column(db.Integer, primary_key=True)    #pk can be the iso code
     name = db.Column(db.String(80))
     currency = db.Column(db.String(80))
     locations = db.Column(db.String(80))
-    exchanges = db.Column(db.String(80))
+    # exchanges = db.Column(db.String(80))
     exchange_rate = db.Column(db.Integer)
-    # exchanges = db.relationship('Exchange', backref='currency', lazy='dynamic')
+
+    
+    # exchange_id = db.Column(db.Integer, db.ForeignKey('Exchange.ID'))
+    ID = db.Column(db.Integer, db.ForeignKey('Exchange.ID'))
+    ID = db.relationship('Exchange', back_populates = "currency")
     # locations = db.relationship('Location', backref='currency', lazy='dynamic')
 
     def __init__(self, name, code, locations, exchanges, exchange_rate):
@@ -61,7 +67,7 @@ class Currency(db.Model):
         return '<Currency %r>' % self.name
 
 class Company(db.Model):
-    rowid = db.Column(db.Integer, primary_key=True)
+    rid = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     symbol = db.Column(db.String(80))
     open_price = db.Column(db.String(80))
@@ -131,12 +137,12 @@ class Company(db.Model):
         return '<Company %r>' % self.name
 
 class Location(db.Model):
-    rowid = db.Column(db.Integer, primary_key=True)        #pk can be the iso code
+    lid = db.Column(db.Integer, primary_key=True)        #pk can be the iso code
     iso = db.Column(db.String(2))
     name = db.Column(db.String(80))
     capital = db.Column(db.String(80))
     gdp = db.Column(db.Float)
-    # currency_id = db.Column(db.Integer, db.ForeignKey('currency.id'))
+    # currency_id = db.Column(db.Integer, db.ForeignKey('Currency.cid'))
     # exchanges = db.relationship('Exchange', backref='location', lazy='dynamic')
 
     def __init__(self, name, capital, gdp, currency):
