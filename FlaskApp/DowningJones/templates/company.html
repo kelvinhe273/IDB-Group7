@@ -1,14 +1,21 @@
 {% extends "layout.html" %}
 {% block body %}
+<style>
+body{
+    background-image: url("../static/background3.png") !important;
+    background-size: cover !important;
+}
+</style>
 <!-- Header Well -->
 <div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; background-color: Gainsboro ">
   <h1 style = "font-weight : bold; text-align : center;">{{ company.name }}</h1>
   <p></p>
   <h3 style = "font-weight : bold; text-align : center">{{ company.symbol }}<a href="/locations/{{company.rowid}}">{{ company.location }}</a></h3>
+
 </div>
 <!-- End Well -->
 <!-- PAGE CONTENT -->
-<div class="container-fluid" style = "background-image: url(static/background4.jpg)">
+<!--div class="container-fluid" style = "background-image: url(static/background4.jpg)">
   <div class="jumbotron">
       <div class="row">
           <div class="col-xs-4">
@@ -35,8 +42,8 @@
               </h3>
           </div>
       </div>
-  </div>
-  <div class="well well-md" style = "border-bottom: 3px solid; background-color: Gainsboro">
+  </div-->
+  <!--div class="well well-md" style = "border-bottom: 3px solid; background-color: Gainsboro">
     <h1 style = "font-weight : bold; text-align : left">Additional Information</h1>
   </div>
 </div>
@@ -66,5 +73,53 @@
     </div>
     <p></p>
   </div>
+</div-->
+
+
+<div class="content">
+    <div class="row" style="padding:50px">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <img id="company-pic" src="http://chart.finance.yahoo.com/z?s={{company.symbol}}&t=6m&q=l&l=on&z=s&p=m50,m200" height="400" width= "500">
+        </div>
+        <div class="col-md-1"></div>
+
+        <div class="col-md-2" id="content">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <b>{{company.name}}</b>
+                </div>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Price</th>
+                                <th>{{company.ask_price}}</th>
+                            </tr>
+                            <tr>
+                                <th>Currency</th>
+                                <th><!--<a href="nasdaq.html">-->{{company.currency}}<!--</a>--></th>
+                            </tr>
+                            <tr>
+                                <th>Stock Exchange</th>
+                                <th>{{company.ask_price}}</th>
+                            </tr>                            
+                            <tr>
+                                <th>Percent Change</th>
+                                <th>{{company.percent_change}}</th>
+                            </tr>
+                            <tr>
+                                <th>Start</th>
+                                <th>{{company.open_price}} {{company.currency}}</th>
+                            </tr>
+                            <tr>
+                                <th>End</th>
+                                <th>{{company.previous_price}}{{company.currency}}</th>
+                            </tr>                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
