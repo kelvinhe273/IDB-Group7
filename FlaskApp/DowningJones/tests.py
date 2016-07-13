@@ -77,7 +77,7 @@ class MyTest(TestCase):
         #assert it returns correct data
         self.assertEqual('USD', str(location.query.first().currency))
 
-        self.assertEqual('NMS', str(location.query.first().location_exchange))
+        self.assertEqual('National Market System', str(location.query.first().location_exchange))
 
     def test_exchange_commits(self):
         exchange = Exchange('NMS', 'National Market System', 'USD', 'USA', '19,223 billion')
