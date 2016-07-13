@@ -15,16 +15,20 @@
         <th id="capital">Capital</th>
         <th id="gdp">GDP</th>
         <th id="iso">ISO</th>
+        <th id="currency">Currency</th>
+        <th id="exchanges">Exchanges</th>
       </tr>
       </thead>
       <!-- Figure out how to add foreign currency signs.-->
        <tbody>
         {% for location in locations %}
           <tr>
-            <td><a href="/locations/{{location.rowid}}">{{ location.name }}</a></td>
+            <td><a style="color:blue" href="/locations/{{location.rowid}}">{{ location.name }}</a></td>
             <td>{{ location.capital }}</td>
             <td>{{ location.gdp }}</td>
             <td>{{ location.iso }}</td>
+            <td> <a style="color:blue" href="/currencies/{{location.rowid}}">{{ location.currency }}</a></td>
+            <td><a style="color:blue" href="/stockmarkets/{{location.rowid}}">{{ location.location_exchange }}</a></td>            
           </tr>
         {% endfor %}
         </tbody>

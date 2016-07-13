@@ -12,7 +12,7 @@ class Exchange(db.Model):
     # location = db.relationship('Location', uselist=False)
     # currency_id = db.Column(db.Integer, db.ForeignKey('currency.id'))
 
-    def __init__(self, name, name_code, change, location, currency):
+    def __init__(self, name, name_code, currency, location, market_cap):
         """
         self.name the name of the Exchange
         self.name_code the three letter symbol for the exchange
@@ -64,8 +64,11 @@ class Currency(db.Model):
 
 class Company(db.Model):
     rowid = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80))
     symbol = db.Column(db.String(80))
+    name = db.Column(db.String(80))
+    exchange = db.Column(db.String(80))
+    currency = db.Column(db.String(80))
+    location = db.Column(db.String(80))
     open_price = db.Column(db.String(80))
     previous_price = db.Column(db.String(80))
     percent_change = db.Column(db.String(80))
@@ -86,7 +89,9 @@ class Company(db.Model):
     # currency_id = db.Column(db.Integer, db.ForeignKey('currency.id'))
     # currency = db.relationship('Currency', uselist=False)
 
-    def __init__(self, name, symbol, location, exchange, currency, open_price, prev_price, percent_change, year_high, ask_price, eps, peg, days_range, percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap):
+    def __init__(self, symbol, name, exchange, currency, location, open_price, 
+        prev_price, percent_change, year_high, ask_price, eps, peg, days_range, 
+        percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap):
         """
         self.name the name of the Company
         self.symbol the symbol of the Company
@@ -134,14 +139,14 @@ class Company(db.Model):
 
 class Location(db.Model):
     rowid = db.Column(db.Integer, primary_key=True)        #pk can be the iso code
-    iso = db.Column(db.String(2))
     name = db.Column(db.String(80))
+    iso = db.Column(db.String(2))
     capital = db.Column(db.String(80))
-    gdp = db.Column(db.Float)
-    # currency_id = db.Column(db.Integer, db.ForeignKey('currency.id'))
-    # exchanges = db.relationship('Exchange', backref='location', lazy='dynamic')
+    gdp = db.Column(db.String(80))
+    currency = db.Column(db.String(80))
+    location_exchange = db.Column(db.String(80))
 
-    def __init__(self, name, capital, gdp, currency):
+    def __init__(self, name, iso, capital, gdp, currency, location_exchange):
         """
         self.iso the two letter id for the country of the location
         self.name the name (country) of the location
@@ -154,6 +159,7 @@ class Location(db.Model):
         self.capital = capital
         self.gdp = gdp
         self.currency = currency
+        self.location_exchange = location_exchange
 
     def __repr__(self):
         """

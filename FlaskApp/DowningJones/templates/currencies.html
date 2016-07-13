@@ -14,8 +14,8 @@
     <tr>
       <th id="name">Name</th>
       <th id="currencycode">Currency Code</th>
-      <th id="exchangerate">Exchange Rate (To U.S Dollar)</th>
-      <th id="exchangerate">Exchange Rate (To U.S Dollar)</th>
+      <th id="exchange">Exchange</th>
+      <th id="location">Location</th>
       <th id="exchangerate">Exchange Rate (To U.S Dollar)</th>
     </tr>
     </thead>
@@ -23,8 +23,10 @@
     <tbody>
       {% for currency in currencies %}
         <tr>
-         <td><a href="/currencies/{{currency.rowid}}">{{ currency.name }}</a></td>
+         <td><a style="color:blue" href="/currencies/{{currency.rowid}}">{{ currency.name }}</a></td>
          <td>{{ currency.currency }}</td>
+          <td><a style="color:blue" href="/stockmarkets/{{currency.rowid}}">{{ currency.exchanges }}</a></td>           
+         <td><a style="color:blue" href="/locations/{{currency.rowid}}">{{ currency.locations }}</a></td>
          <td>{{ currency.exchange_rate }}</td>
         </tr>
       {% endfor %}
