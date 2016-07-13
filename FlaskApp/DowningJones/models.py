@@ -89,7 +89,7 @@ class Company(db.Model):
     # currency_id = db.Column(db.Integer, db.ForeignKey('currency.id'))
     # currency = db.relationship('Currency', uselist=False)
 
-    def __init__(self, name, symbol, location, exchange, currency, open_price, prev_price, percent_change, year_high, ask_price, eps, peg, days_range, percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap):
+    def __init__(self, symbol, name, exchange, currency, location, open_price, prev_price, percent_change, year_high, ask_price, eps, peg, days_range, percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap):
         """
         self.name the name of the Company
         self.symbol the symbol of the Company
