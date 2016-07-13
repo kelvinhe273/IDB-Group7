@@ -1,27 +1,36 @@
 {% extends "layout.html" %}
 {% block body %}
 <!-- PAGE CONTENT -->
-  <div class="container-fluid">
-    <div class="well well-lg" style = "border-top: 3px solid; border-bottom: 3px solid; margin-bottom:0px; boldackground-color: Gainsboro ">
-      <h1 style = "font-weight : bold; text-align : center;">Companies</h1>
-    <p></p>
-  </div>  <table id="companytable" class="table table-hover table-responsive">
-  <thead>
-    <tr>
-      <th id="name">Name</th>
-      <th id="symbol">Symbol</th>
-    </tr>
-    </thead>
-    <!-- Figure out how to add foreign currency signs.-->
-    <tbody>
-        {% for company in companies %}
-          <tr>
-            <td><a href="/companies/{{company.rowid}}">{{ company.name }}</a></td>
-            <td>{{ company.symbol }}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-  </table>
+<div class="container-fluid">
+  <div class="row" style="padding:30px">
+      <div class="col-md-4"></div>
+      <div class="col-md-4" style="text-align: center">
+        <h1 style = "font-weight : bold">Companies</h1>
+      </div>
+  </div> 
+    <table id="companytable" class="table table-hover table-striped table-responsive table-bordered">
+    <thead>
+      <tr>
+        <th id="name">Name</th>
+        <th id="symbol">Symbol</th>
+        <th id="exchange">Exchange</th>
+        <th id="currency">Currency</th>
+        <th id="location">Location</th>
+      </tr>
+      </thead>
+      <!-- Figure out how to add foreign currency signs.-->
+      <tbody>
+          {% for company in companies %}
+            <tr>
+              <td><a href="/companies/{{company.rowid}}">{{ company.name }}</a></td>
+              <td>{{ company.symbol }}</td>
+              <td><a href="/stockmarkets/{{company.rowid}}">{{ company.exchange }}</a></td>
+              <td><a href="/currencies/{{company.rowid}}">{{ company.currency }}</a></td>
+              <td><a href="/locations/{{company.rowid}}">{{ company.location }}</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>
  </div> 
 <!-- END PAGE CONTENT-->
 <!-- SCRIPT FOR SORTING-->
