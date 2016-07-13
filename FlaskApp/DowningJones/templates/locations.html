@@ -23,12 +23,12 @@
        <tbody>
         {% for location in locations %}
           <tr>
-            <td><a href="/locations/{{location.rowid}}">{{ location.name }}</a></td>
+            <td><a style="color:blue" href="/locations/{{location.rowid}}">{{ location.name }}</a></td>
             <td>{{ location.capital }}</td>
             <td>{{ location.gdp }}</td>
             <td>{{ location.iso }}</td>
-            <td> <a href="/currencies/{{location.rowid}}">{{ location.currency }}</a></td>
-            <td><a href="/stockmarkets/{{location.rowid}}">{{ location.location_exchange }}</a></td>            
+            <td> <a style="color:blue" href="/currencies/{{location.rowid}}">{{ location.currency }}</a></td>
+            <td><a style="color:blue" href="/stockmarkets/{{location.rowid}}">{{ location.location_exchange }}</a></td>            
           </tr>
         {% endfor %}
         </tbody>

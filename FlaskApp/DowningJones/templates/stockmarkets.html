@@ -22,11 +22,11 @@
             <tbody>
                 {% for market in markets %}
                 <tr>
-                    <td><a href="/stockmarkets/{{market.rowid}}">{{ market.name }}<a></td>
+                    <td><a style="color:blue" href="/stockmarkets/{{market.rowid}}">{{ market.name }}<a></td>
                     <td>{{ market.exchange }}</td>
                     <td>{{ market.market_cap_exchange }}</td>
-                    <td><a href="/locations/{{market.rowid}}">{{ market.location }}<a></td>
-                    <td><a href="/currencies/{{market.rowid}}">{{ market.currency }}<a></td>
+                    <td><a style="color:blue" href="/locations/{{market.rowid}}">{{ market.location }}<a></td>
+                    <td><a style="color:blue" href="/currencies/{{market.rowid}}">{{ market.currency }}<a></td>
                 </tr>
                 {% endfor %}
             </tbody>
