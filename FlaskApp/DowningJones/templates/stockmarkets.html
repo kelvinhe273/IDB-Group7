@@ -14,6 +14,8 @@
                     <th id="name">Name</th>
                     <th id="symbol">Symbol</th>
                     <th id="market_cap_exchange">Market Cap Exchange</th>
+                    <th id="location">Location</th>
+                    <th id="currency">Currency</th>
                 </tr>
             </thead>
             <!-- Figure out how to add foreign currency signs.-->
@@ -23,6 +25,8 @@
                     <td><a href="/stockmarkets/{{market.rowid}}">{{ market.name }}<a></td>
                     <td>{{ market.exchange }}</td>
                     <td>{{ market.market_cap_exchange }}</td>
+                    <td><a href="/locations/{{market.rowid}}">{{ market.location }}<a></td>
+                    <td><a href="/currencies/{{market.rowid}}">{{ market.currency }}<a></td>
                 </tr>
                 {% endfor %}
             </tbody>
