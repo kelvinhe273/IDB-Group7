@@ -33,7 +33,7 @@ class MyTest(TestCase):
         db.session.commit()
 
         #assert it retuns correct data
-        self.assertEqual('US Dollar', str(currency.query.first()))
+        self.assertEqual('<Currency \'US Dollar\'>', str(currency.query.first()))
 
     def test_currency_relations(self):
         currency = Currency('US Dollar', 'USD', "USA", "NMS", 1)
@@ -77,7 +77,7 @@ class MyTest(TestCase):
         #assert it returns correct data
         self.assertEqual('USD', str(location.query.first().currency))
 
-        self.assertEqual('<Exchange \'NMS\'>', str(location.query.first().exchanges.first()))
+        self.assertEqual('NMS', str(location.query.first().exchanges.first()))
 
     def test_exchange_commits(self):
         exchange = Exchange('NMS', 'National Market System', 'USD', 'USA', '19,223 billion')
