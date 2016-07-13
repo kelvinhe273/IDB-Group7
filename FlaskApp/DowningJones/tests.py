@@ -139,9 +139,9 @@ class MyTest(TestCase):
         #assert it retuns correct data
         self.assertEqual('USA', str(company.query.first().location))
 
-        self.assertEqual('<Exchange \'NMS\'>', str(company.query.first().exchange))
+        self.assertEqual('NMS', str(company.query.first().exchange))
 
-        self.assertEqual('<Currency \'US Dollar\'>', str(company.query.first().currency))
+        self.assertEqual('US Dollar', str(company.query.first().currency))
 
 if __name__ == "__main__" :
     unittest.main()
