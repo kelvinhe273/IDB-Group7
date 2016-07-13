@@ -5,127 +5,319 @@ HOST: downingjones.me
 The Downing Jones API allows for data requests on
 stock market exchanges, companies, locations, and currencies.
 
-# Group Stock Market Exchange
-## Stock Market Exchange List [/api/stockmarkets]
-### Obtain a list of stock market exchanges [GET]
-+ Response 200(application/json)
-    {
-        "exchanges": 
+# Downing Jones API Root [/api]
+This resource does not have any attributes. Instead it offers the initial API affordances in the form of the links in the JSON body.
+
+It is recommend to follow the “url” link values to retrieve resources.
+## Retrieve Entry Points [GET]
+
++ Response 200 (application/json)
+
+        {
+            "exchange_url": "/exchange",
+            "company_url": "/company",
+            "location_url": "/location",
+            "currency_url": "/currency"
+        }
+
+
+## Group Stock Market Exchanges
+
+Resources related to stock exchanges in the API.
+
+## Exchange [/exchange/{exchange_id}]
+
+A Exchange object has the following attributes:
+
++ id
++ name
++ exchange_symbol
++ market_cap
++ currency
++ location
+
++ Parameters
+    + id: 1 (required, number) - Name of the Exchange in form of a number
+
+### View an Exchange's Details [GET]
+
+
++ Response 200 (application/json)
+
         [
+            "exchange": 
             {
-                "name": NASDAQ,
-                "location": USA,
-                "currency": US Dollars,
-                "points": 4862.57,
-                "change": +.041%
-            },
-            {
-                "name": PAR,
-                "location": France,
-                "currency": Euro,
-                "points": 32.15,
-                "change": -2.46%
-            },
-            {
-                "name": LSE,
-                "location": Great Britain,
-                "currency": Pound sterling,
-                "points": 32.15,
-                "change": -2.46%
-            },
-        ]            
-    }
-    
-# Group Companies
-## Companies List [/api/companies]
-### Obtain a list of companies [GET]
-+ Response 200(application/json)
-    {
-        "companies": 
+                {
+                    "id": 1,
+                    "name": "NYSE",
+                    "location": "USA",
+                    "currency": "US Dollars",
+                    "points": 4862.57,
+                    "change": +.041%
+                }
+            }            
+        ]
+
+## Exchanges Collection [/exchange{?page}]
+
++ Parameters
+    + page: 1 (optional, number) - The page of exchanges to return
+
+### List All Exchanges [GET]
+
++ Response 200 (application/json)
+
         [
+            "exchange": 
             {
-                "name": Yahoo,
-                "symbol": YHOO,
-                "stock_exchange": NASDAQ,
-                "location": USA,
-                "currency": US Dollars
-            },
-            {
-                "name": Company 2,
-                "symbol": COM2,
-                "stock_exchange": PAR,
-                "location": France,
-                "currency": Euro
-            },
-            {
-                "name": Company 3,
-                "symbol": COM3,
-                "stock_exchange": LSE,
-                "location": Great Britain,
-                "currency": Pound sterling
-            },
-        ]            
-    }
-    
-# Group Locations
-## Locations List [/api/locations]
-### Obtain a list of various locations [GET]
-+ Response 200(application/json)
-    {
-        "locations": 
+                {
+                    "id": 1,
+                    "name": "NYSE",
+                    "location": "USA",
+                    "currency": "US Dollars",
+                    "points": 4862.57,
+                    "change": +.041%
+                },
+                {
+                    "id": 2,
+                    "name": "PAR",
+                    "location": "France",
+                    "currency": "Euro",
+                    "points": 32.15,
+                    "change": -2.46%
+                },
+                {
+                    "id": 3,
+                    "name": "LSE",
+                    "location": "Great Britain",
+                    "currency": "Pound sterling",
+                    "points": 32.15,
+                    "change": -2.46%
+                },
+            }            
+        ]
+
+## Group Companies
+
+Resources related to companies in the API.
+
+## Company [/company/{company_id}]
+
+A Company object has the following attributes:
+
++ id
++ name
++ symbol
++ stock_exchange
++ location
++ currency
+
++ Parameters
+    + company_id: 1 (required, number) - Name of the Company in form of a number
+
+### View a Company's Details [GET]
+
++ Response 200 (application/json)
+
         [
+            "company": 
             {
-                "location": USA,
-                "capital": Washington, D.C.,
-                "exchange": NASDAQ,
-                "currency": US Dollars,
-                "GDP (Nominal)": $18.558 trillion 
-                
-            },
-            {
-                "location": France,
-                "capital": Paris,
-                "exchange": PAR,
-                "currency": Euro,
-                "GDP (Nominal)": $2.647 trillion
-            },
-            {
-                "location": United Kingdom,
-                "capital": London,
-                "exchange": LSE,
-                "currency": Pound sterling,
-                "GDP (Nominal)": $2.849 trillion
-            },
-        ]            
-    }
-    
-# Group Currencies
-## Currencies List [/api/currencies]
-### Obtain a list of various currencies [GET]
-+ Response 200(application/json)
-    {
-        "currencies": 
+                {
+                    "id": 1,
+                    "name": "Yahoo",
+                    "symbol": "YHOO",
+                    "stock_exchange": "NYSE",
+                    "location": "USA",
+                    "currency": "US Dollars"
+                }
+            }            
+        ]
+
+## Companies Collection [/company{?page}]
+
++ Parameters
+    + page: 1 (optional, number) - The page of companies to return
+
+### List All Companies [GET]
+
++ Response 200 (application/json)
+
         [
+            "companies": 
             {
-                "name": US Dollars,
-                "currency code": USD
-                "exchange": NASDAQ,
-                "location": USA,
-                "# of official users": 9
-            },
+                {
+                    "id": 1,
+                    "name": "Yahoo",
+                    "symbol": "YHOO",
+                    "stock_exchange": "NYSE",
+                    "location": "USA",
+                    "currency": "US Dollars"
+                },
+                {
+                    "id": 2,
+                    "name": "XILAM Animation",
+                    "symbol": "XIL.PA",
+                    "stock_exchange": "PAR",
+                    "location": "France",
+                    "currency": "Euro"
+                },
+                {
+                    "id": 3,
+                    "name": "The Vitec Group",
+                    "symbol": "VTC.L",
+                    "stock_exchange": "LSE",
+                    "location": "Great Britain",
+                    "currency": "Pound sterling"
+                }
+            }      
+        ]
+
+## Group Locations
+
+Resources related to location in the API.
+
+## Location [/location/{location_id}]
+
+A Location object has the following attributes:
+
++ id
++ name
++ iso
++ capital
++ GDP
++ currency
++ location
+
++ Parameters
+    + location_id: 1 (required, number) - Name of the Location in form of a number
+
+### View a Location's Details [GET]
+
++ Response 200 (application/json)
+
+        [
+            "location": 
             {
-                "name": Euro,
-                "currency code": EUR
-                "exchange": PAR,
-                "location": France,
-                "# of official users": 19
-            },            
+                {
+                    "id": 1,
+                    "location": "USA",
+                    "capital": "Washington, D.C.",
+                    "stock_exchange": "NYSE",
+                    "currency": US Dollars,
+                    "GDP (Nominal)": $18.558 trillion
+                }
+            }            
+        ]
+
+## Locations Collection [/location{?page}]
+
++ Parameters
+    + page: 1 (optional, number) - The page of companies to return
+
+### List All Locations [GET]
+
++ Response 200 (application/json)
+
+        [
+            "location": 
             {
-                "name": Pound sterling,
-                "currency code": GBP,
-                "exchange": LSE,
-                "location": Great Britain,
-                "# of official users": 1
-            },
-        ]            
-    }
+                {
+                    "id": 1,
+                    "location": "USA",
+                    "capital": "Washington, D.C.",
+                    "stock_exchange": "NYSE",
+                    "currency": "USD",
+                    "GDP (Nominal)": "$18.558 trillion" 
+                    
+                },
+                {
+                    "id": 2,
+                    "location": "France",
+                    "capital": "Paris",
+                    "stock_exchange": "PAR",
+                    "currency": "EUR",
+                    "GDP (Nominal)": "$2.647 trillion"
+                },
+                {
+                    "id": 3,
+                    "location": "United Kingdom",
+                    "capital": "London",
+                    "stock_exchange": "LSE",
+                    "currency": "GBp",
+                    "GDP (Nominal)": "$2.849 trillion"
+                }
+            }      
+        ]
+        
+## Group Currencies
+
+Resources related to currencies in the API.
+
+## Currency [/currency/{currency_name}]
+
+A Currency object has the following attributes:
+
++ id
++ name
++ currency_code
++ stock_exchange
++ location
++ number_of_official_users
+
++ Parameters
+    + currency_name: 1 (required, string) - Name of the Currency in form of a string
+
+### View a Currency's Details [GET]
+
++ Response 200 (application/json)
+
+        [
+            "currency": 
+            {
+                {
+                    "id": 1,
+                    "name": "US Dollars",
+                    "currency_code": "USD",
+                    "stock_exchange": "NYSE",
+                    "location": "USA",
+                    "number_of_official_users": 9
+                }
+            }            
+        ]
+
+## Currencies Collection [/currency{?page}]
+
++ Parameters
+    + page: 1 (optional, number) - The page of currencies to return
+
+### List All Currencies [GET]
+
++ Response 200 (application/json)
+
+        [
+            "currency": 
+                {
+                    "id": 1,
+                    "name": "US Dollars",
+                    "currency_code": "USD",
+                    "exchange": "NYSE",
+                    "location": "USA",
+                    "number_of_official_users": 9
+                },
+                {
+                    "id": 2,
+                    "name": "Euro",
+                    "currency code": "EUR"
+                    "exchange": "PAR",
+                    "location": "France",
+                    "number_of_official_users": 19
+                },            
+                {
+                    "id": 3,
+                    "name": "Pound sterling",
+                    "currency code": "GBp",
+                    "exchange": "LSE",
+                    "location": "Great Britain",
+                    "number_of_official_users": 1
+                }
+        ]
