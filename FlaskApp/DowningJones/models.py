@@ -64,8 +64,11 @@ class Currency(db.Model):
 
 class Company(db.Model):
     rowid = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80))
     symbol = db.Column(db.String(80))
+    name = db.Column(db.String(80))
+    exchange = db.Column(db.String(80))
+    currency = db.Column(db.String(80))
+    location = db.Column(db.String(80))
     open_price = db.Column(db.String(80))
     previous_price = db.Column(db.String(80))
     percent_change = db.Column(db.String(80))
@@ -134,12 +137,12 @@ class Company(db.Model):
 
 class Location(db.Model):
     rowid = db.Column(db.Integer, primary_key=True)        #pk can be the iso code
-    iso = db.Column(db.String(2))
     name = db.Column(db.String(80))
+    iso = db.Column(db.String(2))
     capital = db.Column(db.String(80))
     gdp = db.Column(db.Float)
-    # currency_id = db.Column(db.Integer, db.ForeignKey('currency.id'))
-    # exchanges = db.relationship('Exchange', backref='location', lazy='dynamic')
+    currency = db.Column(db.String(80))
+    location_exchange = db.Column(db.String(80))
 
     def __init__(self, name, capital, gdp, currency):
         """

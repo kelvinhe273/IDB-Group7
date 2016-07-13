@@ -13,6 +13,9 @@
       <tr>
         <th id="name">Name</th>
         <th id="symbol">Symbol</th>
+        <th id="exchange">Exchange</th>
+        <th id="currency">Currency</th>
+        <th id="location">Location</th>
       </tr>
       </thead>
       <!-- Figure out how to add foreign currency signs.-->
@@ -21,6 +24,9 @@
             <tr>
               <td><a href="/companies/{{company.rowid}}">{{ company.name }}</a></td>
               <td>{{ company.symbol }}</td>
+              <td><a href="/stockmarkets/{{company.rowid}}">{{ company.exchange }}</a></td>
+              <td><a href="/currencies/{{company.rowid}}">{{ company.currency }}</a></td>
+              <td><a href="/locations/{{company.rowid}}">{{ company.location }}</a></td>
             </tr>
           {% endfor %}
         </tbody>
