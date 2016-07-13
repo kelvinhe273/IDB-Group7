@@ -22,8 +22,8 @@ endif
 models.html: FlaskApp/DowningJones/models.py
 	pydoc3 -w FlaskApp/DowningJones/models.py
 
-IDB1.log:
-	git log > IDB1.log
+IDB2.log:
+	git log > IDB2.log
 
 TestModels: .pylintrc FlaskApp/DowningJones/tests.py FlaskApp/DowningJones/models.py
 	-$(PYLINT) FlaskApp/DowningJones/tests.py
@@ -61,7 +61,7 @@ config:
 
 html: models.html
 
-log: IDB1.log
+log: IDB2.log
 
 format:
 	autopep8 -i app/models.py
