@@ -24,9 +24,9 @@
             <tr>
               <td><a href="/companies/{{company.rowid}}">{{ company.name }}</a></td>
               <td>{{ company.symbol }}</td>
-              <td><a style="color:blue"href="/stockmarkets/4">{{ company.exchange }}</a></td>
-              <td><a style="color:blue"href="/currencies/11">{{ company.currency }}</a></td>
-              <td><a style="color:blue"href="/locations/2">{{ company.location }}</a></td>
+              <td><a href="" id="stkexch">{{ company.exchange }}</a></td>
+              <td><a href="/currencies/{{company.rowid}}">{{ company.currency }}</a></td>
+              <td><a href="/locations/{{company.rowid}}">{{ company.location }}</a></td>
             </tr>
           {% endfor %}
         </tbody>
@@ -48,5 +48,10 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
   } );
 </script>
 <!-- END SCRIPT FOR SORTING-->
+<script>
+ if {{company.exchange}} == "NMS"{
+    document.getElementById("compexch").href="/exchanges/4"
+ }
+</script>
 {% endblock %}
 
