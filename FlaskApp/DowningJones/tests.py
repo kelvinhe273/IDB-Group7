@@ -110,7 +110,7 @@ class MyTest(TestCase):
         self.assertEqual('<Location \'USA\'>', str(exchange.query.first().location))
 
     def test_company_commits(self):
-        company = Company('CASS', 'Cass Information Systems, Inc', 'NMS', 'USD', 'USA', '51,29', '+2.42%', '59.09', '52.06', '2.07', '0.00', '51.20-52.22', '+4,24%', '+3.80%', '22222', '27743', '585.15M')
+        company = Company('CASS', 'Cass Information Systems, Inc', 'NMS', 'USD', 'USA', '51,29', '50.82', '+2.42%', '59.09', '52.06', '2.07', '0.00', '51.20-52.22', '+4,24%', '+3.80%', '22222', '27743', '585.15M')
         db.session.add(company)
         db.session.commit()
 
@@ -118,7 +118,7 @@ class MyTest(TestCase):
         self.assertIn(company, db.session)
 
     def test_company_returns(self):
-        company = Company('CASS', 'Cass Information Systems, Inc', 'NMS', 'USD', 'USA', '51,29', '+2.42%', '59.09', '52.06', '2.07', '0.00', '51.20-52.22', '+4,24%', '+3.80%', '22222', '27743', '585.15M')
+        company = Company('CASS', 'Cass Information Systems, Inc', 'NMS', 'USD', 'USA', '51,29', '50.82', '+2.42%', '59.09', '52.06', '2.07', '0.00', '51.20-52.22', '+4,24%', '+3.80%', '22222', '27743', '585.15M')
         db.session.add(company)
         db.session.commit()
 
@@ -129,7 +129,7 @@ class MyTest(TestCase):
         currency = Currency('US Dollar', 'USD', "USA", "NMS", 1)
         location = Location('USA', 'US', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
         exchange = Exchange('NMS', 'National Market System', 'USD', 'USA', '19,223 billion')
-        company = Company('CASS', 'Cass Information Systems, Inc', 'NMS', 'USD', 'USA', '51,29', '+2.42%', '59.09', '52.06', '2.07', '0.00', '51.20-52.22', '+4,24%', '+3.80%', '22222', '27743', '585.15M')
+        company = Company('CASS', 'Cass Information Systems, Inc', 'NMS', 'USD', 'USA', '51,29', '50.82', '+2.42%', '59.09', '52.06', '2.07', '0.00', '51.20-52.22', '+4,24%', '+3.80%', '22222', '27743', '585.15M')
         db.session.add(exchange)
         db.session.add(currency)
         db.session.add(location)
