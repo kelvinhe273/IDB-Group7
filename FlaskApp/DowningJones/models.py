@@ -142,7 +142,7 @@ class Location(db.Model):
     name = db.Column(db.String(80))
     iso = db.Column(db.String(2))
     capital = db.Column(db.String(80))
-    gdp = db.Column(db.Float)
+    gdp = db.Column(db.String(80))
     currency = db.Column(db.String(80))
     location_exchange = db.Column(db.String(80))
 
