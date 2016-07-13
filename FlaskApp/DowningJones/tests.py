@@ -33,7 +33,7 @@ class MyTest(TestCase):
         db.session.commit()
 
         #assert it retuns correct data
-        self.assertEqual('<Currency \'US Dollars\'>', str(currency.query.first()))
+        self.assertEqual('<Currency \'US Dollar\'>', str(currency.query.first()))
 
     def test_currency_relations(self):
         currency = Currency('US Dollar', 'USD', "USA", "NMS", 1)
@@ -75,7 +75,7 @@ class MyTest(TestCase):
         db.session.commit()
 
         #assert it returns correct data
-        self.assertEqual('<Currency \'US Dollars\'>', str(location.query.first().currency))
+        self.assertEqual('<Currency \'US Dollar\'>', str(location.query.first().currency))
 
         self.assertEqual('<Exchange \'NMS\'>', str(location.query.first().exchanges.first()))
 
@@ -105,7 +105,7 @@ class MyTest(TestCase):
         db.session.commit()
 
         #assert it retuns correct data
-        self.assertEqual('<Currency \'US Dollars\'>', str(exchange.query.first().currency))
+        self.assertEqual('<Currency \'US Dollar\'>', str(exchange.query.first().currency))
 
         self.assertEqual('<Location \'USA\'>', str(exchange.query.first().location))
 
@@ -123,7 +123,7 @@ class MyTest(TestCase):
         db.session.commit()
 
         #assert it retuns correct data
-        self.assertEqual('<Company \'Cass Information Systems\'>', str(company.query.first()))
+        self.assertEqual('<Company \'Cass Information Systems, Inc\'>', str(company.query.first()))
 
     def test_company_relations(self):
         currency = Currency('US Dollar', 'USD', "USA", "NMS", 1)
@@ -141,7 +141,7 @@ class MyTest(TestCase):
 
         self.assertEqual('<Exchange \'NMS\'>', str(company.query.first().exchange))
 
-        self.assertEqual('<Currency \'US Dollars\'>', str(company.query.first().currency))
+        self.assertEqual('<Currency \'US Dollar\'>', str(company.query.first().currency))
 
 if __name__ == "__main__" :
     unittest.main()
