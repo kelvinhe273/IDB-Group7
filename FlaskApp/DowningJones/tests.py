@@ -75,7 +75,7 @@ class MyTest(TestCase):
         db.session.commit()
 
         #assert it returns correct data
-        self.assertEqual('<Currency \'USD\'>', str(location.query.first().currency))
+        self.assertEqual('\'USD\'', str(location.query.first().currency))
 
         self.assertEqual('<Exchange \'NMS\'>', str(location.query.first().exchanges.first()))
 
@@ -137,9 +137,11 @@ class MyTest(TestCase):
         db.session.commit()
 
         #assert it retuns correct data
-        self.assertEqual('<Location \'USA\'>', str(exchange.query.first().location))
+        self.assertEqual('<Location \'USA\'>', str(company.query.first().location))
 
-        self.assertEqual('<Currency \'US Dollar\'>', str(exchange.query.first().currency))
+        self.assertEqual('<Exchange \'NMS\'>', str(company.query.first().exchange))
+
+        self.assertEqual('<Currency \'US Dollar\'>', str(company.query.first().currency))
 
 if __name__ == "__main__" :
     unittest.main()
