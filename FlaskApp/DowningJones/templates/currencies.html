@@ -4,34 +4,36 @@
 <!-- PAGE CONTENT -->
  <div class="container-fluid">
   <div class="row" style="padding:30px">
-    <div class="col-md-4"></div>
-    <div class="col-md-4" style="text-align: center">
+    <div class="col-md-4 col-xs-6"></div>
+    <div class="col-md-4 col-xs-6" style="text-align: center">
       <h1 style = "font-weight : bold">Currency</h1>
     </div>
-</div>
-  <table id="currencytable" class="table table-hover table-striped table-responsive table-bordered">
-    <thead>
-    <tr>
-      <th id="name">Name</th>
-      <th id="currencycode">Currency Code</th>
-      <th id="exchange">Exchange</th>
-      <th id="location">Location</th>
-      <th id="exchangerate">Exchange Rate (To U.S Dollar)</th>
-    </tr>
-    </thead>
-    <!-- Figure out how to add foreign currency signs.-->
-    <tbody>
-      {% for currency in currencies %}
-        <tr>
-         <td><a style="color:blue" href="/currencies/{{currency.rowid}}">{{ currency.name }}</a></td>
-         <td>{{ currency.currency }}</td>
-          <td><a style="color:blue" href="/stockmarkets/{{currency.rowid}}">{{ currency.exchanges }}</a></td>           
-         <td><a style="color:blue" href="/locations/{{currency.rowid}}">{{ currency.locations }}</a></td>
-         <td>{{ currency.exchange_rate }}</td>
-        </tr>
-      {% endfor %}
-      </tbody>
-  </table>
+  </div>
+  <div class="table-responsive">
+    <table id="currencytable" class="table table-hover table-striped table-responsive table-bordered">
+      <thead>
+      <tr>
+        <th id="name">Name</th>
+        <th id="currencycode">Currency Code</th>
+        <th id="exchange">Exchange</th>
+        <th id="location">Location</th>
+        <th id="exchangerate">Exchange Rate (To U.S Dollar)</th>
+      </tr>
+      </thead>
+      <!-- Figure out how to add foreign currency signs.-->
+      <tbody>
+        {% for currency in currencies %}
+          <tr>
+           <td><a href="/currencies/{{currency.rowid}}">{{ currency.name }}</a></td>
+           <td>{{ currency.currency }}</td>
+            <td><a href="/stockmarkets/{{currency.rowid}}">{{ currency.exchanges }}</a></td>           
+           <td><a href="/locations/{{currency.rowid}}">{{ currency.locations }}</a></td>
+           <td>{{ currency.exchange_rate }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
  </div> 
 <!-- END PAGE CONTENT -->
 <!-- SCRIPT FOR SORTING-->
