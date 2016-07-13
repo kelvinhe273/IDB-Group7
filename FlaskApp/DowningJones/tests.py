@@ -75,7 +75,7 @@ class MyTest(TestCase):
         db.session.commit()
 
         #assert it returns correct data
-        self.assertEqual('\'USD\'', str(location.query.first().currency))
+        self.assertEqual('USD', str(location.query.first().currency))
 
         self.assertEqual('<Exchange \'NMS\'>', str(location.query.first().exchanges.first()))
 
@@ -137,7 +137,7 @@ class MyTest(TestCase):
         db.session.commit()
 
         #assert it retuns correct data
-        self.assertEqual('<Location \'USA\'>', str(company.query.first().location))
+        self.assertEqual('USA', str(company.query.first().location))
 
         self.assertEqual('<Exchange \'NMS\'>', str(company.query.first().exchange))
 
