@@ -20,7 +20,7 @@ class MyTest(TestCase):
         db.drop_all()
 
     def test_currency_commits(self):
-        currency = Currency('us dollar', 'us dol', 9)
+        currency = Currency('US Dollar', 'USD', "USA", "NMS", 1)
         db.session.add(currency)
         db.session.commit()
 
@@ -28,7 +28,7 @@ class MyTest(TestCase):
         self.assertIn(currency, db.session)
 
     def test_currency_returns(self):
-        currency = Currency('us dollar', 'us dol', 9)
+        currency = Currency('US Dollar', 'USD', "USA", "NMS", 1)
         db.session.add(currency)
         db.session.commit()
 
