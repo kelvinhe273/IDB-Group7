@@ -33,7 +33,7 @@ class MyTest(TestCase):
         db.session.commit()
 
         #assert it retuns correct data
-        self.assertEqual('<Currency \'USD\'>', str(currency.query.first()))
+        self.assertEqual('<Currency \'US Dollar\'>', str(currency.query.first()))
 
     def test_currency_relations(self):
         currency = Currency('US Dollar', 'USD', "USA", "NMS", 1)
@@ -110,7 +110,7 @@ class MyTest(TestCase):
         self.assertEqual('<Location \'USA\'>', str(exchange.query.first().location))
 
     def test_company_commits(self):
-        company = Company('CASS', 'Cass Information Systems, Inc', 'NMS', 'USD', 'USA', '51,29', '+2.42%', '59.09', '52.06', '2.07', '0.00', '51.20-52.22', '+4,24%', '+3.80%', '22222', '27743', '585.15M')
+        company = Company('CASS', 'Cass Information Systems, Inc', 'NMS', 'USD', 'USA', '51,29', '50.82', '+2.42%', '59.09', '52.06', '2.07', '0.00', '51.20-52.22', '+4,24%', '+3.80%', '22222', '27743', '585.15M')
         db.session.add(company)
         db.session.commit()
 
@@ -118,18 +118,18 @@ class MyTest(TestCase):
         self.assertIn(company, db.session)
 
     def test_company_returns(self):
-        company = Company('CASS', 'Cass Information Systems, Inc', 'NMS', 'USD', 'USA', '51,29', '+2.42%', '59.09', '52.06', '2.07', '0.00', '51.20-52.22', '+4,24%', '+3.80%', '22222', '27743', '585.15M')
+        company = Company('CASS', 'Cass Information Systems, Inc', 'NMS', 'USD', 'USA', '51,29', '50.82', '+2.42%', '59.09', '52.06', '2.07', '0.00', '51.20-52.22', '+4,24%', '+3.80%', '22222', '27743', '585.15M')
         db.session.add(company)
         db.session.commit()
 
         #assert it retuns correct data
-        self.assertEqual('<Company \'Yahoo\'>', str(company.query.first()))
+        self.assertEqual('<Company \'Cass Information Systems, Inc\'>', str(company.query.first()))
 
     def test_company_relations(self):
         currency = Currency('US Dollar', 'USD', "USA", "NMS", 1)
         location = Location('USA', 'US', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
         exchange = Exchange('NMS', 'National Market System', 'USD', 'USA', '19,223 billion')
-        company = Company('CASS', 'Cass Information Systems, Inc', 'NMS', 'USD', 'USA', '51,29', '+2.42%', '59.09', '52.06', '2.07', '0.00', '51.20-52.22', '+4,24%', '+3.80%', '22222', '27743', '585.15M')
+        company = Company('CASS', 'Cass Information Systems, Inc', 'NMS', 'USD', 'USA', '51,29', '50.82', '+2.42%', '59.09', '52.06', '2.07', '0.00', '51.20-52.22', '+4,24%', '+3.80%', '22222', '27743', '585.15M')
         db.session.add(exchange)
         db.session.add(currency)
         db.session.add(location)
@@ -137,11 +137,9 @@ class MyTest(TestCase):
         db.session.commit()
 
         #assert it retuns correct data
-        self.assertEqual('<Location \'USA\'>', str(company.query.first().location))
+        self.assertEqual('<Location \'USA\'>', str(exchange.query.first().location))
 
-        self.assertEqual('<Exchange \'NMS\'>', str(company.query.first().exchange))
-
-        self.assertEqual('<Currency \'USD\'>', str(company.query.first().currency))
+        self.assertEqual('<Currency \'US Dollar\'>', str(exchange.query.first().currency))
 
 if __name__ == "__main__" :
     unittest.main()
