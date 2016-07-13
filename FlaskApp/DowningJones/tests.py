@@ -37,8 +37,8 @@ class MyTest(TestCase):
 
     def test_currency_relations(self):
         currency = Currency('US Dollar', 'USD', "USA", "NMS", 1)
-        exchange = Exchange('NMS', 'National Market System', 'USD', 'USA', '19,223 billion')
-        location = location = Location('USA', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
+        exchange = Exchange('National Market System', 'NMS', 'USD', 'USA', '19,223 billion')
+        location = location = Location('USA', 'US', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
         db.session.add(currency)
         db.session.add(exchange)
         db.session.add(location)
@@ -50,7 +50,7 @@ class MyTest(TestCase):
         self.assertEqual('<Location \'USA\'>', str(currency.query.first().locations.first()))
 
     def test_location_commits(self):
-        location = Location('USA', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
+        location = Location('USA', 'US', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
         db.session.add(location)
         db.session.commit()
 
@@ -58,7 +58,7 @@ class MyTest(TestCase):
         self.assertIn(location, db.session)
 
     def test_location_returns(self):
-        location = Location('USA', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
+        location = Location('USA', 'US', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
         db.session.add(location)
         db.session.commit()
 
@@ -67,7 +67,7 @@ class MyTest(TestCase):
 
     def test_location_relations(self):
         currency = Currency('US Dollar', 'USD', "USA", "NMS", 1)
-        location = Location('USA', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
+        location = Location('USA', 'US', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
         exchange = Exchange('NMS', 'National Market System', 'USD', 'USA', '19,223 billion')
         db.session.add(location)
         db.session.add(currency)
@@ -97,7 +97,7 @@ class MyTest(TestCase):
 
     def test_exchange_relations(self):
         currency = Currency('US Dollar', 'USD', "USA", "NMS", 1)
-        location = Location('USA', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
+        location = Location('USA', 'US', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
         exchange = Exchange('NMS', 'National Market System', 'USD', 'USA', '19,223 billion')
         db.session.add(exchange)
         db.session.add(currency)
@@ -127,7 +127,7 @@ class MyTest(TestCase):
 
     def test_company_relations(self):
         currency = Currency('US Dollar', 'USD', "USA", "NMS", 1)
-        location = Location('USA', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
+        location = Location('USA', 'US', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
         exchange = Exchange('NMS', 'National Market System', 'USD', 'USA', '19,223 billion')
         company = Company('CASS', 'Cass Information Systems, Inc', 'NMS', 'USD', 'USA', '51,29', '+2.42%', '59.09', '52.06', '2.07', '0.00', '51.20-52.22', '+4,24%', '+3.80%', '22222', '27743', '585.15M')
         db.session.add(exchange)

@@ -12,7 +12,7 @@ class Exchange(db.Model):
     # location = db.relationship('Location', uselist=False)
     # currency_id = db.Column(db.Integer, db.ForeignKey('currency.id'))
 
-    def __init__(self, name, name_code, change, location, currency):
+    def __init__(self, name, name_code, currency, location, market_cap):
         """
         self.name the name of the Exchange
         self.name_code the three letter symbol for the exchange
@@ -144,7 +144,7 @@ class Location(db.Model):
     currency = db.Column(db.String(80))
     location_exchange = db.Column(db.String(80))
 
-    def __init__(self, name, capital, gdp, currency):
+    def __init__(self, name, iso, capital, gdp, currency, exchange):
         """
         self.iso the two letter id for the country of the location
         self.name the name (country) of the location
@@ -157,6 +157,7 @@ class Location(db.Model):
         self.capital = capital
         self.gdp = gdp
         self.currency = currency
+        self.exchange = exchange
 
     def __repr__(self):
         """
