@@ -45,9 +45,9 @@ class MyTest(TestCase):
         db.session.commit()
 
         #assert currency is on other models
-        self.assertEqual('NMS', str(currency.query.first().exchanges))
+        self.assertEqual('NMS', str(currency.query.first().exchange))
 
-        self.assertEqual('USA', str(currency.query.first().locations.first()))
+        self.assertEqual('USA', str(currency.query.first().locations))
 
     def test_location_commits(self):
         location = Location('USA', 'US', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
@@ -77,7 +77,7 @@ class MyTest(TestCase):
         #assert it returns correct data
         self.assertEqual('USD', str(location.query.first().currency))
 
-        self.assertEqual('NMS', str(location.query.first().exchanges))
+        self.assertEqual('NMS', str(location.query.first().exchange))
 
     def test_exchange_commits(self):
         exchange = Exchange('NMS', 'National Market System', 'USD', 'USA', '19,223 billion')
