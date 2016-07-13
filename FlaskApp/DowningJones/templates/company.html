@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block body %}
+<style>
+body{
+    background:linear-gradient(rgba(200,265,265,0.45), rgba(265,265,265,0.45)), url("../static/background3.png");
+    background-size: cover !important;
+}
+</style>
+<!-- Header Well -->
+<!-- End Well -->
+<!-- PAGE CONTENT -->
+
+<div class="content">
+  <div class="row" style="padding:30px">
+    <div class="col-md-4"></div>
+    <div class="col-md-4" style="text-align: center">
+      <h1 style = "font-weight : bold">{{company.name}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4" style="text-align: center">
+      <h1 style = "font-weight : bold">{{company.symbol}}</h1>
+    </div>
+  </div>
+    <div class="row" style="padding:50px">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <img id="company-pic" src="http://chart.finance.yahoo.com/z?s={{company.symbol}}&t=6m&q=l&l=on&z=s&p=m50,m200" height="400" width= "500">
+        </div>
+        <div class="col-md-1"></div>
+
+        <div class="col-md-2" id="content">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <b>{{company.name}}</b>
+                </div>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Price</th>
+                                <th>{{company.ask_price}}</th>
+                            </tr>
+                            <tr>
+                                <th>Currency</th>
+                                <th><!--<a href="nasdaq.html">-->{{company.currency}}<!--</a>--></th>
+                            </tr>
+                            <tr>
+                                <th>Stock Exchange</th>
+                                <th>{{company.ask_price}}</th>
+                            </tr>                            
+                            <tr>
+                                <th>Percent Change</th>
+                                <th>{{company.percent_change}}</th>
+                            </tr>
+                            <tr>
+                                <th>Start</th>
+                                <th>{{company.open_price}} {{company.currency}}</th>
+                            </tr>
+                            <tr>
+                                <th>End</th>
+                                <th>{{company.previous_price}}{{company.currency}}</th>
+                            </tr>                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
