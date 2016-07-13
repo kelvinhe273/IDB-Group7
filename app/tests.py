@@ -1,21 +1,20 @@
 import unittest
 from flask_testing import TestCase
-from __init__ import app, db
-from models import Currency, Exchange, Location, Company
+from models import app, db, Currency, Exchange, Location, Company
 
 class MyTest(TestCase):
+    SQLALCHEMY_DATABASE_URI = "sqlite://"
+    TESTING = True
 
-    def create_app(self):
+    @classmethod
+    def create_app(cls):
         # pass in test configuration
-        app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite://"
-        app.config['TESTING'] = True
-        db.create_all()
         return app
-
-    def setUp(self):
+    @classmethod
+    def set_up(cls):
         db.create_all()
-
-    def tearDown(self):
+    @classmethod
+    def tear_down(cls):
         db.session.remove()
         db.drop_all()
 
@@ -36,9 +35,9 @@ class MyTest(TestCase):
         self.assertEqual('<Currency \'us dollar\'>', str(currency.query.first()))
 
     def test_currency_relations(self):
-        currency = Currency('US Dollar', 'USD', "USA", "NMS", 1)
+        currency = Currency('us dollar', 'us dol', 9)
         exchange = exchange = Exchange('nasdaq', 200, -.04, None, currency)
-        location = location = Location('USA', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
+        location = location = Location('USA', 'Washington D.C', 20, currency)
         db.session.add(currency)
         db.session.add(exchange)
         db.session.add(location)
@@ -50,7 +49,7 @@ class MyTest(TestCase):
         self.assertEqual('<Location \'USA\'>', str(currency.query.first().locations.first()))
 
     def test_location_commits(self):
-        location = Location('USA', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
+        location = Location('USA', 'Washington D.C', 20, None)
         db.session.add(location)
         db.session.commit()
 
@@ -58,7 +57,7 @@ class MyTest(TestCase):
         self.assertIn(location, db.session)
 
     def test_location_returns(self):
-        location = Location('USA', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
+        location = Location('USA', 'Washington D.C', 20, None)
         db.session.add(location)
         db.session.commit()
 
@@ -66,8 +65,8 @@ class MyTest(TestCase):
         self.assertEqual('<Location \'USA\'>', str(location.query.first()))
 
     def test_location_relations(self):
-        currency = Currency('US Dollar', 'USD', "USA", "NMS", 1)
-        location = Location('USA', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
+        currency = Currency('us dollar', 'us dol', 9)
+        location = Location('USA', 'Washington D.C', 20, currency)
         exchange = Exchange('nasdaq', 200, -.04, location, currency)
         db.session.add(location)
         db.session.add(currency)
@@ -96,8 +95,8 @@ class MyTest(TestCase):
         self.assertEqual('<Exchange \'nasdaq\'>', str(exchange.query.first()))
 
     def test_exchange_relations(self):
-        currency = Currency('US Dollar', 'USD', "USA", "NMS", 1)
-        location = Location('USA', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
+        currency = Currency('us dollar', 'us dol', 9)
+        location = Location('USA', 'Washington D.C', 20, currency)
         exchange = Exchange('nasdaq', 200, -.04, location, currency)
         db.session.add(exchange)
         db.session.add(currency)
@@ -126,8 +125,8 @@ class MyTest(TestCase):
         self.assertEqual('<Company \'Yahoo\'>', str(company.query.first()))
 
     def test_company_relations(self):
-        currency = Currency('US Dollar', 'USD', "USA", "NMS", 1)
-        location = Location('USA', 'Washington DC', '16.77 trillion USD', 'USD', 'National Market System')
+        currency = Currency('us dollar', 'us dol', 9)
+        location = Location('USA', 'Washington D.C', 20, currency)
         exchange = Exchange('nasdaq', 200, -.04, location, currency)
         company = Company('Yahoo', 'YHD', location, exchange, currency)
         db.session.add(exchange)
