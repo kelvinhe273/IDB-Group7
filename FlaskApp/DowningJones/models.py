@@ -6,6 +6,8 @@ class Exchange(db.Model):
     exchange = db.Column(db.String(80))
     name = db.Column(db.String(80))
     market_cap_exchange = db.Column(db.String(80))
+    currency = db.Column(db.String(80))
+    location = db.Column(db.String(80))
     # location_id = db.Column(db.Integer, db.ForeignKey('location.id'))
     # location = db.relationship('Location', uselist=False)
     # currency_id = db.Column(db.Integer, db.ForeignKey('currency.id'))
