@@ -89,7 +89,9 @@ class Company(db.Model):
     # currency_id = db.Column(db.Integer, db.ForeignKey('currency.id'))
     # currency = db.relationship('Currency', uselist=False)
 
-    def __init__(self, symbol, name, exchange, currency, location, open_price, prev_price, percent_change, year_high, ask_price, eps, peg, days_range, percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap):
+    def __init__(self, symbol, name, exchange, currency, location, open_price, 
+        prev_price, percent_change, year_high, ask_price, eps, peg, days_range, 
+        percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap):
         """
         self.name the name of the Company
         self.symbol the symbol of the Company
@@ -144,7 +146,7 @@ class Location(db.Model):
     currency = db.Column(db.String(80))
     location_exchange = db.Column(db.String(80))
 
-    def __init__(self, name, iso, capital, gdp, currency, exchange):
+    def __init__(self, name, iso, capital, gdp, currency, location_exchange):
         """
         self.iso the two letter id for the country of the location
         self.name the name (country) of the location
@@ -157,7 +159,7 @@ class Location(db.Model):
         self.capital = capital
         self.gdp = gdp
         self.currency = currency
-        self.exchange = exchange
+        self.location_exchange = location_exchange
 
     def __repr__(self):
         """
