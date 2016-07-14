@@ -26,7 +26,7 @@
                     <td><a href="/companies/{{company.rowid}}">{{ company.name }}</a></td>
                     <td>{{ company.symbol }}</td>
                     <td><a href="/stockmarkets/{{company.foreign_id}}">{{ company.exchange }}</a></td>
-                    <td><a href="/currencies/{{company.foreign_id_cur}}">{{ company.currency }}</a></td>
+                    <td><a href="/currencies/{{company.foreign_id}}">{{ company.foreign_id}}</a></td>
                     <td><a href="/locations/{{company.foreign_id}}">{{ company.location}}</a></td>
                     </tr>
                 {% endfor %}
