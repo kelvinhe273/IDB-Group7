@@ -4,11 +4,11 @@ import sqlite3
 import csv
 
 
-# from yahoo_oauth import OAuth1
-# oauth = OAuth1(None, None, from_file='keys.json')
+from yahoo_oauth import OAuth1
+oauth = OAuth1(None, None, from_file='keys.json')
 
-# if not oauth.token_is_valid():
-# 	oauth.refresh_access_token()
+if not oauth.token_is_valid():
+	oauth.refresh_access_token()
 
 endpoints = ['Symbol', 'Name', ' Exchange', 'Currency']
 base_url = "http://dev.markitondemand.com/Api/v2/"
@@ -17,34 +17,36 @@ quote_url = base_url + "Quote/"
 
 conn = sqlite3.connect('test.db')
 cur = conn.cursor()
+val = 0
 
 cur.execute('PRAGMA foreign_keys = ON')
 
 cur.execute('DROP TABLE IF EXISTS Exchange')
-cur.execute('CREATE TABLE Exchange (eid INTEGER PRIMARY KEY AUTOINCREMENT,exchange TEXT, name TEXT, currency TEXT, location TEXT, market_cap_exchange TEXT )')
 cur.execute('DROP TABLE IF EXISTS ExchangeVi')
+cur.execute('DROP TABLE IF EXISTS Location')
+cur.execute('DROP TABLE IF EXISTS LocationVi')
+cur.execute('DROP TABLE IF EXISTS Currency')
+cur.execute('DROP TABLE IF EXISTS CurrencyVi')
+cur.execute('DROP TABLE IF EXISTS Company')
+
+cur.execute('CREATE TABLE Exchange (eid INTEGER PRIMARY KEY AUTOINCREMENT,exchange TEXT, name TEXT, currency TEXT, location TEXT, market_cap_exchange TEXT)')
 cur.execute('CREATE VIRTUAL TABLE ExchangeVi USING fts3(eid INTEGER PRIMARY KEY AUTOINCREMENT,exchange TEXT, name TEXT, currency TEXT, location TEXT, market_cap_exchange TEXT)')
 
 
-cur.execute('DROP TABLE IF EXISTS Location')
 cur.execute('CREATE TABLE Location (lid INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT, iso TEXT, capital TEXT, gdp TEXT, currency TEXT, location_exchange TEXT)')
-cur.execute('DROP TABLE IF EXISTS LocationVi')
 cur.execute('CREATE VIRTUAL TABLE LocationVi USING fts3(lid INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT, iso TEXT, capital TEXT, gdp TEXT, currency TEXT, location_exchange TEXT)')
 
-cur.execute('DROP TABLE IF EXISTS Currency')
 cur.execute('CREATE TABLE Currency (cid INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,currency TEXT, locations TEXT, exchanges TEXT, exchange_rate Integer)')
-cur.execute('DROP TABLE IF EXISTS CurrencyVi')
 cur.execute('CREATE VIRTUAL TABLE CurrencyVi USING fts3(cid INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,currency TEXT, locations TEXT, exchanges TEXT, exchange_rate Integer)')
 
-cur.execute('DROP TABLE IF EXISTS Company')
-cur.execute('CREATE TABLE Company (symbol TEXT, name TEXT, exchange TEXT, currency TEXT, location TEXT, open_price INTEGER PRIMARY KEY, previous_price TEXT, percent_change TEXT, year_high TEXT, ask_price TEXT, eps TEXT, peg TEXT,days_range TEXT, percent_change_fifty TEXT, percent_change_twohundred TEXT, volume TEXT, avg_volume TEXT, market_cap TEXT, FOREIGN KEY(rid) REFERENCES Exchange(eid), FOREIGN KEY(rid) REFERENCES Location(lid),FOREIGN KEY(rid) REFERENCES Currency(cid))')
-cur.execute('DROP TABLE IF EXISTS CompanyVi')
-cur.execute('CREATE VIRTUAL TABLE CompanyVi USING fts3(rid INTEGER PRIMARY KEY AUTOINCREMENT,symbol TEXT, name TEXT, exchange TEXT, currency TEXT, location TEXT, open_price TEXT, previous_price TEXT, percent_change TEXT, year_high TEXT, ask_price TEXT, eps TEXT, peg TEXT,days_range TEXT, percent_change_fifty TEXT, percent_change_twohundred TEXT, volume TEXT, avg_volume TEXT, market_cap TEXT)')
+cur.execute('CREATE TABLE Company (rid INTEGER PRIMARY KEY AUTOINCREMENT, symbol TEXT, name TEXT, exchange TEXT, currency TEXT, location TEXT, open_price TEXT, previous_price TEXT, percent_change TEXT, year_high TEXT, ask_price TEXT, eps TEXT, peg TEXT,days_range TEXT, percent_change_fifty TEXT, percent_change_twohundred TEXT, volume TEXT, avg_volume TEXT, market_cap TEXT, foreign_id INTEGER, FOREIGN KEY(foreign_id) REFERENCES Exchange(eid), FOREIGN KEY(foreign_id) REFERENCES Location(lid),FOREIGN KEY(foreign_id) REFERENCES Currency(cid))')
+# cur.execute('DROP TABLE IF EXISTS CompanyVi')
+# cur.execute('CREATE VIRTUAL TABLE CompanyVi USING fts3(rid INTEGER PRIMARY KEY AUTOINCREMENT,symbol TEXT, name TEXT, exchange TEXT, currency TEXT, location TEXT, open_price TEXT, previous_price TEXT, percent_change TEXT, year_high TEXT, ask_price TEXT, eps TEXT, peg TEXT,days_range TEXT, percent_change_fifty TEXT, percent_change_twohundred TEXT, volume TEXT, avg_volume TEXT, market_cap TEXT, foreign_id INTEGER, FOREIGN KEY(foreign_id) REFERENCES Exchange(eid), FOREIGN KEY(foreign_id) REFERENCES Location(lid),FOREIGN KEY(foreign_id) REFERENCES Currency(cid))')
 
 f = open('yahoo.csv')
 csv_f = csv.reader(f)
 for row in csv_f:
-	source = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22' +row[0] +'%22)&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&format=json'
+	source = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22' + row[0] +'%22)&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&format=json'
 
 	try:
 		resp = requests.get(source)
@@ -55,7 +57,7 @@ for row in csv_f:
 		print(symbol)
 		name = resp.json()['query']['results']['quote']['Name']
 		exchange =  resp.json()['query']['results']['quote']['StockExchange']
-		open_price = 5
+		open_price = resp.json()['query']['results']['quote']['Open']
 		previous_price = resp.json()['query']['results']['quote']['PreviousClose']
 		percent_change = resp.json()['query']['results']['quote']['ChangeinPercent']
 		year_high = resp.json()['query']['results']['quote']['YearHigh']
@@ -89,6 +91,7 @@ for row in csv_f:
 			gdp = '16.77 trillion USD'
 			exchangeName = 'National Market System'
 			market_cap_exchange = '19,223 billion'
+			foreign_id = 4
 
 		elif exchange == "LSE":
 			location = 'Great Britain'
@@ -97,6 +100,8 @@ for row in csv_f:
 			gdp = '2.678 trillion USD'
 			exchangeName = 'London Stock Exchange'
 			market_cap_exchange = '6,187 billion'
+			foreign_id = 2
+
 
 		elif exchange == "PAR":
 			location = 'France'
@@ -105,6 +110,7 @@ for row in csv_f:
 			gdp = '2.806 trillion USD'
 			exchangeName = 'Paris Stock Exchange'
 			market_cap_exchange = '3,321 billion'
+			foreign_id = 11
 
 		elif exchange == "HKG":
 			location = 'Hong Kong'
@@ -113,6 +119,7 @@ for row in csv_f:
 			gdp = '274 billion USD'
 			exchangeName = 'Hong Kong Stock Exchange'
 			market_cap_exchange = '3,325 billion'
+			foreign_id = 10
 
 		elif exchange == "MEX":
 			location = 'Mexico'
@@ -121,6 +128,7 @@ for row in csv_f:
 			gdp = '1.261 trillion USD'
 			exchangeName = 'Mexico Stock Exchange'
 			market_cap_exchange = '402.99 billion'
+			foreign_id = 5
 
 		elif exchange == "TAI":
 			location = 'Taiwan'
@@ -129,6 +137,7 @@ for row in csv_f:
 			gdp = '474 billion USD'
 			exchangeName = 'Taiwan Stock Exchange'
 			market_cap_exchange = '861 billion'
+			foreign_id = 7
 
 		elif exchange == "BER":
 			location = 'Berlin, Germany'
@@ -137,6 +146,7 @@ for row in csv_f:
 			gdp = '3.355 trillion USD'
 			exchangeName = 'Berlin Stock Exchange'
 			market_cap_exchange = '1,176 billion'
+			foreign_id = 8
 
 		elif exchange == "MUN":
 			location = 'Munich, Germany'
@@ -145,6 +155,7 @@ for row in csv_f:
 			gdp = '3.355 trillion USD'
 			exchangeName = 'Munich Stock Exchange'
 			market_cap_exchange = '1,762 billion'
+			foreign_id = 9
 
 		elif exchange == "FRA":
 			location = 'Frankfurt, Germany'
@@ -153,6 +164,7 @@ for row in csv_f:
 			gdp = '3.355 trillion USD'
 			exchangeName = 'Frankfurt Stock Exchange'
 			market_cap_exchange = '1,762 billion'
+			foreign_id = 6
 
 		elif exchange == "TOR":
 			location = 'Toronto, Canada'
@@ -161,6 +173,7 @@ for row in csv_f:
 			gdp = '1.827 trillion USD'
 			exchangeName = 'Toronto Stock Exchange'
 			market_cap_exchange = '1,939 billion'
+			foreign_id = 1
 
 		elif exchange == "ASE":
 			location = 'Athens, Greece'
@@ -170,6 +183,7 @@ for row in csv_f:
 			exchangeName = 'Athens Stock Exchange'
 			market_cap_exchange = '43.85 billion'
 			currency = "EUR"
+			foreign_id = 3
 
 		
 		
@@ -239,38 +253,69 @@ for row in csv_f:
 		elif location == 'USA':
 			location_exchange = 'National Market System'
 
-		
-		cur.execute('INSERT INTO Exchange (Exchange, Name, Currency, Location , Market_Cap_Exchange) VALUES ( ?, ?, ?, ?, ?) ',
-			(exchange,exchangeName, currency, location, market_cap_exchange))
 
-		cur.execute('INSERT INTO ExchangeVi (Exchange, Name, Currency, Location , Market_Cap_Exchange) VALUES ( ?, ?, ?, ?, ?) ',
-			(exchange,exchangeName, currency, location, market_cap_exchange))
-
-		cur.execute('INSERT INTO Location (Name, Iso, Capital, Gdp, Currency, Location_Exchange) VALUES (?, ?, ?, ?, ?, ?) ',
-		(location, iso,capital,gdp, currency, location_exchange))
-
-		cur.execute('INSERT INTO LocationVi (Name, Iso, Capital, Gdp, Currency, Location_Exchange) VALUES (?, ?, ?, ?, ?, ?) ',
-		(location, iso,capital,gdp, currency, location_exchange))
-
-
-		cur.execute('INSERT INTO Currency (Name,Currency, Locations, Exchanges, Exchange_Rate) VALUES (?, ?, ?, ?, ?) ',
-		(curName, currency, location_cur, exchnages_cur, exchange_rate))
-
-		cur.execute('INSERT INTO CurrencyVi (Name,Currency, Locations, Exchanges, Exchange_Rate) VALUES (?, ?, ?, ?, ?) ',
-		(curName, currency, location_cur, exchnages_cur, exchange_rate))
-		
-		cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency, Location , Open_Price, Previous_Price, Percent_Change, Year_High, Ask_Price, Eps, Peg, Days_Range, Percent_Change_Fifty, Percent_Change_Twohundred, Volume, Avg_Volume, Market_Cap) VALUES ( ?, ?, ?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ) ',
-			(symbol, name, exchange, currency, location , open_price, previous_price, percent_change, year_high, ask_price, eps, peg, days_range, percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap))
-		
-		cur.execute('INSERT INTO CompanyVi (Symbol, Name, Exchange, Currency, Location , Open_Price, Previous_Price, Percent_Change, Year_High, Ask_Price, Eps, Peg, Days_Range, Percent_Change_Fifty, Percent_Change_Twohundred, Volume, Avg_Volume, Market_Cap) VALUES ( ?, ?, ?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ) ',
-			(symbol, name, exchange, currency, location , open_price, previous_price, percent_change, year_high, ask_price, eps, peg, days_range, percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap))
-		
-		
-
-
-		print(location)
-
+		cur.execute('SELECT name FROM Location WHERE name= ?', (location,))
+		user = cur.fetchone()
+		if not user:
+			# No match found
+			cur.execute('INSERT INTO Exchange (Exchange, Name, Currency, Location , Market_Cap_Exchange) VALUES ( ?, ?, ?, ?, ?) ',
+				(exchange,exchangeName, currency, location, market_cap_exchange))
+			cur.execute('INSERT INTO Location (Name, Iso, Capital, Gdp, Currency, Location_Exchange) VALUES (?, ?, ?, ?, ?, ?) ',
+				(location, iso,capital,gdp, currency, location_exchange))
+			cur.execute('INSERT INTO Currency (Name,Currency, Locations, Exchanges, Exchange_Rate) VALUES (?, ?, ?, ?, ?) ',
+				(curName, currency, location_cur, exchnages_cur, exchange_rate))
+		cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency, Location , Open_Price, Previous_Price, Percent_Change, Year_High, Ask_Price, Eps, Peg, Days_Range, Percent_Change_Fifty, Percent_Change_Twohundred, Volume, Avg_Volume, Market_Cap, Foreign_ID) VALUES ( ?, ?, ?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?, ? ) ',
+			(symbol, name, exchange, currency, location , open_price, previous_price, percent_change, year_high, ask_price, eps, peg, days_range, percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap, foreign_id))
 		# try:
+			# if val < 4:
+
+			# 	cur.execute('INSERT INTO Location (Name, Iso, Capital, Gdp, Currency, Location_Exchange) VALUES (?, ?, ?, ?, ?, ?) ',
+			# 	(location, iso,capital,gdp, currency, location_exchange))
+			# 	val += 1
+			# else:
+			# 	cur.execute('UPDATE Location SET Name = ?, Iso = ?, Capital = ?, Gdp = ?, Currency = ?, Location_Exchange = ? WHERE name = ?',
+			# 	(location, iso,capital,gdp, y, location_exchange , 'Great Britain'))
+			# 	cur.execute('UPDATE Location SET Name = ?, Iso = ?, Capital = ?, Gdp = ?, Currency = ?, Location_Exchange = ? WHERE name = ?',
+			# 	(location, iso,capital,gdp, y, location_exchange , 'USA'))
+			# 	cur.execute('UPDATE Location SET Name = ?, Iso = ?, Capital = ?, Gdp = ?, Currency = ?, Location_Exchange = ? WHERE name = ?',
+			# 	(location, iso,capital,gdp, y, location_exchange , 'Athens, Greece'))
+			# 	cur.execute('UPDATE Location SET Name = ?, Iso = ?, Capital = ?, Gdp = ?, Currency = ?, Location_Exchange = ? WHERE name = ?',
+			# 	(location, iso,capital,gdp, y, location_exchange , 'Toronto, Canada'))
+
+			# cur.execute('INSERT INTO Exchange (Exchange, Name, Currency, Location , Market_Cap_Exchange) SELECT Name FROM Location WHERE Name != location VALUES ( ?, ?, ?, ?, ?)',
+			# 	(exchange,exchangeName, currency, location, market_cap_exchange))
+
+			# cur.execute('REPLACE INTO ExchangeVi (Exchange, Name, Currency, Location , Market_Cap_Exchange) VALUES ( ?, ?, ?, ?, ?) ',
+			# 	(exchange,exchangeName, currency, location, market_cap_exchange))
+
+			
+
+			# cur.execute('REPLACE INTO LocationVi (Name, Iso, Capital, Gdp, Currency, Location_Exchange) VALUES (?, ?, ?, ?, ?, ?) ',
+			# (location, iso,capital,gdp, currency, location_exchange))
+
+
+			# cur.execute('INSERT OR IGNORE INTO Currency (Name,Currency, Locations, Exchanges, Exchange_Rate) VALUES (?, ?, ?, ?, ?) ',
+			# (curName, currency, location_cur, exchnages_cur, exchange_rate))
+
+			# cur.execute('REPLACE INTO CurrencyVi (Name,Currency, Locations, Exchanges, Exchange_Rate) VALUES (?, ?, ?, ?, ?) ',
+			# (curName, currency, location_cur, exchnages_cur, exchange_rate))
+			
+			# cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency, Location , Open_Price, Previous_Price, Percent_Change, Year_High, Ask_Price, Eps, Peg, Days_Range, Percent_Change_Fifty, Percent_Change_Twohundred, Volume, Avg_Volume, Market_Cap, Foreign_ID) VALUES ( ?, ?, ?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?, ? ) ',
+			# 	(symbol, name, exchange, currency, location , open_price, previous_price, percent_change, year_high, ask_price, eps, peg, days_range, percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap, foreign_id))
+			
+			# cur.execute('INSERT INTO CompanyVi (Symbol, Name, Exchange, Currency, Location , Open_Price, Previous_Price, Percent_Change, Year_High, Ask_Price, Eps, Peg, Days_Range, Percent_Change_Fifty, Percent_Change_Twohundred, Volume, Avg_Volume, Market_Cap, Foreign_ID) VALUES ( ?, ?, ?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?, ? ) ',
+			# 	(symbol, name, exchange, currency, location , open_price, previous_price, percent_change, year_high, ask_price, eps, peg, days_range, percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap, foreign_id))
+		
+		# except sqlite3.IntegrityError:
+		# 	# cur.execute('PRAGMA foreign_keys = ON')
+		# 	print("FAILUREEEEEEE")	
+		# 	conn.commit()
+		# 	continue		
+
+
+		# print(location)
+
+		
 		# 	print(location)
 		# 	# cur.execute('INSERT INTO Exchange (Exchange, Name, Currency, Location , Market_Cap_Exchange) VALUES ( ?, ?, ?, ?, ?) ',
 		# 	# (exchange,exchangeName, currency, location, market_cap_exchange))
@@ -279,10 +324,7 @@ for row in csv_f:
 		# # 	# cur.execute('INSERT INTO Location (Name, Iso, Capital, Gdp, Currency, Location_Exchange) VALUES (?, ?, ?, ?, ?, ?) ',
 		# # 	# 	(location, iso,capital,gdp, currency, location_exchange))
 
-		# except sqlite3.IntegrityError:
-		# 	# cur.execute('PRAGMA foreign_keys = ON')	
-		# 	conn.commit()
-		# 	continue
+		
 
 		# cur.execute('PRAGMA foreign_keys = ON')	
 		conn.commit()	
