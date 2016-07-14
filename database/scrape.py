@@ -29,16 +29,16 @@ cur.execute('DROP TABLE IF EXISTS CurrencyVi')
 
 # Create tables/virtual tables for companies, Exchanges, Currency, and Locations and create relationships using foreign keys
 cur.execute('CREATE TABLE Currency (cid INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,currency TEXT, locations TEXT, exchanges TEXT, exchange_rate Integer, UNIQUE(name))')
-cur.execute('CREATE VIRTUAL TABLE CurrencyVi USING fts3(cid INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,currency TEXT, locations TEXT, exchanges TEXT, exchange_rate Integer)')
+# cur.execute('CREATE VIRTUAL TABLE CurrencyVi USING fts3(cid INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,currency TEXT, locations TEXT, exchanges TEXT, exchange_rate Integer)')
 
 cur.execute('CREATE TABLE Exchange (eid INTEGER PRIMARY KEY AUTOINCREMENT,exchange TEXT, name TEXT, currency TEXT, location TEXT, market_cap_exchange TEXT)')
-cur.execute('CREATE VIRTUAL TABLE ExchangeVi USING fts3(eid INTEGER PRIMARY KEY AUTOINCREMENT,exchange TEXT, name TEXT, currency TEXT, location TEXT, market_cap_exchange TEXT)')
+# cur.execute('CREATE VIRTUAL TABLE ExchangeVi USING fts3(eid INTEGER PRIMARY KEY AUTOINCREMENT,exchange TEXT, name TEXT, currency TEXT, location TEXT, market_cap_exchange TEXT)')
 
 cur.execute('CREATE TABLE Location (lid INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT, iso TEXT, capital TEXT, gdp TEXT, currency TEXT, location_exchange TEXT)')
-cur.execute('CREATE VIRTUAL TABLE LocationVi USING fts3(lid INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT, iso TEXT, capital TEXT, gdp TEXT, currency TEXT, location_exchange TEXT)')
+# cur.execute('CREATE VIRTUAL TABLE LocationVi USING fts3(lid INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT, iso TEXT, capital TEXT, gdp TEXT, currency TEXT, location_exchange TEXT)')
 
 cur.execute('CREATE TABLE Company (rid INTEGER PRIMARY KEY AUTOINCREMENT, symbol TEXT, name TEXT, exchange TEXT, currency TEXT, location TEXT, open_price TEXT, previous_price TEXT, percent_change TEXT, year_high TEXT, ask_price TEXT, eps TEXT, peg TEXT,days_range TEXT, percent_change_fifty TEXT, percent_change_twohundred TEXT, volume TEXT, avg_volume TEXT, market_cap TEXT, foreign_id INTEGER,foreign_id_cur INTEGER,FOREIGN KEY(foreign_id_cur) REFERENCES Currency(cid)FOREIGN KEY(foreign_id) REFERENCES Exchange(eid), FOREIGN KEY(foreign_id) REFERENCES Location(lid))')
-cur.execute('CREATE VIRTUAL TABLE CompanyVi USING fts3(rid INTEGER PRIMARY KEY,symbol TEXT, name TEXT, exchange TEXT, currency TEXT, location TEXT, open_price TEXT, previous_price TEXT, percent_change TEXT, year_high TEXT, ask_price TEXT, eps TEXT, peg TEXT,days_range TEXT, percent_change_fifty TEXT, percent_change_twohundred TEXT, volume TEXT, avg_volume TEXT, market_cap TEXT, foreign_id INTEGER)')
+# cur.execute('CREATE VIRTUAL TABLE CompanyVi USING fts3(rid INTEGER PRIMARY KEY,symbol TEXT, name TEXT, exchange TEXT, currency TEXT, location TEXT, open_price TEXT, previous_price TEXT, percent_change TEXT, year_high TEXT, ask_price TEXT, eps TEXT, peg TEXT,days_range TEXT, percent_change_fifty TEXT, percent_change_twohundred TEXT, volume TEXT, avg_volume TEXT, market_cap TEXT, foreign_id INTEGER)')
 
 #read from csv file of a list of all possible yahoo ticker symbols
 f = open('yahoo.csv')
@@ -270,12 +270,12 @@ for row in csv_f:
 			try:
 				cur.execute('INSERT INTO Exchange (Exchange, Name, Currency, Location , Market_Cap_Exchange) VALUES ( ?, ?, ?, ?, ?) ',
 					(exchange,exchangeName, currency, location, market_cap_exchange))
-				cur.execute('INSERT INTO ExchangeVi (Exchange, Name, Currency, Location , Market_Cap_Exchange) VALUES ( ?, ?, ?, ?, ?) ',
-					(exchange,exchangeName, currency, location, market_cap_exchange))
+				# cur.execute('INSERT INTO ExchangeVi (Exchange, Name, Currency, Location , Market_Cap_Exchange) VALUES ( ?, ?, ?, ?, ?) ',
+				# 	(exchange,exchangeName, currency, location, market_cap_exchange))
 				cur.execute('INSERT INTO Location (Name, Iso, Capital, Gdp, Currency, Location_Exchange) VALUES (?, ?, ?, ?, ?, ?) ',
 					(location, iso,capital,gdp, currency, location_exchange))
-				cur.execute('INSERT INTO LocationVi (Name, Iso, Capital, Gdp, Currency, Location_Exchange) VALUES (?, ?, ?, ?, ?, ?) ',
-					(location, iso,capital,gdp, currency, location_exchange))
+				# cur.execute('INSERT INTO LocationVi (Name, Iso, Capital, Gdp, Currency, Location_Exchange) VALUES (?, ?, ?, ?, ?, ?) ',
+				# 	(location, iso,capital,gdp, currency, location_exchange))
 				# if user1:
 				# 	print("slamlkvcsanmdlkv"+curName)
 				# 	cur.execute("UPDATE Currency SET name=? WHERE name=?",("jsd;klnvcs;dkj", 'Euro'))
@@ -284,8 +284,6 @@ for row in csv_f:
 					(curName, currency, location_cur, exchnages_cur, exchange_rate))
 			except sqlite3.IntegrityError:
 				# cur.execute('PRAGMA foreign_keys = ON')	
-				print("hellloooooooo")
-				print(curName)
 				cur.execute('INSERT INTO Company (Symbol, Name, Exchange, Currency, Location , Open_Price, Previous_Price, Percent_Change, Year_High, Ask_Price, Eps, Peg, Days_Range, Percent_Change_Fifty, Percent_Change_Twohundred, Volume, Avg_Volume, Market_Cap, Foreign_ID,Foreign_ID_Cur) VALUES ( ?, ?, ?, ?, ?, ?, ? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?, ? ) ',
 				(symbol, name, exchange, currency, location , open_price, previous_price, percent_change, year_high, ask_price, eps, peg, days_range, percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap, foreign_id,foreign_id_cur))
 	
