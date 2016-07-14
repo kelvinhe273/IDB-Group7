@@ -2,36 +2,38 @@
 {% block body %}
 <!-- PAGE CONTENT -->
 <div class="container-fluid">
-  <div class="row" style="padding:30px">
-      <div class="col-md-4 col-xs-6"></div>
-      <div class="col-md-4 col-xs-6" style="text-align: center">
+    <div class="row" style="padding:30px">
+      <div class="col-md-4 col-xs-4"></div>
+      <div class="col-md-4 col-xs-4" style="text-align: center">
         <h1 style = "font-weight : bold">Companies</h1>
       </div>
-  </div> 
-    <table id="companytable" class="table table-hover table-striped table-responsive table-bordered">
-    <thead>
-      <tr>
-        <th id="name">Name</th>
-        <th id="symbol">Symbol</th>
-        <th id="exchange">Exchange</th>
-        <th id="currency">Currency</th>
-        <th id="location">Location</th>
-      </tr>
-      </thead>
-      <!-- Figure out how to add foreign currency signs.-->
-      <tbody>
-          {% for company in companies %}
-            <tr>
-              <td><a href="/companies/{{company.rowid}}">{{ company.name }}</a></td>
-              <td>{{ company.symbol }}</td>
-              <td><a href="/stockmarkets/4">{{ company.exchange }}</a></td>
-              <td><a href="/currencies/11">{{ company.currency }}</a></td>
-              <td><a href="/locations/2">{{ company.location }}</a></td>
-            </tr>
-          {% endfor %}
-        </tbody>
-    </table>
- </div> 
+    </div>
+    <div class="table-responsive"> 
+        <table id="companytable" class="table table-hover table-striped table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <th id="name">Name</th>
+                    <th id="symbol">Symbol</th>
+                    <th id="exchange">Exchange</th>
+                    <th id="currency">Currency</th>
+                    <th id="location">Location</th>
+                </tr>
+            </thead>
+            <!-- Figure out how to add foreign currency signs.-->
+            <tbody>
+                {% for company in companies %}
+                <tr>
+                    <td><a href="/companies/{{company.rowid}}">{{ company.name }}</a></td>
+                    <td>{{ company.symbol }}</td>
+                    <td><a href="/stockmarkets/{{company.foreign_id}}">{{ company.exchange }}</a></td>
+                    <td><a href="/currencies/{{company.foreign_id}}">{{ company.currency }}</a></td>
+                    <td><a href="/locations/{{company.foreign_id}}">{{ company.location}}</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div> 
 <!-- END PAGE CONTENT-->
 <!-- SCRIPT FOR SORTING-->
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
