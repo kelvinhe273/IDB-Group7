@@ -1,8 +1,12 @@
 {% extends "layout.html" %}
 {% block body %}
-
+<style>
+  .country{
+    color: blue
+  }
+</style>
 <!-- PAGE CONTENT -->
-
+<script type="text/javascript" src="static/count.js" ></script>
 <div class="container-fluid">
     <div class="row" style="padding:30px">
         <div class="col-md-4 col-xs-4"></div>
@@ -28,9 +32,10 @@
                     <td><a href="/currencies/{{currency.rowid}}">{{ currency.name }}</a></td>
                     <td>{{ currency.currency }}</td>
                     <td><a href="/stockmarkets/{{currency.rowid}}">{{ currency.exchanges }}</a></td>           
+                    
                     <td>
-
-                    <a id = "results {{ currency.locations }}" onclick="javascript:count_countries('{{ currency.locations }}'); return true;"> {{ currency.locations }} </a>
+                      
+                      <a class = "country" id = "results {{ currency.locations }}" > {{ currency.locations }} </a>
 
                     </td>
                   
@@ -41,6 +46,8 @@
         </table>
     </div>
 </div> 
+<script > onload = function(){_print()} </script>
+<script > onload = function(){ count_countries_helper()} </script>
 <!-- END PAGE CONTENT -->
 <!-- SCRIPT FOR SORTING-->
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
@@ -56,6 +63,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
       $('#currencytable').DataTable();
   } );
 </script>
+
 
 <!-- END SCRIPT FOR SORTING-->
 {% endblock %}
