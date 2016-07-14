@@ -4,11 +4,11 @@ import sqlite3
 import csv
 
 
-from yahoo_oauth import OAuth1
-oauth = OAuth1(None, None, from_file='keys.json')
+# from yahoo_oauth import OAuth1
+# oauth = OAuth1(None, None, from_file='keys.json')
 
-if not oauth.token_is_valid():
-	oauth.refresh_access_token()
+# if not oauth.token_is_valid():
+# 	oauth.refresh_access_token()
 
 endpoints = ['Symbol', 'Name', ' Exchange', 'Currency']
 base_url = "http://dev.markitondemand.com/Api/v2/"
@@ -21,13 +21,14 @@ val = 0
 
 cur.execute('PRAGMA foreign_keys = ON')
 
+cur.execute('DROP TABLE IF EXISTS Company')
 cur.execute('DROP TABLE IF EXISTS Exchange')
 cur.execute('DROP TABLE IF EXISTS ExchangeVi')
 cur.execute('DROP TABLE IF EXISTS Location')
 cur.execute('DROP TABLE IF EXISTS LocationVi')
 cur.execute('DROP TABLE IF EXISTS Currency')
 cur.execute('DROP TABLE IF EXISTS CurrencyVi')
-cur.execute('DROP TABLE IF EXISTS Company')
+
 
 cur.execute('CREATE TABLE Exchange (eid INTEGER PRIMARY KEY AUTOINCREMENT,exchange TEXT, name TEXT, currency TEXT, location TEXT, market_cap_exchange TEXT)')
 cur.execute('CREATE VIRTUAL TABLE ExchangeVi USING fts3(eid INTEGER PRIMARY KEY AUTOINCREMENT,exchange TEXT, name TEXT, currency TEXT, location TEXT, market_cap_exchange TEXT)')
