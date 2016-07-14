@@ -68,7 +68,7 @@ class Company(db.Model):
     name = db.Column(db.String(80))
     exchange = db.Column(db.String(80))
     currency = db.Column(db.String(80))
-    # location = db.Column(db.String(80))
+    location = db.Column(db.String(80))
     open_price = db.Column(db.String(80))
     previous_price = db.Column(db.String(80))
     percent_change = db.Column(db.String(80))
@@ -83,9 +83,10 @@ class Company(db.Model):
     avg_volume = db.Column(db.String(80))
     market_cap = db.Column(db.String(80))
     foreign_id = db.Column(db.Integer)
-    # location_id = db.Column(db.Integer, db.ForeignKey('Location.rowid'))
-    # location = db.relationship('Location', back_populates="companies")
-    # # location_name = location.Location.name
+    foreign_id_cur = db.Column(db.Integer)
+    # location_id = db.Column(db.Integer, db.ForeignKey('foreign_id'))
+    # location = db.relationship('Location', uselist=False)
+    # location_name = location.Location.name
     # exchange_id = db.Column(db.Integer, db.ForeignKey('exchange.id'))
     # exchange = db.relationship('Exchange', uselist=False)
     # currency_id = db.Column(db.Integer, db.ForeignKey('currency.id'))
@@ -93,7 +94,7 @@ class Company(db.Model):
 
     def __init__(self, symbol, name, exchange, currency, location, open_price, 
         prev_price, percent_change, year_high, ask_price, eps, peg, days_range, 
-        percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap,foreign_id,location_id,location):
+        percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap):
         """
         self.name the name of the Company
         self.symbol the symbol of the Company
@@ -132,10 +133,6 @@ class Company(db.Model):
         self.volume = volume
         self.avg_volume = avg_volume
         self.market_cap = market_cap
-        self.foreign_id =foreign_id
-        self.location_id=location_id
-        self.location = location
-
 
     def __repr__(self):
         """
@@ -151,7 +148,6 @@ class Location(db.Model):
     gdp = db.Column(db.String(80))
     currency = db.Column(db.String(80))
     location_exchange = db.Column(db.String(80))
-    companies = relationship('Company', back_populates = location )
 
     def __init__(self, name, iso, capital, gdp, currency, location_exchange):
         """
@@ -167,7 +163,6 @@ class Location(db.Model):
         self.gdp = gdp
         self.currency = currency
         self.location_exchange = location_exchange
-        
 
     def __repr__(self):
         """

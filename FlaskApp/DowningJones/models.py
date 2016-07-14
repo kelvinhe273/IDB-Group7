@@ -83,6 +83,7 @@ class Company(db.Model):
     avg_volume = db.Column(db.String(80))
     market_cap = db.Column(db.String(80))
     foreign_id = db.Column(db.Integer)
+    foreign_id_cur = db.Column(db.Integer)
     # location_id = db.Column(db.Integer, db.ForeignKey('foreign_id'))
     # location = db.relationship('Location', uselist=False)
     # location_name = location.Location.name
