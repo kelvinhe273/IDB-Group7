@@ -1,9 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import subprocess
 
 app = Flask ( __name__ )
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
 
 from models import *
@@ -88,3 +88,56 @@ def tests ():
         return str(out) + str(err)
     except Exception as exc:
         return str(exc)
+
+@app.route ('/api/exchange/<int:id>', methods=['GET'])
+def get_exchange(id):
+    market = Exchange.query.get(id)
+    return jsonify(id = id,
+                   name = market.name, 
+                   name_code = market.exchange,
+                   market_cap = market.market_cap_exchange,
+                   location = market.location,
+                   currency = market.currency)
+
+@app.route ('/api/location/<int:id>', methods=['GET'])
+def get_location(id):
+    location = Location.query.get(id)
+    return jsonify(id = id,
+                   name = location.name, 
+                   iso = location.iso,
+                   capital = location.capital,
+                   GDP = location.gdp,
+                   location = location.location_exchange,
+                   currency = location.currency)
+
+@app.route ('/api/currency/<int:id>', methods=['GET'])
+def get_currency(id):
+    currency = Currency.query.get(id)
+    return jsonify(id = id,
+                   name = currency.name, 
+                   exchange_rate = currency.exchange_rate,
+                   exchanges = currency.exchanges,
+                   locations = currency.locations,
+                   currency = currency.currency)
+
+@app.route ('/api/company/<int:id>', methods=['GET'])
+def get_company(id):
+    company = Company.query.get(id)
+    return jsonify(id = id,
+                   name = company.name, 
+                   symbol = company.symbol,
+                   exchange = company.exchange,
+                   location = company.location,
+                   open_price = company.open_price,
+                   previous_price = company.previous_price,
+                   percent_change = company.percent_change,
+                   year_high = company.year_high,
+                   ask_price = company.ask_price,
+                   eps = company.eps,
+                   peg = company.peg,
+                   days_range = company.days_range,
+                   percent_change_fifty = company.percent_change_fifty,
+                   percent_change_twohundred = company.percent_change_twohundred,
+                   volume = company.volume,
+                   avg_volume = company.avg_volume,
+                   market_cap = company.market_cap)
