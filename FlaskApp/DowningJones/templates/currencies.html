@@ -2,10 +2,13 @@
 {% block body %}
 
 <!-- PAGE CONTENT -->
+
+
  <div class="container-fluid">
+  <script type="text/javascript" src="static/count.js" ></script>
   <div class="row" style="padding:30px">
-    <div class="col-md-4 col-xs-6"></div>
-    <div class="col-md-4 col-xs-6" style="text-align: center">
+    <div class="col-md-4 col-xs-4"></div>
+    <div class="col-md-4 col-xs-4" style="text-align: center">
       <h1 style = "font-weight : bold">Currency</h1>
     </div>
   </div>
@@ -24,10 +27,15 @@
       <tbody>
         {% for currency in currencies %}
           <tr>
+
            <td><a href="/currencies/{{currency.rowid}}">{{ currency.name }}</a></td>
            <td>{{ currency.currency }}</td>
             <td><a href="/stockmarkets/{{currency.rowid}}">{{ currency.exchanges }}</a></td>           
-           <td><a href="/locations/{{currency.rowid}}">{{ currency.locations }}</a></td>
+           <td>
+
+            <a id = "results {{ currency.locations }}" onclick="javascript:count_countries('{{ currency.locations }}'); return true;"> {{ currency.locations }} </a>
+
+           </td>
            <td>{{ currency.exchange_rate }}</td>
           </tr>
         {% endfor %}
