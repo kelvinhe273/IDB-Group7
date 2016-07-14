@@ -142,3 +142,14 @@ def get_company(id):
                    volume = company.volume,
                    avg_volume = company.avg_volume,
                    market_cap = company.market_cap)
+
+
+"""
+Minor routing changes for POST request
+"""
+
+# @app.route ('/search', methods=["POST"])
+# def search ():
+#     query= request.form['searchinput']
+#     return json.dumps({'status':'OK', 'query':query}), render_template('search.html',
+#                                                                         title="Search")
