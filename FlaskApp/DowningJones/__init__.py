@@ -89,6 +89,7 @@ def tests ():
     except Exception as exc:
         return str(exc)
 
+<<<<<<< Updated upstream
 @app.route ('/api/exchange/<int:id>', methods=['GET'])
 def get_exchange(id):
     market = Exchange.query.get(id)
