@@ -1,4 +1,6 @@
-from flask import Flask, render_template, jsonify
+import os
+import requests
+from flask import Flask, render_template, request, json, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import subprocess
 
@@ -147,8 +149,12 @@ def get_company(id):
 Minor routing changes for POST request
 """
 
-# @app.route ('/search', methods=["POST"])
-# def search ():
-#     query= request.form['searchinput']
-#     return json.dumps({'status':'OK', 'query':query}), render_template('search.html',
-#                                                                         title="Search")
+@app.route ('/search', methods=['GET', 'POST'])
+def search ():
+    # query = request.query_string
+    # return render_template('search.html', query = query, title="Search")
+    queries = {}
+    url = request.form['url']
+    thisString = url.split('=')
+    queries = thisString
+    return render_template('search.html',  queries = queries, title="Search")

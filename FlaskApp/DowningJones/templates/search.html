@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if queries %}
+{% for query in queries %}
+<h3>{{ query }}</h3>
+{% endfor %}
+{% endif %}
+{% endblock %}
