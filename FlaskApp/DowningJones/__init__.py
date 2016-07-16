@@ -2,10 +2,12 @@ import os
 import requests
 from flask import Flask, render_template, request, json, jsonify
 from flask_sqlalchemy import SQLAlchemy
+import flask_whooshalchemy
 import subprocess
 
 app = Flask ( __name__ )
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+app.config['WHOOSH_BASE'] = 'test.db'
 db = SQLAlchemy(app)
 
 from models import *
@@ -151,10 +153,12 @@ Minor routing changes for POST request
 
 @app.route ('/search', methods=['GET', 'POST'])
 def search ():
-    # query = request.query_string
-    # return render_template('search.html', query = query, title="Search")
     queries = {}
     url = request.form['url']
     thisString = url.split('=')
     queries = thisString
-    return render_template('search.html',  queries = queries, title="Search")
+    search_query1 = Location.query.filter(Location.name.contains(queries[0]))
+    search_query2 = Exchange.query.filter(Exchange.name.contains(queries[0]))
+    search_query3 = Currency.query.filter(Currency.name.contains(queries[0]))
+    search_query4 = Company.query.filter(Company.name.contains(queries[0]))
+    return render_template('search.html',  queries1 = search_query1, queries2= search_query2, queries3 =search_query3, queries4 = search_query4 ,title="Search")

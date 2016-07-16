@@ -1,8 +1,24 @@
 {% extends "layout.html" %}
 {% block body %}
-{% if queries %}
-{% for query in queries %}
-<h3>{{ query }}</h3>
+{% if queries1 %}
+{% for query in queries1 %}
+<h3>Location: {{ query.name }}, {{ query.iso }}, {{ query.capital }}, {{ query.gdp }}, {{ query.currency }}, {{ query.location_exchange }}</h3>
+{% endfor %}
+{% endif %}
+{% if queries2 %}
+{% for query in queries2 %}
+<h3>Exchange: {{ query.exchange }}, {{ query.name }}, {{ query.market_cap_exchange }}, {{ query.currency }}, {{ query.location }}</h3>
+{% endfor %}
+{% endif %}
+{% if queries3 %}
+{% for query in queries3 %}
+<h3>Currency: {{ query.name }}, {{ query.currency }}, {{ query.locations }}, {{ query.exchanges }}, {{ query.exchange_rate }}</h3>
+{% endfor %}
+{% endif %}
+{% if queries4 %}
+{% for query in queries4 %}
+<h3>Company: {{ query.symbol }}, {{ query.name }}, {{ query.exchange }}, {{ query.currency }}, {{ query.location }}, {{ query.open_price }}, {{ query.previous_price }}, {{ query.percent_change }}, {{ query.year_high }}, {{ query.ask_price }} , {{ query.eps }}, {{ query.peg }}, {{ query.days_range }}, {{ query.percent_change_fifty }}, {{ query.percent_change_twohundred }}, {{ query.volume }}, {{ query.avg_volume }}, {{ query.market_cap }}</h3>
 {% endfor %}
 {% endif %}
 {% endblock %}
+
