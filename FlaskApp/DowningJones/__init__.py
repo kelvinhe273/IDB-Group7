@@ -155,6 +155,7 @@ def search ():
     queries = {}
     url = request.form['url']
     thisString = url.split('=')
+    # thisString = thisString.split(" ")
     queries = thisString
     search_query1 = Location.query.filter(Location.name.contains(queries[0]))
     search_query2 = Exchange.query.filter(Exchange.name.contains(queries[0]))
