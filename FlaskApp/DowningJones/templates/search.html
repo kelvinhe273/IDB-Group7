@@ -1,24 +1,200 @@
 {% extends "layout.html" %}
 {% block body %}
+<div class="container-fluid">
+    <div class="row" style="padding:30px">
+      <div class="col-md-4 col-xs-4"></div>
+      <div class="col-md-4 col-xs-4" style="text-align: center">
+        <h1 style = "font-weight : bold">Search Results</h1>
+      </div>
+    </div>
+
 {% if queries1 %}
-{% for query in queries1 %}
-<h3>Location: {{ query.name }}, {{ query.iso }}, {{ query.capital }}, {{ query.gdp }}, {{ query.currency }}, {{ query.location_exchange }}</h3>
-{% endfor %}
+<div class="row" style="padding:30px">
+      <div class="col-md-4 col-xs-4"></div>
+      <div class="col-md-4 col-xs-4" style="text-align: center">
+        <h1 style = "font-weight : bold">Location</h1>
+      </div>
+    </div>
+    <div class="table-responsive"> 
+        <table id="locationtable" class="table table-hover table-striped table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <th id="name">Name</th>
+                    <th id="symbol">Symbol</th>
+                    <th id="exchange">Capital</th>
+                    <th id="currency">GDP</th>
+                    <th id="location">Currency</th>
+                    <th id="location">Excahnge</th>
+                </tr>
+            </thead>
+            <!-- Figure out how to add foreign currency signs.-->
+            <tbody>
+                {% for query in queries1 %}
+                <tr>
+                    <td>{{ query.name }}</td>
+                    <td>{{ query.iso }}</td>
+                    <td>{{ query.capital}}</td>
+                    <td>{{ query.gdp}}</td>
+                    <td>{{ query.currency}}</td>
+                    <td>{{ query.location_exchange}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div> 
 {% endif %}
 {% if queries2 %}
-{% for query in queries2 %}
-<h3>Exchange: {{ query.exchange }}, {{ query.name }}, {{ query.market_cap_exchange }}, {{ query.currency }}, {{ query.location }}</h3>
-{% endfor %}
+<div class="row" style="padding:30px">
+      <div class="col-md-4 col-xs-4"></div>
+      <div class="col-md-4 col-xs-4" style="text-align: center">
+        <h1 style = "font-weight : bold">Exchange</h1>
+      </div>
+    </div>
+    <div class="table-responsive"> 
+        <table id="exchangetable" class="table table-hover table-striped table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <th id="name">Name</th>
+                    <th id="symbol">Symbol</th>
+                    <th id="exchange">Market Cap</th>
+                    <th id="currency">Currency</th>
+                    <th id="location">Location</th>
+                </tr>
+            </thead>
+            <!-- Figure out how to add foreign currency signs.-->
+            <tbody>
+                {% for query in queries2 %}
+                <tr>
+                    <td>{{ query.exchange }}</td>
+                    <td>{{ query.name }}</td>
+                    <td>{{ query.market_cap_exchange}}</td>
+                    <td>{{ query.currency}}</td>
+                    <td>{{ query.location}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 {% endif %}
 {% if queries3 %}
-{% for query in queries3 %}
-<h3>Currency: {{ query.name }}, {{ query.currency }}, {{ query.locations }}, {{ query.exchanges }}, {{ query.exchange_rate }}</h3>
-{% endfor %}
+<div class="row" style="padding:30px">
+      <div class="col-md-4 col-xs-4"></div>
+      <div class="col-md-4 col-xs-4" style="text-align: center">
+        <h1 style = "font-weight : bold">Currency</h1>
+      </div>
+    </div>
+    <div class="table-responsive"> 
+        <table id="currencytable" class="table table-hover table-striped table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <th id="name">Name</th>
+                    <th id="symbol">Currency</th>
+                    <th id="exchange">Locations</th>
+                    <th id="currency">Exchanges</th>
+                    <th id="location">Exchange Rate</th>
+                </tr>
+            </thead>
+            <!-- Figure out how to add foreign currency signs.-->
+            <tbody>
+                {% for query in queries3 %}
+                <tr>
+                    <td>{{ query.name }}</td>
+                    <td>{{ query.currency }}</td>
+                    <td>{{ query.locations}}</td>
+                    <td>{{ query.exchanges}}</td>
+                    <td>{{ query.exchange_rate}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 {% endif %}
 {% if queries4 %}
-{% for query in queries4 %}
-<h3>Company: {{ query.symbol }}, {{ query.name }}, {{ query.exchange }}, {{ query.currency }}, {{ query.location }}, {{ query.open_price }}, {{ query.previous_price }}, {{ query.percent_change }}, {{ query.year_high }}, {{ query.ask_price }} , {{ query.eps }}, {{ query.peg }}, {{ query.days_range }}, {{ query.percent_change_fifty }}, {{ query.percent_change_twohundred }}, {{ query.volume }}, {{ query.avg_volume }}, {{ query.market_cap }}</h3>
-{% endfor %}
+
+<div class="row" style="padding:30px">
+      <div class="col-md-4 col-xs-4"></div>
+      <div class="col-md-4 col-xs-4" style="text-align: center">
+        <h1 style = "font-weight : bold">Company</h1>
+      </div>
+    </div>
+    <div class="table-responsive"> 
+        <table id="companytable" class="table table-hover table-striped table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <th id="name">Symbol</th>
+                    <th id="symbol">Name</th>
+                    <th id="exchange">Exchange</th>
+                    <th id="currency">Currency</th>
+                    <th id="location">Location</th>
+                    <th id="name">Open Price</th>
+                    <th id="symbol">Previous Price</th>
+                    <th id="exchange">Percent Change</th>
+                    <th id="currency">Year High</th>
+                    <th id="location">Ask Price</th>
+                    <th id="name">EPS</th>
+                    <th id="symbol">PEG</th>
+                    <th id="exchange">Days Range</th>
+                    <th id="currency">Percent Change Fifty days</th>
+                    <th id="location">Percent Change Two Hundred Days</th>
+                    <th id="name">Volume</th>
+                    <th id="symbol">Average Volume</th>
+                    <th id="exchange">Market Cap</th>
+                </tr>
+            </thead>
+            <!-- Figure out how to add foreign currency signs.-->
+            <tbody>
+                {% for query in queries4 %}
+                <tr>
+                    <td>{{ query.symbol }}</td>
+                    <td>{{ query.name }}</td>
+                    <td>{{ query.exchange}}</td>
+                    <td>{{ query.currency}}</td>
+                    <td>{{ query.loaction}}</td>
+                    <td>{{ query.open_price }}</td>
+                    <td>{{ query.previous_price }}</td>
+                    <td>{{ query.percent_change}}</td>
+                    <td>{{ query.year_high}}</td>
+                    <td>{{ query.ask_price}}</td>
+                    <td>{{ query.eps }}</td>
+                    <td>{{ query.peg }}</td>
+                    <td>{{ query.days_range}}</td>
+                    <td>{{ query.percent_change_fifty}}</td>
+                    <td>{{ query.percent_change_twohundred}}</td>
+                     <td>{{ query.volume }}</td>
+                    <td>{{ query.avg_volume }}</td>
+                    <td>{{ query.market_cap}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 {% endif %}
+
+<!-- END PAGE CONTENT-->
+<!-- SCRIPT FOR SORTING-->
+<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript" 
+src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" 
+src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function() {
+
+      $('#companytable').DataTable();
+  } );
+  } );
+  } );
+  } );
+</script>
 {% endblock %}
+
+
+
 
