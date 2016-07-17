@@ -153,12 +153,20 @@ Minor routing changes for POST request
 @app.route ('/search', methods=['GET', 'POST'])
 def search ():
     queries = {}
+    hackString = ""
     url = request.form['url']
     thisString = url.split('=')
-    # thisString = thisString.split(" ")
-    queries = thisString
-    search_query1 = Location.query.filter(Location.name.contains(queries[0]))
-    search_query2 = Exchange.query.filter(Exchange.name.contains(queries[0]))
-    search_query3 = Currency.query.filter(Currency.name.contains(queries[0]))
-    search_query4 = Company.query.filter(Company.name.contains(queries[0]))
+    index = 0
+    for x in thisString:
+      hackString += thisString[index]
+      index = index + 1
+    hackString = hackString.split(" ")
+    queries = hackString
+    index2 = 0
+    for i in queries:
+      search_query1 = Location.query.filter(Location.name.contains(queries[index2]))
+      search_query2 = Exchange.query.filter(Exchange.name.contains(queries[index2]))
+      search_query3 = Currency.query.filter(Currency.name.contains(queries[index2]))
+      search_query4 = Company.query.filter(Company.name.contains(queries[index2]))
+      index2 = index2 + 1
     return render_template('search.html',  queries = queries, queries1 = search_query1, queries2= search_query2, queries3 =search_query3, queries4 = search_query4 ,title="Search")

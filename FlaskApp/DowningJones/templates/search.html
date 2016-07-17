@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 {% block body %}
 
-<h1 style ="text-align:center;"> Search For: {{queries[0]}}</h1>
+<div id="and">
+<input type="button" id="hideshow" value="and">
+<h1 style ="text-align:center;"> Search For: {{queries}}</h1>
 <div class="container-fluid">
     <div class="row" style="padding:30px">
       <div class="col-md-4 col-xs-4"></div>
@@ -47,6 +49,7 @@
 </div> 
 {% endif %}
 {% if queries2 %}
+<div class="container-fluid">
 <div class="row" style="padding:30px">
       <div class="col-md-4 col-xs-4"></div>
       <div class="col-md-4 col-xs-4" style="text-align: center">
@@ -81,6 +84,7 @@
 </div>
 {% endif %}
 {% if queries3 %}
+<div class="container-fluid">
 <div class="row" style="padding:30px">
       <div class="col-md-4 col-xs-4"></div>
       <div class="col-md-4 col-xs-4" style="text-align: center">
@@ -121,7 +125,7 @@
 </div>
 {% endif %}
 {% if queries4 %}
-
+<div class="container-fluid">
 <div class="row" style="padding:30px">
       <div class="col-md-4 col-xs-4"></div>
       <div class="col-md-4 col-xs-4" style="text-align: center">
@@ -176,8 +180,18 @@
         </table>
     </div>
 </div>
+</input>
+</div>
+
 {% endif %}
-<script > 
+<script>
+jQuery(document).ready(function(){
+        jQuery('#hideshow').on('click', function(event) {        
+             jQuery('#and').toggle('show');
+        });
+    });
+</script>
+<script> 
 onload = function(){count_helper('exchange', '', '/stockmarkets/', 'ex '); count_helper('country', '', '/locations/', 'cr ');} 
 </script>
 
