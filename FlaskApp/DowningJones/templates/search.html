@@ -28,16 +28,16 @@
                     <th id="location">Excahnge</th>
                 </tr>
             </thead>
-            <!-- Figure out how to add foreign currency signs.-->
             <tbody>
                 {% for query in queries1 %}
                 <tr>
-                    <td>{{ query.name }}</td>
+                    <td><a href="/locations/{{query.rowid}}">{{ query.name }}</a></td>
                     <td>{{ query.iso }}</td>
                     <td>{{ query.capital}}</td>
                     <td>{{ query.gdp}}</td>
-                    <td>{{ query.currency}}</td>
-                    <td>{{ query.location_exchange}}</td>
+                    <!-- fix this sal hardcode this like the other table-->
+                    <td><a href="/currencies/{{query.rowid}}">{{ query.currency}}</a></td>
+                    <td><a href="/stockmarkets/{{query.rowid}}">{{ query.location_exchange}}</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
@@ -63,15 +63,15 @@
                     <th id="location">Location</th>
                 </tr>
             </thead>
-            <!-- Figure out how to add foreign currency signs.-->
             <tbody>
                 {% for query in queries2 %}
                 <tr>
-                    <td>{{ query.exchange }}</td>
-                    <td>{{ query.name }}</td>
+                    <td><a href="/stockmarkets/{{query.rowid}}">{{ query.name }}</a></td>
+                    <td><a href="/stockmarkets/{{query.rowid}}">{{ query.exchange }}</a></td>
                     <td>{{ query.market_cap_exchange}}</td>
-                    <td>{{ query.currency}}</td>
-                    <td>{{ query.location}}</td>
+                    <!-- fix this sal hardcode this like the other table-->
+                    <td><a href="/currencies/{{query.rowid}}">{{ query.currency}}</a></td>
+                    <td><a href="/locations/{{query.rowid}}">{{ query.location}}</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
@@ -101,10 +101,12 @@
             <tbody>
                 {% for query in queries3 %}
                 <tr>
-                    <td>{{ query.name }}</td>
-                    <td>{{ query.currency }}</td>
-                    <td>{{ query.locations}}</td>
-                    <td>{{ query.exchanges}}</td>
+                    <!-- fix this sal hardcode this like the other table-->
+                    <td><a href="/currency/{{ query.rowid }}">{{ query.name }}</a></td>
+                    <!-- fix this sal hardcode this like the other table-->
+                    <td><a href="/currency/{{ query.rowid }}">{{ query.currency }}</a></td>
+                    <td><a href="/locations/{{ query.rowid }}">{{ query.locations}}</a></td>
+                    <td><a href="/stockmarkets/{{query.rowid}}">{{ query.exchanges}}</a></td>
                     <td>{{ query.exchange_rate}}</td>
                     </tr>
                 {% endfor %}
@@ -148,10 +150,11 @@
                 {% for query in queries4 %}
                 <tr>
                     <td>{{ query.symbol }}</td>
-                    <td>{{ query.name }}</td>
-                    <td>{{ query.exchange}}</td>
-                    <td>{{ query.currency}}</td>
-                    <td>{{ query.location}}</td>
+                    <td><a href="/companies/{{query.rowid}}">{{ query.name }}</a></td>
+                    <td><a href="/stockmarkets/{{query.foreign_id}}">{{ query.exchange}}</a></td>
+                    <!-- fix this sal hardcode this like the other table-->
+                    <td><a href="/currencies/{{query.foreign_id}}">{{ query.currency}}</a></td>
+                    <td><a href="/locations/{{query.foreign_id}}">{{ query.location}}</a></td>
                     <td>{{ query.open_price }}</td>
                     <td>{{ query.previous_price }}</td>
                     <td>{{ query.percent_change}}</td>

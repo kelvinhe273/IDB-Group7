@@ -1,6 +1,5 @@
 from flask import Flask
 from __init__ import db,app
-import flask.ext.whooshalchemy as whooshalchemy
 
 class Exchange(db.Model):
     rowid = db.Column(db.Integer, primary_key=True)

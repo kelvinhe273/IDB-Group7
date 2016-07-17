@@ -2,7 +2,6 @@ import os
 import requests
 from flask import Flask, render_template, request, json, jsonify
 from flask_sqlalchemy import SQLAlchemy
-import flask_whooshalchemy
 import subprocess
 
 app = Flask ( __name__ )
