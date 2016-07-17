@@ -1,5 +1,5 @@
 from flask import Flask
-from __init__ import db
+from __init__ import db,app
 
 class Exchange(db.Model):
     rowid = db.Column(db.Integer, primary_key=True)
@@ -141,6 +141,7 @@ class Company(db.Model):
         return '<Company %r>' % self.name
 
 class Location(db.Model):
+    __searchable__ = ['name', 'iso','capital','gdp', 'currency', 'location_exchange']
     rowid = db.Column(db.Integer, primary_key=True)        #pk can be the iso code
     name = db.Column(db.String(80))
     iso = db.Column(db.String(2))
@@ -169,3 +170,4 @@ class Location(db.Model):
         returns the location's self.name attribute
         """
         return '<Location %r>' % self.name
+

@@ -2,7 +2,7 @@ FILES :=                              \
     .gitignore					 	  \
     makefile						  \
     apiary.apib						  \
-    IDB1.log						  \
+    IDB3.log						  \
     models.html						  \
     FlaskApp/DowningJones/models.py	  \
     FlaskApp/DowningJones/tests.py    \					  \
@@ -23,7 +23,7 @@ models.html: FlaskApp/DowningJones/models.py
 	pydoc3 -w FlaskApp/DowningJones/models.py
 
 IDB1.log:
-	git log > IDB1.log
+	git log > IDB3.log
 
 TestModels: .pylintrc FlaskApp/DowningJones/tests.py FlaskApp/DowningJones/models.py
 	-$(PYLINT) FlaskApp/DowningJones/tests.py
@@ -52,7 +52,7 @@ clean:
 	rm -f  .coverage
 	rm -f  *.pyc
 	rm -f  *.tmp
-	rm -f  IDB1.log
+	rm -f  IDB3.log
 	rm -rf __pycache__
 
 
@@ -61,7 +61,7 @@ config:
 
 html: models.html
 
-log: IDB1.log
+log: IDB3.log
 
 format:
 	autopep8 -i app/models.py
@@ -74,4 +74,4 @@ status:
 	git remote -v
 	git status
 
-test: .pylintrc models.html TestModels IDB1.log check
+test: .pylintrc models.html TestModels IDB3.log check

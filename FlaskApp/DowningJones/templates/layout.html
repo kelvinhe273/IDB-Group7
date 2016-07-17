@@ -11,19 +11,30 @@
   <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>
   <link rel="stylesheet" type="text/css" href="static/style.css">
   <script src="//code.jquery.com/jquery-1.12.3.js"></script>
-  <script type="text/javascript">
-$(document).ready(function() {
-  $('#searchsubmit').click(function(){
-    var searchstring  = $('#searchbar').val();
-    $.ajax({
-    url: "../../__init__.py",
-    method: "POST",
-    data: {"searchinput": searchstring},
-    dataType: "json",
-    success: function(d) {
-        // Successful POST; do something with the response if you want
-        alert(d.status);
-    }
+<!--   <script type="text/javascript">
+// $(document).ready(function() {
+//   $('#searchsubmit').click(function(){
+//     var searchstring  = $('#searchbar').val();
+//     $.ajax({
+//     url: "../search",
+//     method: "POST",
+//     data: {"searchinput": searchstring},
+//     dataType: "json",
+//     success: function(d) {
+//         // Successful POST; do something with the response if you want
+//         alert(d.status);
+//     }
+//     });
+//   });
+// });
+// </script>-->
+<script>
+$(document).ready(function ($){
+  $(function(){
+    $("#searchsubmit").keyup(function(e){
+      if(e.keyCode===13){
+        window.location.href="/search?q=" + $('#searchsubmit').val();
+      }
     });
   });
 });
@@ -82,9 +93,9 @@ $(document).ready(function() {
           </li>
           <li><a href="/about">About</a></li>
         </ul>
-        <form class="navbar-form navbar-left" role="search">
+        <form class="navbar-form navbar-left" role="search" action="/search" method="post">
           <div class="form-group">
-            <input type="text" id="searchbar" class="form-control" placeholder="Search">
+            <input type="text" id="searchbar" name="url" class="form-control" placeholder="Search">
           </div>
           <button type="submit" id="searchsubmit" class="btn btn-default">Submit</button>
         </form>

@@ -1,9 +1,12 @@
-from flask import Flask, render_template, jsonify
+import os
+import requests
+from flask import Flask, render_template, request, json, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import subprocess
 
 app = Flask ( __name__ )
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+app.config['WHOOSH_BASE'] = 'test.db'
 db = SQLAlchemy(app)
 
 from models import *
@@ -147,8 +150,14 @@ def get_company(id):
 Minor routing changes for POST request
 """
 
-# @app.route ('/search', methods=["POST"])
-# def search ():
-#     query= request.form['searchinput']
-#     return json.dumps({'status':'OK', 'query':query}), render_template('search.html',
-#                                                                         title="Search")
+@app.route ('/search', methods=['GET', 'POST'])
+def search ():
+    queries = {}
+    url = request.form['url']
+    thisString = url.split('=')
+    queries = thisString
+    search_query1 = Location.query.filter(Location.name.contains(queries[0]))
+    search_query2 = Exchange.query.filter(Exchange.name.contains(queries[0]))
+    search_query3 = Currency.query.filter(Currency.name.contains(queries[0]))
+    search_query4 = Company.query.filter(Company.name.contains(queries[0]))
+    return render_template('search.html',  queries = queries, queries1 = search_query1, queries2= search_query2, queries3 =search_query3, queries4 = search_query4 ,title="Search")
