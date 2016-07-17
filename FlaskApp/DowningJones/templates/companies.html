@@ -26,7 +26,10 @@
                     <td><a href="/companies/{{company.rowid}}">{{ company.name }}</a></td>
                     <td>{{ company.symbol }}</td>
                     <td><a href="/stockmarkets/{{company.foreign_id}}">{{ company.exchange }}</a></td>
-                    <td><a href="/currencies/{{company.foreign_id}}">{{ company.currency}}</a></td>
+                    <!--td><a href="/currencies/{{company.foreign_id}}">{{ company.currency}}</a></td-->
+
+                    <td><a class = "currency" id = "cu {{ company.currency }}" >{{ company.currency }}</a></td>
+
                     <td><a href="/locations/{{company.foreign_id}}">{{ company.location}}</a></td>
                     </tr>
                 {% endfor %}
@@ -34,6 +37,11 @@
         </table>
     </div>
 </div> 
+
+<script > 
+onload = function(){count_helper('currency', '', '/currencies/', 'cu ')} 
+</script>
+
 <!-- END PAGE CONTENT-->
 <!-- SCRIPT FOR SORTING-->
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>

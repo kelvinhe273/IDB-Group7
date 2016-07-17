@@ -1,16 +1,20 @@
 
 /* I THINK THERE ARE PLACE HOLDER VALUES UNTIL I FIGURE OUT HOW TO DYNAMICALLY ASSIGN THEM	*/
 var refc = ["Canada", "Great Britain", "Greece", "United States", "Mexico", "Germany", "Taiwan", "Germany", "Germany", "Hong Kong", "France"];
+var refu = ["CAD", "GBp", "Eur", "USD", "MXN", "TWD", "HKD"];
 var refe = ["TOR", "LSE", "ASE", "NMS", "MEX", "FRA", "TAI", "BER", "MUN", "HKG", "PAR"];
+
 
 function count(str, classn, k, href, id){
 	
 	var id = id + str;
 
-	//console.log(classn[0] + (classn[0] == "c"))
+	//console.log(classn[0]+classn[1] + (classn[0]+classn[1] == "cu"));
 	
-	if(classn[0] == "c")
+	if(classn[0]+classn[1] == "co")
 		var ref = refc
+	else if(classn[0]+classn[1] == "cu")
+		var ref = refu
 	else
 		var ref = refe
 	
@@ -35,9 +39,11 @@ function count(str, classn, k, href, id){
 
 	}
 	else{
+
 		document.getElementById(id).innerHTML = str;
 		var num = ref.indexOf(str) + 1;
 		document.getElementById(id).href = href + num;
+		console.log("ID: " + id +  " STR: " + str + " NUM: " + num)
 	}
 	return true;
 }
@@ -53,7 +59,7 @@ function count_helper(classn, k, href, id){
 	for(i = 0; i < countries.length; i++){
 
 		if (repeated.indexOf(countries[i].textContent) == -1){
-			//console.log("NOT REPEATED " + countries[i].textContent)
+			console.log("NOT REPEATED " + countries[i].textContent)
 			count(trim(countries[i].textContent), classn, k, href, id);
 			repeated.push(countries[i].textContent);
 		}

@@ -6,20 +6,23 @@ python:
 sudo: false
 
 install:
-    - pip install --upgrade pip
-    - pip --version
-    - pip install coverage
-    - pip install pylint
-    - pip install Flask
-    - pip install Flask-SQLAlchemy
-    - pip install Flask-Testing
+    #Sal changed these from pip to pip3, hopefully didn't break anything?!
+    - pip3 install --upgrade pip
+    - pip3 --version
+    - pip3 install coverage
+    - pip3 install pylint
+    - pip3 install Flask
+    - pip3 install Flask-SQLAlchemy
+    - pip3 install Flask-Testing
+    - pip3 install requests
 
 before_script:
+    #also changed pylint and coverage to version 3
     - uname -a
     - printenv
     - pip list
-    - coverage --version
-    - pylint   --version
+    - coverage3 --version
+    - pylint3   --version
 
 script:
     - date

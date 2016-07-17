@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
+
 <h1 style ="text-align:center;"> Search For: {{queries[0]}}</h1>
 <div class="container-fluid">
     <div class="row" style="padding:30px">
@@ -100,13 +101,18 @@
             <tbody>
                 {% for query in queries3 %}
                 <tr>
-                    <!-- fix this sal hardcode this like the other table-->
+                    <!-- fix this sal hardcode this like the other table .. SAL SAYS HE DUNN IT-->
                     <td><a href="/currency/{{ query.rowid }}">{{ query.name }}</a></td>
-                    <!-- fix this sal hardcode this like the other table-->
+                    <!-- fix this sal hardcode this like the other table .. SAL SAYS HE DUNN IT-->
                     <td><a href="/currency/{{ query.rowid }}">{{ query.currency }}</a></td>
-                    <td><a href="/locations/{{ query.rowid }}">{{ query.locations}}</a></td>
-                    <td><a href="/stockmarkets/{{query.rowid}}">{{ query.exchanges}}</a></td>
+
+                    <!--td><a href="/locations/{{ query.rowid }}">{{ query.locations}}</a></td-->
+                    <!--td><a href="/stockmarkets/{{query.rowid}}">{{ query.exchanges}}</a></td-->
+
+                    <td><a class = "country" id = "cr {{ query.locations }}" > {{ query.locations }} </a></td>
+                    <td><a class = "exchange" id = "ex {{ query.exchanges }}" >{{ query.exchanges }}</a></td>
                     <td>{{ query.exchange_rate}}</td>
+
                     </tr>
                 {% endfor %}
             </tbody>
@@ -171,6 +177,9 @@
     </div>
 </div>
 {% endif %}
+<script > 
+onload = function(){count_helper('exchange', '', '/stockmarkets/', 'ex '); count_helper('country', '', '/locations/', 'cr ');} 
+</script>
 
 <!-- END PAGE CONTENT-->
 <!-- SCRIPT FOR SORTING-->

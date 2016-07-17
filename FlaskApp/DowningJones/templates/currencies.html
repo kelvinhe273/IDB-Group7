@@ -2,7 +2,6 @@
 {% block body %}
 
 <!-- PAGE CONTENT -->
-<script type="text/javascript" src="static/count.js" ></script>
 <div class="container-fluid">
     <div class="row" style="padding:30px">
         <div class="col-md-4 col-xs-4"></div>
@@ -16,8 +15,8 @@
                 <tr>
                     <th id="name">Name</th>
                     <th id="currencycode">Currency Code</th>
-                    <th id="exchange">Exchange</th>
                     <th id="location">Location</th>
+                    <th id="exchange">Exchange</th>
                     <th id="exchangerate">Exchange Rate (To U.S Dollar)</th>
                 </tr>
             </thead>
@@ -27,9 +26,8 @@
                 <tr>
                     <td><a href="/currencies/{{currency.rowid}}">{{ currency.name }}</a></td>
                     <td>{{ currency.currency }}</td>
-                    <!--td><a href="/stockmarkets/{{currency.rowid}}">{{ currency.exchanges }}</a></td-->  
-                    <td><a class = "exchange" id = "ex {{ currency.exchanges }}" >{{ currency.exchanges }}</a></td>           
                     <td><a class = "country" id = "cr {{ currency.locations }}" > {{ currency.locations }} </a></td>
+                    <td><a class = "exchange" id = "ex {{ currency.exchanges }}" >{{ currency.exchanges }}</a></td>
                    <td>{{ currency.exchange_rate }}</td>
                 </tr>
                 {% endfor %}
