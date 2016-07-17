@@ -10,14 +10,18 @@ b{
 th,a {
     padding: 15px !important;
 }
+td{
+    text-align:center;
+}
 
 body{
     background:linear-gradient(rgba(200,265,265,0.45), rgba(265,265,265,0.45)), url("../static/background3.png");
     background-size: cover !important;
 }
 </style>
-<!-- PAGE CONTENT -->
 
+<!-- PAGE CONTENT -->
+<script type="text/javascript" src="../static/count.js" ></script>
 <div class="content">
     <div class="row" style="padding:30px">
         <div class="col-md-4"></div>
@@ -41,19 +45,19 @@ body{
                         <tbody>
                             <tr>
                                 <th>Location</th>
-                                <td style="text-align:center "><a href="/locations/{{currency.rowid}}">{{currency.locations}}</a></td>
+                                <td ><a class = "country2" id = "cr {{ currency.locations }}">{{currency.locations}}</a></td>
                             </tr>
                             <tr>
                                 <th>Stock Exchange(s)</th>
-                                <td style="text-align:center "><a href="/stockmarkets/{{currency.rowid}}">{{currency.exchanges}}</a></td>
+                                <td ><a class = "exchange2" id = "ex {{ currency.exchanges }}">{{currency.exchanges}}</a></td>
                             </tr>
                             <tr>
                                 <th>Currency Symbol</th>
-                                <td style="text-align:center">{{currency.currency}}</td>
+                                <td >{{currency.currency}}</td>
                             </tr>
                             <tr>
                                 <th> Exchange Rate</th>
-                                <td style="text-align:center"> {{currency.exchange_rate}}</td>
+                                <td > {{currency.exchange_rate}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -62,5 +66,7 @@ body{
         </div>
     </div>
 </div>
+<script > onload = function(){count_helper('exchange', '2', '/stockmarkets/', 'ex '); count_helper('country', '2', '/locations/', 'cr ');} </script>
  <!-- END PAGE CONTENT -->
+ 
 {% endblock %}
