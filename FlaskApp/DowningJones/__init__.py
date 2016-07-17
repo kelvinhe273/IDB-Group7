@@ -161,4 +161,4 @@ def search ():
     search_query2 = Exchange.query.filter(Exchange.name.contains(queries[0]))
     search_query3 = Currency.query.filter(Currency.name.contains(queries[0]))
     search_query4 = Company.query.filter(Company.name.contains(queries[0]))
-    return render_template('search.html',  queries1 = search_query1, queries2= search_query2, queries3 =search_query3, queries4 = search_query4 ,title="Search")
+    return render_template('search.html',  queries = queries, queries1 = search_query1, queries2= search_query2, queries3 =search_query3, queries4 = search_query4 ,title="Search")
