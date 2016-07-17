@@ -1,16 +1,8 @@
 {% extends "layout.html" %}
 {% block body %}
-<style>
-  .country{
-    
-  }
-  .exchange{
-    
-  }
-</style>
+
 <!-- PAGE CONTENT -->
-<script type="text/javascript" src="static/count_countries.js" ></script>
-<script type="text/javascript" src="static/count_exchanges.js" ></script>
+<script type="text/javascript" src="static/count.js" ></script>
 <div class="container-fluid">
     <div class="row" style="padding:30px">
         <div class="col-md-4 col-xs-4"></div>
@@ -46,7 +38,9 @@
     </div>
 </div> 
 
-<script > onload = function(){count_exchanges_helper(); count_countries_helper();} </script>
+<script > 
+onload = function(){count_helper('exchange', '', '/stockmarkets/', 'ex '); count_helper('country', '', '/locations/', 'cr ');} 
+</script>
 
 <!-- END PAGE CONTENT -->
 <!-- SCRIPT FOR SORTING-->
