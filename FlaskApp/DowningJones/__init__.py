@@ -145,6 +145,13 @@ def get_company(id):
                    avg_volume = company.avg_volume,
                    market_cap = company.market_cap)
 
+@app.route ('/api', methods=['GET'])
+def get_entry_points():
+  return jsonify(exchange_url = "/exchange",
+                 company_url = "/company",
+                 location_url = "/location",
+                 currency_url = "/currency")
+
 
 """
 Minor routing changes for POST request
