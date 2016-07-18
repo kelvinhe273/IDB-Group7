@@ -160,19 +160,32 @@ Minor routing changes for POST request
 @app.route ('/search', methods=['GET', 'POST'])
 def search ():
     queries = {}
+    andqueries = {}
     hackString = ""
     url = request.form['url']
     thisString = url.split('=')
-    # index = 0
-    # for x in thisString:
-    #   hackString += thisString[index]
-    #   index = index + 1
-    # hackString = hackString.split(" ")
-    queries = thisString
-    # index2 = 0
+    andqueries = thisString
+    search_queryand1 = Location.query.filter(or_(Location.name.contains(andqueries[0]),Location.iso.contains(andqueries[0]), Location.capital.contains(andqueries[0]),Location.gdp.contains(andqueries[0]),Location.currency.contains(andqueries[0]), Location.location_exchange.contains(andqueries[0])))
+    search_queryand2 = Exchange.query.filter(or_(Exchange.exchange.contains(andqueries[0]),Exchange.name.contains(andqueries[0]),Exchange.market_cap_exchange.contains(andqueries[0]),Exchange.currency.contains(andqueries[0]),Exchange.location.contains(andqueries[0])))
+    search_queryand3 = Currency.query.filter(or_(Currency.name.contains(andqueries[0]),Currency.currency.contains(andqueries[0]),Currency.locations.contains(andqueries[0]),Currency.exchanges.contains(andqueries[0]), Currency.exchange_rate.contains(andqueries[0])))
+    search_queryand4 = Company.query.filter(or_(Company.symbol.contains(andqueries[0]),Company.name.contains(andqueries[0]),Company.exchange.contains(andqueries[0]),Company.currency.contains(andqueries[0]),Company.location.contains(andqueries[0]),Company.open_price.contains(andqueries[0]),Company.previous_price.contains(andqueries[0]),Company.percent_change.contains(andqueries[0]),Company.year_high.contains(andqueries[0]),Company.ask_price.contains(andqueries[0]),Company.eps.contains(andqueries[0]),Company.peg.contains(andqueries[0]),Company.percent_change_fifty.contains(andqueries[0]),Company.volume.contains(andqueries[0]),Company.avg_volume.contains(andqueries[0]),Company.market_cap.contains(andqueries[0])))
+    index = 0
+    for x in thisString:
+      hackString += thisString[index]
+      index = index + 1
+    hackString = hackString.split(" ")
+    queries = hackString
+    index2 = 0
+    search_queryor1 = []
+    search_queryor2 = []
+    search_queryor3 = []
+    search_queryor4 = []
     for i in queries:
-      search_query1 = Location.query.filter(or_(Location.name.contains(queries[0]),Location.iso.contains(queries[0]), Location.capital.contains(queries[0]),Location.gdp.contains(queries[0]),Location.currency.contains(queries[0]), Location.location_exchange.contains(queries[0])))
-      search_query2 = Exchange.query.filter(or_(Exchange.exchange.contains(queries[0]),Exchange.name.contains(queries[0]),Exchange.market_cap_exchange.contains(queries[0]),Exchange.currency.contains(queries[0]),Exchange.location.contains(queries[0])))
-      search_query3 = Currency.query.filter(or_(Currency.name.contains(queries[0]),Currency.currency.contains(queries[0]),Currency.locations.contains(queries[0]),Currency.exchanges.contains(queries[0]), Currency.exchange_rate.contains(queries[0])))
-      search_query4 = Company.query.filter(or_(Company.symbol.contains(queries[0]),Company.name.contains(queries[0]),Company.exchange.contains(queries[0]),Company.currency.contains(queries[0]),Company.location.contains(queries[0]),Company.open_price.contains(queries[0]),Company.previous_price.contains(queries[0]),Company.percent_change.contains(queries[0]),Company.year_high.contains(queries[0]),Company.ask_price.contains(queries[0]),Company.eps.contains(queries[0]),Company.peg.contains(queries[0]),Company.percent_change_fifty.contains(queries[0]),Company.volume.contains(queries[0]),Company.avg_volume.contains(queries[0]),Company.market_cap.contains(queries[0])))
-    return render_template('search.html',  queries = queries, queries1 = search_query1, queries2= search_query2, queries3 =search_query3, queries4 = search_query4 ,title="Search")
+      search_queryor1 += Location.query.filter(or_(Location.name.contains(queries[index2]),Location.iso.contains(queries[index2]), Location.capital.contains(queries[index2]),Location.gdp.contains(queries[index2]),Location.currency.contains(queries[index2]), Location.location_exchange.contains(queries[index2])))
+      search_queryor2 += Exchange.query.filter(or_(Exchange.exchange.contains(queries[index2]),Exchange.name.contains(queries[index2]),Exchange.market_cap_exchange.contains(queries[index2]),Exchange.currency.contains(queries[index2]),Exchange.location.contains(queries[index2])))
+      search_queryor3 += Currency.query.filter(or_(Currency.name.contains(queries[index2]),Currency.currency.contains(queries[index2]),Currency.locations.contains(queries[index2]),Currency.exchanges.contains(queries[index2]), Currency.exchange_rate.contains(queries[index2])))
+      search_queryor4 += Company.query.filter(or_(Company.symbol.contains(queries[index2]),Company.name.contains(queries[index2]),Company.exchange.contains(queries[index2]),Company.currency.contains(queries[index2]),Company.location.contains(queries[index2]),Company.open_price.contains(queries[index2]),Company.previous_price.contains(queries[index2]),Company.percent_change.contains(queries[index2]),Company.year_high.contains(queries[index2]),Company.ask_price.contains(queries[index2]),Company.eps.contains(queries[index2]),Company.peg.contains(queries[index2]),Company.percent_change_fifty.contains(queries[index2]),Company.volume.contains(queries[index2]),Company.avg_volume.contains(queries[index2]),Company.market_cap.contains(queries[index2])))
+      index2 = index2 + 1
+
+    return render_template('search.html', queries = queries, queriesand1 = search_queryand1, queriesand2 = search_queryand2, queriesand3 = search_queryand3, queriesand4 = search_queryand4, queriesor1 = search_queryor1, queriesor2= search_queryor2, queriesor3 =search_queryor3, queriesor4 = search_queryor4 ,title="Search")
+      

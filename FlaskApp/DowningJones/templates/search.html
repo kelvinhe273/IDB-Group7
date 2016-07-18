@@ -12,7 +12,7 @@
       </div>
     </div>
 
-{% if queries1 %}
+{% if queriesand1 %}
 <div class="row" style="padding:30px">
       <div class="col-md-4 col-xs-4"></div>
       <div class="col-md-4 col-xs-4" style="text-align: center">
@@ -32,7 +32,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for query in queries1 %}
+                {% for query in queriesand1 %}
                 <tr>
                     <td><a href="/locations/{{query.rowid}}">{{ query.name }}</a></td>
                     <td>{{ query.iso }}</td>
@@ -48,7 +48,7 @@
     </div>
 </div> 
 {% endif %}
-{% if queries2 %}
+{% if queriesand2 %}
 <div class="container-fluid">
 <div class="row" style="padding:30px">
       <div class="col-md-4 col-xs-4"></div>
@@ -68,7 +68,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for query in queries2 %}
+                {% for query in queriesand2 %}
                 <tr>
                     <td><a href="/stockmarkets/{{query.rowid}}">{{ query.name }}</a></td>
                     <td><a href="/stockmarkets/{{query.rowid}}">{{ query.exchange }}</a></td>
@@ -83,7 +83,7 @@
     </div>
 </div>
 {% endif %}
-{% if queries3 %}
+{% if queriesand3 %}
 <div class="container-fluid">
 <div class="row" style="padding:30px">
       <div class="col-md-4 col-xs-4"></div>
@@ -103,7 +103,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for query in queries3 %}
+                {% for query in queriesand3 %}
                 <tr>
                     <!-- fix this sal hardcode this like the other table .. SAL SAYS HE DUNN IT-->
                     <td><a href="/currency/{{ query.rowid }}">{{ query.name }}</a></td>
@@ -124,7 +124,7 @@
     </div>
 </div>
 {% endif %}
-{% if queries4 %}
+{% if queriesand4 %}
 <div class="container-fluid">
 <div class="row" style="padding:30px">
       <div class="col-md-4 col-xs-4"></div>
@@ -155,7 +155,7 @@
                 </tr>
             </thead>
             <tbody>
-                {% for query in queries4 %}
+                {% for query in queriesand4 %}
                 <tr>
                     <td>{{ query.symbol }}</td>
                     <td><a href="/companies/{{query.rowid}}">{{ query.name }}</a></td>
@@ -195,6 +195,175 @@ jQuery(document).ready(function(){
 onload = function(){count_helper('exchange', '', '/stockmarkets/', 'ex '); count_helper('country', '', '/locations/', 'cr ');} 
 </script>
 
+{% if queriesor1 %}
+<div class="row" style="padding:30px">
+      <div class="col-md-4 col-xs-4"></div>
+      <div class="col-md-4 col-xs-4" style="text-align: center">
+        <h1 style = "font-weight : bold">Location</h1>
+      </div>
+    </div>
+    <div class="table-responsive"> 
+        <table id="locationtable" class="table table-hover table-striped table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <th id="name">Name</th>
+                    <th id="symbol">Symbol</th>
+                    <th id="exchange">Capital</th>
+                    <th id="currency">GDP</th>
+                    <th id="location">Currency</th>
+                    <th id="location">Excahnge</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for query in queriesor1 %}
+                <tr>
+                    <td><a href="/locations/{{query.rowid}}">{{ query.name }}</a></td>
+                    <td>{{ query.iso }}</td>
+                    <td>{{ query.capital}}</td>
+                    <td>{{ query.gdp}}</td>
+                    <!-- fix this sal hardcode this like the other table-->
+                    <td><a href="/currencies/{{query.rowid}}">{{ query.currency}}</a></td>
+                    <td><a href="/stockmarkets/{{query.rowid}}">{{ query.location_exchange}}</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div> 
+{% endif %}
+{% if queriesor2 %}
+<div class="container-fluid">
+<div class="row" style="padding:30px">
+      <div class="col-md-4 col-xs-4"></div>
+      <div class="col-md-4 col-xs-4" style="text-align: center">
+        <h1 style = "font-weight : bold">Exchange</h1>
+      </div>
+    </div>
+    <div class="table-responsive"> 
+        <table id="exchangetable" class="table table-hover table-striped table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <th id="name">Name</th>
+                    <th id="symbol">Symbol</th>
+                    <th id="exchange">Market Cap</th>
+                    <th id="currency">Currency</th>
+                    <th id="location">Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for query in queriesor2 %}
+                <tr>
+                    <td><a href="/stockmarkets/{{query.rowid}}">{{ query.name }}</a></td>
+                    <td><a href="/stockmarkets/{{query.rowid}}">{{ query.exchange }}</a></td>
+                    <td>{{ query.market_cap_exchange}}</td>
+                    <!-- fix this sal hardcode this like the other table-->
+                    <td><a href="/currencies/{{query.rowid}}">{{ query.currency}}</a></td>
+                    <td><a href="/locations/{{query.rowid}}">{{ query.location}}</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+{% if queriesor3 %}
+<div class="container-fluid">
+<div class="row" style="padding:30px">
+      <div class="col-md-4 col-xs-4"></div>
+      <div class="col-md-4 col-xs-4" style="text-align: center">
+        <h1 style = "font-weight : bold">Currency</h1>
+      </div>
+    </div>
+    <div class="table-responsive"> 
+        <table id="currencytable" class="table table-hover table-striped table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <th id="name">Name</th>
+                    <th id="symbol">Currency</th>
+                    <th id="exchange">Locations</th>
+                    <th id="currency">Exchanges</th>
+                    <th id="location">Exchange Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for query in queriesor3 %}
+                <tr>
+                    <!-- fix this sal hardcode this like the other table .. SAL SAYS HE DUNN IT-->
+                    <td><a href="/currency/{{ query.rowid }}">{{ query.name }}</a></td>
+                    <!-- fix this sal hardcode this like the other table .. SAL SAYS HE DUNN IT-->
+                    <td><a href="/currency/{{ query.rowid }}">{{ query.currency }}</a></td>
+
+                    <!--td><a href="/locations/{{ query.rowid }}">{{ query.locations}}</a></td-->
+                    <!--td><a href="/stockmarkets/{{query.rowid}}">{{ query.exchanges}}</a></td-->
+
+                    <td><a class = "country" id = "cr {{ query.locations }}" > {{ query.locations }} </a></td>
+                    <td><a class = "exchange" id = "ex {{ query.exchanges }}" >{{ query.exchanges }}</a></td>
+                    <td>{{ query.exchange_rate}}</td>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
+{% if queriesor4 %}
+<div class="container-fluid">
+<div class="row" style="padding:30px">
+      <div class="col-md-4 col-xs-4"></div>
+      <div class="col-md-4 col-xs-4" style="text-align: center">
+        <h1 style = "font-weight : bold">Company</h1>
+      </div>
+    </div>
+    <div class="table-responsive"> 
+        <table id="companytable" class="table table-hover table-striped table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <th id="name">Symbol</th>
+                    <th id="symbol">Name</th>
+                    <th id="exchange">Exchange</th>
+                    <th id="currency">Currency</th>
+                    <th id="location">Location</th>
+                    <th id="name">Open Price</th>
+                    <th id="symbol">Previous Price</th>
+                    <th id="exchange">Percent Change</th>
+                    <th id="currency">Year High</th>
+                    <th id="location">Ask Price</th>
+                    <th id="name">EPS</th>
+                    <th id="symbol">PEG</th>
+                    <th id="currency">Percent Change Fifty days</th>
+                    <th id="name">Volume</th>
+                    <th id="symbol">Average Volume</th>
+                    <th id="exchange">Market Cap</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for query in queriesor4 %}
+                <tr>
+                    <td>{{ query.symbol }}</td>
+                    <td><a href="/companies/{{query.rowid}}">{{ query.name }}</a></td>
+                    <td><a href="/stockmarkets/{{query.foreign_id}}">{{ query.exchange}}</a></td>
+                    <!-- fix this sal hardcode this like the other table-->
+                    <td><a href="/currencies/{{query.foreign_id}}">{{ query.currency}}</a></td>
+                    <td><a href="/locations/{{query.foreign_id}}">{{ query.location}}</a></td>
+                    <td>{{ query.open_price }}</td>
+                    <td>{{ query.previous_price }}</td>
+                    <td>{{ query.percent_change}}</td>
+                    <td>{{ query.year_high}}</td>
+                    <td>{{ query.ask_price}}</td>
+                    <td>{{ query.eps }}</td>
+                    <td>{{ query.peg }}</td>
+                    <td>{{ query.percent_change_fifty}}</td>
+                     <td>{{ query.volume }}</td>
+                    <td>{{ query.avg_volume }}</td>
+                    <td>{{ query.market_cap}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endif %}
 <!-- END PAGE CONTENT-->
 <!-- SCRIPT FOR SORTING-->
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
