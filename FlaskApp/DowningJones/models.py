@@ -1,5 +1,5 @@
 from flask import Flask
-from __init__ import db,app
+from __init__ import db
 
 class Exchange(db.Model):
     rowid = db.Column(db.Integer, primary_key=True)
