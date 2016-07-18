@@ -6,7 +6,6 @@ import subprocess
 
 app = Flask ( __name__ )
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-app.config['WHOOSH_BASE'] = 'test.db'
 db = SQLAlchemy(app)
 
 from models import *
