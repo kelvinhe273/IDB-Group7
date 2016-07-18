@@ -4,26 +4,29 @@ var refc = ["Canada", "Great Britain", "Greece", "United States", "Mexico", "Ger
 var refu = ["CAD", "GBp", "Eur", "USD", "MXN", "TWD", "HKD"];
 var refe = ["TOR", "LSE", "ASE", "NMS", "MEX", "FRA", "TAI", "BER", "MUN", "HKG", "PAR"];
 
+//will comment the whole file latre, now to bed
 
 function count(str, classn, k, href, id){
 	
 	var id = id + str;
+	
+	if(classn[0]+classn[1] == "co"){
+		var ref = refc;
+	}
+	else if(classn[0]+classn[1] == "cu"){
+		var ref = refu;
+	}
+	else{
+		var ref = refe;
+	}
 
-	//console.log(classn[0]+classn[1] + (classn[0]+classn[1] == "cu"));
-	
-	if(classn[0]+classn[1] == "co")
-		var ref = refc
-	else if(classn[0]+classn[1] == "cu")
-		var ref = refu
-	else
-		var ref = refe
-	
 	if(str.includes(",")){
 		var tmp = str.split(",");
 		for(i = 0; i < tmp.length; i++){
 
 			tmp[i] = ref.indexOf(trim(tmp[i])) + 1;
 		}
+
 		var orig = document.getElementById(id);
 		document.getElementById(id).innerHTML = trim(str.split(",")[0]);
 		document.getElementById(id).href = href + tmp[0];
@@ -39,36 +42,49 @@ function count(str, classn, k, href, id){
 
 	}
 	else{
-
+		var orig = document.getElementById(id);
 		document.getElementById(id).innerHTML = str;
 		var num = ref.indexOf(str) + 1;
 		document.getElementById(id).href = href + num;
-		console.log("ID: " + id +  " STR: " + str + " NUM: " + num)
 	}
 	return true;
 }
-
-function count_helper(classn, k, href, id){
+function change_links(str, classn, k, href, id){
 	
-	//convert nodelist to array
-	for (var countries = [], i = document.getElementsByClassName(classn + k).length - 1; i > -1; --i){
-		countries[i] = document.getElementsByClassName(classn + k)[i];
+	for (var elems = [], i = document.getElementsByClassName(classn + k).length - 1; i > -1; --i){
+		elems[i] = document.getElementsByClassName(classn + k)[i];
+	}
+	var tmp = new Array();
+	for(var i = 0; i < elems.length; i++)
+		if(trim(str) == trim(elems[i].innerHTML))
+			tmp.push(elems[i])
+
+	for (var i = 1; i<tmp.length; i++){
+		console.log(tmp[i])
+		tmp[i].href = tmp[0].href;
+	}
+	
+	return true;
+}
+function count_helper(classn, k, href, id, change_link){
+	
+	//converts nodelist to array
+	for (var elems = [], i = document.getElementsByClassName(classn + k).length - 1; i > -1; --i){
+		elems[i] = document.getElementsByClassName(classn + k)[i];
 	}
 
 	var repeated = [];
-	for(i = 0; i < countries.length; i++){
+	for(i = 0; i < elems.length; i++){
 
-		if (repeated.indexOf(countries[i].textContent) == -1){
-			console.log("NOT REPEATED " + countries[i].textContent)
-			count(trim(countries[i].textContent), classn, k, href, id);
-			repeated.push(countries[i].textContent);
-		}
-		else{
-			//console.log("NOT REPEATED " + countries[i].textContent)
+		if (repeated.indexOf(elems[i].textContent) == -1){
+			console.log("NOT REPEATED " + elems[i].textContent)
+			count(trim(elems[i].textContent), classn, k, href, id);
+			if(change_link)
+				change_links(trim(elems[i].textContent), classn, k, href, id);
+			repeated.push(elems[i].textContent);
 		}
 	}	
 }
-
 function trim(s){ 
- return ( s || '' ).replace( /^\s+|\s+$/g, '' ); 
+	return ( s || '' ).replace( /^\s+|\s+$/g, '' ); 
 }

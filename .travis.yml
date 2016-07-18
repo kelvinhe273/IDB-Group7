@@ -17,12 +17,12 @@ install:
     - pip3 install requests
 
 before_script:
-    #also changed pylint and coverage to version 3
+    #also changed coverage to version 3
     - uname -a
     - printenv
     - pip list
     - coverage3 --version
-    - pylint3   --version
+    - pylint   --version
 
 script:
     - date
