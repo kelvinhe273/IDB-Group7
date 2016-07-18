@@ -2,6 +2,7 @@ import os
 import requests
 from flask import Flask, render_template, request, json, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import or_
 import subprocess
 
 app = Flask ( __name__ )
@@ -155,17 +156,16 @@ def search ():
     hackString = ""
     url = request.form['url']
     thisString = url.split('=')
-    index = 0
-    for x in thisString:
-      hackString += thisString[index]
-      index = index + 1
-    hackString = hackString.split(" ")
-    queries = hackString
-    index2 = 0
+    # index = 0
+    # for x in thisString:
+    #   hackString += thisString[index]
+    #   index = index + 1
+    # hackString = hackString.split(" ")
+    queries = thisString
+    # index2 = 0
     for i in queries:
-      search_query1 = Location.query.filter(Location.name.contains(queries[index2]))
-      search_query2 = Exchange.query.filter(Exchange.name.contains(queries[index2]))
-      search_query3 = Currency.query.filter(Currency.name.contains(queries[index2]))
-      search_query4 = Company.query.filter(Company.name.contains(queries[index2]))
-      index2 = index2 + 1
+      search_query1 = Location.query.filter(or_(Location.name.contains(queries[0]),Location.iso.contains(queries[0]), Location.capital.contains(queries[0]),Location.gdp.contains(queries[0]),Location.currency.contains(queries[0]), Location.location_exchange.contains(queries[0])))
+      search_query2 = Exchange.query.filter(or_(Exchange.exchange.contains(queries[0]),Exchange.name.contains(queries[0]),Exchange.market_cap_exchange.contains(queries[0]),Exchange.currency.contains(queries[0]),Exchange.location.contains(queries[0])))
+      search_query3 = Currency.query.filter(or_(Currency.name.contains(queries[0]),Currency.currency.contains(queries[0]),Currency.locations.contains(queries[0]),Currency.exchanges.contains(queries[0]), Currency.exchange_rate.contains(queries[0])))
+      search_query4 = Company.query.filter(or_(Company.symbol.contains(queries[0]),Company.name.contains(queries[0]),Company.exchange.contains(queries[0]),Company.currency.contains(queries[0]),Company.location.contains(queries[0]),Company.open_price.contains(queries[0]),Company.previous_price.contains(queries[0]),Company.percent_change.contains(queries[0]),Company.year_high.contains(queries[0]),Company.ask_price.contains(queries[0]),Company.eps.contains(queries[0]),Company.peg.contains(queries[0]),Company.percent_change_fifty.contains(queries[0]),Company.volume.contains(queries[0]),Company.avg_volume.contains(queries[0]),Company.market_cap.contains(queries[0])))
     return render_template('search.html',  queries = queries, queries1 = search_query1, queries2= search_query2, queries3 =search_query3, queries4 = search_query4 ,title="Search")
