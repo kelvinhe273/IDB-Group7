@@ -4,8 +4,8 @@ FILES :=                              \
     apiary.apib						  \
     IDB3.log						  \
     models.html						  \
-    FlaskApp/DowningJones/models.py	  \
-    FlaskApp/DowningJones/tests.py    \					  \
+    app/models.py   				  \
+    app/tests.py   					  \
     UML.pdf                           
 
 ifeq ($(CI), true)
@@ -16,18 +16,11 @@ else
 	PYLINT   := pylint3
 endif
 
-.pylintrc:
-	$(PYLINT)  --generated-members=commit,add,query --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
 
-models.html: FlaskApp/DowningJones/models.py
-	pydoc3 -w FlaskApp/DowningJones/models.py
 
-IDB1.log:
+IDB3.log:
 	git log > IDB3.log
 
-TestModels: .pylintrc FlaskApp/DowningJones/tests.py FlaskApp/DowningJones/models.py
-	-$(PYLINT) FlaskApp/DowningJones/tests.py
-	python3 FlaskApp/DowningJones/tests.py
 
 check:
 	@not_found=0;                                 \
@@ -59,7 +52,6 @@ clean:
 config:
 	git config -l
 
-html: models.html
 
 log: IDB3.log
 
@@ -74,4 +66,4 @@ status:
 	git remote -v
 	git status
 
-test: .pylintrc models.html TestModels IDB3.log check
+test: .pylintrc IDB3.log format check
