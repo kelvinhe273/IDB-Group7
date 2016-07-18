@@ -194,7 +194,7 @@ jQuery(document).ready(function(){
 <script> 
 onload = function(){count_helper('exchange', '', '/stockmarkets/', 'ex '); count_helper('country', '', '/locations/', 'cr ');} 
 </script>
-
+<!-- THIS IS THE OR TABLES -->
 {% if queriesor1 %}
 <div class="row" style="padding:30px">
       <div class="col-md-4 col-xs-4"></div>
@@ -203,7 +203,7 @@ onload = function(){count_helper('exchange', '', '/stockmarkets/', 'ex '); count
       </div>
     </div>
     <div class="table-responsive"> 
-        <table id="locationtable" class="table table-hover table-striped table-responsive table-bordered">
+        <table id="locationtableor" class="table table-hover table-striped table-responsive table-bordered">
             <thead>
                 <tr>
                     <th id="name">Name</th>
@@ -240,7 +240,7 @@ onload = function(){count_helper('exchange', '', '/stockmarkets/', 'ex '); count
       </div>
     </div>
     <div class="table-responsive"> 
-        <table id="exchangetable" class="table table-hover table-striped table-responsive table-bordered">
+        <table id="exchangetableor" class="table table-hover table-striped table-responsive table-bordered">
             <thead>
                 <tr>
                     <th id="name">Name</th>
@@ -275,7 +275,7 @@ onload = function(){count_helper('exchange', '', '/stockmarkets/', 'ex '); count
       </div>
     </div>
     <div class="table-responsive"> 
-        <table id="currencytable" class="table table-hover table-striped table-responsive table-bordered">
+        <table id="currencytableor" class="table table-hover table-striped table-responsive table-bordered">
             <thead>
                 <tr>
                     <th id="name">Name</th>
@@ -316,7 +316,7 @@ onload = function(){count_helper('exchange', '', '/stockmarkets/', 'ex '); count
       </div>
     </div>
     <div class="table-responsive"> 
-        <table id="companytable" class="table table-hover table-striped table-responsive table-bordered">
+        <table id="companytableor" class="table table-hover table-striped table-responsive table-bordered">
             <thead>
                 <tr>
                     <th id="name">Symbol</th>
@@ -380,6 +380,10 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
       $('#exchangetable').DataTable();
       $('#currencytable').DataTable();
       $('#companytable').DataTable();
+      $('#locationtableor').DataTable();
+      $('#exchangetableor').DataTable();
+      $('#currencytableor').DataTable();
+      $('#companytableor').DataTable();
   } );
 </script>
 {% endblock %}
