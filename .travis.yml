@@ -16,7 +16,6 @@ install:
     - pip3 install Flask-Testing
     - pip3 install requests
     - pip3 install autopep8
-    - pip3 install epydoc 
 
 before_script:
     #also changed coverage to version 3

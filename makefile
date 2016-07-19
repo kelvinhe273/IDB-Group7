@@ -3,7 +3,6 @@ FILES :=                              \
     makefile						  \
     apiary.apib						  \
     IDB3.log						  \
-    models.html						  \
     app/models.py   				  \
     app/tests.py   					  \
     UML.pdf                           
@@ -20,7 +19,7 @@ IDB3.log:
 	git log > IDB3.log
 
 .pylintrc:
-	$(PYLINT) disable-msg=E0611 --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
+	$(PYLINT) --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
 
 TestModels: .pylintrc app/tests.py
 	-$(PYLINT) app/tests.py
@@ -55,10 +54,6 @@ clean:
 	rm -f app/*.pyc
 	rm -rf models.html/
 
-epydoc: app/models.py
-	epydoc app/models.py -o models.html
-	rm -f app/*.pyc
-
 config:
 	git config -l
 
@@ -76,4 +71,4 @@ status:
 	git remote -v
 	git status
 
-test: clean .pylintrc IDB3.log format epydoc TestModels check
+test: clean .pylintrc IDB3.log format TestModels check
