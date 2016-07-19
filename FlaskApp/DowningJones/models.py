@@ -1,6 +1,7 @@
 from flask import Flask
 from __init__ import db
 
+
 class Exchange(db.Model):
     rowid = db.Column(db.Integer, primary_key=True)
     exchange = db.Column(db.String(80))
@@ -32,15 +33,17 @@ class Exchange(db.Model):
         """
         return '<Exchange %r>' % self.name
 
+
 class Currency(db.Model):
-    rowid = db.Column(db.Integer, primary_key=True)    #pk can be the iso code
+    rowid = db.Column(db.Integer, primary_key=True)  # pk can be the iso code
     name = db.Column(db.String(80))
     currency = db.Column(db.String(80))
     locations = db.Column(db.String(80))
     exchanges = db.Column(db.String(80))
     exchange_rate = db.Column(db.Integer)
     # exchanges = db.relationship('Exchange', backref='currency', lazy='dynamic')
-    # locations = db.relationship('Location', backref='currency', lazy='dynamic')
+    # locations = db.relationship('Location', backref='currency',
+    # lazy='dynamic')
 
     def __init__(self, name, code, locations, exchanges, exchange_rate):
         """
@@ -61,6 +64,7 @@ class Currency(db.Model):
         returns the Currency's self.name attribute
         """
         return '<Currency %r>' % self.name
+
 
 class Company(db.Model):
     rowid = db.Column(db.Integer, primary_key=True)
@@ -92,9 +96,9 @@ class Company(db.Model):
     # currency_id = db.Column(db.Integer, db.ForeignKey('currency.id'))
     # currency = db.relationship('Currency', uselist=False)
 
-    def __init__(self, symbol, name, exchange, currency, location, open_price, 
-        prev_price, percent_change, year_high, ask_price, eps, peg, days_range, 
-        percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap):
+    def __init__(self, symbol, name, exchange, currency, location, open_price,
+                 prev_price, percent_change, year_high, ask_price, eps, peg, days_range,
+                 percent_change_fifty, percent_change_twohundred, volume, avg_volume, market_cap):
         """
         self.name the name of the Company
         self.symbol the symbol of the Company
@@ -140,8 +144,10 @@ class Company(db.Model):
         """
         return '<Company %r>' % self.name
 
+
 class Location(db.Model):
-    rowid = db.Column(db.Integer, primary_key=True)        #pk can be the iso code
+    rowid = db.Column(db.Integer, primary_key=True)
+                      # pk can be the iso code
     name = db.Column(db.String(80))
     iso = db.Column(db.String(2))
     capital = db.Column(db.String(80))
@@ -169,4 +175,3 @@ class Location(db.Model):
         returns the location's self.name attribute
         """
         return '<Location %r>' % self.name
-
