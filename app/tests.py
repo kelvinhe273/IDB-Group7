@@ -1,6 +1,6 @@
 import unittest
-from flask_testing import TestCase
 from __init__ import app, db
+from flask_testing import TestCase
 from models import Currency, Exchange, Location, Company
 
 

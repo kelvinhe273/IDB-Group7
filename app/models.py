@@ -1,5 +1,5 @@
 from flask import Flask
-from __init__ import db
+from __init__ import app, db
 
 
 class Exchange(db.Model):
