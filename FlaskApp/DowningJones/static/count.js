@@ -1,5 +1,5 @@
 
-/* I THINK THERE ARE PLACE HOLDER VALUES UNTIL I FIGURE OUT HOW TO DYNAMICALLY ASSIGN THEM	*/
+
 //locations
 var refc = ["Canada", "Great Britain", "Greece", "United States", "Mexico", "Germany", "Taiwan", "Germany", "Germany", "Hong Kong", "France"];
 //currencies
@@ -8,7 +8,7 @@ var refu = ["CAD", "GBp", "EUR", "USD", "MXN", "TWD", "HKD"];
 var refe = ["TOR", "LSE", "ASE", "NMS", "MEX", "FRA", "TAI", "BER", "MUN", "HKG", "PAR"];
 
 
-
+//function will take an input and set it's href
 function count(str, classn, k, href, id){
 	var id = id + str;
 	if(classn[0]+classn[1] == "co")

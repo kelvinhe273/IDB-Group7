@@ -18,10 +18,10 @@ endif
 IDB3.log:
 	git log > IDB3.log
 
-.pylintrc:
-	$(PYLINT) --disable=bad-whitespace,import-error,no-member,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
+.pylintrc: app/tests.py
+	$(PYLINT) --disable=bad-whitespace,import-error,no-member,missing-docstring,pointless-string-statement,no-name-in-module, --reports=n --generate-rcfile > $@
 
-TestModels: .pylintrc
+TestModels: .pylintrc 
 	-$(PYLINT) app/tests.py
 	$(COVERAGE) run --omit='*flask_testing*' --branch app/tests.py
 	$(COVERAGE) report -m

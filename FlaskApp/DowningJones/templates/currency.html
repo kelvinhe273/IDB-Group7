@@ -1,9 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
 <style>
-a{
-	color: black;
-}
 b{
     font-size:16px;
 }
@@ -13,13 +10,10 @@ th,a {
 td{
     text-align:center;
 }
-
-body{
-    background:linear-gradient(rgba(200,265,265,0.45), rgba(265,265,265,0.45)), url("../static/background3.png");
-    background-size: cover !important;
-}
 </style>
+
 <script type="text/javascript" src="../static/count.js" ></script>
+
 <!-- PAGE CONTENT -->
 <div class="content">
     <div class="row" style="padding:30px">
@@ -55,7 +49,7 @@ body{
                                 <td >{{currency.currency}}</td>
                             </tr>
                             <tr>
-                                <th> Exchange Rate</th>
+                                <th> Exchange Rate (To USD)</th>
                                 <td > {{currency.exchange_rate}}</td>
                             </tr>
                         </tbody>
