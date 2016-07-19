@@ -1,5 +1,15 @@
 {% extends "layout.html" %}
 {% block body %}
+<style>
+    .tab-content.active{
+        display: block;
+    }
+            
+    .tab-content.hide{
+        display: none;
+    }
+</style>
+
 <div class="container">
     <ul class="nav nav-tabs">
         <li class="active">
@@ -38,9 +48,9 @@
                             <thead>
                                 <tr>
                                     <th id="name">Name</th>
-                                    <th id="symbol">Symbol</th>
-                                    <th id="exchange">Capital</th>
-                                    <th id="currency">GDP</th>
+                                    <th id="capital">Capital of Country</th>
+                                    <th id="gdp">GDP</th>
+                                    <th id="iso">2 letter ISO Symbol</th>                                    
                                     <th id="location">Currency</th>
                                     <th id="location">Excahnge</th>
                                 </tr>
@@ -49,11 +59,12 @@
                                 {% for query in queriesand1 %}
                                 <tr>
                                     <td><a href="/locations/{{query.rowid}}">{{ query.name }}</a></td>
-                                    <td>{{ query.iso }}</td>
                                     <td>{{ query.capital}}</td>
                                     <td>{{ query.gdp}}</td>
+                                    <td>{{ query.iso }}</td>
+                                    
                                     <!-- fix this sal hardcode this like the other table-->
-                                    <td><a href="/currencies/{{query.rowid}}">{{ query.currency}}</a></td>
+                                    <td><a class = "currencya" id = "cua {{ query.rowid }}" >{{ query.currency}}</a></td>
                                     <td><a href="/stockmarkets/{{query.rowid}}">{{ query.location_exchange}}</a></td>
                                 </tr>
                                 {% endfor %}
@@ -299,25 +310,20 @@
                             <thead>
                                 <tr>
                                     <th id="name">Name</th>
-                                    <th id="symbol">Currency</th>
+                                    <th id="symbol">Currency Code</th>
                                     <th id="exchange">Locations</th>
                                     <th id="currency">Exchanges</th>
-                                    <th id="location">Exchange Rate</th>
+                                    <th id="location">Exchange Rate (To U.S Dollar)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for query in queriesor3 %}
                                 <tr>
-                                    <!-- fix this sal hardcode this like the other table .. SAL SAYS HE DUNN IT-->
                                     <td><a href="/currency/{{ query.rowid }}">{{ query.name }}</a></td>
-                                    <!-- fix this sal hardcode this like the other table .. SAL SAYS HE DUNN IT-->
                                     <td><a href="/currency/{{ query.rowid }}">{{ query.currency }}</a></td>
 
-                                    <!--td><a href="/locations/{{ query.rowid }}">{{ query.locations}}</a></td-->
-                                    <!--td><a href="/stockmarkets/{{query.rowid}}">{{ query.exchanges}}</a></td-->
-
-                                    <td><a class = "country" id = "cr {{ query.locations }}" > {{ query.locations }} </a></td>
-                                    <td><a class = "exchange" id = "ex {{ query.exchanges }}" >{{ query.exchanges }}</a></td>
+                                    <td><a class = "country3" id = "cr {{ query.locations }}" > {{ query.locations }} </a></td>
+                                    <td><a class = "exchange3" id = "ex {{ query.exchanges }}" >{{ query.exchanges }}</a></td>
                                     <td>{{ query.exchange_rate}}</td>
                                 </tr>
                                 {% endfor %}
@@ -388,9 +394,6 @@
     </div>
 </div>
 
-<script> 
-onload = function(){count_helper('exchange', '', '/stockmarkets/', 'ex '); count_helper('country', '', '/locations/', 'cr ');} 
-</script>
 
 <!-- END PAGE CONTENT-->
 <!-- SCRIPT FOR SORTING-->
@@ -414,14 +417,16 @@ jQuery(document).ready(function(){
 </script>
 <script>
   $(document).ready(function() {
-      $('#locationtable').DataTable();
-      $('#exchangetable').DataTable();
-      $('#currencytable').DataTable();
-      $('#companytable').DataTable();
-      $('#locationtableor').DataTable();
-      $('#exchangetableor').DataTable();
-      $('#currencytableor').DataTable();
-      $('#companytableor').DataTable();
+
+      $('#locationtable').DataTable( { onSort:count_helper('currencya', '', '/currencies/', 'cua ', true, 1) } );
+      $('#exchangetable').DataTable( { onSort:count_helper('currencyb', '', '/currencies/', 'cu ', true, 2) } );
+      $('#currencytable').DataTable( {onSort:count_helper('exchangec', '', '/stockmarkets/', 'ex ', false, 3)}, {onSort:count_helper('countryd', '', '/locations/', 'cr ', false, 4)} );
+      $('#companytable').DataTable( { onSort:count_helper('currencye', '', '/currencies/', 'cu ', true, 5) } );
+
+      $('#locationtableor').DataTable( { onSort:count_helper('currencyf', '3', '/currencies/', 'cu ', true, 6) } );
+      $('#exchangetableor').DataTable( { onSort:count_helper('currencyg', '3', '/currencies/', 'cu ', true, 7) } );
+      $('#currencytableor').DataTable( {onSort:count_helper('exchangeh', '3', '/stockmarkets/', 'ex ', false, 8)}, {onSort:count_helper('countryi', '3', '/locations/', 'cr ', false, 9)} );
+      $('#companytableor').DataTable( { onSort:count_helper('currencyj', '3', '/currencies/', 'cu ', true, 10) } );
   } );
 </script>
 
@@ -452,15 +457,6 @@ $(document).ready(function() {
       });
 </script>
 
-<style>
-    .tab-content.active{
-        display: block;
-    }
-            
-    .tab-content.hide{
-        display: none;
-    }
-</style>
 
 {% endblock %}
 
