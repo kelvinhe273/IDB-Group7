@@ -68,7 +68,7 @@ function change_links(str, classn, k, href, id){
 }
 function count_helper(classn, k, href, id, change_link, b){
 	b = b || 0;
-	print(b);
+	//print(b);
 	//converts nodelist to array
 	for (var elems = [], i = document.getElementsByClassName(classn + k).length - 1; i > -1; --i){
 		elems[i] = document.getElementsByClassName(classn + k)[i];
@@ -92,7 +92,4 @@ function count_helper(classn, k, href, id, change_link, b){
 }
 function trim(s){ 
 	return ( s || '' ).replace( /^\s+|\s+$/g, '' ); 
-}
-function print(b){ 
-	console.log("--------- PRINT !!! ---------" + b);
 }
