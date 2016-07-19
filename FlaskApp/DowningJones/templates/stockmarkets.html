@@ -22,7 +22,7 @@ $('table-responsive').on('onSort', count_helper('currency', '', '/currencies/', 
                 <tr > 
                     <th id="name" >Name</th>
                     <th id="symbol" >Symbol</th>
-                    <th id="market_cap_exchange" >Market Cap Exchange</th>
+                    <th id="market_cap_exchange" >Market Capital (in USD)</th>
                     <th id="location" >Location</th>
                     <th id="currency" >Currency</th>
                 </tr>
@@ -55,7 +55,7 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 
 <script>
   $(document).ready(function() {
-      $('#stocktable').DataTable({ onSort:count_helper('currency', '', '/currencies/', 'cu ', true) });
+      $('#stocktable').DataTable( { onSort:count_helper('currency', '', '/currencies/', 'cu ', true) } );
     });
 
 </script>

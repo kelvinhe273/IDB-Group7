@@ -7,18 +7,9 @@ var refu = ["CAD", "GBp", "EUR", "USD", "MXN", "TWD", "HKD"];
 //exchanges
 var refe = ["TOR", "LSE", "ASE", "NMS", "MEX", "FRA", "TAI", "BER", "MUN", "HKG", "PAR"];
 
-/*
-$('table-responsive').bootstrapTable({
-    onEventName: count_helper('currency', '', '/currencies/', 'cu ', true)});
-
-$('table-responsive').on('onSort', count_helper('currency', '', '/currencies/', 'cu ', true));
-*/
-
-
 
 
 function count(str, classn, k, href, id){
-	
 	var id = id + str;
 	if(classn[0]+classn[1] == "co")
 		var ref = refc;
@@ -46,10 +37,10 @@ function count(str, classn, k, href, id){
 			div.href = href + tmp[i];
 			orig.appendChild(div);
 		}
-
 	}
 	else{
 		var orig = document.getElementById(id);
+		//console.log("'" + id + "'");
 		document.getElementById(id).innerHTML = str;
 		var num = ref.indexOf(str) + 1;
 		document.getElementById(id).href = href + num;
@@ -75,8 +66,9 @@ function change_links(str, classn, k, href, id){
 	
 	return true;
 }
-function count_helper(classn, k, href, id, change_link){
-	print();
+function count_helper(classn, k, href, id, change_link, b){
+	b = b || 0;
+	print(b);
 	//converts nodelist to array
 	for (var elems = [], i = document.getElementsByClassName(classn + k).length - 1; i > -1; --i){
 		elems[i] = document.getElementsByClassName(classn + k)[i];
@@ -87,7 +79,7 @@ function count_helper(classn, k, href, id, change_link){
 	for(i = 0; i < elems.length; i++){
 
 		if (repeated.indexOf(elems[i].textContent) == -1){
-			console.log("NOT REPEATED " + elems[i].textContent)
+			//console.log("NOT REPEATED " + elems[i].textContent)
 			count(trim(elems[i].textContent), classn, k, href, id);
 			if(change_link)
 				change_links(trim(elems[i].textContent), classn, k, href, id);
@@ -101,6 +93,6 @@ function count_helper(classn, k, href, id, change_link){
 function trim(s){ 
 	return ( s || '' ).replace( /^\s+|\s+$/g, '' ); 
 }
-function print(){ 
-	console.log("--------- PRINT !!! ---------");
+function print(b){ 
+	console.log("--------- PRINT !!! ---------" + b);
 }
