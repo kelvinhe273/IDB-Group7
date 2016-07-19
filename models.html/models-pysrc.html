@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>models</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;models
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="models-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="models-module.html">Module models</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">flask</tt> <tt class="py-keyword">import</tt> <tt class="py-name">Flask</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Method models.Company.__init__()=models.Company-class.html#__init__,Method models.Currency.__init__()=models.Currency-class.html#__init__,Method models.Exchange.__init__()=models.Exchange-class.html#__init__,Method models.Location.__init__()=models.Location-class.html#__init__"><a title="models.Company.__init__
+models.Currency.__init__
+models.Exchange.__init__
+models.Location.__init__" class="py-name" href="#" onclick="return doclink('link-0', '__init__', 'link-0');">__init__</a></tt> <tt class="py-keyword">import</tt> <tt class="py-name">db</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"> </tt>
+<a name="Exchange"></a><div id="Exchange-def"><a name="L5"></a><tt class="py-lineno">  5</tt> <a class="py-toggle" href="#" id="Exchange-toggle" onclick="return toggle('Exchange');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="models.Exchange-class.html">Exchange</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Exchange-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Exchange-expanded"><a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line">    <tt id="link-1" class="py-name" targets="Variable models.Company.rowid=models.Company-class.html#rowid,Variable models.Currency.rowid=models.Currency-class.html#rowid,Variable models.Exchange.rowid=models.Exchange-class.html#rowid,Variable models.Location.rowid=models.Location-class.html#rowid"><a title="models.Company.rowid
+models.Currency.rowid
+models.Exchange.rowid
+models.Location.rowid" class="py-name" href="#" onclick="return doclink('link-1', 'rowid', 'link-1');">rowid</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line">    <tt id="link-2" class="py-name" targets="Variable models.Company.exchange=models.Company-class.html#exchange,Variable models.Exchange.exchange=models.Exchange-class.html#exchange"><a title="models.Company.exchange
+models.Exchange.exchange" class="py-name" href="#" onclick="return doclink('link-2', 'exchange', 'link-2');">exchange</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line">    <tt id="link-3" class="py-name" targets="Variable models.Company.name=models.Company-class.html#name,Variable models.Currency.name=models.Currency-class.html#name,Variable models.Exchange.name=models.Exchange-class.html#name,Variable models.Location.name=models.Location-class.html#name"><a title="models.Company.name
+models.Currency.name
+models.Exchange.name
+models.Location.name" class="py-name" href="#" onclick="return doclink('link-3', 'name', 'link-3');">name</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line">    <tt id="link-4" class="py-name" targets="Variable models.Exchange.market_cap_exchange=models.Exchange-class.html#market_cap_exchange"><a title="models.Exchange.market_cap_exchange" class="py-name" href="#" onclick="return doclink('link-4', 'market_cap_exchange', 'link-4');">market_cap_exchange</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line">    <tt id="link-5" class="py-name" targets="Variable models.Company.currency=models.Company-class.html#currency,Variable models.Currency.currency=models.Currency-class.html#currency,Variable models.Exchange.currency=models.Exchange-class.html#currency,Variable models.Location.currency=models.Location-class.html#currency"><a title="models.Company.currency
+models.Currency.currency
+models.Exchange.currency
+models.Location.currency" class="py-name" href="#" onclick="return doclink('link-5', 'currency', 'link-5');">currency</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line">    <tt id="link-6" class="py-name" targets="Variable models.Company.location=models.Company-class.html#location,Variable models.Exchange.location=models.Exchange-class.html#location"><a title="models.Company.location
+models.Exchange.location" class="py-name" href="#" onclick="return doclink('link-6', 'location', 'link-6');">location</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="Exchange.__init__"></a><div id="Exchange.__init__-def"><a name="L13"></a><tt class="py-lineno"> 13</tt> <a class="py-toggle" href="#" id="Exchange.__init__-toggle" onclick="return toggle('Exchange.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Exchange-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">name_code</tt><tt class="py-op">,</tt> <tt class="py-param">currency</tt><tt class="py-op">,</tt> <tt class="py-param">location</tt><tt class="py-op">,</tt> <tt class="py-param">market_cap</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Exchange.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Exchange.__init__-expanded"><a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring">        self.name the name of the Exchange</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring">        self.name_code the three letter symbol for the exchange</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">        self.market_cap the market cap of the exchange</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-docstring">        self.location the location of the Exchange</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-docstring">        self.currency the currency the Exchange uses</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="models.Company.name
+models.Currency.name
+models.Exchange.name
+models.Location.name" class="py-name" href="#" onclick="return doclink('link-7', 'name', 'link-3');">name</a></tt> <tt class="py-op">=</tt> <tt id="link-8" class="py-name"><a title="models.Company.name
+models.Currency.name
+models.Exchange.name
+models.Location.name" class="py-name" href="#" onclick="return doclink('link-8', 'name', 'link-3');">name</a></tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">name_code</tt> <tt class="py-op">=</tt> <tt class="py-name">name_code</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Variable models.Company.market_cap=models.Company-class.html#market_cap"><a title="models.Company.market_cap" class="py-name" href="#" onclick="return doclink('link-9', 'market_cap', 'link-9');">market_cap</a></tt> <tt class="py-op">=</tt> <tt id="link-10" class="py-name"><a title="models.Company.market_cap" class="py-name" href="#" onclick="return doclink('link-10', 'market_cap', 'link-9');">market_cap</a></tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="models.Company.location
+models.Exchange.location" class="py-name" href="#" onclick="return doclink('link-11', 'location', 'link-6');">location</a></tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name"><a title="models.Company.location
+models.Exchange.location" class="py-name" href="#" onclick="return doclink('link-12', 'location', 'link-6');">location</a></tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name"><a title="models.Company.currency
+models.Currency.currency
+models.Exchange.currency
+models.Location.currency" class="py-name" href="#" onclick="return doclink('link-13', 'currency', 'link-5');">currency</a></tt> <tt class="py-op">=</tt> <tt id="link-14" class="py-name"><a title="models.Company.currency
+models.Currency.currency
+models.Exchange.currency
+models.Location.currency" class="py-name" href="#" onclick="return doclink('link-14', 'currency', 'link-5');">currency</a></tt> </tt>
+</div><a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"> </tt>
+<a name="Exchange.__repr__"></a><div id="Exchange.__repr__-def"><a name="L27"></a><tt class="py-lineno"> 27</tt> <a class="py-toggle" href="#" id="Exchange.__repr__-toggle" onclick="return toggle('Exchange.__repr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Exchange-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Exchange.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Exchange.__repr__-expanded"><a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"><tt class="py-docstring">        returns the Exchange's self.name attribute</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'&lt;Exchange %r&gt;'</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name"><a title="models.Company.name
+models.Currency.name
+models.Exchange.name
+models.Location.name" class="py-name" href="#" onclick="return doclink('link-15', 'name', 'link-3');">name</a></tt> </tt>
+</div></div><a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"> </tt>
+<a name="Currency"></a><div id="Currency-def"><a name="L34"></a><tt class="py-lineno"> 34</tt> <a class="py-toggle" href="#" id="Currency-toggle" onclick="return toggle('Currency');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="models.Currency-class.html">Currency</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Currency-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Currency-expanded"><a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">    <tt id="link-16" class="py-name"><a title="models.Company.rowid
+models.Currency.rowid
+models.Exchange.rowid
+models.Location.rowid" class="py-name" href="#" onclick="return doclink('link-16', 'rowid', 'link-1');">rowid</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt>  <tt class="py-comment"># pk can be the iso code</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">    <tt id="link-17" class="py-name"><a title="models.Company.name
+models.Currency.name
+models.Exchange.name
+models.Location.name" class="py-name" href="#" onclick="return doclink('link-17', 'name', 'link-3');">name</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">    <tt id="link-18" class="py-name"><a title="models.Company.currency
+models.Currency.currency
+models.Exchange.currency
+models.Location.currency" class="py-name" href="#" onclick="return doclink('link-18', 'currency', 'link-5');">currency</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">    <tt id="link-19" class="py-name" targets="Variable models.Currency.locations=models.Currency-class.html#locations"><a title="models.Currency.locations" class="py-name" href="#" onclick="return doclink('link-19', 'locations', 'link-19');">locations</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">    <tt id="link-20" class="py-name" targets="Variable models.Currency.exchanges=models.Currency-class.html#exchanges"><a title="models.Currency.exchanges" class="py-name" href="#" onclick="return doclink('link-20', 'exchanges', 'link-20');">exchanges</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">    <tt id="link-21" class="py-name" targets="Variable models.Currency.exchange_rate=models.Currency-class.html#exchange_rate"><a title="models.Currency.exchange_rate" class="py-name" href="#" onclick="return doclink('link-21', 'exchange_rate', 'link-21');">exchange_rate</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"> </tt>
+<a name="Currency.__init__"></a><div id="Currency.__init__-def"><a name="L42"></a><tt class="py-lineno"> 42</tt> <a class="py-toggle" href="#" id="Currency.__init__-toggle" onclick="return toggle('Currency.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Currency-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">code</tt><tt class="py-op">,</tt> <tt class="py-param">locations</tt><tt class="py-op">,</tt> <tt class="py-param">exchanges</tt><tt class="py-op">,</tt> <tt class="py-param">exchange_rate</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Currency.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Currency.__init__-expanded"><a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-docstring">        self.locations the location of all relevant countries</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring">        self.name the name of the currency type</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">        self.code the currency code</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">        self.exchanges the relevant exchanges that use this currency</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">        self.exchange_rate is the exchange rate compared to the USD</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="models.Currency.locations" class="py-name" href="#" onclick="return doclink('link-22', 'locations', 'link-19');">locations</a></tt> <tt class="py-op">=</tt> <tt id="link-23" class="py-name"><a title="models.Currency.locations" class="py-name" href="#" onclick="return doclink('link-23', 'locations', 'link-19');">locations</a></tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name"><a title="models.Company.name
+models.Currency.name
+models.Exchange.name
+models.Location.name" class="py-name" href="#" onclick="return doclink('link-24', 'name', 'link-3');">name</a></tt> <tt class="py-op">=</tt> <tt id="link-25" class="py-name"><a title="models.Company.name
+models.Currency.name
+models.Exchange.name
+models.Location.name" class="py-name" href="#" onclick="return doclink('link-25', 'name', 'link-3');">name</a></tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">code</tt> <tt class="py-op">=</tt> <tt class="py-name">code</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name"><a title="models.Currency.exchanges" class="py-name" href="#" onclick="return doclink('link-26', 'exchanges', 'link-20');">exchanges</a></tt> <tt class="py-op">=</tt> <tt id="link-27" class="py-name"><a title="models.Currency.exchanges" class="py-name" href="#" onclick="return doclink('link-27', 'exchanges', 'link-20');">exchanges</a></tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name"><a title="models.Currency.exchange_rate" class="py-name" href="#" onclick="return doclink('link-28', 'exchange_rate', 'link-21');">exchange_rate</a></tt> <tt class="py-op">=</tt> <tt id="link-29" class="py-name"><a title="models.Currency.exchange_rate" class="py-name" href="#" onclick="return doclink('link-29', 'exchange_rate', 'link-21');">exchange_rate</a></tt> </tt>
+</div><a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"> </tt>
+<a name="Currency.__repr__"></a><div id="Currency.__repr__-def"><a name="L56"></a><tt class="py-lineno"> 56</tt> <a class="py-toggle" href="#" id="Currency.__repr__-toggle" onclick="return toggle('Currency.__repr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Currency-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Currency.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Currency.__repr__-expanded"><a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">        returns the Currency's self.name attribute</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'&lt;Currency %r&gt;'</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name"><a title="models.Company.name
+models.Currency.name
+models.Exchange.name
+models.Location.name" class="py-name" href="#" onclick="return doclink('link-30', 'name', 'link-3');">name</a></tt> </tt>
+</div></div><a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"> </tt>
+<a name="Company"></a><div id="Company-def"><a name="L63"></a><tt class="py-lineno"> 63</tt> <a class="py-toggle" href="#" id="Company-toggle" onclick="return toggle('Company');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="models.Company-class.html">Company</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Company-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Company-expanded"><a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">    <tt id="link-31" class="py-name"><a title="models.Company.rowid
+models.Currency.rowid
+models.Exchange.rowid
+models.Location.rowid" class="py-name" href="#" onclick="return doclink('link-31', 'rowid', 'link-1');">rowid</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">    <tt id="link-32" class="py-name" targets="Variable models.Company.symbol=models.Company-class.html#symbol"><a title="models.Company.symbol" class="py-name" href="#" onclick="return doclink('link-32', 'symbol', 'link-32');">symbol</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">    <tt id="link-33" class="py-name"><a title="models.Company.name
+models.Currency.name
+models.Exchange.name
+models.Location.name" class="py-name" href="#" onclick="return doclink('link-33', 'name', 'link-3');">name</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">    <tt id="link-34" class="py-name"><a title="models.Company.exchange
+models.Exchange.exchange" class="py-name" href="#" onclick="return doclink('link-34', 'exchange', 'link-2');">exchange</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">    <tt id="link-35" class="py-name"><a title="models.Company.currency
+models.Currency.currency
+models.Exchange.currency
+models.Location.currency" class="py-name" href="#" onclick="return doclink('link-35', 'currency', 'link-5');">currency</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt id="link-36" class="py-name"><a title="models.Company.location
+models.Exchange.location" class="py-name" href="#" onclick="return doclink('link-36', 'location', 'link-6');">location</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">    <tt id="link-37" class="py-name" targets="Variable models.Company.open_price=models.Company-class.html#open_price"><a title="models.Company.open_price" class="py-name" href="#" onclick="return doclink('link-37', 'open_price', 'link-37');">open_price</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">    <tt id="link-38" class="py-name" targets="Variable models.Company.previous_price=models.Company-class.html#previous_price"><a title="models.Company.previous_price" class="py-name" href="#" onclick="return doclink('link-38', 'previous_price', 'link-38');">previous_price</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">    <tt id="link-39" class="py-name" targets="Variable models.Company.percent_change=models.Company-class.html#percent_change"><a title="models.Company.percent_change" class="py-name" href="#" onclick="return doclink('link-39', 'percent_change', 'link-39');">percent_change</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">    <tt id="link-40" class="py-name" targets="Variable models.Company.year_high=models.Company-class.html#year_high"><a title="models.Company.year_high" class="py-name" href="#" onclick="return doclink('link-40', 'year_high', 'link-40');">year_high</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">    <tt id="link-41" class="py-name" targets="Variable models.Company.ask_price=models.Company-class.html#ask_price"><a title="models.Company.ask_price" class="py-name" href="#" onclick="return doclink('link-41', 'ask_price', 'link-41');">ask_price</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">    <tt id="link-42" class="py-name" targets="Variable models.Company.eps=models.Company-class.html#eps"><a title="models.Company.eps" class="py-name" href="#" onclick="return doclink('link-42', 'eps', 'link-42');">eps</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">    <tt id="link-43" class="py-name" targets="Variable models.Company.peg=models.Company-class.html#peg"><a title="models.Company.peg" class="py-name" href="#" onclick="return doclink('link-43', 'peg', 'link-43');">peg</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">    <tt id="link-44" class="py-name" targets="Variable models.Company.days_range=models.Company-class.html#days_range"><a title="models.Company.days_range" class="py-name" href="#" onclick="return doclink('link-44', 'days_range', 'link-44');">days_range</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">    <tt id="link-45" class="py-name" targets="Variable models.Company.percent_change_fifty=models.Company-class.html#percent_change_fifty"><a title="models.Company.percent_change_fifty" class="py-name" href="#" onclick="return doclink('link-45', 'percent_change_fifty', 'link-45');">percent_change_fifty</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">    <tt id="link-46" class="py-name" targets="Variable models.Company.percent_change_twohundred=models.Company-class.html#percent_change_twohundred"><a title="models.Company.percent_change_twohundred" class="py-name" href="#" onclick="return doclink('link-46', 'percent_change_twohundred', 'link-46');">percent_change_twohundred</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">    <tt id="link-47" class="py-name" targets="Variable models.Company.volume=models.Company-class.html#volume"><a title="models.Company.volume" class="py-name" href="#" onclick="return doclink('link-47', 'volume', 'link-47');">volume</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">    <tt id="link-48" class="py-name" targets="Variable models.Company.avg_volume=models.Company-class.html#avg_volume"><a title="models.Company.avg_volume" class="py-name" href="#" onclick="return doclink('link-48', 'avg_volume', 'link-48');">avg_volume</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">    <tt id="link-49" class="py-name"><a title="models.Company.market_cap" class="py-name" href="#" onclick="return doclink('link-49', 'market_cap', 'link-9');">market_cap</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">    <tt id="link-50" class="py-name" targets="Variable models.Company.foreign_id=models.Company-class.html#foreign_id"><a title="models.Company.foreign_id" class="py-name" href="#" onclick="return doclink('link-50', 'foreign_id', 'link-50');">foreign_id</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">    <tt id="link-51" class="py-name" targets="Variable models.Company.foreign_id_cur=models.Company-class.html#foreign_id_cur"><a title="models.Company.foreign_id_cur" class="py-name" href="#" onclick="return doclink('link-51', 'foreign_id_cur', 'link-51');">foreign_id_cur</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"> </tt>
+<a name="Company.__init__"></a><div id="Company.__init__-def"><a name="L86"></a><tt class="py-lineno"> 86</tt> <a class="py-toggle" href="#" id="Company.__init__-toggle" onclick="return toggle('Company.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Company-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">symbol</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">exchange</tt><tt class="py-op">,</tt> <tt class="py-param">currency</tt><tt class="py-op">,</tt> <tt class="py-param">location</tt><tt class="py-op">,</tt> <tt class="py-param">open_price</tt><tt class="py-op">,</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">                 <tt class="py-param">prev_price</tt><tt class="py-op">,</tt> <tt class="py-param">percent_change</tt><tt class="py-op">,</tt> <tt class="py-param">year_high</tt><tt class="py-op">,</tt> <tt class="py-param">ask_price</tt><tt class="py-op">,</tt> <tt class="py-param">eps</tt><tt class="py-op">,</tt> <tt class="py-param">peg</tt><tt class="py-op">,</tt> <tt class="py-param">days_range</tt><tt class="py-op">,</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">                 <tt class="py-param">percent_change_fifty</tt><tt class="py-op">,</tt> <tt class="py-param">percent_change_twohundred</tt><tt class="py-op">,</tt> <tt class="py-param">volume</tt><tt class="py-op">,</tt> <tt class="py-param">avg_volume</tt><tt class="py-op">,</tt> <tt class="py-param">market_cap</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Company.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Company.__init__-expanded"><a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring">        self.name the name of the Company</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring">        self.symbol the symbol of the Company</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring">        self.location the location of the Company</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">        self.currency the currecny the Company uses</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-docstring">        self.open_price the open price for that stock that day</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-docstring">        self.prev_price th eclosing price of that stock the previous day</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-docstring">        self.percent_change the percent it has changed today</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-docstring">        self.year_high the highest p[rice of the year for that stock</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-docstring">        self.ask_price the asking price for that stock</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring">        self.eps the eps for that stock</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring">        self.peg the peg for that stock</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">        self.days_range the range of days for info about that stock</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-docstring">        self.percent_change_fifty the percent change in fifty days for that stock</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring">        self.percent_change_twohundred the percent change in 200 days for that stock</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring">        self.volume  the volume for that stock</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-docstring">        self.avg_volume the average volume for that stock</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-docstring">        self.market_cap the market capitalization for that stock</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-52" class="py-name"><a title="models.Company.name
+models.Currency.name
+models.Exchange.name
+models.Location.name" class="py-name" href="#" onclick="return doclink('link-52', 'name', 'link-3');">name</a></tt> <tt class="py-op">=</tt> <tt id="link-53" class="py-name"><a title="models.Company.name
+models.Currency.name
+models.Exchange.name
+models.Location.name" class="py-name" href="#" onclick="return doclink('link-53', 'name', 'link-3');">name</a></tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name"><a title="models.Company.symbol" class="py-name" href="#" onclick="return doclink('link-54', 'symbol', 'link-32');">symbol</a></tt> <tt class="py-op">=</tt> <tt id="link-55" class="py-name"><a title="models.Company.symbol" class="py-name" href="#" onclick="return doclink('link-55', 'symbol', 'link-32');">symbol</a></tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-56" class="py-name"><a title="models.Company.location
+models.Exchange.location" class="py-name" href="#" onclick="return doclink('link-56', 'location', 'link-6');">location</a></tt> <tt class="py-op">=</tt> <tt id="link-57" class="py-name"><a title="models.Company.location
+models.Exchange.location" class="py-name" href="#" onclick="return doclink('link-57', 'location', 'link-6');">location</a></tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name"><a title="models.Company.exchange
+models.Exchange.exchange" class="py-name" href="#" onclick="return doclink('link-58', 'exchange', 'link-2');">exchange</a></tt> <tt class="py-op">=</tt> <tt id="link-59" class="py-name"><a title="models.Company.exchange
+models.Exchange.exchange" class="py-name" href="#" onclick="return doclink('link-59', 'exchange', 'link-2');">exchange</a></tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="models.Company.currency
+models.Currency.currency
+models.Exchange.currency
+models.Location.currency" class="py-name" href="#" onclick="return doclink('link-60', 'currency', 'link-5');">currency</a></tt> <tt class="py-op">=</tt> <tt id="link-61" class="py-name"><a title="models.Company.currency
+models.Currency.currency
+models.Exchange.currency
+models.Location.currency" class="py-name" href="#" onclick="return doclink('link-61', 'currency', 'link-5');">currency</a></tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-62" class="py-name"><a title="models.Company.open_price" class="py-name" href="#" onclick="return doclink('link-62', 'open_price', 'link-37');">open_price</a></tt> <tt class="py-op">=</tt> <tt id="link-63" class="py-name"><a title="models.Company.open_price" class="py-name" href="#" onclick="return doclink('link-63', 'open_price', 'link-37');">open_price</a></tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">prev_price</tt> <tt class="py-op">=</tt> <tt class="py-name">prev_price</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name"><a title="models.Company.percent_change" class="py-name" href="#" onclick="return doclink('link-64', 'percent_change', 'link-39');">percent_change</a></tt> <tt class="py-op">=</tt> <tt id="link-65" class="py-name"><a title="models.Company.percent_change" class="py-name" href="#" onclick="return doclink('link-65', 'percent_change', 'link-39');">percent_change</a></tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-66" class="py-name"><a title="models.Company.year_high" class="py-name" href="#" onclick="return doclink('link-66', 'year_high', 'link-40');">year_high</a></tt> <tt class="py-op">=</tt> <tt id="link-67" class="py-name"><a title="models.Company.year_high" class="py-name" href="#" onclick="return doclink('link-67', 'year_high', 'link-40');">year_high</a></tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-68" class="py-name"><a title="models.Company.ask_price" class="py-name" href="#" onclick="return doclink('link-68', 'ask_price', 'link-41');">ask_price</a></tt> <tt class="py-op">=</tt> <tt id="link-69" class="py-name"><a title="models.Company.ask_price" class="py-name" href="#" onclick="return doclink('link-69', 'ask_price', 'link-41');">ask_price</a></tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-70" class="py-name"><a title="models.Company.eps" class="py-name" href="#" onclick="return doclink('link-70', 'eps', 'link-42');">eps</a></tt> <tt class="py-op">=</tt> <tt id="link-71" class="py-name"><a title="models.Company.eps" class="py-name" href="#" onclick="return doclink('link-71', 'eps', 'link-42');">eps</a></tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-72" class="py-name"><a title="models.Company.peg" class="py-name" href="#" onclick="return doclink('link-72', 'peg', 'link-43');">peg</a></tt> <tt class="py-op">=</tt> <tt id="link-73" class="py-name"><a title="models.Company.peg" class="py-name" href="#" onclick="return doclink('link-73', 'peg', 'link-43');">peg</a></tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-74" class="py-name"><a title="models.Company.days_range" class="py-name" href="#" onclick="return doclink('link-74', 'days_range', 'link-44');">days_range</a></tt> <tt class="py-op">=</tt> <tt id="link-75" class="py-name"><a title="models.Company.days_range" class="py-name" href="#" onclick="return doclink('link-75', 'days_range', 'link-44');">days_range</a></tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-76" class="py-name"><a title="models.Company.percent_change_fifty" class="py-name" href="#" onclick="return doclink('link-76', 'percent_change_fifty', 'link-45');">percent_change_fifty</a></tt> <tt class="py-op">=</tt> <tt id="link-77" class="py-name"><a title="models.Company.percent_change_fifty" class="py-name" href="#" onclick="return doclink('link-77', 'percent_change_fifty', 'link-45');">percent_change_fifty</a></tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-78" class="py-name"><a title="models.Company.percent_change_twohundred" class="py-name" href="#" onclick="return doclink('link-78', 'percent_change_twohundred', 'link-46');">percent_change_twohundred</a></tt> <tt class="py-op">=</tt> <tt id="link-79" class="py-name"><a title="models.Company.percent_change_twohundred" class="py-name" href="#" onclick="return doclink('link-79', 'percent_change_twohundred', 'link-46');">percent_change_twohundred</a></tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-80" class="py-name"><a title="models.Company.volume" class="py-name" href="#" onclick="return doclink('link-80', 'volume', 'link-47');">volume</a></tt> <tt class="py-op">=</tt> <tt id="link-81" class="py-name"><a title="models.Company.volume" class="py-name" href="#" onclick="return doclink('link-81', 'volume', 'link-47');">volume</a></tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-82" class="py-name"><a title="models.Company.avg_volume" class="py-name" href="#" onclick="return doclink('link-82', 'avg_volume', 'link-48');">avg_volume</a></tt> <tt class="py-op">=</tt> <tt id="link-83" class="py-name"><a title="models.Company.avg_volume" class="py-name" href="#" onclick="return doclink('link-83', 'avg_volume', 'link-48');">avg_volume</a></tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-84" class="py-name"><a title="models.Company.market_cap" class="py-name" href="#" onclick="return doclink('link-84', 'market_cap', 'link-9');">market_cap</a></tt> <tt class="py-op">=</tt> <tt id="link-85" class="py-name"><a title="models.Company.market_cap" class="py-name" href="#" onclick="return doclink('link-85', 'market_cap', 'link-9');">market_cap</a></tt> </tt>
+</div><a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"> </tt>
+<a name="Company.__repr__"></a><div id="Company.__repr__-def"><a name="L128"></a><tt class="py-lineno">128</tt> <a class="py-toggle" href="#" id="Company.__repr__-toggle" onclick="return toggle('Company.__repr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Company-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Company.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Company.__repr__-expanded"><a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"><tt class="py-docstring">        returns the Company's self.name attribute</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'&lt;Company %r&gt;'</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-86" class="py-name"><a title="models.Company.name
+models.Currency.name
+models.Exchange.name
+models.Location.name" class="py-name" href="#" onclick="return doclink('link-86', 'name', 'link-3');">name</a></tt> </tt>
+</div></div><a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"> </tt>
+<a name="Location"></a><div id="Location-def"><a name="L135"></a><tt class="py-lineno">135</tt> <a class="py-toggle" href="#" id="Location-toggle" onclick="return toggle('Location');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="models.Location-class.html">Location</a><tt class="py-op">(</tt><tt class="py-base-class">db</tt><tt class="py-op">.</tt><tt class="py-base-class">Model</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Location-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Location-expanded"><a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line">    <tt id="link-87" class="py-name"><a title="models.Company.rowid
+models.Currency.rowid
+models.Exchange.rowid
+models.Location.rowid" class="py-name" href="#" onclick="return doclink('link-87', 'rowid', 'link-1');">rowid</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Integer</tt><tt class="py-op">,</tt> <tt class="py-name">primary_key</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">    <tt id="link-88" class="py-name"><a title="models.Company.name
+models.Currency.name
+models.Exchange.name
+models.Location.name" class="py-name" href="#" onclick="return doclink('link-88', 'name', 'link-3');">name</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line">    <tt id="link-89" class="py-name" targets="Variable models.Location.iso=models.Location-class.html#iso"><a title="models.Location.iso" class="py-name" href="#" onclick="return doclink('link-89', 'iso', 'link-89');">iso</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">2</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">    <tt id="link-90" class="py-name" targets="Variable models.Location.capital=models.Location-class.html#capital"><a title="models.Location.capital" class="py-name" href="#" onclick="return doclink('link-90', 'capital', 'link-90');">capital</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">    <tt id="link-91" class="py-name" targets="Variable models.Location.gdp=models.Location-class.html#gdp"><a title="models.Location.gdp" class="py-name" href="#" onclick="return doclink('link-91', 'gdp', 'link-91');">gdp</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">    <tt id="link-92" class="py-name"><a title="models.Company.currency
+models.Currency.currency
+models.Exchange.currency
+models.Location.currency" class="py-name" href="#" onclick="return doclink('link-92', 'currency', 'link-5');">currency</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">    <tt id="link-93" class="py-name" targets="Variable models.Location.location_exchange=models.Location-class.html#location_exchange"><a title="models.Location.location_exchange" class="py-name" href="#" onclick="return doclink('link-93', 'location_exchange', 'link-93');">location_exchange</a></tt> <tt class="py-op">=</tt> <tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">Column</tt><tt class="py-op">(</tt><tt class="py-name">db</tt><tt class="py-op">.</tt><tt class="py-name">String</tt><tt class="py-op">(</tt><tt class="py-number">80</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"> </tt>
+<a name="Location.__init__"></a><div id="Location.__init__-def"><a name="L144"></a><tt class="py-lineno">144</tt> <a class="py-toggle" href="#" id="Location.__init__-toggle" onclick="return toggle('Location.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Location-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">iso</tt><tt class="py-op">,</tt> <tt class="py-param">capital</tt><tt class="py-op">,</tt> <tt class="py-param">gdp</tt><tt class="py-op">,</tt> <tt class="py-param">currency</tt><tt class="py-op">,</tt> <tt class="py-param">location_exchange</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Location.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Location.__init__-expanded"><a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"><tt class="py-docstring">        self.iso the two letter id for the country of the location</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"><tt class="py-docstring">        self.name the name (country) of the location</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"><tt class="py-docstring">        self.capital the capital of the location</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"><tt class="py-docstring">        self.gdp the GDP(Nominal) of the location</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"><tt class="py-docstring">        self.currency the currency of the location</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-94" class="py-name"><a title="models.Location.iso" class="py-name" href="#" onclick="return doclink('link-94', 'iso', 'link-89');">iso</a></tt> <tt class="py-op">=</tt> <tt id="link-95" class="py-name"><a title="models.Location.iso" class="py-name" href="#" onclick="return doclink('link-95', 'iso', 'link-89');">iso</a></tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-96" class="py-name"><a title="models.Company.name
+models.Currency.name
+models.Exchange.name
+models.Location.name" class="py-name" href="#" onclick="return doclink('link-96', 'name', 'link-3');">name</a></tt> <tt class="py-op">=</tt> <tt id="link-97" class="py-name"><a title="models.Company.name
+models.Currency.name
+models.Exchange.name
+models.Location.name" class="py-name" href="#" onclick="return doclink('link-97', 'name', 'link-3');">name</a></tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-98" class="py-name"><a title="models.Location.capital" class="py-name" href="#" onclick="return doclink('link-98', 'capital', 'link-90');">capital</a></tt> <tt class="py-op">=</tt> <tt id="link-99" class="py-name"><a title="models.Location.capital" class="py-name" href="#" onclick="return doclink('link-99', 'capital', 'link-90');">capital</a></tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-100" class="py-name"><a title="models.Location.gdp" class="py-name" href="#" onclick="return doclink('link-100', 'gdp', 'link-91');">gdp</a></tt> <tt class="py-op">=</tt> <tt id="link-101" class="py-name"><a title="models.Location.gdp" class="py-name" href="#" onclick="return doclink('link-101', 'gdp', 'link-91');">gdp</a></tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-102" class="py-name"><a title="models.Company.currency
+models.Currency.currency
+models.Exchange.currency
+models.Location.currency" class="py-name" href="#" onclick="return doclink('link-102', 'currency', 'link-5');">currency</a></tt> <tt class="py-op">=</tt> <tt id="link-103" class="py-name"><a title="models.Company.currency
+models.Currency.currency
+models.Exchange.currency
+models.Location.currency" class="py-name" href="#" onclick="return doclink('link-103', 'currency', 'link-5');">currency</a></tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-104" class="py-name"><a title="models.Location.location_exchange" class="py-name" href="#" onclick="return doclink('link-104', 'location_exchange', 'link-93');">location_exchange</a></tt> <tt class="py-op">=</tt> <tt id="link-105" class="py-name"><a title="models.Location.location_exchange" class="py-name" href="#" onclick="return doclink('link-105', 'location_exchange', 'link-93');">location_exchange</a></tt> </tt>
+</div><a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"> </tt>
+<a name="Location.__repr__"></a><div id="Location.__repr__-def"><a name="L159"></a><tt class="py-lineno">159</tt> <a class="py-toggle" href="#" id="Location.__repr__-toggle" onclick="return toggle('Location.__repr__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="models.Location-class.html#__repr__">__repr__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Location.__repr__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Location.__repr__-expanded"><a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line"><tt class="py-docstring">        returns the location's self.name attribute</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">'&lt;Location %r&gt;'</tt> <tt class="py-op">%</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-106" class="py-name"><a title="models.Company.name
+models.Currency.name
+models.Exchange.name
+models.Location.name" class="py-name" href="#" onclick="return doclink('link-106', 'name', 'link-3');">name</a></tt> </tt>
+</div></div><a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue Jul 19 11:28:18 2016
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,1695 @@
+commit d76ae8cb3028883234b365562d9362f97c8e4d85
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Mon Jul 18 19:15:48 2016 -0500
+
+    added pylint cmd to makefile
+
+commit d0708cc7e45534dbe3e358295b9ec3217a69d77d
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Mon Jul 18 19:02:16 2016 -0500
+
+    deleted idb2.log
+
+commit 9c7da6174e7e54490deec79a86edd2556b4670c3
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Mon Jul 18 19:01:09 2016 -0500
+
+    added apiary / makefile
+
+commit 5f64a7016115e34570cf9930cdd813051a44806a
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 12 21:55:18 2016 -0500
+
+    final commit
+
+commit 2229959fe8c2cb3034009295fb494eefc84f8691
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 12 21:47:16 2016 -0500
+
+    apiary.apib
+
+commit 74cf593fc9fa8de10693b89a457636f8520dd037
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 12 21:45:57 2016 -0500
+
+    added uml file
+
+commit febc5f063b6bc68c70a905b91954d2aab24f0ced
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:40:53 2016 -0500
+
+    work pls pt 5
+
+commit 5e85bfdfb5e5b05b2d91d016f9a81f7fdc40881f
+Merge: c7db52e f7de741
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:39:40 2016 -0500
+
+    Merge branch 'server' of https://github.com/kelvinhe273/IDB-Group7 into server
+
+commit c7db52e07139b5b0f7a313fb1d1b48c7c486ca5b
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:39:25 2016 -0500
+
+    work pls pt 4
+
+commit f7de741c2484a8911e6dd729fbcdbf8dd95ef4b5
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 12 21:38:50 2016 -0500
+
+    changed about pg
+
+commit f062f686df63ce015edbfd61fea227a6bf5771f4
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:38:00 2016 -0500
+
+    work pls pt 3
+
+commit c7f241fa8a995e1a7a98a25d2d912d835fed0d7c
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:35:03 2016 -0500
+
+    work pls pt 2
+
+commit 364510d44559bfb50424da15e9d85033454aedb6
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:32:48 2016 -0500
+
+    work pls
+
+commit eefd575e07167d2fc89bf532a1fb6547d2868b75
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:30:51 2016 -0500
+
+    work pls
+
+commit d7e5456fb54ff0516fa660f0bc2eb99eb90dd4c4
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:28:23 2016 -0500
+
+    more work on units again 1
+
+commit 52ec4967a83a223337b986951fa41397e0cc2091
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:27:14 2016 -0500
+
+    more work on units again
+
+commit 005322c77de44fa13a170f1f9d1f9d1aa797f68e
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:25:47 2016 -0500
+
+    more work on units
+
+commit 8478f824a549b8e2f336cf5f646bef7f3ecfc87d
+Merge: e5fec87 75290ba
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 12 21:22:14 2016 -0500
+
+    Merge branch 'server' of https://github.com/kelvinhe273/IDB-Group7 into server
+
+commit 75290ba50d6826eec118f865d2d83a93a343805c
+Merge: 9ff51f3 8d79eb5
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:21:10 2016 -0500
+
+    Merge branch 'server' of https://github.com/kelvinhe273/IDB-Group7 into server
+
+commit 9ff51f31d967f65dc19676026b5f2ff7bb69a68e
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:20:58 2016 -0500
+
+    edited location models.py 1
+
+commit 8d79eb5d52138a3fd977dee524a4fd064e9813b4
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 12 21:20:50 2016 -0500
+
+    edited companies.html file
+
+commit e5fec87fe4ba29852e71440c8d4a0037a46928e1
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 12 21:19:38 2016 -0500
+
+    hovertext
+
+commit 785204de5a7dfcc00ed2a228a59fad9c8a59f95c
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:17:08 2016 -0500
+
+    edited location models.py again
+
+commit 317d7becf50334225bb63c25e102dac2c86deee9
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:10:00 2016 -0500
+
+    edit location models.py again
+
+commit b5fd477c6e7738872d896f0a7a5f0117a4b949b4
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 12 21:08:43 2016 -0500
+
+    added blue links
+
+commit 14964eef7b873260708941c2c47e15c64fb9f457
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:08:12 2016 -0500
+
+    edit location models.py
+
+commit 50d83de2032e3819e99b4d8f4d2ea34e525a0a4b
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:05:13 2016 -0500
+
+    edit again tests.py
+
+commit 7b3af9ffcad070a736f659d37e8897496febdb4b
+Merge: f7c4d05 95531d4
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:01:18 2016 -0500
+
+    Merge branch 'server' of https://github.com/kelvinhe273/IDB-Group7 into server
+
+commit f7c4d054e9bd416d0c9ad813088e6348f6050edb
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 21:01:06 2016 -0500
+
+    edit tests
+
+commit 95531d467f39d8546f3fd1d9d702d99019635bb8
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 12 20:59:01 2016 -0500
+
+    changed html files
+
+commit 3ff5ac0eb298b2f45026ad29ea57cdcba37d4422
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 20:57:30 2016 -0500
+
+    edit companies tests
+
+commit 82c26ec58c784d347945bc5aca54f6cd9cdbb5ff
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 20:54:13 2016 -0500
+
+    edit companies models
+
+commit ff66a6d23cc2678e2d1cacae6ce506df90ba36f6
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 12 20:52:04 2016 -0500
+
+    added pictures
+
+commit e8717443450ddebeffc938eeb9a08530ed2e5595
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 20:48:40 2016 -0500
+
+    fixed models.py
+
+commit e79b3268725e21e9b794725d4a10799c1c69ae62
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 20:41:04 2016 -0500
+
+    fixed unit tests
+
+commit 9ab662824c9df41f497808fd4c03b4aed9ee15d4
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 20:28:25 2016 -0500
+
+    fixed some linkings
+
+commit ad03491290badf643c73e39d3d11ae31ac36a0c3
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 20:12:14 2016 -0500
+
+    this works? maybe
+
+commit e52e7b5570741edba138acf25e10bcc03accf623
+Merge: 1bd3eb8 259b58b
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 20:09:24 2016 -0500
+
+    Merge branch 'server' of https://github.com/kelvinhe273/IDB-Group7 into server
+
+commit 1bd3eb8e44ff66d810ac8e1196d3ed5202466487
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 20:09:09 2016 -0500
+
+    fixed some linkings
+
+commit 259b58b500a571124786909b3762069192db1ac7
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 12 20:07:03 2016 -0500
+
+     working on unit tests
+
+commit 4e085b9b56af7067eaa57011ca6552aceb1f4095
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 12 20:01:05 2016 -0500
+
+     working on unit tests
+
+commit e89455fb71a8eebe03281435ff339edb7e4f46a8
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 12 19:54:30 2016 -0500
+
+     working on unit tests
+
+commit 679714d7a355d76cec1f7b9d35f07f711037e44d
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 19:28:18 2016 -0500
+
+    idk
+
+commit 0f2e953bd614ff7824afa4a6cd264362fca9c87d
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 15:39:00 2016 -0500
+
+    fixed location pictures, tinted background
+
+commit e067ad71503b323f42cd56302438fb6937c7df4c
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 13:56:06 2016 -0500
+
+    redid exchange, comapny, location, currency.html
+
+commit a0e2817d919b44125f092e9a3acf3589b1508951
+Merge: ff71311 80077c3
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 10:56:33 2016 -0500
+
+    added stock exchange pictures, changed font
+
+commit ff71311a427be213a9ead4b3aab9fc995c1000b1
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Tue Jul 12 10:55:13 2016 -0500
+
+    added stock exchange pictures, changed font
+
+commit 80077c312f7baaf3b114df7d7d567e12cdb4bc78
+Author: almto3 <almto3@hotmail.com>
+Date:   Mon Jul 11 21:08:37 2016 -0500
+
+    removed margin
+
+commit ee8410179e96be0718b05857e1d4600f4aa17b69
+Merge: b2d234c b38b4fe
+Author: almto3 <almto3@hotmail.com>
+Date:   Mon Jul 11 20:54:33 2016 -0500
+
+    merged and added background image
+
+commit b2d234cb3ad876dbbadcd2b84b738996a0239e46
+Author: almto3 <almto3@hotmail.com>
+Date:   Mon Jul 11 20:45:07 2016 -0500
+
+    changed background info and etc.
+
+commit dc0480d354bf9ffa753a6960db851af30893fa62
+Author: almto3 <almto3@hotmail.com>
+Date:   Mon Jul 11 20:42:16 2016 -0500
+
+    changed background image
+
+commit b38b4feec88b2d74577d9b472d96f8a031d2eee3
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Mon Jul 11 19:08:01 2016 -0500
+
+    Minor changes to location.
+
+commit f93ebc1aad1a0905a98af3da12b11c6ee7b4b004
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Mon Jul 11 18:53:49 2016 -0500
+
+    edited about pg
+
+commit 18c9dc4238498e2941a5c5aa25b7de0e35526dc8
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Mon Jul 11 18:52:10 2016 -0500
+
+    beautified index.html
+
+commit 54089ba21ebb73a7cadbaf0ab0245db5120e9126
+Merge: 2f05136 76bee29
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Mon Jul 11 18:40:36 2016 -0500
+
+    Merge branch 'server' of https://github.com/kelvinhe273/IDB-Group7 into kh/visual_improv
+
+commit 2f051364fbd6f29653e458c82ad8c9c2027b6d28
+Merge: 20fce7b 7dd65bd
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Mon Jul 11 18:40:13 2016 -0500
+
+    added moving carousel
+
+commit 76bee292d1c635640926d737df81c9e99806f081
+Merge: 9576c98 d33ffaf
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Mon Jul 11 18:37:48 2016 -0500
+
+    Merge remote-tracking branch 'origin/server' into server
+
+commit 9576c98dc0005493b91da74c907d6822f282704b
+Author: almto3 <almto3@hotmail.com>
+Date:   Mon Jul 11 19:35:48 2016 -0400
+
+    Finalize the running of the unit tests on the server
+
+commit d33ffaf318682cec16177381b6aa1b2c1fede614
+Merge: 4dec650 7dd65bd
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Mon Jul 11 18:34:15 2016 -0500
+
+    Merge branch 'server' of https://github.com/kelvinhe273/IDB-Group7 into server
+
+commit 4dec650cb9f37db34a26c7dcf092bce239c42381
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Mon Jul 11 18:33:53 2016 -0500
+
+    added pictures to location pages
+
+commit 7dd65bd4a8de2ef7bb5288d914027d35760fd72c
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Mon Jul 11 18:32:08 2016 -0500
+
+    Added arrows for tables and some basic dynamic page information loading.
+
+commit 943ca66eb34a88e0d549e36b1ff5cd61a4ef2572
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Mon Jul 11 18:30:15 2016 -0500
+
+    Correct spacing on __init.py
+
+commit 20fce7b28c3878e87e60fe5318159e521d6677f6
+Merge: b1f8d04 8271d91
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Mon Jul 11 18:29:14 2016 -0500
+
+    Merge branch 'server' of https://github.com/kelvinhe273/IDB-Group7 into kh/visual_improv
+
+commit b1f8d04f622534b8cd4b58b58b2104095849b49b
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Mon Jul 11 18:29:04 2016 -0500
+
+    fixed carousel in about.html to be full background
+
+commit e4f5484782a8de0e7c12adc05b81faad2303c3bb
+Author: almto3 <almto3@hotmail.com>
+Date:   Mon Jul 11 19:26:17 2016 -0400
+
+    Fix call to tests on about page
+
+commit 8271d91788dcdbdba067d9681f72542d935ce5cc
+Author: almto3 <almto3@hotmail.com>
+Date:   Mon Jul 11 18:45:47 2016 -0400
+
+    Make server run in prod
+
+commit 7dc815e6c9147d2fec2373febf55c3a7f09b279f
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Mon Jul 11 16:59:27 2016 -0500
+
+    Add ability to run unit tests from about page
+
+commit beeaf3a3dc53ec917fd387c77c9546ca9b295162
+Merge: edcf5ba 9ff3a99
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Mon Jul 11 16:23:30 2016 -0500
+
+    Merge remote-tracking branch 'origin/server' into na/get_travis_running
+
+commit 9ff3a993e0d1df88cb14b49b701ccc0055d91f74
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Mon Jul 11 16:23:02 2016 -0500
+
+    Made carousel fit page.
+
+commit edcf5bae6f0fa4e22d0daff5c72d6727ae0d080d
+Merge: 195c470 1c575a2
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Mon Jul 11 16:22:27 2016 -0500
+
+    Merge remote-tracking branch 'origin/na/mobile_style' into na/get_travis_running
+
+commit 195c47018bcaf5662ec20a9a595590980e5f1e9b
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Mon Jul 11 16:20:44 2016 -0500
+
+    Add dynamic stock charts for company
+
+commit 1c575a2fa7fdf8aa3d1a38029083355e96ff6ce9
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Mon Jul 11 16:18:18 2016 -0500
+
+    finished the about page
+
+commit d05329602837a980d44f1b2bd11a1ed21781abbc
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Mon Jul 11 16:13:24 2016 -0500
+
+    Make all routes grab data from db
+
+commit 8710a449575daa678f9e3a3045458ae50dab3421
+Merge: ccbf6ec c5cfbe1
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Mon Jul 11 15:01:11 2016 -0500
+
+    Merge remote-tracking branch 'origin/dev' into na/get_travis_running
+
+commit c5cfbe1a65d74b5e9be6971a7f5c3da918cf2d55
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 11 12:52:37 2016 -0500
+
+    tables are fille with all attributes and database should be done
+
+commit ccbf6ecb4ff2f4d1c98cbe82aab1273c91518982
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Mon Jul 11 12:48:22 2016 -0500
+
+    Correct makefile for new test locations
+
+commit 02ecd090618a978e7af5dc9123f7d60a59e66054
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Mon Jul 11 12:45:31 2016 -0500
+
+    Correct the testing stuff to pint to correct dbs
+
+commit e0909616bf5afb18ef1796418b3f80bd99d21d4c
+Merge: d70abb8 fa13dce
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Mon Jul 11 12:32:12 2016 -0500
+
+    Merge remote-tracking branch 'origin/server' into na/get_travis_running
+
+commit b26c874b398b60fa027636b103279f68eaaf404c
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 11 11:18:42 2016 -0500
+
+     fixed the initialization of our database
+
+commit 9e2c81a6d9ca08c0b6804d8e119cf75f9798c1e2
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 11 10:55:27 2016 -0500
+
+     added onto the compnay model to include the extra info from the database
+
+commit 4be9e28f1d39a48ee15b0afc06644e187342db4b
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 11 09:13:51 2016 -0500
+
+     added all the extra company info to the company table
+
+commit 2f5a8f19913ce86d6b83ec69344cd6cb0c602994
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Sun Jul 10 22:20:49 2016 -0500
+
+     all tables in our database are filled up
+
+commit a8df182cb1939e4ee52b50e76364d30681a8f2c4
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Sun Jul 10 21:06:34 2016 -0500
+
+     fixed the database bug, can now take any amount of input
+
+commit 675d6f9319974c9437f0f3c1a839e3a378edf7a1
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Sun Jul 10 19:36:48 2016 -0500
+
+     working on improving the database
+
+commit ac14c14bebfe66ace96a0b58f407a69090b138a8
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Sun Jul 10 19:24:25 2016 -0500
+
+    Initial mobile styling stuff
+
+commit fa13dce09d574495881944eb9b3ec5cb784c584d
+Merge: 0d5469d f46b97a
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Sun Jul 10 18:26:00 2016 -0500
+
+    Merge branch 'na/plural_html' into server
+
+commit 0d5469d8a297b170bc90043ea5cebb10aa172ad9
+Merge: 6092fe2 14fba2a
+Author: almto3 <almto3@hotmail.com>
+Date:   Sun Jul 10 18:19:33 2016 -0500
+
+    Merge branch 'server' of https://github.com/kelvinhe273/IDB-Group7 into server
+
+commit f46b97ace928a7429db83f5a85a5fb22c1283b02
+Merge: 9a78f62 14fba2a
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Sun Jul 10 18:19:13 2016 -0500
+
+    Merge remote-tracking branch 'origin/server' into na/plural_html
+
+commit 6092fe290783df0e207c396b74be8ac6b95bbb4d
+Author: almto3 <almto3@hotmail.com>
+Date:   Sun Jul 10 18:18:57 2016 -0500
+
+    trying to see if mobile devices work now
+
+commit 9a78f62b482c07d48b95960fc80e0e3adf9bc3a1
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Sun Jul 10 18:17:45 2016 -0500
+
+    Remove static pages
+
+commit 14fba2aec7ba199a6c322184169304dd226e14d9
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Sun Jul 10 18:10:25 2016 -0500
+
+    edited css
+
+commit e6ced766dc10ae978a0588d30d8bc8b4fac1a7c1
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Sun Jul 10 18:06:01 2016 -0500
+
+    Add single routing
+
+commit b7af8892867eeea3d1dc6ea470449ebca7e5e066
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Sun Jul 10 17:58:54 2016 -0500
+
+    edited small devices.css
+
+commit 5676ad2febfa368d67ea2d3d4f9cae2d328c3e6d
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Sun Jul 10 17:54:07 2016 -0500
+
+    Make collection pages dynamic
+
+commit 9b795fd9615afce3f7d74441e196f27a55123a94
+Merge: f974246 ab541e9
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Sun Jul 10 17:44:50 2016 -0500
+
+    edited about page again
+
+commit f9742463ac7cf5b3a6470c0335fef7db5b59d2ad
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Sun Jul 10 17:41:49 2016 -0500
+
+    edited about page again
+
+commit ab541e9b2bc89627a5374035daa600a065f7973a
+Author: almto3 <almto3@hotmail.com>
+Date:   Sun Jul 10 17:40:08 2016 -0500
+
+    removed extra static folder
+
+commit 99cafaea66ec1ca47f8072f75d74ffb27d31bd12
+Merge: e1f68ec 8ac658d
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Sun Jul 10 17:27:39 2016 -0500
+
+    database is working
+
+commit e1f68eca70821a1b6e95a93961154f96d9594490
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Sun Jul 10 17:16:45 2016 -0500
+
+    database is working
+
+commit 33a493c08aec2df46d002c2ea3a4ff57e8ba604f
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Sun Jul 10 17:12:49 2016 -0500
+
+    Add the rest of the single model templates
+
+commit de6a2cd82cfc5281588c9566655f66cd6e33c5d0
+Author: Nathan Adams <nathan.riley.adams@gmail.com>
+Date:   Sun Jul 10 17:03:11 2016 -0500
+
+    Make themplates for lists plural
+
+commit b2e7c608d6c5fa6368c23c151cb876d9f0642313
+Merge: 39dd950 7297828
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Sun Jul 10 16:44:52 2016 -0500
+
+    Merge remote-tracking branch 'origin/na/templates' into server
+
+commit 711a3ddb5340ddde3c6cd12ac3543aec078bc2d5
+Author: almto3 <almto3@hotmail.com>
+Date:   Sun Jul 10 17:43:42 2016 -0400
+
+    updating the temp server
+
+commit 192eae5b6b474519c86df3d209c8a250173ca198
+Merge: 39dd950 7297828
+Author: almto3 <almto3@hotmail.com>
+Date:   Sun Jul 10 17:40:40 2016 -0400
+
+    Merge remote-tracking branch 'origin/na/templates' into server
+    
+    Conflicts:
+            FlaskApp/DowningJones/templates/about.html
+
+commit 7297828aa0e1d64bbf4e34908c111cb6c855e14f
+Author: Nathan Adams <nadams@cs.utexas.edu>
+Date:   Sun Jul 10 16:34:17 2016 -0500
+
+    Create a run and dev file to run flask locally
+
+commit 9f0bb16f1d62204faf70952c560fd6f9410972c5
+Author: Nathan Adams <nadams@cs.utexas.edu>
+Date:   Sun Jul 10 16:32:52 2016 -0500
+
+    Make templates extend off layout
+
+commit 39dd9503484f20d4ea1159b572e9bc010e2fdb90
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Sun Jul 10 16:27:48 2016 -0500
+
+    edited about page
+
+commit d0322f94afbc40d77acae125eb0a8a670dca97ce
+Author: almto3 <almto3@hotmail.com>
+Date:   Sun Jul 10 17:25:33 2016 -0400
+
+    set up the new server
+
+commit e6ec415a35a8b60aa1fc568e23e968895c970c7e
+Author: almto3 <almto3@hotmail.com>
+Date:   Sun Jul 10 16:42:13 2016 -0400
+
+    changed settings
+
+commit f996fcf81f791bd125a0837d27d18c1dbadb408d
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Sun Jul 10 14:40:10 2016 -0500
+
+    new temp server branch
+
+commit 8ac658daf6ef160c83333e3620f7806c35b6e3cf
+Author: almto3 <almto3@hotmail.com>
+Date:   Sun Jul 10 14:07:23 2016 -0500
+
+    added a link to the currency google sheet
+
+commit 3ce051b91d0fc5704549c6d1e6265409c9cf6bc8
+Author: almto3 <almto3@hotmail.com>
+Date:   Sun Jul 10 13:43:30 2016 -0500
+
+    modified currency.csv
+
+commit d08a045c996c67bf58a7c6d05285d6236d06d1a0
+Author: almto3 <almto3@hotmail.com>
+Date:   Sun Jul 10 13:15:56 2016 -0500
+
+    updated data files
+
+commit 7ea63a110f20612aaf2f902fe150b204e6bd101f
+Author: almto3 <almto3@hotmail.com>
+Date:   Sun Jul 10 12:56:32 2016 -0500
+
+    added data folder for location and currency, and added attribute iso to both tables
+
+commit c12c73d537e5ec7016b55e0245b736bc41e690fe
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Sun Jul 10 12:20:46 2016 -0500
+
+    update dev
+
+commit d70abb826bfd6220b575e88bf5cee92818be3477
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Sun Jul 10 12:10:46 2016 -0500
+
+     fixed the stock exchnage issues
+
+commit 82c32a278174ff5b724c506c9c70ae205aa5c535
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Sun Jul 10 11:46:50 2016 -0500
+
+     made all the tables for each model with attributes i could fill
+
+commit 007605d62403c485e6765f8f08688d845da2df8a
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Sun Jul 10 11:15:04 2016 -0500
+
+    created the stock exchange table, still need to add attributes
+
+commit d11b80d84796046da836eaaa1892103755247afe
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Sat Jul 9 18:39:19 2016 -0500
+
+    added oauth1.0 for yahoo api so we can have 20K requests/hour
+
+commit 8bbd73773097225888dbfe76ae3856f11acb23ce
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Sat Jul 9 16:51:48 2016 -0500
+
+     made our first table and scraped data to fill it
+
+commit 89ff73ab4eece470b54a7bae731248ef41730d55
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Sat Jul 9 15:29:24 2016 -0500
+
+    working on setting up the database with json from yahoo api
+
+commit 683eb5c43c3d182df8b080f1fb470a703753f297
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Sat Jul 9 14:46:23 2016 -0500
+
+    added scrape file and created db folder
+
+commit d5f076505a1873479ab9e492dd0d139fb4b0d8e8
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Sat Jul 9 13:40:10 2016 -0500
+
+     created the database I think
+
+commit 9fc3ca7be329e5334b804357ae98af4d0e5b92d3
+Author: Nathan Adams <nathana@spiceworks.com>
+Date:   Thu Jul 7 17:40:06 2016 -0500
+
+    Add pylint exceptions for generated members from sqlalchemy
+
+commit 57f8f3d468754dc7e09c13f516314464f423231e
+Author: Nathan Adams <nathana@spiceworks.com>
+Date:   Thu Jul 7 17:33:50 2016 -0500
+
+    Add Travis file and test line in make file to run on travis
+
+commit dfea86ee8f76dd8573d4384af6f07943475b0032
+Author: Nathan Adams <nathana@spiceworks.com>
+Date:   Thu Jul 7 17:32:12 2016 -0500
+
+    Revert changes to test setup methods so they actually run
+
+commit 32e3222d44fc0cf71a3eb45e9faba745c98150e9
+Merge: f388617 f769342
+Author: Nathan Adams <nathana@spiceworks.com>
+Date:   Thu Jul 7 17:00:20 2016 -0500
+
+    Merge branch 'master' of https://github.com/kelvinhe273/IDB-Group7
+
+commit f76934245908e019a00f9792d0dd5e9610f4a95e
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 20:40:15 2016 -0500
+
+    Final commit.
+
+commit 953ad250e0ff4f03217b3c84efc8758d1bf4f65f
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 20:39:19 2016 -0500
+
+    removing travis file
+
+commit eefcb179ba10a18e9f3f58873b45285118b9913c
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 20:37:54 2016 -0500
+
+    repo cleanup
+
+commit a3937cd1cf2288a1ac795a215fc25e1c538cb5a7
+Merge: cfe4ee2 ddd2dba
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 20:36:21 2016 -0500
+
+    Merge branch 'dev'
+
+commit ddd2dbabb4e679653f8d8cc4f81cdd38141e9fa3
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 20:34:21 2016 -0500
+
+    edited makefile
+
+commit e4a87d93cb84c96c3fe6fd9e1b75aa941a83ee1b
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 20:29:41 2016 -0500
+
+    changed makefile, created models.html file
+
+commit 1ed4f5b704c735fb3e013ac4f0062598a63899ff
+Merge: b816e02 985f76d
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 5 21:24:44 2016 -0400
+
+    Merge branch 'dev' of https://github.com/kelvinhe273/IDB-Group7 into dev
+
+commit b816e02f309579511667760bb292e50358ff5afa
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 5 21:24:10 2016 -0400
+
+    ran pydoc
+
+commit 985f76d4bf019fdeb395fbeb3f3d3dbec0493e11
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 20:18:02 2016 -0500
+
+    edited makefile
+
+commit cfe4ee2aba5041804ede7807a8463be68a2257e1
+Author: kelvinhe273 <kelvinhe1995@gmail.com>
+Date:   Tue Jul 5 19:56:32 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit daecc58c4c23bf444363b0b6a781bcfe066abab1
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 19:55:32 2016 -0500
+
+    edited make file; added comments to models.py for pydoc
+
+commit e0e7d13f844a0ef6beecc651341dae088aec83bd
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 19:39:02 2016 -0500
+
+    edited test and makefile to fix pylint errors
+
+commit 8d9079b90a17469bc86887fbc2749eb066c45566
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 5 20:36:12 2016 -0400
+
+    updated .gitignore
+
+commit 64f14e00fcddbe1cd68d7ca0b2758f2e0412cbf8
+Merge: a401a83 a6d1923
+Author: kelvinhe273 <kelvinhe1995_@utexas.edu>
+Date:   Tue Jul 5 19:17:03 2016 -0500
+
+    Merge pull request #23 from kelvinhe273/na/fix_pyint
+    
+    Fix pylint issues with test.py
+
+commit a6d1923af28229f73327079aa8c6d616f087337a
+Author: Nathan Adams <nathana@spiceworks.com>
+Date:   Tue Jul 5 19:14:48 2016 -0500
+
+    Fix pylint warnings
+
+commit 143ca92279b34dd1993431c40f2181a57275e2ed
+Merge: ff4ec97 a401a83
+Author: Nathan Adams <nathana@spiceworks.com>
+Date:   Tue Jul 5 19:13:32 2016 -0500
+
+    Merge branch 'dev' of https://github.com/kelvinhe273/IDB-Group7 into dev
+
+commit 57855c79bdb5d467ebd5f843a7d98ac53b756076
+Merge: 196c123 a401a83
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 5 18:30:13 2016 -0400
+
+    Merge branch 'dev'
+
+commit a401a838c736baa5ece42cccdc70f382645ed728
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 17:29:12 2016 -0500
+
+    removed uml file
+
+commit 12d9ff95c6b4c10ed9483ba7adc8fff9b9eb6592
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 17:28:19 2016 -0500
+
+    editing gitignore
+
+commit 196c123b3f062bdb34f970e8c9ad991ea724e3cb
+Merge: 073b33d 3711974
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 5 18:27:43 2016 -0400
+
+    MERGE PLEASE.
+
+commit 3711974c1ab93c7a2017d3f2c293d4fc34f48f6d
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 17:26:41 2016 -0500
+
+    update uml to be a pdf file
+
+commit 073b33d3cbeebe246f45964ce3fe2d282a40f6b4
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 5 18:25:35 2016 -0400
+
+    merging.
+
+commit 4e4e893c843cd23237aa35e3405d5098e38e6a1d
+Merge: 3cb4455 2301308
+Author: Dinosaurleg <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 17:21:49 2016 -0500
+
+    Merge pull request #22 from kelvinhe273/na/models
+    
+    Add models and unit tests
+
+commit ed5d42e6958064f5c8d54a4064c2e3b14ac56223
+Merge: a87d9b8 3cb4455
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 5 18:20:34 2016 -0400
+
+    Merge branch 'dev'
+
+commit 3cb4455d514b91e1376c31593fb9109bb7a03d1b
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 17:04:09 2016 -0500
+
+    edited apiary action button for currencies
+
+commit 9ad3d5838ca779d6908fa3542314d75c9cd26286
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 5 16:48:18 2016 -0500
+
+    fixing mobile layout
+
+commit 9b099d3df65323202e1e2db489d5e18deba0855b
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 5 16:46:04 2016 -0500
+
+    fixing mobile layout
+
+commit f31f7bbb0ff4777b10c80fd2ce3c33e7400650a0
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 5 16:44:04 2016 -0500
+
+    fixing mobile layout
+
+commit 23013081749449df2d638925c7f7e0f6b85db0a3
+Merge: f0c2e4f ff4ec97
+Author: Nathan Adams <nathana@spiceworks.com>
+Date:   Tue Jul 5 16:40:52 2016 -0500
+
+    Merge branch 'dev' into na/models
+
+commit ff4ec977251a254acfd18b7fcd118a5e6663a64b
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 5 16:37:09 2016 -0500
+
+    fixing mobile layout
+
+commit f0c2e4fa07f448e3ec1229bd1274f8349e46f552
+Author: Nathan Adams <nathana@spiceworks.com>
+Date:   Tue Jul 5 16:35:30 2016 -0500
+
+    Correct relationships to be multi-directional
+
+commit 72b21615ccfe9ddb537be59a16f0238bd853a9a5
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 5 16:34:44 2016 -0500
+
+    fixing mobile layout
+
+commit 302fc715812368a0f46d0607ea56a81de7c80c62
+Author: Nathan Adams <nathana@spiceworks.com>
+Date:   Tue Jul 5 16:16:57 2016 -0500
+
+    Round out initial tests
+
+commit f3daf97e8ed624d777091758d46954aea690fcc7
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 15:59:54 2016 -0500
+
+    Final change to about for now hopefullly. Added info for who wwe are.
+
+commit 4961e8d2fff6b835cf39cc5da32d3de46837bb0d
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 15:54:18 2016 -0500
+
+    Final formatting for pictures.
+
+commit d38e608d11e2fd9fa86df427de4d85575d32e694
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 15:50:46 2016 -0500
+
+    Cleaning up pictures.
+
+commit 4e8ae80f9bf26cc575451b99b5765d9e02f30246
+Author: Nathan Adams <nathana@spiceworks.com>
+Date:   Tue Jul 5 15:39:02 2016 -0500
+
+    Initial unit tests
+
+commit 8f9d6595038b85366d8aaeeb5e2901e8c71f54f1
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 15:38:10 2016 -0500
+
+    OKAY ABOUT PAGE DONE.
+
+commit 2f8c513e28678f392b6695dedce0aaa6372738ae
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 15:33:51 2016 -0500
+
+    Finally formatting on about page.
+
+commit d56fdab71994c43e674e3c2bf581cc4b47c15724
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 15:31:41 2016 -0500
+
+    About page fleshed out.
+
+commit 1bb169fabf5e503a5e279b19e8e10788f31eedac
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 15:12:36 2016 -0500
+
+    OKKAY MORE CLEANN UP.
+
+commit ad875649d76cddae6fcd6157526fb2e06d637ba6
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 15:10:36 2016 -0500
+
+    Okay now final cleanup.
+
+commit c6a10ae92521d34aba60c66dadb45f9266bf13ae
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 15:07:01 2016 -0500
+
+    Final clean up hopefully.
+
+commit 9f4f15162bd53f3d6c23e076416c9613337aa8f3
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 14:57:43 2016 -0500
+
+    Cleaned up companies.
+
+commit a2dafe6f48a4901cd47ce06de4620718a96b2b5c
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 5 14:47:09 2016 -0500
+
+    my profile info
+
+commit 88178d23effce05c231fbd4fe4949de15b58c9bc
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 5 14:43:18 2016 -0500
+
+    my profile info
+
+commit 571ab55311e4925f7cbe301da3663870d6cfee75
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 5 14:39:16 2016 -0500
+
+    my profile info
+
+commit 51cb274812f094dd493b1fdcbbb556d339efbe27
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 14:31:40 2016 -0500
+
+    Added info for kelvin.
+
+commit 277c12e5ab36e74ac199704dfe1b578d2597e14a
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 14:22:13 2016 -0500
+
+    Changed background for currencies.
+
+commit 6cb6790ee1d551ee906075bee0c1fddbb1780bbe
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 5 14:18:36 2016 -0500
+
+     last time, about page should work now
+
+commit b15cb702a40f45a96b385f441ce5cfe1100bbadd
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 5 14:12:24 2016 -0500
+
+     last time, about page should work now
+
+commit 83ef7a70f134f944b22dc52260c3dced30ce88c8
+Merge: 77ecab4 83c440e
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 5 14:10:15 2016 -0500
+
+    Merge branch 'dev' of https://github.com/kelvinhe273/IDB-Group7 into dev
+
+commit 77ecab40712e19f5171251233d480b9ddb38f263
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 5 14:09:32 2016 -0500
+
+     fixed text color on about page
+
+commit 83c440e0f9279c580a6ce187e003ccdd818fca57
+Merge: a39703c 0e64a48
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 14:08:01 2016 -0500
+
+    Merge branch 'dev' of https://github.com/kelvinhe273/IDB-Group7 into dev
+
+commit a39703c920e096011c6b376f860947ce93a23493
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 14:07:45 2016 -0500
+
+    Fixed font colr on stock exchange pages.
+
+commit 0e64a48307d2e56765ee6da518d1941ef02f7a11
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 5 14:04:33 2016 -0500
+
+     fixed text color on about page
+
+commit cd5de814c54b30f2c378631500b784d47bd09c33
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 13:55:43 2016 -0500
+
+    Changed background and got rid of the stockexchange css page.
+
+commit be03499b29928fdd659f63e315dbc0e84f3da76b
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 5 13:51:50 2016 -0500
+
+     added a basic layout for the stock exchange pages
+
+commit 8ff859f12b8d00db57abb6f5c1549be60a02eb61
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 13:51:00 2016 -0500
+
+    Finished about part for jae.
+
+commit 624e68000e76d4ec741d90a7f9ed0b82e92120c5
+Author: Nathan Adams <nathana@spiceworks.com>
+Date:   Tue Jul 5 13:41:20 2016 -0500
+
+    Update models to have all attributes
+    
+    refs #16
+
+commit 3739d6655a77983068d1a9cbf045ad6bb16ec2cd
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 13:33:29 2016 -0500
+
+    Changed coloring on table to match links.
+
+commit f6013428ee39934811e0aaeb22ed98cf8d2f5d0a
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 13:24:14 2016 -0500
+
+    Colors, how do they work?
+
+commit a87d9b82c2b2ad8e190f4e1049b40e685afd0b45
+Merge: 8fbefa5 31ab3bc
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 13:19:08 2016 -0500
+
+    merging with dev.
+
+commit 31ab3bcf091cf17ab640929560c799d8acd75ddc
+Merge: 818e65e d9d9e7a
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 13:12:30 2016 -0500
+
+    Merge branch 'dev' of https://github.com/kelvinhe273/IDB-Group7 into dev
+    
+    what
+
+commit 818e65e0f9f37913c8f8e58f41d4120b456a09c5
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 13:12:03 2016 -0500
+
+    Added attributes for currency and company.
+
+commit d9d9e7ab0cdc018bfc427eacbc00c2149ed4e39e
+Author: Kelvin <kelvinhe1995@gmail.com>
+Date:   Tue Jul 5 13:11:01 2016 -0500
+
+    edited yuml link
+
+commit 338138f457747693aceae942a6f6a4846e0877b1
+Author: Kelvin <kelvinhe1995@gmail.com>
+Date:   Tue Jul 5 13:08:50 2016 -0500
+
+    added 5 attributes to each model in yUML, also added link to yUML model
+
+commit d3114b1cd47163bbafe4254f87783b362bb1ba5e
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 13:02:51 2016 -0500
+
+    changed exchange FRA - PAR
+
+commit 7a45edea45980e2ca2ba863640a4b1aae94225ed
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 12:56:56 2016 -0500
+
+    updated currencies attribute type->name
+
+commit f0bf0af3b46390e0f7cf1d8ad33dac897ce5c29c
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 12:55:15 2016 -0500
+
+    Group name change. Great Britain->United Kingdom. Added attributes to stockmarket and location.
+
+commit 7eb987fc3d4eba53a5fcd588caf59068a857bfe3
+Author: Kelvin He <kelvinhe@cs.utexas.edu>
+Date:   Tue Jul 5 12:54:14 2016 -0500
+
+    Added 5 attributes to each model
+
+commit 5b4f2f026f2a36236acefece5982738c6af67116
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 5 12:36:43 2016 -0500
+
+    fixed usa picture link
+
+commit de650dffb4039ee01e889ae3b8f59f7762add066
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Tue Jul 5 12:34:55 2016 -0500
+
+    added basic layout for the location pages
+
+commit ce3b4cbc57f320cef0cc01515b896239d0e073d7
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 12:29:05 2016 -0500
+
+    Cleaning up typos, and page titles.
+
+commit fcf5f64f639fe01680a877abd6e4f351a4057f8e
+Author: Nathan Adams <nathana@spiceworks.com>
+Date:   Tue Jul 5 12:15:07 2016 -0500
+
+    Initial model stub
+    
+    refs #16
+
+commit b29575bc9f8de74b56b8a032b44670c577f257b5
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 12:05:41 2016 -0500
+
+    Okay really fixed table sort now.
+
+commit 318429710503aecd5000c30a62cef66716a35429
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Tue Jul 5 11:56:39 2016 -0500
+
+    Fixed sorting on tables.
+
+commit d13da4ce0f1f81ac6cc680c8f166242dc904f296
+Author: Kelvin <kelvinhe1995@gmail.com>
+Date:   Tue Jul 5 11:43:28 2016 -0500
+
+    added yuml diagram, needs to be updated with more attributes
+
+commit f3886173afe323ef807ddf7babfdf9cea8c282a9
+Merge: 036756c 8fbefa5
+Author: Nathan Adams <nathana@spiceworks.com>
+Date:   Tue Jul 5 11:42:34 2016 -0500
+
+    Merge branch 'master' of https://github.com/kelvinhe273/IDB-Group7
+
+commit a6d9d87f734ca50f75ac92e4afa345f0ece74ec0
+Author: Kelvin <kelvinhe1995@gmail.com>
+Date:   Tue Jul 5 11:41:19 2016 -0500
+
+    removed apiary folder, moved apiary.apib to main folder
+
+commit 2dc1c858c85f2183c6916cf29c3cdb3b2fd85337
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 5 11:44:34 2016 -0400
+
+    changes saleh's info
+
+commit 705ed576e459563e88569113256d221cccbb096b
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 5 05:11:05 2016 -0400
+
+    fixed bug in about.html
+
+commit f0deb37bc6c9cd2f60d611c5f76620f1b4d61c2d
+Author: almto3 <almto3@hotmail.com>
+Date:   Tue Jul 5 04:53:40 2016 -0400
+
+    added saleh info
+
+commit f65fa843e787b1dad3486856bf4907ae66e3e934
+Merge: ded554c b6a7ba8
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Mon Jul 4 20:59:37 2016 -0500
+
+    Merge branch 'dev' of https://github.com/kelvinhe273/IDB-Group7 into dev
+
+commit ded554ce656d6764fef52eb978ffe0ebccc919b0
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Mon Jul 4 20:59:15 2016 -0500
+
+    Fixed url from bad merge.
+
+commit b6a7ba887bb5caf3ea36a7f28d7a6193347b15af
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 4 17:29:10 2016 -0500
+
+    didnt git pull, fixed merge issues
+
+commit b31505481e01ca470c1814e7ec61b37e9c893294
+Merge: 79f80ce ba0ecec
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 4 17:27:28 2016 -0500
+
+    Merge branch 'dev' of https://github.com/kelvinhe273/IDB-Group7 into dev
+
+commit 79f80cef389993fd83e0a4cf70a8cf630d16cf7b
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 4 17:27:18 2016 -0500
+
+     fixed minor container bug on stockmarket page
+
+commit 8fbefa50c708560306e48d3cc323aabfe9f1a737
+Merge: ec7742b ba0ecec
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Mon Jul 4 17:23:50 2016 -0500
+
+    Merge branch 'dev' of https://github.com/kelvinhe273/IDB-Group7
+
+commit ba0ecec19b6076461b04dbbf82261ce7f77f3c50
+Merge: 9b4d051 8def6fd
+Author: almto3 <almto3@hotmail.com>
+Date:   Mon Jul 4 18:22:38 2016 -0400
+
+    Fixed pathing for background image.
+
+commit 9b4d051bde106788fbbc18a1208e2460bd625116
+Author: almto3 <almto3@hotmail.com>
+Date:   Mon Jul 4 18:21:12 2016 -0400
+
+    Fixed pathing for background image.
+
+commit 8def6fd689bd803ac2cd58d834cd80bad7b708c9
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 4 17:20:34 2016 -0500
+
+    fixing background issues
+
+commit 9b4338af634d70312dd52ab723359e8767b57ade
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 4 16:57:08 2016 -0500
+
+    fixing background issues
+
+commit 5933ab830284f7197f0700a4b183a6257c3b08ea
+Merge: 3fce146 83712e8
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 4 16:23:29 2016 -0500
+
+     created common theme among pages
+
+commit 3fce146b7999b23afadd25bd57b2b8e8ef89910b
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 4 16:20:15 2016 -0500
+
+     created common theme among pages
+
+commit ec7742bf49d467f24cbc36b6cf827313b701568c
+Merge: d555f61 83712e8
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Mon Jul 4 15:44:05 2016 -0500
+
+    Merge branch 'dev'
+
+commit 83712e8891b8dd5abb6c7ff68016bffb423abc23
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Mon Jul 4 15:43:26 2016 -0500
+
+    Minor change to stockmarket(would do later but 4th of july calls now).
+
+commit aabb46edc1a1d9e59880e9f88a7becb58fefc11c
+Author: almto3 <almto3@hotmail.com>
+Date:   Mon Jul 4 16:39:56 2016 -0400
+
+    Fixed pathing due to file name change.
+
+commit bd45844eb017f6c2d5ab06e4a73cdef62e07f30a
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Mon Jul 4 15:37:40 2016 -0500
+
+    Changed layout of stockexchange pages and changed FRA -> PAR.
+
+commit 7f9e4aaf9e8164a032f8284a6fa393c1f0af62e0
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 4 15:15:39 2016 -0500
+
+    added links to other pages
+
+commit 9f6e41d5d68e89e51a9011928f82f1f89d3794b7
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 4 15:03:43 2016 -0500
+
+    minor changes to company page
+
+commit dd90c4df2462840f73e68143ae919b2139cde0c4
+Merge: 5f27e78 0ac5815
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 4 14:50:57 2016 -0500
+
+    Merge branch 'dev' of https://github.com/kelvinhe273/IDB-Group7 into dev
+
+commit 5f27e789077e89a58c265613cbb8eceeda3d56da
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 4 14:50:34 2016 -0500
+
+     fixed up th layout of the individual company pages
+
+commit 0ac58156462c2029d596ecf5e8dd0a1f997af624
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Mon Jul 4 13:06:53 2016 -0500
+
+    Made tables center in company, location, currency, stockmarket. Linked currency to location and stockexchange.
+
+commit 81cbbec32b7d3003652b63415825f58a5ed1013b
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 4 11:56:06 2016 -0500
+
+    last time this should finally work
+
+commit 61a99fc9032971bd72e8a03418d479c33408b33d
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 4 11:54:59 2016 -0500
+
+    fixed text color on about page
+
+commit 4fa8c438e94c09849291125d2b422f2d94dabe7d
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Mon Jul 4 11:53:31 2016 -0500
+
+    fixed text color on about page
+
+commit 5116532bdfc52ecb935785a8ac95a973b2d6798a
+Author: almto3 <almto3@hotmail.com>
+Date:   Sun Jul 3 18:46:28 2016 -0400
+
+    changes some settings, done for the day
+
+commit e208d55772fc43415e8c51519376f0bbdb188c4b
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Sun Jul 3 17:35:35 2016 -0500
+
+    Fixed names for about cause Sal thinks he's funny.
+
+commit d555f61202fe62ea44ce4e46d3038eda5a617473
+Merge: 39dcea5 e04bb23
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Sun Jul 3 17:24:16 2016 -0500
+
+    Merge branch 'master' of https://github.com/kelvinhe273/IDB-Group7
+
+commit 39dcea558a216af89515c8e4b2f546ed3dd4f626
+Author: almto3 <almto3@hotmail.com>
+Date:   Sun Jul 3 18:23:13 2016 -0400
+
+    fixed all links + changed 'euro.html' to 'euros.html' for consistency
+
+commit d41cf4559cc6fbd229964fbdd4e1d1571a06aa4b
+Author: almto3 <almto3@hotmail.com>
+Date:   Sun Jul 3 17:12:21 2016 -0500
+
+    added paths for all html files
+
+commit 562bfb23c7c031d48c76ac9309658be27a1f2c32
+Author: almto3 <almto3@hotmail.com>
+Date:   Sun Jul 3 17:57:59 2016 -0400
+
+    changed init file
+
+commit 95f497b5c80f651a13cca2b09e7b9ecd2c689df8
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Sun Jul 3 16:51:31 2016 -0500
+
+    Changed file paths for images and css hopefully.
+
+commit 8f229b2351daac156c1fd63ff5e3a4d20796aa9d
+Author: almto3 <almto3@hotmail.com>
+Date:   Sun Jul 3 17:29:14 2016 -0400
+
+    deleted top level directories
+
+commit 595b6e79282f213808de2c181446434d900ad4c2
+Author: almto3 <almto3@hotmail.com>
+Date:   Sun Jul 3 17:27:41 2016 -0400
+
+    new repo structre, still need to delete top level directories
+
+commit e04bb239eb04dc0705e1ffc8b858ce2954920530
+Author: kelvinhe273 <kelvinhe1995@gmail.com>
+Date:   Sat Jul 2 23:04:33 2016 -0500
+
+    added reference models for companies, currencies, locations
+
+commit db9f7d92edd1d5bf28a2b509fba4d13644082626
+Author: kelvinhe273 <kelvinhe1995@gmail.com>
+Date:   Sat Jul 2 21:35:22 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit bfeb28f4ca2bb1be93c52d8c079f570a122d50bb
+Merge: 4f3b924 1177c8e
+Author: kelvinhe273 <kelvinhe1995_@utexas.edu>
+Date:   Sat Jul 2 20:50:16 2016 -0500
+
+    Merge pull request #13 from kelvinhe273/na/cleanup_uneeded_files
+    
+    Remove .DS-Store files and a temp file
+
+commit 1177c8e4520af4b19db25b268fcfd285db92a314
+Author: Nathan Adams <nathana@spiceworks.com>
+Date:   Sat Jul 2 19:26:02 2016 -0500
+
+    Remove .DS-Store files and a temp file
+    
+    repo cleanup
+
+commit 4f3b9245618793c266caac50e23a3fbcc0605554
+Author: Kelvin <kelvinhe1995@gmail.com>
+Date:   Sat Jul 2 18:44:12 2016 -0500
+
+    Started documentation of finance api, exchange model added.
+
+commit 036756c43dd86ac775c68db81cd98c284b1bfe9b
+Author: Matt Coleman <mdc2010@utexas.edu>
+Date:   Sat Jul 2 18:41:55 2016 -0500
+
+    formatted the about page using bootstrap
+
+commit 8485dfba58a3cdca1c6cbc99b683fcdea008108e
+Author: almto3 <almto3@hotmail.com>
+Date:   Sat Jul 2 19:02:34 2016 -0400
+
+    minor changes in __init__
+
+commit d767385a4a9a8f9565be80cd95095a91f43bc883
+Author: almto3 <almto3@hotmail.com>
+Date:   Sat Jul 2 18:58:43 2016 -0400
+
+    changed __init__
+
+commit 67ca7b3d6dbe06b96436b07434de5e3f43b401fd
+Author: almto3 <almto3@hotmail.com>
+Date:   Sat Jul 2 18:55:19 2016 -0400
+
+    Got rid of FlaskAppName.
+
+commit a920f91464585ac15e266270ddaf7858209c3bbe
+Author: almto3 <almto3@hotmail.com>
+Date:   Sat Jul 2 18:50:49 2016 -0400
+
+    i kinda deleted everything by mistake
+
+commit 1ffea40c362dd0145f437d0a9055d53afce16f0c
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Sat Jul 2 17:24:37 2016 -0500
+
+    .
+
+commit fd540db03e8d6dd1df1c7168b4842cab5df63ff3
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Sat Jul 2 15:59:20 2016 -0500
+
+    Made companies linkable. Now just need to make pages pretty and put info.
+
+commit 9d3e5b7f2987c9bf894c0cf472d29941f7ec7163
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Sat Jul 2 15:38:09 2016 -0500
+
+    Stock exchanges clickable.
+
+commit 51aeee5f06fb2f91cd6a003c7eac16c122042a44
+Author: almto3 <almto3@hotmail.com>
+Date:   Sat Jul 2 16:31:16 2016 -0400
+
+    modified __init__.py
+
+commit 7f7d4093e6b30a01d6d06dbbb5a3b5cec7cf07b3
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Sat Jul 2 15:23:31 2016 -0500
+
+    Added location html files and fixed titles.
+
+commit 68f851055f5ff067c12fe865e46b9117b8b38e45
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Sat Jul 2 15:04:07 2016 -0500
+
+    Added sorting and pagination? to tables.
+
+commit 9cb94e818f409ff6835b47dac88235de5dfc69de
+Author: Kelvin <kelvinhe1995@gmail.com>
+Date:   Sat Jul 2 14:52:02 2016 -0500
+
+    first push to test travis
+
+commit 51bd749e0607fa69bb6a5e6fa93fb7c927769f8d
+Author: almto3 <almto3@hotmail.com>
+Date:   Sat Jul 2 15:32:29 2016 -0400
+
+    setting up git on flask
+
+commit 3ea630b5e717ef715d91c9db090df2b162927cd8
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Sat Jul 2 14:29:18 2016 -0500
+
+    Made entries under currency clickable.
+
+commit bb99b26cfd73e90f24c3326394ac0d156ac42104
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Sat Jul 2 14:20:20 2016 -0500
+
+    Did currency images.
+
+commit c611ccf292ba6b4f1e778c5561fba783964d68ed
+Author: Jemin <jaeshin5553@utexas.edu>
+Date:   Sat Jul 2 13:53:46 2016 -0500
+
+    Added some stuff for currency.
+
+commit 7f58f8d16d7cc5191d3c89c37d2eec26532544b1
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Fri Jul 1 19:56:18 2016 -0500
+
+    Changed color when on an active page and ghetto linking.
+
+commit 37373140fb0940af0d2232f1fa503ea00a8f6e03
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Fri Jul 1 18:54:51 2016 -0500
+
+    Added very basic css styling just to test and change later.
+
+commit 91ac646866d8df57ca570e8e3c1e55b5b6839ed4
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Fri Jul 1 18:31:49 2016 -0500
+
+    Changed carousel->index(home page), added base to get appended to, added templates for company, currency, index, location. All bare bones for now.
+
+commit 1843aab3729dd7ae4777a52f657bd8e0f8b5fe2f
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Fri Jul 1 17:40:34 2016 -0500
+
+    added makefile, travis, and gitignore files
+
+commit 0ac5ee734be0a1ae64153d57a05768ba7b28219d
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Fri Jul 1 16:57:02 2016 -0500
+
+    Added image for sarah and made bare template for stockmarket.
+
+commit 0dd2a6e99fe2415bec8a0522b575bae3628d885d
+Author: Jemin Shin <heyjaekev5553@yahoo.com>
+Date:   Fri Jul 1 16:26:43 2016 -0500
+
+    Changed navbar and added template for the about page.
+
+commit 0ce003b1ffa2d0776ce108f240a12137ac147423
+Author: Sarah Jee <sjee96@cs.utexas.edu>
+Date:   Fri Jul 1 16:00:31 2016 -0500
+
+    made carousel splash page
+
+commit 9162221086c1fdf992f54387c7c153fe74215df4
+Author: kelvinhe273 <kelvinhe1995_@utexas.edu>
+Date:   Mon Jun 27 15:45:13 2016 -0500
+
+    Initial commit

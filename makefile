@@ -50,7 +50,12 @@ clean:
 	rm -f  *.tmp
 	rm -f  IDB3.log
 	rm -rf __pycache__
+	rm -f app/*.pyc
+	rm -rf models.html/
 
+epydoc: app/models.py
+	epydoc app/models.py -o models.html
+	rm -f app/*.pyc
 
 config:
 	git config -l
@@ -69,4 +74,4 @@ status:
 	git remote -v
 	git status
 
-test: .pylintrc IDB3.log format check
+test: clean .pylintrc IDB3.log format epydoc check
