@@ -6,6 +6,7 @@ body{
     background-size: cover !important;
 }
 </style>
+<script type="text/javascript" src="../static/count.js" ></script>
 <!-- PAGE CONTENT -->
 <!-- End Well -->
 <!-- PAGE CONTENT -->
@@ -45,7 +46,7 @@ body{
                             </tr>
                             <tr>
                                 <th>Currency</th>
-                                <td><a href="/currencies/{{location.rowid}}">{{location.currency}}</a></td>
+                                <td ><a class = "currency2" id = "cu {{ location.currency }}">{{location.currency}}</a></td>
                             </tr>
                             <tr>
                                 <th>Stock Exchanges</th>
@@ -58,4 +59,7 @@ body{
         </div>
     </div>
 </div>
+<script>
+    onload = function(){count_helper('currency', '2', '/currencies/', 'cu ');} 
+</script>
 {% endblock %}

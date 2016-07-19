@@ -9,7 +9,7 @@ body{
 <!-- Header Well -->
 <!-- End Well -->
 <!-- PAGE CONTENT -->
-
+<script type="text/javascript" src="../static/count.js" ></script>
 <div class="content">
     <div class="row" style="padding:30px">
         <div class="col-md-4 col-xs-2"></div>
@@ -39,7 +39,7 @@ body{
                             </tr>
                             <tr>
                                 <th>Currency</th>
-                                <td><a href="/currencies/{{company.foreign_id}}">{{company.currency}}</a></td>
+                                <td ><a class = "currency2" id = "cu {{ company.currency }}">{{company.currency}}</a></td>
                             </tr>
                             <tr>
                                 <th>Stock Exchange</th>
@@ -92,4 +92,7 @@ body{
         </div>
     </div>
 </div>
+<script>
+    onload = function(){count_helper('currency', '2', '/currencies/', 'cu ');} 
+</script>
 {% endblock %}
