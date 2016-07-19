@@ -1,22 +1,30 @@
 {% extends "layout.html" %}
 {% block body %}
 <!-- PAGE CONTENT -->
-<div class="container-fluid">
+<style>
+$('table-responsive').bootstrapTable({
+    onEventName: count_helper('currency', '', '/currencies/', 'cu ', true)});
+
+$('table-responsive').on('onSort', count_helper('currency', '', '/currencies/', 'cu ', true));
+</style>
+
+
+<div class="container-fluid" >
     <div class="row" style="padding:30px">
         <div class="col-xs-4 col-md-4 "></div>
             <div class="col-xs-4 col-md-4" style="text-align: center">
                 <h1 style = "font-weight : bold">Stock Exchanges</h1>
             </div>
         </div>
-    <div class='table-responsive'>
-        <table id="stocktable" class="table table-hover table-striped table-responsive table-bordered">
-            <thead>
-                <tr>
-                    <th id="name">Name</th>
-                    <th id="symbol">Symbol</th>
-                    <th id="market_cap_exchange">Market Cap Exchange</th>
-                    <th id="location">Location</th>
-                    <th id="currency">Currency</th>
+    <div class='table-responsive' >
+        <table id="stocktable" class="table table-hover table-striped table-responsive table-bordered" >
+            <thead >
+                <tr > 
+                    <th id="name" >Name</th>
+                    <th id="symbol" >Symbol</th>
+                    <th id="market_cap_exchange" >Market Cap Exchange</th>
+                    <th id="location" >Location</th>
+                    <th id="currency" >Currency</th>
                 </tr>
             </thead>
             <!-- Figure out how to add foreign currency signs.-->
@@ -27,7 +35,7 @@
                     <td>{{ market.exchange }}</td>
                     <td>{{ market.market_cap_exchange }}</td>
                     <td><a href="/locations/{{market.rowid}}">{{ market.location }}<a></td>
-                    <td><a href="/currencies/{{market.rowid}}">{{ market.currency }}<a></td>
+                    <td><a class = "currency" id = "cu {{ market.currency }}" >{{ market.currency }}</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -44,10 +52,15 @@
 src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" 
 src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 <script>
   $(document).ready(function() {
-      $('#stocktable').DataTable();
-  } );
+      $('#stocktable').DataTable({ onSort:count_helper('currency', '', '/currencies/', 'cu ', true) });
+    });
+
 </script>
+
+
+
 <!-- END SCRIPT FOR SORTING-->
 {% endblock %}

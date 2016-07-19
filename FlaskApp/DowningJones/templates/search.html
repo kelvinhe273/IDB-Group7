@@ -392,6 +392,11 @@
         </div>
     </div>
 </div>
+
+<script> 
+onload = function(){count_helper('exchange', '', '/stockmarkets/', 'ex '); count_helper('country', '', '/locations/', 'cr ');} 
+</script>
+
 <!-- END PAGE CONTENT-->
 <!-- SCRIPT FOR SORTING-->
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
@@ -411,9 +416,6 @@ jQuery(document).ready(function(){
              jQuery('#and').toggle('show');
         });
     });
-</script>
-<script> 
-onload = function(){count_helper('exchange', '', '/stockmarkets/', 'ex '); count_helper('country', '', '/locations/', 'cr ');} 
 </script>
 <script>
   $(document).ready(function() {

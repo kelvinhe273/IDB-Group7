@@ -15,6 +15,7 @@ install:
     - pip3 install Flask-SQLAlchemy
     - pip3 install Flask-Testing
     - pip3 install requests
+    - pip3 install autopep8
 
 before_script:
     #also changed coverage to version 3

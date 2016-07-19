@@ -1,6 +1,8 @@
 {% extends "layout.html" %}
 {% block body %}
 <!-- PAGE CONTENT -->
+
+
 <div class="container-fluid">
     <div class="row" style="padding:30px">
       <div class="col-md-4 col-xs-4"></div>
@@ -8,15 +10,15 @@
         <h1 style = "font-weight : bold">Companies</h1>
       </div>
     </div>
-    <div class="table-responsive"> 
-        <table id="companytable" class="table table-hover table-striped table-responsive table-bordered">
+    <div class="table-responsive" > 
+        <table id="companytable" class="table table-hover table-striped table-responsive table-bordered" >
             <thead>
-                <tr>
-                    <th id="name">Name</th>
-                    <th id="symbol">Symbol</th>
-                    <th id="exchange">Exchange</th>
-                    <th id="currency">Currency</th>
-                    <th id="location">Location</th>
+                <tr onchange="count_helper('currency', '', '/currencies/', 'cu ', true)">
+                    <th id="name" >Name</th>
+                    <th id="symbol" >Symbol</th>
+                    <th id="exchange" >Exchange</th>
+                    <th id="currency" >Currency</th>
+                    <th id="location" >Location</th>
                 </tr>
             </thead>
             <!-- Figure out how to add foreign currency signs.-->
@@ -26,7 +28,6 @@
                     <td><a href="/companies/{{company.rowid}}">{{ company.name }}</a></td>
                     <td>{{ company.symbol }}</td>
                     <td><a href="/stockmarkets/{{company.foreign_id}}">{{ company.exchange }}</a></td>
-                    <!--td><a href="/currencies/{{company.foreign_id}}">{{ company.currency}}</a></td-->
 
                     <td><a class = "currency" id = "cu {{ company.currency }}" >{{ company.currency }}</a></td>
 
@@ -37,10 +38,6 @@
         </table>
     </div>
 </div> 
-
-<script > 
-onload = function(){count_helper('currency', '', '/currencies/', 'cu ', true); } 
-</script>
 
 <!-- END PAGE CONTENT-->
 <!-- SCRIPT FOR SORTING-->
@@ -54,7 +51,7 @@ src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
 src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script>
   $(document).ready(function() {
-      $('#companytable').DataTable();
+      $('#companytable').DataTable({ onSort:count_helper('currency', '', '/currencies/', 'cu ', true) });
   } );
 </script>
 <!-- END SCRIPT FOR SORTING-->

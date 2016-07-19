@@ -28,7 +28,8 @@
                     <td>{{ location.capital }}</td>
                     <td>{{ location.gdp }}</td>
                     <td>{{ location.iso }}</td>
-                    <td> <a href="/currencies/{{location.rowid}}">{{ location.currency }}</a></td>
+                    <!--td> <a href="/currencies/{{location.rowid}}">{{ location.currency }}</a></td-->
+                    <td><a class = "currency" id = "cu {{ location.currency }}" >{{ location.currency }}</a></td>
                     <td><a href="/stockmarkets/{{location.rowid}}">{{ location.location_exchange }}</a></td>            
                 </tr>
                 {% endfor %}
@@ -49,7 +50,7 @@ src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
 src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script>
   $(document).ready(function() {
-      $('#locationtable').DataTable();
+      $('#locationtable').DataTable( { onSort:count_helper('currency', '', '/currencies/', 'cu ', true) } );
   } );
 </script>
 <!-- END SCRIPT FOR SORTING-->
