@@ -32,10 +32,8 @@
 <script>
 $(document).ready(function ($){
   $(function(){
-    $("#searchsubmit").keyup(function(e){
-      if(e.keyCode===13){
+    $("#searchsubmit").submit(function(){
         window.location.href="/search?q=" + $('#searchsubmit').val();
-      }
     });
   });
 });
