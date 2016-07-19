@@ -42,8 +42,9 @@
                 </div>
 
                 {% if queriesand1 %}
-                <div class="row">
-                    <div class="col-md-4 col-xs-4"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4 col-xs-4"></div>
                         <div class="col-md-4 col-xs-4" style="text-align: center">
                             <h1 style = "font-weight : bold">Location</h1>
                         </div>
@@ -205,7 +206,7 @@
         </div>
         <!-- THIS IS THE OR TABLES -->
         <div id="ortab" class="tab-content hide">
-            <div class="container-fluid">
+            
                 <h1 class = "or" style ="text-align:center;"> Search For OR: </h1>
                 {% for query in queries %}
                 <script>
@@ -217,14 +218,13 @@
                 </script>
                 {% endif %}
                 {% endfor %}
-
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-4 col-xs-4"></div>
                     <div class="col-md-4 col-xs-4" style="text-align: center">
                         <h1 style = "font-weight : bold">Search Results</h1>
                     </div>
                 </div>
-
                 {% if queriesor1 %}
                 <div class="container-fluid">
                     <div class="row">
@@ -254,7 +254,7 @@
                                     <td>{{ query.iso }}</td>
                                     <td><a class = "currencyf" id = "cuf {{ query.currency }}" >{{ query.currency}}</a></td>
                                     <td><a href="/stockmarkets/{{query.rowid}}">{{ query.location_exchange}}</a></td>
-                                    </tr>
+                                </tr>
                                 {% endfor %}
                             </tbody>
                         </table>
