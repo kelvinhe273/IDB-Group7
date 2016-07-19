@@ -12,7 +12,12 @@
     <div class="tab-info">
         <!-- THIS IS THE AND TABLES -->
         <div id="andtab" class ="tab-content active">
-            <h1 style ="text-align:center;"> Search For: {{queries}}</h1>
+            <h1 class = "and" style ="text-align:center;"> Search For AND: </h1>
+                {% for query in queries %}
+                <script>
+                $( ".and" ).append( "{{query}}" );
+                </script>
+                {% endfor %}
             <div class="container-fluid">
                 <div class="row" style="padding:30px">
                     <div class="col-md-4 col-xs-4"></div>
@@ -195,6 +200,20 @@
         <!-- THIS IS THE OR TABLES -->
         <div id="ortab" class="tab-content hide">
             <div class="container-fluid">
+                <h1 class = "or" style ="text-align:center;"> Search For OR: </h1>
+                {% for query in queries %}
+                <script>
+                $( ".or" ).append( "{{query}}" );
+                </script>
+                {% if not loop.last %}
+                <script>
+                $( ".or" ).append( " or " );
+                </script>
+                {% endif %}
+                {% endfor %}
+
+                
+
                 {% if queriesor1 %}
                 <div class="container-fluid">
                     <div class="row" style="padding:30px">
