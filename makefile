@@ -19,6 +19,12 @@ endif
 IDB3.log:
 	git log > IDB3.log
 
+.pylintrc:
+	$(PYLINT) --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
+
+TestModels: .pylintrc app/tests.py
+	-$(PYLINT) app/tests.py
+
 check:
 	@not_found=0;                                 \
     for i in $(FILES);                            \
