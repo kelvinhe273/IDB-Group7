@@ -4,12 +4,14 @@ from flask import Flask, render_template, request, json, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import or_
 import subprocess
+from models import *
 
 app = Flask ( __name__ )
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 
-from models import *
+
 
 @app.route ( '/' )
 def homepage ():
