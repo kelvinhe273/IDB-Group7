@@ -40,7 +40,7 @@ function count(str, classn, k, href, id){
 	}
 	else{
 		var orig = document.getElementById(id);
-		console.log("'");
+		//console.log("'" + id + "'");
 		document.getElementById(id).innerHTML = str;
 		var num = ref.indexOf(str) + 1;
 		document.getElementById(id).href = href + num;
@@ -79,7 +79,7 @@ function count_helper(classn, k, href, id, change_link, b){
 	for(i = 0; i < elems.length; i++){
 
 		if (repeated.indexOf(elems[i].textContent) == -1){
-			console.log("NOT REPEATED " + elems[i].textContent)
+			//console.log("NOT REPEATED " + elems[i].textContent)
 			count(trim(elems[i].textContent), classn, k, href, id);
 			if(change_link)
 				change_links(trim(elems[i].textContent), classn, k, href, id);

@@ -57,7 +57,7 @@
                                     <th id="gdp">GDP</th>
                                     <th id="iso">2 letter ISO Symbol</th>                                    
                                     <th id="location">Currency</th>
-                                    <th id="location">Excahnge</th>
+                                    <th id="exchange">Exchange</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,9 +67,7 @@
                                     <td>{{ query.capital}}</td>
                                     <td>{{ query.gdp}}</td>
                                     <td>{{ query.iso }}</td>
-                                    
-                                    <!-- fix this sal hardcode this like the other table-->
-                                    <td><a class = "currencya" id = "cua {{ query.rowid }}" >{{ query.currency}}</a></td>
+                                    <td><a class = "currencya" id = "cua {{ query.currency }}" >{{ query.currency}}</a></td>
                                     <td><a href="/stockmarkets/{{query.rowid}}">{{ query.location_exchange}}</a></td>
                                 </tr>
                                 {% endfor %}
@@ -92,9 +90,9 @@
                                 <tr>
                                     <th id="name">Name</th>
                                     <th id="symbol">Symbol</th>
-                                    <th id="exchange">Market Cap</th>
-                                    <th id="currency">Currency</th>
+                                    <th id="marketcap">Market Capital (in USD)</th>
                                     <th id="location">Location</th>
+                                    <th id="currency">Currency</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -103,9 +101,8 @@
                                     <td><a href="/stockmarkets/{{query.rowid}}">{{ query.name }}</a></td>
                                     <td><a href="/stockmarkets/{{query.rowid}}">{{ query.exchange }}</a></td>
                                     <td>{{ query.market_cap_exchange}}</td>
-                                    <!-- fix this sal hardcode this like the other table-->
-                                    <td><a href="/currencies/{{query.rowid}}">{{ query.currency}}</a></td>
                                     <td><a href="/locations/{{query.rowid}}">{{ query.location}}</a></td>
+                                    <td><a class = "currencyb" id = "cub {{ query.currency }}" >{{ query.currency }}</a></td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
@@ -126,25 +123,19 @@
                             <thead>
                                 <tr>
                                     <th id="name">Name</th>
-                                    <th id="symbol">Currency</th>
-                                    <th id="exchange">Locations</th>
-                                    <th id="currency">Exchanges</th>
-                                    <th id="location">Exchange Rate</th>
+                                    <th id="symbol">Currency ISO Code</th>
+                                    <th id="locations">Locations</th>
+                                    <th id="exchanges">Exchanges</th>
+                                    <th id="exchangerate">Exchange Rate (To USD)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for query in queriesand3 %}
                                 <tr>
-                                    <!-- fix this sal hardcode this like the other table .. SAL SAYS HE DUNN IT-->
                                     <td><a href="/currency/{{ query.rowid }}">{{ query.name }}</a></td>
-                                    <!-- fix this sal hardcode this like the other table .. SAL SAYS HE DUNN IT-->
                                     <td><a href="/currency/{{ query.rowid }}">{{ query.currency }}</a></td>
-
-                                    <!--td><a href="/locations/{{ query.rowid }}">{{ query.locations}}</a></td-->
-                                    <!--td><a href="/stockmarkets/{{query.rowid}}">{{ query.exchanges}}</a></td-->
-
-                                    <td><a class = "country" id = "cr {{ query.locations }}" > {{ query.locations }} </a></td>
-                                    <td><a class = "exchange" id = "ex {{ query.exchanges }}" >{{ query.exchanges }}</a></td>
+                                    <td><a class = "countryd" id = "crd {{ query.locations }}" > {{ query.locations }} </a></td>
+                                    <td><a class = "exchangec" id = "exc {{ query.exchanges }}" >{{ query.exchanges }}</a></td>
                                     <td>{{ query.exchange_rate}}</td>
 
                                     </tr>
@@ -166,41 +157,40 @@
                         <table id="companytable" class="table table-hover table-striped table-responsive table-bordered">
                             <thead>
                                 <tr>
-                                    <th id="name">Symbol</th>
-                                    <th id="symbol">Name</th>
+                                    <th id="name">Name</th>
+                                    <th id="symbol">Symbol</th>
                                     <th id="exchange">Exchange</th>
                                     <th id="currency">Currency</th>
                                     <th id="location">Location</th>
-                                    <th id="name">Open Price</th>
-                                    <th id="symbol">Previous Price</th>
-                                    <th id="exchange">Percent Change</th>
-                                    <th id="currency">Year High</th>
-                                    <th id="location">Ask Price</th>
-                                    <th id="name">EPS</th>
-                                    <th id="symbol">PEG</th>
-                                    <th id="currency">Percent Change Fifty days</th>
-                                    <th id="name">Volume</th>
-                                    <th id="symbol">Average Volume</th>
-                                    <th id="exchange">Market Cap</th>
+                                    <th id="openprice">Open Price</th>
+                                    <th id="prvprice">Previous Price</th>
+                                    <th id="percentchange">Percent Change</th>
+                                    <th id="percentchange50">Percent Change Fifty days</th>
+                                    <th id="yearhigh">Year High</th>
+                                    <th id="askprice">Ask Price</th>
+                                    <th id="eps">EPS</th>
+                                    <th id="peg">PEG</th>
+                                    <th id="volume">Volume</th>
+                                    <th id="avgvolume">Average Volume</th>
+                                    <th id="marketcap">Market Capital (in USD)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for query in queriesand4 %}
                                 <tr>
-                                    <td>{{ query.symbol }}</td>
                                     <td><a href="/companies/{{query.rowid}}">{{ query.name }}</a></td>
+                                    <td>{{ query.symbol }}</td>
                                     <td><a href="/stockmarkets/{{query.foreign_id}}">{{ query.exchange}}</a></td>
-                                    <!-- fix this sal hardcode this like the other table-->
-                                    <td><a href="/currencies/{{query.foreign_id}}">{{ query.currency}}</a></td>
+                                    <td><a class = "currencye" id = "cue {{ query.currency }}" >{{ query.currency }}</a></td>
                                     <td><a href="/locations/{{query.foreign_id}}">{{ query.location}}</a></td>
                                     <td>{{ query.open_price }}</td>
                                     <td>{{ query.previous_price }}</td>
                                     <td>{{ query.percent_change}}</td>
+                                    <td>{{ query.percent_change_fifty}}</td>
                                     <td>{{ query.year_high}}</td>
                                     <td>{{ query.ask_price}}</td>
                                     <td>{{ query.eps }}</td>
                                     <td>{{ query.peg }}</td>
-                                    <td>{{ query.percent_change_fifty}}</td>
                                     <td>{{ query.volume }}</td>
                                     <td>{{ query.avg_volume }}</td>
                                     <td>{{ query.market_cap}}</td>
@@ -248,22 +238,21 @@
                             <thead>
                                 <tr>
                                     <th id="name">Name</th>
-                                    <th id="symbol">Symbol</th>
-                                    <th id="exchange">Capital</th>
-                                    <th id="currency">GDP</th>
+                                    <th id="capital">Capital of Country</th>
+                                    <th id="gdp">GDP</th>
+                                    <th id="iso">2 letter ISO Symbol</th>                                    
                                     <th id="location">Currency</th>
-                                    <th id="location">Excahnge</th>
+                                    <th id="exchange">Exchange</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for query in queriesor1 %}
                                 <tr>
                                     <td><a href="/locations/{{query.rowid}}">{{ query.name }}</a></td>
-                                    <td>{{ query.iso }}</td>
                                     <td>{{ query.capital}}</td>
                                     <td>{{ query.gdp}}</td>
-                                    <!-- fix this sal hardcode this like the other table-->
-                                    <td><a href="/currencies/{{query.rowid}}">{{ query.currency}}</a></td>
+                                    <td>{{ query.iso }}</td>
+                                    <td><a class = "currencyf" id = "cuf {{ query.currency }}" >{{ query.currency}}</a></td>
                                     <td><a href="/stockmarkets/{{query.rowid}}">{{ query.location_exchange}}</a></td>
                                     </tr>
                                 {% endfor %}
@@ -286,9 +275,9 @@
                                 <tr>
                                     <th id="name">Name</th>
                                     <th id="symbol">Symbol</th>
-                                    <th id="exchange">Market Cap</th>
-                                    <th id="currency">Currency</th>
+                                    <th id="marketcap">Market Capital (in USD)</th>
                                     <th id="location">Location</th>
+                                    <th id="currency">Currency</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -297,9 +286,8 @@
                                     <td><a href="/stockmarkets/{{query.rowid}}">{{ query.name }}</a></td>
                                     <td><a href="/stockmarkets/{{query.rowid}}">{{ query.exchange }}</a></td>
                                     <td>{{ query.market_cap_exchange}}</td>
-                                    <!-- fix this sal hardcode this like the other table-->
-                                    <td><a href="/currencies/{{query.rowid}}">{{ query.currency}}</a></td>
                                     <td><a href="/locations/{{query.rowid}}">{{ query.location}}</a></td>
+                                    <td><a class = "currencyg" id = "cug {{ query.currency }}" >{{ query.currency }}</a></td>
                                 </tr>
                                 {% endfor %}
                             </tbody>
@@ -320,10 +308,10 @@
                             <thead>
                                 <tr>
                                     <th id="name">Name</th>
-                                    <th id="symbol">Currency Code</th>
-                                    <th id="exchange">Locations</th>
-                                    <th id="currency">Exchanges</th>
-                                    <th id="location">Exchange Rate (To U.S Dollar)</th>
+                                    <th id="symbol">Currency ISO Code</th>
+                                    <th id="locations">Locations</th>
+                                    <th id="exchanges">Exchanges</th>
+                                    <th id="exchangerate">Exchange Rate (To USD)</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -331,9 +319,8 @@
                                 <tr>
                                     <td><a href="/currency/{{ query.rowid }}">{{ query.name }}</a></td>
                                     <td><a href="/currency/{{ query.rowid }}">{{ query.currency }}</a></td>
-
-                                    <td><a class = "country3" id = "cr {{ query.locations }}" > {{ query.locations }} </a></td>
-                                    <td><a class = "exchange3" id = "ex {{ query.exchanges }}" >{{ query.exchanges }}</a></td>
+                                    <td><a class = "countryi" id = "cri {{ query.locations }}" > {{ query.locations }} </a></td>
+                                    <td><a class = "exchangeh" id = "exh {{ query.exchanges }}" >{{ query.exchanges }}</a></td>
                                     <td>{{ query.exchange_rate}}</td>
                                 </tr>
                                 {% endfor %}
@@ -354,41 +341,40 @@
                         <table id="companytableor" class="table table-hover table-striped table-responsive table-bordered">
                             <thead>
                                 <tr>
-                                    <th id="name">Symbol</th>
-                                    <th id="symbol">Name</th>
+                                    <th id="name">Name</th>
+                                    <th id="symbol">Symbol</th>
                                     <th id="exchange">Exchange</th>
                                     <th id="currency">Currency</th>
                                     <th id="location">Location</th>
-                                    <th id="name">Open Price</th>
-                                    <th id="symbol">Previous Price</th>
-                                    <th id="exchange">Percent Change</th>
-                                    <th id="currency">Year High</th>
-                                    <th id="location">Ask Price</th>
-                                    <th id="name">EPS</th>
-                                    <th id="symbol">PEG</th>
-                                    <th id="currency">Percent Change Fifty days</th>
-                                    <th id="name">Volume</th>
-                                    <th id="symbol">Average Volume</th>
-                                    <th id="exchange">Market Cap</th>
+                                    <th id="openprice">Open Price</th>
+                                    <th id="prvprice">Previous Price</th>
+                                    <th id="percentchange">Percent Change</th>
+                                    <th id="percentchange50">Percent Change Fifty days</th>
+                                    <th id="yearhigh">Year High</th>
+                                    <th id="askprice">Ask Price</th>
+                                    <th id="eps">EPS</th>
+                                    <th id="peg">PEG</th>
+                                    <th id="volume">Volume</th>
+                                    <th id="avgvolume">Average Volume</th>
+                                    <th id="marketcap">Market Capital (in USD)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for query in queriesor4 %}
                                 <tr>
-                                    <td>{{ query.symbol }}</td>
                                     <td><a href="/companies/{{query.rowid}}">{{ query.name }}</a></td>
+                                    <td>{{ query.symbol }}</td>
                                     <td><a href="/stockmarkets/{{query.foreign_id}}">{{ query.exchange}}</a></td>
-                                    <!-- fix this sal hardcode this like the other table-->
-                                    <td><a href="/currencies/{{query.foreign_id}}">{{ query.currency}}</a></td>
+                                    <td><a class = "currencyj" id = "cuj {{ query.currency }}" >{{ query.currency }}</a></td>
                                     <td><a href="/locations/{{query.foreign_id}}">{{ query.location}}</a></td>
                                     <td>{{ query.open_price }}</td>
                                     <td>{{ query.previous_price }}</td>
                                     <td>{{ query.percent_change}}</td>
+                                    <td>{{ query.percent_change_fifty}}</td>
                                     <td>{{ query.year_high}}</td>
                                     <td>{{ query.ask_price}}</td>
                                     <td>{{ query.eps }}</td>
                                     <td>{{ query.peg }}</td>
-                                    <td>{{ query.percent_change_fifty}}</td>
                                     <td>{{ query.volume }}</td>
                                     <td>{{ query.avg_volume }}</td>
                                     <td>{{ query.market_cap}}</td>
@@ -422,14 +408,14 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
   $(document).ready(function() {
 
       $('#locationtable').DataTable( { onSort:count_helper('currencya', '', '/currencies/', 'cua ', true, 1) } );
-      $('#exchangetable').DataTable( { onSort:count_helper('currencyb', '', '/currencies/', 'cu ', true, 2) } );
-      $('#currencytable').DataTable( {onSort:count_helper('exchangec', '', '/stockmarkets/', 'ex ', false, 3)}, {onSort:count_helper('countryd', '', '/locations/', 'cr ', false, 4)} );
-      $('#companytable').DataTable( { onSort:count_helper('currencye', '', '/currencies/', 'cu ', true, 5) } );
+      $('#exchangetable').DataTable( { onSort:count_helper('currencyb', '', '/currencies/', 'cub ', true, 2) } );
+      $('#currencytable').DataTable( {onSort:count_helper('exchangec', '', '/stockmarkets/', 'exc ', false, 3)}, {onSort:count_helper('countryd', '', '/locations/', 'crd ', false, 4)} );
+      $('#companytable').DataTable( { onSort:count_helper('currencye', '', '/currencies/', 'cue ', true, 5) } );
 
-      $('#locationtableor').DataTable( { onSort:count_helper('currencyf', '3', '/currencies/', 'cu ', true, 6) } );
-      $('#exchangetableor').DataTable( { onSort:count_helper('currencyg', '3', '/currencies/', 'cu ', true, 7) } );
-      $('#currencytableor').DataTable( {onSort:count_helper('exchangeh', '3', '/stockmarkets/', 'ex ', false, 8)}, {onSort:count_helper('countryi', '3', '/locations/', 'cr ', false, 9)} );
-      $('#companytableor').DataTable( { onSort:count_helper('currencyj', '3', '/currencies/', 'cu ', true, 10) } );
+      $('#locationtableor').DataTable( { onSort:count_helper('currencyf', '', '/currencies/', 'cuf ', true, 6) } );
+      $('#exchangetableor').DataTable( { onSort:count_helper('currencyg', '', '/currencies/', 'cug ', true, 7) } );
+      $('#currencytableor').DataTable( {onSort:count_helper('exchangeh', '', '/stockmarkets/', 'exh ', false, 8)}, {onSort:count_helper('countryi', '', '/locations/', 'cri ', false, 9)} );
+      $('#companytableor').DataTable( { onSort:count_helper('currencyj', '', '/currencies/', 'cuj ', true, 10) } );
   } );
 </script>
 

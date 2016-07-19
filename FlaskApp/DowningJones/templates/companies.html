@@ -28,9 +28,7 @@
                     <td><a href="/companies/{{company.rowid}}">{{ company.name }}</a></td>
                     <td>{{ company.symbol }}</td>
                     <td><a href="/stockmarkets/{{company.foreign_id}}">{{ company.exchange }}</a></td>
-
                     <td><a class = "currency" id = "cu {{ company.currency }}" >{{ company.currency }}</a></td>
-
                     <td><a href="/locations/{{company.foreign_id}}">{{ company.location}}</a></td>
                     </tr>
                 {% endfor %}
