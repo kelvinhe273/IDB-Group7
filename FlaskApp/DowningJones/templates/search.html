@@ -15,7 +15,7 @@
             <h1 class = "and" style ="text-align:center;"> Search For AND: </h1>
                 {% for query in queries %}
                 <script>
-                $( ".and" ).append( "{{query}}" );
+                $( ".and" ).append( "<strong>{{query}}</strong" );
                 </script>
                 {% endfor %}
             <div class="container-fluid">
@@ -203,7 +203,7 @@
                 <h1 class = "or" style ="text-align:center;"> Search For OR: </h1>
                 {% for query in queries %}
                 <script>
-                $( ".or" ).append( "{{query}}" );
+                $( ".or" ).append( "<strong>{{query}}</strong" );
                 </script>
                 {% if not loop.last %}
                 <script>
