@@ -15,8 +15,13 @@
             <h1 class = "and" style ="text-align:center;"> Search For AND: </h1>
                 {% for query in queries %}
                 <script>
-                $( ".and" ).append( "<strong>{{query}}</strong" );
+                 $( ".and" ).append( "<strong>{{query}}</strong" );
                 </script>
+                {% if not loop.last %}
+                <script>
+                $( ".and" ).append( " and " );
+                </script>
+                {% endif %}
                 {% endfor %}
             <div class="container-fluid">
                 <div class="row" style="padding:30px">
