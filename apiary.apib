@@ -5,127 +5,179 @@ HOST: downingjones.me
 The Downing Jones API allows for data requests on
 stock market exchanges, companies, locations, and currencies.
 
-# Group Stock Market Exchange
-## Stock Market Exchange List [/api/stockmarkets]
-### Obtain a list of stock market exchanges [GET]
-+ Response 200(application/json)
-    {
-        "exchanges": 
+# Downing Jones API Root [/api]
+This resource does not have any attributes. Instead it offers the initial API affordances in the form of the links in the JSON body.
+
+It is recommend to follow the “url” link values to retrieve resources.
+## Retrieve Entry Points [GET]
+
++ Response 200 (application/json)
+
+        {
+            "company_url": "/company", 
+            "currency_url": "/currency", 
+            "exchange_url": "/exchange", 
+            "location_url": "/location"
+        }
+
+
+## Group Stock Market Exchanges
+
+Resources related to stock exchanges in the API.
+
+## Exchange [/api/exchange/{exchange_id}]
+
+A Exchange object has the following at tributes:
+
++ id
++ name
++ name_code
++ market_cap
++ location
++ currency
+
++ Parameters
+    + id: 1 (required, number) - Name of the Exchange in form of a number (1-11)
+
+### View an Exchange's Details [GET]
+
+
++ Response 200 (application/json)
+
         [
             {
-                "name": NASDAQ,
-                "location": USA,
-                "currency": US Dollars,
-                "points": 4862.57,
-                "change": +.041%
-            },
-            {
-                "name": PAR,
-                "location": France,
-                "currency": Euro,
-                "points": 32.15,
-                "change": -2.46%
-            },
-            {
-                "name": LSE,
-                "location": Great Britain,
-                "currency": Pound sterling,
-                "points": 32.15,
-                "change": -2.46%
-            },
-        ]            
-    }
-    
-# Group Companies
-## Companies List [/api/companies]
-### Obtain a list of companies [GET]
-+ Response 200(application/json)
-    {
-        "companies": 
+              "currency": "CAD", 
+              "id": 1, 
+              "location": "Toronto, Canada", 
+              "market_cap": "1,939 billion", 
+              "name": "Toronto Stock Exchange", 
+              "name_code": "TOR"
+            }
+        ]
+
+## Group Companies
+
+Resources related to companies in the API.
+
+## Company [/api/company/{company_id}]
+
+A Company object has the following attributes:
+
++ id
++ symbol
++ name
++ exchange
++ location
++ currency
++ open_price
++ previous_price
++ percent_change
++ year_high
++ ask_price
++ eps
++ peg
++ days_range
++ percent_change_fifty
++ percent_change_twohundred
++ volume
++ avg_volume
++ market_cap
+
+
++ Parameters
+    + company_id: 1 (required, number) - Name of the Company in form of a number (1-1650)
+
+### View a Company's Details [GET]
+
++ Response 200 (application/json)
+
         [
             {
-                "name": Yahoo,
-                "symbol": YHOO,
-                "stock_exchange": NASDAQ,
-                "location": USA,
-                "currency": US Dollars
-            },
-            {
-                "name": Company 2,
-                "symbol": COM2,
-                "stock_exchange": PAR,
-                "location": France,
-                "currency": Euro
-            },
-            {
-                "name": Company 3,
-                "symbol": COM3,
-                "stock_exchange": LSE,
-                "location": Great Britain,
-                "currency": Pound sterling
-            },
-        ]            
-    }
-    
-# Group Locations
-## Locations List [/api/locations]
-### Obtain a list of various locations [GET]
-+ Response 200(application/json)
-    {
-        "locations": 
+                "ask_price": "0.270", 
+                "avg_volume": "26811", 
+                "days_range": "0.205 - 0.205", 
+                "eps": "-0.320", 
+                "exchange": "TOR", 
+                "id": 1, 
+                "location": "Toronto, Canada", 
+                "market_cap": null, 
+                "name": "RARE ELEMENT RESOURCES LTD", 
+                "open_price": "0.205", 
+                "peg": "0.000", 
+                "percent_change": "+0.000%", 
+                "percent_change_fifty": "-20.069%", 
+                "percent_change_twohundred": "-50.749%", 
+                "previous_price": "0.205", 
+                "symbol": "RES.TO", 
+                "volume": "500", 
+                "year_high": "1.310"
+            }          
+        ]
+
+## Group Locations
+
+Resources related to location in the API.
+
+## Location [/api/location/{location_id}]
+
+A Location object has the following attributes:
+
++ id
++ name
++ iso
++ capital
++ GDP
++ currency
++ exchange
+
++ Parameters
+    + location_id: 1 (required, number) - Name of the Location in form of a number (1-11)
+
+### View a Location's Details [GET]
+
++ Response 200 (application/json)
+
         [
             {
-                "location": USA,
-                "capital": Washington, D.C.,
-                "exchange": NASDAQ,
-                "currency": US Dollars,
-                "GDP (Nominal)": $18.558 trillion 
-                
-            },
-            {
-                "location": France,
-                "capital": Paris,
-                "exchange": PAR,
-                "currency": Euro,
-                "GDP (Nominal)": $2.647 trillion
-            },
-            {
-                "location": United Kingdom,
-                "capital": London,
-                "exchange": LSE,
-                "currency": Pound sterling,
-                "GDP (Nominal)": $2.849 trillion
-            },
-        ]            
-    }
-    
-# Group Currencies
-## Currencies List [/api/currencies]
-### Obtain a list of various currencies [GET]
-+ Response 200(application/json)
-    {
-        "currencies": 
+                "GDP": "1.827 trillion USD", 
+                "capital": "Ottawa", 
+                "currency": "CAD", 
+                "id": 1, 
+                "iso": "CA", 
+                "location": "Toronto Stock Exchange", 
+                "name": "Toronto, Canada"
+            }
+        ]
+
+## Group Currencies
+
+Resources related to currencies in the API.
+
+## Currency [/api/currency/{currency_id}]
+
+A Currency object has the following attributes:
+
++ id
++ name
++ currency
++ locations
++ exchanges
++ exchange_rate
+
++ Parameters
+    + currency_id: 1 (required, number) - Name of the Currency in form of a number (1-7)
+
+### View a Currency's Details [GET]
+
++ Response 200 (application/json)
+
         [
             {
-                "name": US Dollars,
-                "currency code": USD
-                "exchange": NASDAQ,
-                "location": USA,
-                "# of official users": 9
-            },
-            {
-                "name": Euro,
-                "currency code": EUR
-                "exchange": PAR,
-                "location": France,
-                "# of official users": 19
-            },            
-            {
-                "name": Pound sterling,
-                "currency code": GBP,
-                "exchange": LSE,
-                "location": Great Britain,
-                "# of official users": 1
-            },
-        ]            
-    }
+                "currency": "CAD", 
+                "exchange_rate": 0.76, 
+                "exchanges": "TOR", 
+                "id": 1, 
+                "locations": "Canada", 
+                "name": "Canadian Dollar"
+            }            
+        ]

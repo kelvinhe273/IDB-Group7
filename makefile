@@ -16,11 +16,16 @@ else
 	PYLINT   := pylint3
 endif
 
-
-
 IDB3.log:
 	git log > IDB3.log
 
+.pylintrc:
+	$(PYLINT) disable-msg=E0611 --disable=bad-whitespace,missing-docstring,pointless-string-statement --reports=n --generate-rcfile > $@
+
+TestModels: .pylintrc app/tests.py
+	-$(PYLINT) app/tests.py
+	$(COVERAGE) run --omit='*flask_testing*' --branch app/tests.py
+	$(COVERAGE) report -m
 
 check:
 	@not_found=0;                                 \
@@ -47,7 +52,12 @@ clean:
 	rm -f  *.tmp
 	rm -f  IDB3.log
 	rm -rf __pycache__
+	rm -f app/*.pyc
+	rm -rf models.html/
 
+epydoc: app/models.py
+	epydoc app/models.py -o models.html
+	rm -f app/*.pyc
 
 config:
 	git config -l
@@ -66,4 +76,4 @@ status:
 	git remote -v
 	git status
 
-test: .pylintrc IDB3.log format check
+test: clean .pylintrc IDB3.log format epydoc TestModels check
