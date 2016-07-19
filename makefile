@@ -3,7 +3,6 @@ FILES :=                              \
     makefile						  \
     apiary.apib						  \
     IDB3.log						  \
-    models.html						  \
     app/models.py   				  \
     app/tests.py   					  \
     UML.pdf                           
