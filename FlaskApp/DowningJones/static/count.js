@@ -1,24 +1,31 @@
 
 /* I THINK THERE ARE PLACE HOLDER VALUES UNTIL I FIGURE OUT HOW TO DYNAMICALLY ASSIGN THEM	*/
+//locations
 var refc = ["Canada", "Great Britain", "Greece", "United States", "Mexico", "Germany", "Taiwan", "Germany", "Germany", "Hong Kong", "France"];
-var refu = ["CAD", "GBp", "Eur", "USD", "MXN", "TWD", "HKD"];
+//currencies
+var refu = ["CAD", "GBp", "EUR", "USD", "MXN", "TWD", "HKD"];
+//exchanges
 var refe = ["TOR", "LSE", "ASE", "NMS", "MEX", "FRA", "TAI", "BER", "MUN", "HKG", "PAR"];
 
-//will comment the whole file latre, now to bed
+/*
+$('table-responsive').bootstrapTable({
+    onEventName: count_helper('currency', '', '/currencies/', 'cu ', true)});
+
+$('table-responsive').on('onSort', count_helper('currency', '', '/currencies/', 'cu ', true));
+*/
+
+
+
 
 function count(str, classn, k, href, id){
 	
 	var id = id + str;
-	
-	if(classn[0]+classn[1] == "co"){
+	if(classn[0]+classn[1] == "co")
 		var ref = refc;
-	}
-	else if(classn[0]+classn[1] == "cu"){
+	else if(classn[0]+classn[1] == "cu")
 		var ref = refu;
-	}
-	else{
+	else
 		var ref = refe;
-	}
 
 	if(str.includes(",")){
 		var tmp = str.split(",");
@@ -49,6 +56,8 @@ function count(str, classn, k, href, id){
 	}
 	return true;
 }
+
+/* for duplicate cells (same text value)	*/
 function change_links(str, classn, k, href, id){
 	
 	for (var elems = [], i = document.getElementsByClassName(classn + k).length - 1; i > -1; --i){
@@ -60,17 +69,18 @@ function change_links(str, classn, k, href, id){
 			tmp.push(elems[i])
 
 	for (var i = 1; i<tmp.length; i++){
-		console.log(tmp[i])
+		//console.log(tmp[i])
 		tmp[i].href = tmp[0].href;
 	}
 	
 	return true;
 }
 function count_helper(classn, k, href, id, change_link){
-	
+	print();
 	//converts nodelist to array
 	for (var elems = [], i = document.getElementsByClassName(classn + k).length - 1; i > -1; --i){
 		elems[i] = document.getElementsByClassName(classn + k)[i];
+		//console.log("TMP " + elems[i].textContent)
 	}
 
 	var repeated = [];
@@ -83,8 +93,14 @@ function count_helper(classn, k, href, id, change_link){
 				change_links(trim(elems[i].textContent), classn, k, href, id);
 			repeated.push(elems[i].textContent);
 		}
+		else{
+			//console.log("REPEATED " + elems[i].textContent)
+		}
 	}	
 }
 function trim(s){ 
 	return ( s || '' ).replace( /^\s+|\s+$/g, '' ); 
+}
+function print(){ 
+	console.log("--------- PRINT !!! ---------");
 }
