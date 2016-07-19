@@ -24,7 +24,7 @@
                 {% endif %}
                 {% endfor %}
             <div class="container-fluid">
-                <div class="row" style="padding:30px">
+                <div class="row">
                     <div class="col-md-4 col-xs-4"></div>
                     <div class="col-md-4 col-xs-4" style="text-align: center">
                         <h1 style = "font-weight : bold">Search Results</h1>
@@ -32,7 +32,7 @@
                 </div>
 
                 {% if queriesand1 %}
-                <div class="row" style="padding:30px">
+                <div class="row">
                     <div class="col-md-4 col-xs-4"></div>
                         <div class="col-md-4 col-xs-4" style="text-align: center">
                             <h1 style = "font-weight : bold">Location</h1>
@@ -217,11 +217,16 @@
                 {% endif %}
                 {% endfor %}
 
-                
+                <div class="row">
+                    <div class="col-md-4 col-xs-4"></div>
+                    <div class="col-md-4 col-xs-4" style="text-align: center">
+                        <h1 style = "font-weight : bold">Search Results</h1>
+                    </div>
+                </div>
 
                 {% if queriesor1 %}
                 <div class="container-fluid">
-                    <div class="row" style="padding:30px">
+                    <div class="row">
                         <div class="col-md-4 col-xs-4"></div>
                         <div class="col-md-4 col-xs-4" style="text-align: center">
                             <h1 style = "font-weight : bold">Location</h1>
@@ -411,13 +416,6 @@ src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></scrip
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 <script>
-jQuery(document).ready(function(){
-        jQuery('#hideshow').on('click', function(event) {        
-             jQuery('#and').toggle('show');
-        });
-    });
-</script>
-<script>
   $(document).ready(function() {
       $('#locationtable').DataTable();
       $('#exchangetable').DataTable();
@@ -436,11 +434,11 @@ $(document).ready(function() {
         event.preventDefault();//stop browser to take action for clicked anchor
                     
         //get displaying tab content jQuery selector
-        var active_tab_selector = $('.nav-tabs > li.active > a').attr('href');                  
-                    
+        var active_tab_selector = $('.nav-tabs > li.active > a').attr('href');
+
         //find actived navigation and remove 'active' css
-        var actived_nav = $('.nav-tabs > li.active');
-        actived_nav.removeClass('active');
+        var active_nav = $('.nav-tabs > li.active');
+        active_nav.removeClass('active');
                     
         //add 'active' css into clicked navigation
         $(this).parents('li').addClass('active');
