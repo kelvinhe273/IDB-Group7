@@ -82,6 +82,10 @@ def market (id):
     return render_template('stockmarket.html',
                             title=market.name,
                             market=market)
+@app.route ( '/d3' )
+def d3 ():
+  return render_template('d3.html',
+                title='Downing Jones')
 
 @app.route ( '/api/run_tests')
 def tests ():
@@ -165,6 +169,10 @@ def search ():
     hackString = ""
     url = request.form['url']
     thisString = url.split('=')
+
+    #line will take out empty spaces
+    thisString = [stri.strip() if len(stri) > 0 else None for stri in thisString]
+
     andqueries = thisString
     search_queryand1 = Location.query.filter(or_(Location.name.contains(andqueries[0]),Location.iso.contains(andqueries[0]), Location.capital.contains(andqueries[0]),Location.gdp.contains(andqueries[0]),Location.currency.contains(andqueries[0]), Location.location_exchange.contains(andqueries[0])))
     search_queryand2 = Exchange.query.filter(or_(Exchange.exchange.contains(andqueries[0]),Exchange.name.contains(andqueries[0]),Exchange.market_cap_exchange.contains(andqueries[0]),Exchange.currency.contains(andqueries[0]),Exchange.location.contains(andqueries[0])))

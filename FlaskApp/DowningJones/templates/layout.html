@@ -12,23 +12,6 @@
   <script type="text/javascript" src="static/count.js" ></script>
   <link rel="stylesheet" type="text/css" href="static/style.css">
   <script src="//code.jquery.com/jquery-1.12.3.js"></script>
-<!--   <script type="text/javascript">
-// $(document).ready(function() {
-//   $('#searchsubmit').click(function(){
-//     var searchstring  = $('#searchbar').val();
-//     $.ajax({
-//     url: "../search",
-//     method: "POST",
-//     data: {"searchinput": searchstring},
-//     dataType: "json",
-//     success: function(d) {
-//         // Successful POST; do something with the response if you want
-//         alert(d.status);
-//     }
-//     });
-//   });
-// });
-// </script>-->
 <script>
 $(document).ready(function ($){
   $(function(){
@@ -87,9 +70,11 @@ $(document).ready(function ($){
           <li><a href="/companies">Company</a></li>
           <li><a href="/locations">Location</a></li>
           <li><a href="/currencies">Currency</a></li>
+          
           </ul>
             <ul  class="nav navbar-nav navbar-right">
           </li>
+          <li><a title="d3 is still a work on progress"  href="/d3">d3</a></li>
           <li><a href="/about">About</a></li>
         </ul>
         <form class="navbar-form navbar-left" role="search" action="/search" method="post">
@@ -103,8 +88,7 @@ $(document).ready(function ($){
   </nav>
   <!-- END NAVBAR -->
 <!-- PAGE CONTENT -->
- <!-- <div class="container-fluid"> -->
-  {% block body %}{% endblock %}
+{% block body %}{% endblock %}
  </div>
   
  </div> 

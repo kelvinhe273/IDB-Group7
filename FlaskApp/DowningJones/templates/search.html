@@ -133,8 +133,8 @@
                             <tbody>
                                 {% for query in queriesand3 %}
                                 <tr>
-                                    <td><a href="/currency/{{ query.rowid }}">{{ query.name }}</a></td>
-                                    <td><a href="/currency/{{ query.rowid }}">{{ query.currency }}</a></td>
+                                    <td><a href="/currencies/{{ query.rowid }}">{{ query.name }}</a></td>
+                                    <td><a href="/currencies/{{ query.rowid }}">{{ query.currency }}</a></td>
                                     <td><a class = "countryd" id = "crd {{ query.locations }}" > {{ query.locations }} </a></td>
                                     <td><a class = "exchangec" id = "exc {{ query.exchanges }}" >{{ query.exchanges }}</a></td>
                                     <td>{{ query.exchange_rate}}</td>
@@ -317,8 +317,8 @@
                             <tbody>
                                 {% for query in queriesor3 %}
                                 <tr>
-                                    <td><a href="/currency/{{ query.rowid }}">{{ query.name }}</a></td>
-                                    <td><a href="/currency/{{ query.rowid }}">{{ query.currency }}</a></td>
+                                    <td><a href="/currencies/{{ query.rowid }}">{{ query.name }}</a></td>
+                                    <td><a href="/currencies/{{ query.rowid }}">{{ query.currency }}</a></td>
                                     <td><a class = "countryi" id = "cri {{ query.locations }}" > {{ query.locations }} </a></td>
                                     <td><a class = "exchangeh" id = "exh {{ query.exchanges }}" >{{ query.exchanges }}</a></td>
                                     <td>{{ query.exchange_rate}}</td>

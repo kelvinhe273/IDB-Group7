@@ -1,5 +1,4 @@
 
-
 //locations
 var refc = ["Canada", "Great Britain", "Greece", "United States", "Mexico", "Germany", "Taiwan", "Germany", "Germany", "Hong Kong", "France"];
 //currencies
@@ -90,6 +89,11 @@ function count_helper(classn, k, href, id, change_link, b){
 		}
 	}	
 }
+/*	trim will remove trailing and starting white space	*/
 function trim(s){ 
 	return ( s || '' ).replace( /^\s+|\s+$/g, '' ); 
+}
+/*	only for testing purposes, will print to the console	*/
+function print(b){ 
+	console.log(" ----- PRINT ---- " + b);
 }
