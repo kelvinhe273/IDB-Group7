@@ -1,245 +1,66 @@
-{% extends "layout.html" %}
-{% block body %}
-
+<!DOCTYPE html>
+<meta charset="utf-8">
 <style>
-  h1,h2,h3,h4,h5,h6, a {
-      color : white;
-  }
-  p {
-    /*color : black;*/
-  } 
-  .person {
-    width: 400px;
-    margin-right: 15px;
-    float: left;
-  }
+
+text {
+  font: 10px sans-serif;
+}
 
 </style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
 
+var diameter = 960,
+    format = d3.format(",d"),
+    color = d3.scale.category20c();
 
-<link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 480px)" href="/static/small-device.css" />
+var bubble = d3.layout.pack()
+    .sort(null)
+    .size([diameter, diameter])
+    .padding(1.5);
 
-<!-- About the authors part-->
-    <div class="jumbotron" style = "margin-bottom: 0px; margin-top: 0px; padding:0px">
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+var svg = d3.select("body").append("svg")
+    .attr("width", diameter)
+    .attr("height", diameter)
+    .attr("class", "bubble");
 
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" >
-         <style>.carousel-inner{margin:auto;max-width: 100%;}</style>
-        <div class="item active">
-          <img src="static/Building.jpg" width= "100%";>
-            <div class="carousel-caption">
-              <style>.carousel-caption{background-color: transparent !important;opacity: 0.7}</style>
-              <h1>The Downing Jones</h1>
-            <p class="lead" style="color:white"> About Us</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+d3.json("http://testdowningjones.me/static/flare.json", function(error, root) {
+  if (error) throw error;
 
-    <div class="container">
-      <h2 style = "color:white; text-align : center;font-weight : bold; padding : 20px"> Site Description</h2>
-      <h4 style = "color:white; font-weight : normal; text-align : center; padding : 20px">Our site contains four models concerning stock companies, stock exchanges, locations and currencies. If you click on a specific element within a table, you will get more detailed information about the various data members.</h4>              
-      <h2 style = "color:white; text-align : center;font-weight : bold; padding : 20px"> Our Purpose </h2>
-      <h4 style = "color:white; font-weight : normal; text-align : center; padding : 20px">Our purpose is to bring valuable financial data for users so they can make educated investment decisions.</h4>
-      <h2 style = "color:white; text-align : center;font-weight : bold; padding : 20px"> Our Team </h2> 
-    </div>
+  var node = svg.selectAll(".node")
+      .data(bubble.nodes(classes(root))
+      .filter(function(d) { return !d.children; }))
+    .enter().append("g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
-    <div class="container aboutCard" style="color: white;">
-    <!-- Team Members Row -->
+  node.append("title")
+      .text(function(d) { return d.className + ": " + format(d.value); });
 
-    <div class="container row">
-        <!-- Matthew Bio -->
-        <div class="container col-md-4 col-sm-4">
-            <div class="text-center" style="padding: 15px; height: 100%;">
-                <div class="row">
-                    <div style="margin: 0 auto;">
-                        <img class="profilePic img-circle" src="static/MattPic.png" width="200" height="200">
-                    </div>
-                </div>
+  node.append("circle")
+      .attr("r", function(d) { return d.r; })
+      .style("fill", function(d) { return color(d.packageName); });
 
-                <div class="row" >
-                    <h2>Matthew Coleman</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-4; text-center">
-                        <h4 ><b>Role: </b>Full Stack</h4>
-                        <h6 ><b>Git Commits: </b>71</h6>
-                        <h6 ><b>Unit Tests: </b>2</h6>
-                        <h6 ><b>Issues: </b>30</h6>
-                    </div>
-                </div>
-                <p style="font-size:16px"> I am currently a UTCS senior who is planning on graduating in December 2016.</p>
-            </div>
-        </div>
+  node.append("text")
+      .attr("dy", ".3em")
+      .style("text-anchor", "middle")
+      .text(function(d) { return d.className.substring(0, d.r / 3); });
+});
 
-        <!-- Saleh Bio -->
-        <div class="container col-md-4 col-sm-4">
-            <div class="text-center" style="padding: 15px; height: 100%;">
+// Returns a flattened hierarchy containing all leaf nodes under the root.
+function classes(root) {
+  var classes = [];
 
-                <div class="row">
-                    <div style="margin: 0 auto;">
-                        <img class="profilePic img-circle" src="static/saleh.jpg" width="200" height="200">
-                    </div>
-                </div>
+  function recurse(name, node) {
+    if (node.children) node.children.forEach(function(child) { recurse(node.name, child); });
+    else classes.push({packageName: name, className: node.name, value: node.size});
+  }
 
-                <div class="row" >
-                    <h2>Saleh Alghusson</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-4; text-center">
-                        <h4 ><b>Role: </b>Full Stack</h6>
-                        <h6 ><b>Git Commits: </b>59</h6>
-                        <h6 ><b>Unit Tests: </b>2</h6>
-                        <h6 ><b>Issues: </b>6</6>
-                    </div>
-                </div>
-                <p style="font-size:16px">Transferred into the CS program at the University of Texas from King Fahd's University of Petroleum and Minerals from his home country of Saudi Arabia. Is interested in learning more about networks and security.</p>
-            </div>
-        </div>
+  recurse(null, root);
+  return {children: classes};
+}
 
-        <!-- Nathan Bio -->
-        <div class="container col-md-4 col-sm-4">
-            <div class="text-center" style="padding: 15px; height: 100%;">
+d3.select(self.frameElement).style("height", diameter + "px");
 
-                <div class="row">
-                    <div style="margin: 0 auto;">
-                        <img class="profilePic img-circle" src="static/nathan.jpg" width="200" height="200">
-                    </div>
-                </div>
-
-                <div class="row" >
-                    <h2>Nathan Adams</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-4; text-center">
-                        <h4 ><b>Role: </b>Back End</h6>
-                        <h6 ><b>Git Commits: </b>24</h6>
-                        <h6 ><b>Unit Tests: </b>3</h6>
-                        <h6 ><b>Issues: </b>3</h6>
-                    </div>
-                </div>
-            <p style="font-size:16px"> Likes to blow things up back in Tyler, Texas. Is a very experienced full stack developer at SpiceWorks here in Austin, Texas. Loves Zoidberg.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container row">
-        <!-- Sarah Bio -->
-        <div class="container col-md-4 col-sm-4">
-            <div class="text-center" style="padding: 15px; height: 100%;">
-                <div class="row">
-                    <div style="margin: 0 auto;">
-                        <img class="profilePic img-circle" src="static/sarah.jpg" width="200" height="200">
-                    </div>
-                </div>
-
-                <div class="row" >
-                    <h2>Sarah Jee</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-4; text-center">
-                        <h4 ><b>Role: </b>Full Stack</h6>
-                        <h6 ><b>Git Commits: </b>42</h6>
-                        <h6 ><b>Unit Tests: </b>2</h6>
-                        <h6 ><b>Issues: </b>6</h6>
-                    </div>
-                </div>
-                <p style="font-size:16px"> Incoming junior. Computer science major.</p>
-            </div>
-        </div>
-
-        <!-- Kelvin Bio -->
-        <div class="container col-md-4 col-sm-4">
-            <div class="text-center" style="padding: 15px; height: 100%;">
-                <div class="row">
-                    <div style="margin: 0 auto;">
-                        <img class="profilePic img-circle" src="static/kelvin.jpg" width="200" height="200">
-                    </div>
-                </div>
-
-                <div class="row" >
-                    <h2>Kelvin He</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-4; text-center">
-                        <h4 ><b>Role: </b>Full Stack</h6>
-                        <h6 ><b>Git Commits: </b>59</h6>
-                        <h6 ><b>Unit Tests: </b>2</h6>
-                        <h6 ><b>Issues: </b>15</h6>
-                    </div>
-                </div>
-                <p style="font-size:16px"> Incoming junior. Likes to mess with design and innovative ideas.</p>
-            </div>
-        </div>
-
-        <!-- Jemin Bio -->
-        <div class="container col-md-4 col-sm-4">
-            <div class="text-center" style="padding: 15px; height: 100%;">
-                <div class="row">
-                    <div style="margin: 0 auto;">
-                        <img class="profilePic img-circle" src="static/jae.jpg" width="200" height="200">
-                    </div>
-                </div>
-                <div class="row" >
-                    <h2>Jemin Shin</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-4; text-center">
-                        <h4 ><b>Role: </b>Full Stack</h4>
-                        <h6 ><b>Git Commits: </b>75</h6>
-                        <h6 ><b>Unit Tests: </b>2</h6>
-                        <h6 ><b>Issues: </b>13</h6>
-                    </div>
-                </div>
-                <p style="font-size:16px"> Senior computer science major. Hopes to graduate by December 2016.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="space" class="row panel-body text-center">
-        <div class="col-md-4 col-xs-4">
-            <h4 >Tools Used</h4>
-            <h5 ><a href="https://getbootstrap.com/" style="color:white">Bootstrap</a></h5>
-            <h5 ><a href="http://flask.pocoo.org/" style="color:white">Flask</a></h5>
-            <h5 ><a href="https://github.com/">Git</a></h5>
-            <h5 ><a href="https://travis-ci.org/">Travis-CI</a></h5>
-            <h5 ><a href="http://www.sqlalchemy.org/">SQLAlchemy</a></h5>
-            <h5 ><a href="https://apiary.io/">Apiary</a></h5>
-        </div>
-        <div class="col-md-4 col-xs-4">
-            <h4 >Links</h4>
-            <h5 ><a href="https://github.com/kelvinhe273/IDB-Group7">Github Repo</a></h5>
-            <h5 ><a href="https://github.com/kelvinhe273/IDB-Group7/issues" >Github Issue Tracker</a></h5>
-            <h5 ><a href="https://github.com/kelvinhe273/IDB-Group7/wiki" >Github Wiki</a></h5>
-            <h5 ><a href="http://docs.downingjones.apiary.io/#">Apiary Api</a></h5>
-        </div>
-        <div class="col-md-4 col-xs-4">
-            <h4 >Stats</h4>
-            <h5 ><b># Commits: </b>330</h5>
-            <h5 ><b># Issues: </b>73</h5>
-            <h5 ><b># Unit Tests: </b>13</h5>
-            <button id="test-button" class="button btn-info"><h5 style = "color: black">Run Tests</h5></button>
-        </div>
-    </div>
-    <div id='test_results' style='display:none;'></div>
-    <script type="text/javascript">
-        $('#test-button').click(function(){
-            $.ajax({
-                url: '/api/run_tests',
-                type: 'GET'
-            })
-            .done(function(data, textStatus, jqXHR){
-                // $('#test_results').text(data);
-                // $('#test_results').show();
-                alert(data);
-            })
-            .fail(function(jqXHR, textStatus, errorThrown){
-                $('#test_results').text('An error occur red running the tests');
-                $('#test_results').show();
-            })
-        })
-    </script>
-{% endblock %}
-
+</script>
