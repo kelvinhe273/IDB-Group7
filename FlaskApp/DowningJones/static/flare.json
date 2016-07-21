@@ -3,6 +3,9 @@
   "children": 
   [
     {
+     "name": "analytics",
+     "children": [
+    {
       "name": "Premiere League 2016/17",
       "size": 380,
     }, 
@@ -44,4 +47,27 @@
     }
   ]
 
+}
+
+{
+ "name": "flare",
+ "children": 
+  [
+    {
+     "name": "analytics",
+     "children": 
+      [
+        {
+         "name": "cluster",
+         "children": 
+          [
+            {"name": "Premiere League 2016/17", "size": 380},
+            {"name": "CommunityStructure", "size": 3812},
+            {"name": "HierarchicalCluster", "size": 6714},
+            {"name": "MergeEdge", "size": 743}
+          ]
+        },
+      ]
+    }
+  ]
 }
