@@ -7,63 +7,18 @@
       [
         {
          "name": "cluster",
-         "children": [
-{
-      "name": "Premiere League 2016/17",
-      "size": 380,
-    }, 
-    {
-      "name": "Primera Division 2016/17",
-      "size": 380,
-    }, 
-    {
-      "name": "1. Bundesliga 2016/17",
-       "size": 306,
-    }, 
-    {
-      "name": "Dfb-Pokal 2016/17",
-       "size": 32,
-    }, 
-    {
-      "name": "2. Bundesliga 2016/17",
-       "size": 306,
-    }, 
-    {
-      "name": "Eredivisie 2016/17",
-       "size": 306,
-    }, 
-    {
-      "name": "Ligue 2 2016/17",
-       "size": 380,
-    }, 
-    {
-      "name": "Ligue 1 2016/17",
-       "size": 380,
-    }, 
-    {
-      "name": "Championship 2016/17",
-       "size": 552,
-    }, 
-    {
-      "name": "Liga Adelante 2016/17",
-      "size": 462,
-    }
-         ]
-        },
-        {
-         "name": "graph",
-         "children": [
-          {"name": "BetweennessCentrality", "size": 3534},
-          {"name": "LinkDistance", "size": 5731},
-          {"name": "MaxFlowMinCut", "size": 7840},
-          {"name": "ShortestPaths", "size": 5914},
-          {"name": "SpanningTree", "size": 3416}
-         ]
-        },
-        {
-         "name": "optimization",
-         "children": [
-          {"name": "AspectRatioBanker", "size": 7074}
+         "children":
+         [
+          {"name": "Premiere League 2016/17", "size": 380}, 
+          {"name": "Primera Division 2016/17", "size": 380}, 
+          {"name": "1. Bundesliga 2016/17","size": 306}, 
+          {"name": "Dfb-Pokal 2016/17","size": 32}, 
+          {"name": "2. Bundesliga 2016/17","size": 306}, 
+          {"name": "Eredivisie 2016/17","size": 306}, 
+          {"name": "Ligue 2 2016/17","size": 380}, 
+          {"name": "Ligue 1 2016/17","size": 380}, 
+          {"name": "Championship 2016/17","size": 552}, 
+          {"name": "Liga Adelante 2016/17", "size": 462}
          ]
         }
       ]
