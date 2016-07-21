@@ -8,10 +8,46 @@
         {
          "name": "cluster",
          "children": [
-          {"name": "AgglomerativeCluster", "size": 3938},
-          {"name": "CommunityStructure", "size": 3812},
-          {"name": "HierarchicalCluster", "size": 6714},
-          {"name": "MergeEdge", "size": 743}
+{
+      "name": "Premiere League 2016/17",
+      "size": 380,
+    }, 
+    {
+      "name": "Primera Division 2016/17",
+      "size": 380,
+    }, 
+    {
+      "name": "1. Bundesliga 2016/17",
+       "size": 306,
+    }, 
+    {
+      "name": "Dfb-Pokal 2016/17",
+       "size": 32,
+    }, 
+    {
+      "name": "2. Bundesliga 2016/17",
+       "size": 306,
+    }, 
+    {
+      "name": "Eredivisie 2016/17",
+       "size": 306,
+    }, 
+    {
+      "name": "Ligue 2 2016/17",
+       "size": 380,
+    }, 
+    {
+      "name": "Ligue 1 2016/17",
+       "size": 380,
+    }, 
+    {
+      "name": "Championship 2016/17",
+       "size": 552,
+    }, 
+    {
+      "name": "Liga Adelante 2016/17",
+      "size": 462,
+    }
          ]
         },
         {
