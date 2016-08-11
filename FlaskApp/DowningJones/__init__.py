@@ -82,10 +82,10 @@ def market (id):
     return render_template('stockmarket.html',
                             title=market.name,
                             market=market)
-@app.route ( '/d3' )
-def d3 ():
-  return render_template('d3.html',
-                title='Downing Jones')
+# @app.route ( '/d3' )
+# def d3 ():
+#   return render_template('d3.html',
+#                 title='Downing Jones')
 
 @app.route ( '/api/run_tests')
 def tests ():
